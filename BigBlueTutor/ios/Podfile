@@ -1,0 +1,23 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+
+target 'BigBlueTutor' do
+  use_frameworks!
+
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'RCTText',
+    'RCTImage',
+    'RCTNetwork',
+    'RCTWebSocket',
+    'RCTAnimation',
+    'BatchedBridge',
+  ]
+  pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  pod 'Starscream', '~> 2.0.3'
+  pod 'SwiftyJSON'
+  pod 'WebRTC'
+  pod 'DeepstreamIO'
+  pod 'QMChatViewController'
+
+end
