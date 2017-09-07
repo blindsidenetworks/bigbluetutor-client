@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      Messages
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let msg of messages" (click)="viewMessage(msg)"><b>{{msg.sender}}</b>&emsp;&emsp;{{msg.content}}</button>
+  </ion-list>
+</ion-content>
