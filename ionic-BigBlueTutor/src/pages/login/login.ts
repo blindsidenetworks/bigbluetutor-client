@@ -8,14 +8,15 @@ import { DsService } from '../../shared/ds.service';
   providers: [DsService]
 })
 export class LoginPage {
-  data:any;
+  username;
+  password;
   constructor(public navCtrl: NavController, private ds: DsService) {
 
   }
 
   login() {
-    console.log(this.data.username);
-    this.ds.login({ username: this.data.username, password: this.data.password }, this.handleLogin)
+    console.log(this.username);
+    this.ds.login({ username: this.username, password: this.password }, this.handleLogin.bind(this))
   }
 
   handleLogin(success, data) {
