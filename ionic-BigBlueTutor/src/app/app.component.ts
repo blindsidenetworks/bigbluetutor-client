@@ -3,9 +3,10 @@ import {Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
+import {HomePage} from '../pages/home/home';
 import {MessageList} from '../pages/messagelist/messagelist';
+import {ProfilePage} from '../pages/profilepage/profilepage';
+import {LoginPage} from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +18,11 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menu: MenuController) {
-    this.pages = [{title: "Home", component: HomePage}, {title: "Messages", component: MessageList}];
+    this.pages = [
+      {title: "Home", component: HomePage},
+      {title: "Profile", component: ProfilePage},
+      {title: "Messages", component: MessageList}
+    ];
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
