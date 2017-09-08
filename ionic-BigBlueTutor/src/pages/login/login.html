@@ -1,13 +1,15 @@
 <ion-content view-title="Login" name="login-view">
-  <ion-content class="padding">
+  <ion-content padding>
     <div class="list list-inset">
-      <label class="item item-input">
-        <input type="text" placeholder="Username" [(ngModel)]="username">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Password" [(ngModel)]="password">
-      </label>
+      <ion-list>
+      <ion-item class="item item-input">
+        <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+      </ion-item>
+      <ion-item class="item item-input">
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      </ion-list>
     </div>
-    <button class="button button-block button-calm" (tap)="login()" (click)="login()">Login</button>
+    <button ion-button style="width:5%" class="button button-block button-calm" (tap)="login()" (click)="login()">Login</button>
   </ion-content>
 </ion-content>
