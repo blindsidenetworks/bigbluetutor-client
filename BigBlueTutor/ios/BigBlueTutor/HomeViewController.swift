@@ -60,16 +60,16 @@ class HomeViewController: UIViewController {
 
     func browseClicked(sender: UIButton) {
         //uncomment this
-        /*
+        
         DispatchQueue.main.async{
             let viewController = MainViewController.instance
             viewController.showDetailViewController(viewController.browseViewController, sender: viewController)
         }
-        */
+ 
         //remove this
-        DispatchQueue.main.async {
-            MainViewController.instance.showDetailViewController(ChatViewController(), sender: self)
-        }
+  //      DispatchQueue.main.async {
+//            MainViewController.instance.showDetailViewController(ChatViewController(), sender: self)
+        //}
     }
     
     override func didReceiveMemoryWarning() {

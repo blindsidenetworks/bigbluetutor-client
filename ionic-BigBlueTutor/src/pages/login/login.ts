@@ -1,21 +1,30 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
-//import * as deepstream from 'deepstream.io-client-js';
+import { DsService } from '../../shared/ds.service';
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html'
+  templateUrl: 'login.html',
+  providers: [DsService]
 })
 export class LoginPage {
-
-  constructor(public navCtrl: NavController) {
+  username;
+  password;
+  constructor(public navCtrl: NavController, private ds: DsService) {
 
   }
 
   login() {
-    /*var client = deepstream("https://tutor-back.blindside-dev.com:6020").login({ username: "", password: "" })
-    @injectable() export class DsService ( get dsInstance() { return client })*/
-    this.navCtrl.setRoot(HomePage);
+    console.log(this.username);
+    this.ds.login({ username: this.username, password: this.password }, this.handleLogin.bind(this))
+  }
+
+  handleLogin(success, data) {
+    if(success) {
+      this.navCtrl.setRoot(HomePage);
+    }else {
+      console.log(success)
+    }
   }
 
 }

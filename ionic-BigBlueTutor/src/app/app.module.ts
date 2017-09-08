@@ -10,6 +10,7 @@ import {MessageList} from '../pages/messagelist/messagelist';
 import {Message} from '../pages/message/message'
 import {ProfilePage} from '../pages/profilepage/profilepage'
 import {LoginPage} from '../pages/login/login'
+import { DsService } from '../shared/ds.service'
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {LoginPage} from '../pages/login/login'
   providers: [
     StatusBar,
     SplashScreen,
+    DsService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

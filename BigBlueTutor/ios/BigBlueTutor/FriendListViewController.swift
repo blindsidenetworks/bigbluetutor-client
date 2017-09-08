@@ -142,16 +142,14 @@ extension FriendListViewController: UITableViewDelegate {
                 client.rpc.make("addContact", data: ["contact":contact, "client":MainViewController.instance.auth.username].jsonElement)
             }
         }else {
-            /*
             contact = self.contacts[indexPath.row]
             DispatchQueue.global(qos: .background).async {
                 client.rpc.make("requestMeeting", data: ["contact":contact, "client":MainViewController.instance.auth.username].jsonElement)
             }
-            */
-            
+            /*
             DispatchQueue.main.async {
                 MainViewController.instance.showDetailViewController(ChatViewController(), sender: self)
-            }
+            }*/
         }
     }
 }
