@@ -7,7 +7,7 @@ export class DsService {
   public dsInstance;
 
   constructor() {
-    this.ds = this.dsInstance = deepstream('https://tutor-back.blindside-dev.com:6020')
+    this.ds = this.dsInstance = deepstream('tutor-back.blindside-dev.com:6020')
       .on('error', error => console.log(error));
   }
 

@@ -26,7 +26,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      BigBlueTutor\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <p> This is the BigBlueTutor main menu. </p>\n</ion-content>\n'/*ion-inline-end:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      BigBlueTutor\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <p> This is the BigBlueTutor main menu. </p>\n</ion-content>\n'/*ion-inline-end:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], HomePage);
@@ -97,8 +97,8 @@ var LoginPage = (function () {
         this.ds = ds;
     }
     LoginPage.prototype.login = function () {
-        console.log(this.data.username);
-        this.ds.login({ username: this.data.username, password: this.data.password }, this.handleLogin);
+        console.log(this.username);
+        this.ds.login({ username: this.username, password: this.password }, this.handleLogin.bind(this));
     };
     LoginPage.prototype.handleLogin = function (success, data) {
         if (success) {
@@ -112,12 +112,13 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/pages/login/login.html"*/'<ion-content view-title="Login" name="login-view">\n  <ion-content class="padding">\n    <div class="list list-inset">\n      <label class="item item-input">\n        <input type="text" placeholder="Username" [(ngModel)]="data.username">\n      </label>\n      <label class="item item-input">\n        <input type="text" placeholder="Username" [(ngModel)]="data.username">\n      </label>\n    </div>\n    <button class="button button-block button-calm" (tap)="login()" (click)="login()">Login</button>\n  </ion-content>\n</ion-content>\n'/*ion-inline-end:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/pages/login/login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/login/login.html"*/'<ion-content view-title="Login" name="login-view">\n  <ion-content class="padding">\n    <div class="list list-inset">\n      <label class="item item-input">\n        <input type="text" placeholder="Username" [(ngModel)]="username">\n      </label>\n      <label class="item item-input">\n        <input type="text" placeholder="Password" [(ngModel)]="password">\n      </label>\n    </div>\n    <button class="button button-block button-calm" (tap)="login()" (click)="login()">Login</button>\n  </ion-content>\n</ion-content>\n'/*ion-inline-end:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/login/login.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_3__shared_ds_service__["a" /* DsService */]]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__shared_ds_service__["a" /* DsService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_ds_service__["a" /* DsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_ds_service__["a" /* DsService */]) === "function" && _b || Object])
 ], LoginPage);
 
+var _a, _b;
 //# sourceMappingURL=login.js.map
 
 /***/ }),
@@ -143,7 +144,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var DsService = (function () {
     function DsService() {
-        this.ds = this.dsInstance = __WEBPACK_IMPORTED_MODULE_1_deepstream_io_client_js__('https://tutor-back.blindside-dev.com:6020')
+        this.ds = this.dsInstance = __WEBPACK_IMPORTED_MODULE_1_deepstream_io_client_js__('tutor-back.blindside-dev.com:6020')
             .on('error', function (error) { return console.log(error); });
     }
     DsService.prototype.login = function (credentials, loginHandler) {
@@ -198,7 +199,7 @@ var MessageList = (function () {
 }());
 MessageList = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-messagelist',template:/*ion-inline-start:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/pages/messagelist/messagelist.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\'menu\'></ion-icon>\n    </button>\n    <ion-title>\n      Messages\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let msg of messages" (click)="viewMessage(msg)"><b>{{msg.sender}}</b>&emsp;&emsp;{{msg.content}}</button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/pages/messagelist/messagelist.html"*/
+        selector: 'page-messagelist',template:/*ion-inline-start:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/messagelist/messagelist.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\'menu\'></ion-icon>\n    </button>\n    <ion-title>\n      Messages\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let msg of messages" (click)="viewMessage(msg)"><b>{{msg.sender}}</b>&emsp;&emsp;{{msg.content}}</button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/messagelist/messagelist.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], MessageList);
@@ -235,7 +236,7 @@ var Message = (function () {
 }());
 Message = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-message',template:/*ion-inline-start:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/pages/message/message.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\'menu\'></ion-icon>\n    </button>\n    <ion-title>\n      Message\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <p>{{message.content}}</p>\n</ion-content>\n'/*ion-inline-end:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/pages/message/message.html"*/
+        selector: 'page-message',template:/*ion-inline-start:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\'menu\'></ion-icon>\n    </button>\n    <ion-title>\n      Message\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <p>{{message.content}}</p>\n</ion-content>\n'/*ion-inline-end:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], Message);
@@ -381,7 +382,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/app/app.html"*/'<ion-nav [root]="rootPage" #content></ion-nav>\n\n<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Pages</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let page of pages" (click)="openPage(page)">{{page.title}}</button>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n'/*ion-inline-end:"/Users/firstuser/Desktop/BigBlueTutor-REACT/ionic-BigBlueTutor/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/app/app.html"*/'<ion-nav [root]="rootPage" #content></ion-nav>\n\n<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Pages</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let page of pages" (click)="openPage(page)">{{page.title}}</button>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n'/*ion-inline-end:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* MenuController */]])
 ], MyApp);
