@@ -6,20 +6,23 @@ import {StatusBar} from '@ionic-native/status-bar';
 
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
-import {MessageList} from '../pages/messagelist/messagelist';
-import {Message} from '../pages/message/message'
-import {ProfilePage} from '../pages/profilepage/profilepage'
-import {LoginPage} from '../pages/login/login'
-import { DsService } from '../shared/ds.service'
+import {Inbox} from '../pages/inbox/inbox';
+import {Message} from '../pages/message/message';
+import {ProfilePage} from '../pages/profilepage/profilepage';
+import {LoginPage} from '../pages/login/login';
+import {UserPage} from '../pages/userpage/userpage';
+import { DsService } from '../shared/ds.service';
+import { RecordListenService } from '../shared/recordlisten.service';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    MessageList,
+    Inbox,
     Message,
     ProfilePage,
-    LoginPage
+    LoginPage,
+    UserPage
   ],
   imports: [
     BrowserModule,
@@ -29,15 +32,17 @@ import { DsService } from '../shared/ds.service'
   entryComponents: [
     MyApp,
     HomePage,
-    MessageList,
+    Inbox,
     Message,
     ProfilePage,
-    LoginPage
+    LoginPage,
+    UserPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     DsService,
+    RecordListenService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

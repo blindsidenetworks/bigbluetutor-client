@@ -10,5 +10,24 @@
 </ion-header>
 
 <ion-content padding>
-  <p> This is the BigBlueTutor main menu. </p>
+  <ion-searchbar
+    [(ngModel)]="search"
+    (ionInput)="onInput($event)">
+  </ion-searchbar>
+  <ion-list>
+    <ion-list-header>
+      Catagories
+    </ion-list-header>
+    <button ion-item *ngFor="let catagory of catagories" (click)="catagorySelected(catagory)">
+      {{ catagory }}
+    </button>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Users
+    </ion-list-header>
+    <button ion-item *ngFor="let user of users" (click)="userSelected(user)">
+      {{ user }}
+    </button>
+  </ion-list>
 </ion-content>
