@@ -4,7 +4,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 import {HomePage} from '../pages/home/home';
-import {MessageList} from '../pages/messagelist/messagelist';
+import {Inbox} from '../pages/inbox/inbox';
 import {ProfilePage} from '../pages/profilepage/profilepage';
 import {LoginPage} from '../pages/login/login';
 
@@ -21,7 +21,7 @@ export class MyApp {
     this.pages = [
       {title: "Home", component: HomePage},
       {title: "Profile", component: ProfilePage},
-      {title: "Messages", component: MessageList}
+      {title: "Inbox", component: Inbox}
     ];
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

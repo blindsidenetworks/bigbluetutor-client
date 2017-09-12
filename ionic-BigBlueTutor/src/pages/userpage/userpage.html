@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      {{username}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="userInfo">
+    <img width="150px" height="150px" src="images/icon.png"/>
+    <button (click)="star()" ion-button>Favorite</button>
+    <div id="name">{{username}}</div>
+    Online
+    <button (click)="message()" ion-button>Message</button>
+  </div>
+</ion-content>

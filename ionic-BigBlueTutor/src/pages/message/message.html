@@ -1,11 +1,21 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
     <ion-title>
-      Message
+      {{user}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <p>{{message.content}}</p>
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let msg of messages"><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>
+  </ion-list>
+  <div>
+    <ion-input [(ngModel)]="input"></ion-input>
+    <button (click)="requestMeeting()" ion-button>Request Meeting</button>
+    <button (click)="sendMessage()" ion-button>Send</button>
+  </div>
 </ion-content>

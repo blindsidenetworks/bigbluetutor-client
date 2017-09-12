@@ -25210,3 +25210,11 @@ page-profile #profileInfo {
 page-profile #name {
   font-size: 36px;
 }
+
+page-user #userInfo {
+  text-align: center;
+}
+
+page-user #name {
+  font-size: 36px;
+}
