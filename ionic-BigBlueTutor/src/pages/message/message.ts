@@ -30,7 +30,7 @@ export class Message {
       var url = this.ds.profileRecord.get('meeting');
       if (url !== "") {
         if (this.platform.is('ios')) {
-
+          window.open('bigbluebutton://'+url+"&endUrl=1&", '_system')
         } else if (this.platform.is('android')) {
 
         } else {
