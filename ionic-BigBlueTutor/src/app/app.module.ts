@@ -11,6 +11,8 @@ import {Message} from '../pages/message/message';
 import {ProfilePage} from '../pages/profilepage/profilepage';
 import {LoginPage} from '../pages/login/login';
 import {UserPage} from '../pages/userpage/userpage';
+import {OnboardingPage} from '../pages/onboarding/onboarding';
+import {Category} from '../pages/category/category';
 import { DsService } from '../shared/ds.service';
 import { RecordListenService } from '../shared/recordlisten.service';
 
@@ -22,7 +24,9 @@ import { RecordListenService } from '../shared/recordlisten.service';
     Message,
     ProfilePage,
     LoginPage,
-    UserPage
+    UserPage,
+    OnboardingPage,
+    Category
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { RecordListenService } from '../shared/recordlisten.service';
     Message,
     ProfilePage,
     LoginPage,
-    UserPage
+    UserPage,
+    OnboardingPage,
+    Category
   ],
   providers: [
     StatusBar,

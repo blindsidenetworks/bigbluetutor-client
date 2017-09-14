@@ -12,8 +12,8 @@ export class RecordListenService {
     this.ds.profileRecord.subscribe('meeting', () => {
       events.publish('user:meeting');
     })
-    this.ds.dataRecord.subscribe('users', () => {
-      events.publish('data:user');
+    this.ds.dataRecord.subscribe('tutors', () => {
+      events.publish('data:tutor');
     })
   }
 }

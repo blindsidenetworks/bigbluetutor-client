@@ -4,7 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      {{ catagory }}
+      {{ category }}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -14,9 +14,9 @@
     <ion-list-header>
       Tutors
     </ion-list-header>
-    <button ion-item *ngFor="let user of users" (click)="userSelected(user)">
-      {{ user.username }}
-      {{ user.position }}
+    <button ion-item *ngFor="let tutor of tutors" (click)="userSelected(tutor)">
+      {{ tutor.username }}
+      {{ tutor.position }}
     </button>
   </ion-list>
 </ion-content>

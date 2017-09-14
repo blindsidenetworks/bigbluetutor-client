@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, Platform} from 'ionic-angular';
 import { Events } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
+import { RecordListenService } from '../../shared/recordlisten.service';
 
 @Component({
   selector: 'page-message',
@@ -12,7 +13,7 @@ export class Message {
   username: any;
   input: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService) {
     this.username = navParams.get('username');
     if (this.ds.profileRecord.get('messages')[this.username]) {
       this.messages = this.ds.profileRecord.get('messages')[this.username];
