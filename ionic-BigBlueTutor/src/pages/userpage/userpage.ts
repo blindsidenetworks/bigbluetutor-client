@@ -11,8 +11,10 @@ import { Message } from '../message/message';
 })
 export class UserPage {
   username:any;
+  user:any;
   constructor(public navCtrl: NavController, public navParams:NavParams) {
-    this.username = navParams.get('user');
+    this.user = navParams.get('user');
+    this.username = this.user.username;
   }
 
   star() {
@@ -21,7 +23,7 @@ export class UserPage {
 
   message() {
     this.navCtrl.setRoot(Inbox);
-    this.navCtrl.push(Message, {user: this.username});
+    this.navCtrl.push(Message, {username: this.user.username});
   }
 
 }

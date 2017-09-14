@@ -4,27 +4,15 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      BigBlueTutor
+      {{ catagory }}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-searchbar
-    [(ngModel)]="search"
-    (ionInput)="onInput($event)">
-  </ion-searchbar>
   <ion-list>
     <ion-list-header>
-      Catagories
-    </ion-list-header>
-    <button ion-item *ngFor="let catagory of catagories" (click)="catagorySelected(catagory)">
-      {{ catagory }}
-    </button>
-  </ion-list>
-  <ion-list>
-    <ion-list-header>
-      Users
+      Tutors
     </ion-list-header>
     <button ion-item *ngFor="let user of users" (click)="userSelected(user)">
       {{ user.username }}
