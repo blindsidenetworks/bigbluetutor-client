@@ -16,19 +16,20 @@
   </ion-searchbar>
   <ion-list>
     <ion-list-header>
-      Catagories
+      Categories
     </ion-list-header>
-    <button ion-item *ngFor="let catagory of catagories" (click)="catagorySelected(catagory)">
-      {{ catagory }}
+    <button ion-item *ngFor="let category of categories" (click)="categorySelected(category)">
+      {{ category }}
     </button>
   </ion-list>
   <ion-list>
     <ion-list-header>
       Users
     </ion-list-header>
-    <button ion-item *ngFor="let user of users" (click)="userSelected(user)">
-      {{ user.username }}
-      {{ user.position }}
+    <button ion-item *ngFor="let tutor of tutors" (click)="userSelected(tutor)">
+      {{ tutor.username }}
+      {{ tutor.position }}
+      {{ tutor.catagories }}
     </button>
   </ion-list>
 </ion-content>

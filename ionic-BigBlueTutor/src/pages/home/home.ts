@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, Events } from 'ionic-angular';
 import { ProfilePage } from '../profilepage/profilepage';
 import { UserPage } from '../userpage/userpage';
+import { Category } from '../category/category';
 import { DsService } from '../../shared/ds.service';
+import { RecordListenService } from '../../shared/recordlisten.service';
 
 @Component({
   selector: 'page-home',
@@ -10,38 +12,39 @@ import { DsService } from '../../shared/ds.service';
 })
 export class HomePage {
   private search;
-  catagories;
-  users;
-  constructor(public navCtrl: NavController, public events: Events, private ds: DsService) {
-    this.catagories = ds.dataRecord.get('catagories');
-    this.users = ds.dataRecord.get('users');
-    events.subscribe('data:user', () => {
-      this.users = ds.dataRecord.get('users');
+  categories;
+  tutors;
+  constructor(public navCtrl: NavController, public events: Events, private ds: DsService, private rls:RecordListenService) {
+    this.categories = ds.dataRecord.get('categories');
+    events.subscribe('data:tutor', () => {
+      console.log("stuff happened");
+      this.tutors = ds.dataRecord.get('tutors');
     });
+    this.tutors = ds.dataRecord.get('tutors');
+    console.log(this.tutors);
   }
 
   onInput(event) {
-    var catagoriesData = this.ds.dataRecord.get('catagories');
-    var usersData = this.ds.dataRecord.get('users');
-    this.catagories = catagoriesData.filter(function(text) {
+    var categoriesData = this.ds.dataRecord.get('categories');
+    var tutorsData = this.ds.dataRecord.get('tutors');
+    this.categories = categoriesData.filter(function(text) {
       return text.includes(this.search);
     }.bind(this));
-    this.users = usersData.filter(function(text) {
+    this.tutors = tutorsData.filter(function(text) {
       return text.includes(this.search);
     }.bind(this));
-    console.log(this.search);
   }
 
-  catagorySelected(catagory) {
-    console.log(catagory);
+  categorySelected(category) {
+    this.navCtrl.setRoot(Category, {category:category});
   }
 
-  userSelected(user) {
-    console.log(user);
-    if (user === this.ds.profileRecord.get('username')) {
+  userSelected(tutor) {
+    console.log(tutor);
+    if (tutor === this.ds.profileRecord.get('username')) {
       this.navCtrl.push(ProfilePage);
     }else {
-      this.navCtrl.setRoot(UserPage, {user:user});
+      this.navCtrl.setRoot(UserPage, {user:tutor});
     }
   }
 

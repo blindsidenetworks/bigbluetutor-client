@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { OnboardingPage } from '../onboarding/onboarding';
 import { DsService } from '../../shared/ds.service';
 
 @Component({
@@ -39,12 +40,22 @@ export class LoginPage {
         messages: {},
         meeting: ""
       });
+      this.ds.profileRecord = record;
+      this.ds.dataRecord = this.ds.getRecord("data")
+      this.ds.dataRecord.whenReady(() => {
+        this.goToOnboarding();
+      })
+    } else {
+      this.ds.profileRecord = record;
+      this.ds.dataRecord = this.ds.getRecord("data")
+      this.ds.dataRecord.whenReady(() => {
+        this.goToHome();
+      });
     }
-    this.ds.profileRecord = record;
-    this.ds.dataRecord = this.ds.getRecord("data")
-    this.ds.dataRecord.whenReady(() => {
-      this.goToHome();
-    })
+  }
+
+  goToOnboarding() {
+    this.navCtrl.setRoot(OnboardingPage);
   }
 
   goToHome() {
