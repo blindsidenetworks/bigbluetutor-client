@@ -7,7 +7,8 @@ export class DsService {
   private ds;
   public dsInstance;
   public profileRecord;
-  public dataRecord
+  public dataRecord;
+  public auth;
 
   constructor() {
     this.ds = this.dsInstance = deepstream('tutor-back.blindside-dev.com:6020')
@@ -16,6 +17,7 @@ export class DsService {
 
   login (credentials?, loginHandler?) {
     this.ds.login(credentials, loginHandler);
+    this.auth = credentials;
   }
 
   getRecord(name) {

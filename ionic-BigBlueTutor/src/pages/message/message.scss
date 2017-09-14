@@ -1,3 +1,10 @@
 page-message {
-
+  #header {
+    display: flex;
+    justify-content: center;
+  }
+  #requestContainer {
+    display: flex;
+    justify-content:flex-end;
+  }
 }

@@ -32,6 +32,7 @@ export class LoginPage {
     if(!hasRecord) {
       record.set({
         username: this.username,
+        password: '',
         stars: [],
         pendingMeetings: [],
         requestMeetings: [],

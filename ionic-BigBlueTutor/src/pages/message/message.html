@@ -4,7 +4,12 @@
       <ion-icon name='menu'></ion-icon>
     </button>
     <ion-title>
-      {{user}}
+      <div id="header">
+        <strong>{{username}}</strong>
+      </div>
+      <div id="requestContainer">
+        <button id="requestButton" (click)="requestMeeting()" ion-button>Request Meeting</button>
+    </div>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,7 +20,6 @@
   </ion-list>
   <div>
     <ion-input [(ngModel)]="input"></ion-input>
-    <button (click)="requestMeeting()" ion-button>Request Meeting</button>
     <button (click)="sendMessage()" ion-button>Send</button>
   </div>
 </ion-content>
