@@ -25203,10 +25203,51 @@ page-login ion-list {
   width: 20%;
 }
 
+page-message #header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+page-message #requestContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
 page-profile #profileInfo {
   text-align: center;
 }
 
 page-profile #name {
   font-size: 36px;
+}
+
+page-user #userInfo {
+  text-align: center;
+}
+
+page-user #name {
+  font-size: 36px;
+}
+
+page-user #imageContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
