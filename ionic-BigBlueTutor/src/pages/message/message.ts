@@ -3,6 +3,7 @@ import {NavController, NavParams, Platform} from 'ionic-angular';
 import { Events } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
 import { RecordListenService } from '../../shared/recordlisten.service';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-message',
@@ -13,7 +14,7 @@ export class Message {
   username: any;
   input: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService, private iab: InAppBrowser) {
     this.username = navParams.get('username');
     if (this.ds.profileRecord.get('messages')[this.username]) {
       this.messages = this.ds.profileRecord.get('messages')[this.username];
@@ -32,7 +33,8 @@ export class Message {
         if (this.platform.is('ios')) {
           window.open('bigbluebutton://'+url+"&endUrl=1&", '_system')
         } else if (this.platform.is('android')) {
-
+          var room = iab.create(url);
+          room.show();
         } else {
           window.open(url, '_blank');
         }

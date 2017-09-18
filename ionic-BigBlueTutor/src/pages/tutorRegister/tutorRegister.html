@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Register as Tutor
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <div *ngFor="let category of categories">
+      <ion-item
+        (click)="toggleCategories(category)">
+        {{ category }}
+      </ion-item>
+      <div *ngIf="isOpen(category)">
+        <ion-item
+          *ngFor="let subcategory of categoriesData[category]">
+          <ion-label>
+            {{ subcategory }}
+          </ion-label>
+          <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
+          </ion-checkbox>
+        </ion-item>
+      </div>
+    </div>
+  </ion-list>
+  <button ion-button
+    (click)="tutor()">
+    Register
+  </button>
+</ion-content>

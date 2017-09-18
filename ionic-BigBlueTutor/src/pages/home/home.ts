@@ -15,7 +15,15 @@ export class HomePage {
   categories;
   tutors;
   constructor(public navCtrl: NavController, public events: Events, private ds: DsService, private rls:RecordListenService) {
-    this.categories = ds.dataRecord.get('categories');
+    var categoryData = ds.dataRecord.get('categories');
+    this.categories = [];
+    for (var category in categoryData) {
+      var subCategories = categoryData[category];
+      for (var i =0;i<subCategories.length;i++) {
+        this.categories.push(subCategories[i]);
+      }
+    }
+
     events.subscribe('data:tutor', () => {
       console.log("stuff happened");
       this.tutors = ds.dataRecord.get('tutors');
@@ -25,11 +33,19 @@ export class HomePage {
   }
 
   onInput(event) {
-    var categoriesData = this.ds.dataRecord.get('categories');
-    var tutorsData = this.ds.dataRecord.get('tutors');
-    this.categories = categoriesData.filter(function(text) {
+    var categoryData = this.ds.dataRecord.get('categories');
+    this.categories = [];
+    for (var category in categoryData) {
+      var subCategories = categoryData[category];
+      for (var i =0;i<subCategories.length;i++) {
+        this.categories.push(subCategories[i]);
+      }
+    }
+    this.categories = this.categories.filter(function(text) {
       return text.includes(this.search);
     }.bind(this));
+
+    var tutorsData = this.ds.dataRecord.get('tutors');
     this.tutors = tutorsData.filter(function(text) {
       return text.includes(this.search);
     }.bind(this));
