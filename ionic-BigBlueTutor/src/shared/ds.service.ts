@@ -11,11 +11,12 @@ export class DsService {
   public auth;
 
   constructor() {
-    this.ds = this.dsInstance = deepstream('tutor-back.blindside-dev.com:6020')
-      .on('error', error => console.log(error));
   }
 
   login (credentials?, loginHandler?) {
+    //this code is moved here to prevent the login timeouts
+    this.ds = this.dsInstance = deepstream('tutor-back.blindside-dev.com:6020')
+      .on('error', error => console.log(error));
     this.ds.login(credentials, loginHandler);
     this.auth = credentials;
   }

@@ -18,5 +18,11 @@
     <div id="name">{{username}}</div>
     Online
     <button (click)="message()" ion-button>Message</button>
+    <button (click)="request($event)" ion-button>Request Session</button>
   </div>
+  <ion-list>
+    <ion-item *ngFor="let category of categories">
+      {{ category }}
+    </ion-item>
+  </ion-list>
 </ion-content>

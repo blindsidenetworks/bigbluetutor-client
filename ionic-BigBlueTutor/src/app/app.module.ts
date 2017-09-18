@@ -12,9 +12,12 @@ import {ProfilePage} from '../pages/profilepage/profilepage';
 import {LoginPage} from '../pages/login/login';
 import {UserPage} from '../pages/userpage/userpage';
 import {OnboardingPage} from '../pages/onboarding/onboarding';
+import {TutorRegister} from '../pages/tutorRegister/tutorRegister';
 import {Category} from '../pages/category/category';
 import { DsService } from '../shared/ds.service';
 import { RecordListenService } from '../shared/recordlisten.service';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { RequestPopover } from '../pages/userpage/request'
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { RecordListenService } from '../shared/recordlisten.service';
     LoginPage,
     UserPage,
     OnboardingPage,
-    Category
+    TutorRegister,
+    Category,
+    RequestPopover
   ],
   imports: [
     BrowserModule,
@@ -37,18 +42,21 @@ import { RecordListenService } from '../shared/recordlisten.service';
     MyApp,
     HomePage,
     Inbox,
+    OnboardingPage,
     Message,
     ProfilePage,
     LoginPage,
     UserPage,
-    OnboardingPage,
-    Category
+    TutorRegister,
+    Category,
+    RequestPopover
   ],
   providers: [
     StatusBar,
     SplashScreen,
     DsService,
     RecordListenService,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
