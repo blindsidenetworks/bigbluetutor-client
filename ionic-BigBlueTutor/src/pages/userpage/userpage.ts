@@ -35,7 +35,7 @@ export class UserPage {
   }
 
   request(myEvent) {
-    var popover = this.pc.create(RequestPopover, {categories: this.categories})
+    var popover = this.pc.create(RequestPopover, {user: this.user})
     popover.present({
       ev: myEvent
     });
