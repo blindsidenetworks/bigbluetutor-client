@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar class="onboardingnav">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -10,26 +10,37 @@
 </ion-header>
 
 <ion-content padding>
+  <div class="allcategories">
   <ion-list>
     <div *ngFor="let category of categories">
-      <ion-item
-        (click)="toggleCategories(category)">
-        {{ category }}
-      </ion-item>
-      <div *ngIf="isOpen(category)">
-        <ion-item
-          *ngFor="let subcategory of categoriesData[category]">
-          <ion-label>
-            {{ subcategory }}
-          </ion-label>
-          <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
-          </ion-checkbox>
+
+      <div class="categorydiv">
+
+        <ion-item class="categoryitem"
+          (click)="toggleCategories(category)">
+          {{ category }}
+          <ion-icon ios="ios-add" class="moreoptions" md="md-add"></ion-icon>
         </ion-item>
+
+        <div *ngIf="isOpen(category)">
+          <ion-item class="subcategoryitem"
+            *ngFor="let subcategory of categoriesData[category]">
+            <ion-label>
+              {{ subcategory }}
+            </ion-label>
+            <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
+            </ion-checkbox>
+          </ion-item>
+        </div>
+
       </div>
+
     </div>
   </ion-list>
-  <button ion-button
+  <button ion-button round class="center"
     (click)="tutor()">
-    Register
+    REGISTER
   </button>
+
+</div>
 </ion-content>

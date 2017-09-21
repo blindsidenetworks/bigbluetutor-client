@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
-import { TutorRegister } from '../tutorRegister/tutorRegister'
-import { DsService } from '../../shared/ds.service';
+import { HomePage } from '../../home/home';
+import { TutorRegister } from '../../tutorRegister/tutorRegister'
+import { DsService } from '../../../shared/ds.service';
 
 @Component({
   selector: 'page-onboarding',
-  templateUrl: 'onboarding.html',
+  templateUrl: 'roleChoice.html',
 })
 export class OnboardingPage {
   constructor(public navCtrl: NavController, public navParams:NavParams, private ds: DsService) {
@@ -17,7 +17,6 @@ export class OnboardingPage {
   }
 
   tutor() {
-    this.navCtrl.push(TutorRegister)
+    this.navCtrl.push(TutorRegister);
   }
-
 }

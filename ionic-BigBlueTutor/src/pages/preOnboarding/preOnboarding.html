@@ -1,0 +1,29 @@
+<ion-content padding class="onboarding">
+  <ion-slides pager>
+    <ion-slide>
+      <ion-img class="onboardingimg" src="/assets/OBimgs/OB1.png"></ion-img>
+      <h1 class="onboardingtitle">TUTORING ANYWHERE ANYTIME</h1>
+      <p class="onboardingtext">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lobortis sapien, vel semper risus.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-img class="onboardingimg" src="/assets/OBimgs/OB2.png"></ion-img>
+      <h1 class="onboardingtitle">QUICKLY CONNECT</h1>
+      <p class="onboardingtext">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-img class="onboardingimg" src="/assets/OBimgs/OB3.png"></ion-img>
+      <h1 class="onboardingtitle">DOWNLOAD BIGBLUEBUTTON</h1>
+      <p class="onboardingtext">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lobortis sapien, vel semper risus.</p>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>
+
+<div class="btndiv" ng-controller="slideCtrl">
+  <button [navPush]="TutorRegister" ion-button round class="nextbtn">NEXT</button>
+</div>
