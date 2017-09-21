@@ -1,0 +1,16 @@
+<ion-content padding>
+    <h1 class="iAm">I AM A</h1>
+    <div class="fulldiv">
+      <ion-img class="studentimg img" src="/assets/OBimgs/student.png"></ion-img>
+      <button ion-button round class="whitebtn nextbtn">STUDENT</button>
+    </div>
+    <div class="fulldiv">
+      <ion-img class="tutorimg img" src="/assets/OBimgs/tutor.png"></ion-img>
+      <button ion-button round class="whitebtn nextbtn">TUTOR</button>
+      <!--button (click)="tutor()" ng-app="myApp" ion-button round class="whitebtn nextbtn">TUTOR</button
+
+     ng-click="activeButton = 'a'" ng-class="{ 'active': activeButton === 'a' }"
+   -->
+    </div>
+    <button (click)="next()" ion-button class="choicenext"> NEXT </button>
+</ion-content>

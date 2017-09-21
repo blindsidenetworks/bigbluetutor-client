@@ -11,7 +11,7 @@ import {Message} from '../pages/message/message';
 import {ProfilePage} from '../pages/profilepage/profilepage';
 import {LoginPage} from '../pages/login/login';
 import {UserPage} from '../pages/userpage/userpage';
-import {OnboardingPage} from '../pages/onboarding/onboarding';
+import {OnboardingPage} from '../pages/onboarding/roleChoice/roleChoice';
 import {TutorRegister} from '../pages/tutorRegister/tutorRegister';
 import {Category} from '../pages/category/category';
 import { DsService } from '../shared/ds.service';

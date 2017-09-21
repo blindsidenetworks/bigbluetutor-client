@@ -3,5 +3,10 @@ page-login
   ion-list
   {
     width: 20%;
+    min-width: 343px;
+  }
+  .loginbtn{
+    max-width: 10%;
+    min-width: 343px;
   }
 }
