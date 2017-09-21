@@ -16,7 +16,10 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let msg of messages"><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>
+    <div *ngFor="let msg of messages" [ngSwitch]="msg.special">
+        <button *ngSwitchCase="true">REQUEST</button>
+        <button *ngSwitchDefault ion-item><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>
+    </div>
   </ion-list>
   <div>
     <ion-input [(ngModel)]="input"></ion-input>
