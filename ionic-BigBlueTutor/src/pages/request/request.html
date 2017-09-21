@@ -1,0 +1,21 @@
+<ion-header>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header>I need help in:</ion-list-header>
+    <ion-item *ngFor="let category of categories">
+      <ion-label>{{ category }}</ion-label>
+      <ion-checkbox [(ngModel)]="categoriesSelected[category]"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-list radio-group [(ngModel)]="time">
+    <ion-item *ngFor="let time of times">
+      <ion-label>{{ time }}</ion-label>
+      <ion-radio [value]="time">
+      </ion-radio>
+    </ion-item>
+  </ion-list>
+  <button (click)="request()" ion-button>
+    Request Meeting
+  </button>
+</ion-content>
