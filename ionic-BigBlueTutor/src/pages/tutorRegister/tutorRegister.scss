@@ -1,0 +1,43 @@
+.categoryitem{
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: $lightgrey;
+  padding: 4px;
+  border-radius: 27px;
+  padding-left: 20px;
+}
+
+.list-ios .item-block .item-inner {
+  border-bottom: 0;
+}
+
+.moreoptions{
+  float: right;
+}
+
+.onboardingnav{
+
+}
+
+.categorydiv{
+    border: 2px solid #D1D1D1;
+    border-radius: 27px;
+    margin-bottom: 12px;
+}
+.categorydiv:active{
+  border: 2px solid $blue;
+}
+
+.subcategoryitem{
+  border-radius: 50%;
+}
+
+.selected{
+  border: 2px solid $blue;
+}
+
+.allcategories{
+  max-width: 500px;
+  display: block;
+  margin: auto;
+}
