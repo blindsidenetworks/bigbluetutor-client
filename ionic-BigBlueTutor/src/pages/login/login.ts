@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { OnboardingPage } from '../onboarding/onboarding';
+import { OnboardingPage } from '../onboarding/roleChoice/roleChoice';
 import { DsService } from '../../shared/ds.service';
 
 @Component({

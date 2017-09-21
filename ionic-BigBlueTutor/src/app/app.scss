@@ -14,3 +14,36 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+$blue: #5576FF;
+
+h1, p{
+  font-family: 'Karla', sans-serif;
+}
+
+.nextbtn{
+  padding: 10px;
+  width: 180px;
+  display: block;
+  max-width: 300px;
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width : 400px){
+    .nextbtn{
+      margin-right:auto;
+      margin-left: auto;
+    }
+}
+
+button{
+  font-family: 'Karla', sans-serif;
+  background-color: $blue;
+  font-weight: bold;
+}
+
+.ion-button, .button-ios, .button-ios.activated{
+  background-color: $blue;
+}

@@ -11,13 +11,12 @@ import { DsService } from '../../shared/ds.service';
 export class OnboardingPage {
   constructor(public navCtrl: NavController, public navParams:NavParams, private ds: DsService) {
   }
-
-  student() {
-    this.navCtrl.setRoot(HomePage);
-  }
-
-  tutor() {
-    this.navCtrl.push(TutorRegister)
-  }
-
 }
+
+/*.controller('slideCtrl', ['$scope', '$ionicSlideBoxDelegate', function($scope, $ionicSlideBoxDelegate) {
+
+    $scope.slideNext = function() {
+
+        $ionicSlideBoxDelegate.next();
+    }
+});*/
