@@ -16,6 +16,7 @@
 // automatically applied to the <body> element in the app.
 
 $blue: #5576FF;
+$lightgrey: #F7F7F7;
 
 h1, p{
   font-family: 'Karla', sans-serif;
@@ -46,4 +47,9 @@ button{
 
 .ion-button, .button-ios, .button-ios.activated{
   background-color: $blue;
+}
+
+.center{
+  display: block;
+  margin: auto;
 }
