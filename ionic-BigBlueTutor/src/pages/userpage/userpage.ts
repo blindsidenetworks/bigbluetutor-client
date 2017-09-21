@@ -5,7 +5,7 @@ import { PopoverController } from 'ionic-angular';
 
 import { Inbox } from '../inbox/inbox';
 import { Message } from '../message/message';
-import { RequestPopover } from './request';
+import { RequestPopover } from '../request/request';
 
 @Component({
   selector: 'page-user',

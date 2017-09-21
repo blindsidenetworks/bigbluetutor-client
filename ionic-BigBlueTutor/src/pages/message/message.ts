@@ -28,6 +28,7 @@ export class Message {
       this.messages = this.ds.profileRecord.get('messages')[this.username];
     });
     events.subscribe('user:meeting', () => {
+      console.log(this.messages);
       var url = this.ds.profileRecord.get('meeting');
       if (url !== "") {
         if (this.platform.is('ios')) {
