@@ -1,0 +1,141 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', '-g', 'n' ]
+2 info using npm@3.5.2
+3 info using node@v4.7.2
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData n
+8 silly fetchNamedPackageData n
+9 silly mapToRegistry name n
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/n
+13 verbose request uri https://registry.npmjs.org/n
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 10:39:19 AM
+16 verbose request id 5989085a997a2752
+17 http request GET https://registry.npmjs.org/n
+18 http 200 https://registry.npmjs.org/n
+19 verbose headers { server: 'nginx/1.10.1',
+19 verbose headers   'content-type': 'application/json',
+19 verbose headers   'last-modified': 'Sun, 17 Sep 2017 08:22:16 GMT',
+19 verbose headers   etag: 'W/"59be30b8-116c4"',
+19 verbose headers   'content-encoding': 'gzip',
+19 verbose headers   'cache-control': 'max-age=300',
+19 verbose headers   'content-length': '11791',
+19 verbose headers   'accept-ranges': 'bytes',
+19 verbose headers   date: 'Wed, 20 Sep 2017 14:39:19 GMT',
+19 verbose headers   via: '1.1 varnish',
+19 verbose headers   age: '0',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'x-served-by': 'cache-jfk8126-JFK',
+19 verbose headers   'x-cache': 'HIT',
+19 verbose headers   'x-cache-hits': '1',
+19 verbose headers   'x-timer': 'S1505918360.517232,VS0,VE86',
+19 verbose headers   vary: 'Accept-Encoding, Accept' }
+20 silly get cb [ 200,
+20 silly get   { server: 'nginx/1.10.1',
+20 silly get     'content-type': 'application/json',
+20 silly get     'last-modified': 'Sun, 17 Sep 2017 08:22:16 GMT',
+20 silly get     etag: 'W/"59be30b8-116c4"',
+20 silly get     'content-encoding': 'gzip',
+20 silly get     'cache-control': 'max-age=300',
+20 silly get     'content-length': '11791',
+20 silly get     'accept-ranges': 'bytes',
+20 silly get     date: 'Wed, 20 Sep 2017 14:39:19 GMT',
+20 silly get     via: '1.1 varnish',
+20 silly get     age: '0',
+20 silly get     connection: 'keep-alive',
+20 silly get     'x-served-by': 'cache-jfk8126-JFK',
+20 silly get     'x-cache': 'HIT',
+20 silly get     'x-cache-hits': '1',
+20 silly get     'x-timer': 'S1505918360.517232,VS0,VE86',
+20 silly get     vary: 'Accept-Encoding, Accept' } ]
+21 verbose get saving n to /home/courtney/.npm/registry.npmjs.org/n/.cache.json
+22 silly install normalizeTree
+23 silly loadCurrentTree Finishing
+24 silly loadIdealTree Starting
+25 silly install loadIdealTree
+26 silly cloneCurrentTree Starting
+27 silly install cloneCurrentTreeToIdealTree
+28 silly cloneCurrentTree Finishing
+29 silly loadShrinkwrap Starting
+30 silly install loadShrinkwrap
+31 silly loadShrinkwrap Finishing
+32 silly loadAllDepsIntoIdealTree Starting
+33 silly install loadAllDepsIntoIdealTree
+34 silly resolveWithNewModule n@2.1.8 checking installable status
+35 silly cache add args [ 'n', null ]
+36 verbose cache add spec n
+37 silly cache add parsed spec Result {
+37 silly cache add   raw: 'n',
+37 silly cache add   scope: null,
+37 silly cache add   name: 'n',
+37 silly cache add   rawSpec: '',
+37 silly cache add   spec: 'latest',
+37 silly cache add   type: 'tag' }
+38 silly addNamed n@latest
+39 verbose addNamed "latest" is being treated as a dist-tag for n
+40 info addNameTag [ 'n', 'latest' ]
+41 silly mapToRegistry name n
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry uri https://registry.npmjs.org/n
+45 verbose addNameTag registry:https://registry.npmjs.org/n not in flight; fetching
+46 verbose get https://registry.npmjs.org/n not expired, no request
+47 silly addNameTag next cb for n with tag latest
+48 silly addNamed n@2.1.8
+49 verbose addNamed "2.1.8" is a plain semver version for n
+50 silly mapToRegistry name n
+51 silly mapToRegistry using default registry
+52 silly mapToRegistry registry https://registry.npmjs.org/
+53 silly mapToRegistry uri https://registry.npmjs.org/n
+54 verbose addRemoteTarball https://registry.npmjs.org/n/-/n-2.1.8.tgz not in flight; adding
+55 verbose addRemoteTarball [ 'https://registry.npmjs.org/n/-/n-2.1.8.tgz',
+55 verbose addRemoteTarball   '9b770f6ae0a93c49c64fb614625a63cc5a22d1fd' ]
+56 info retry fetch attempt 1 at 10:39:19 AM
+57 info attempt registry request try #1 at 10:39:19 AM
+58 http fetch GET https://registry.npmjs.org/n/-/n-2.1.8.tgz
+59 http fetch 200 https://registry.npmjs.org/n/-/n-2.1.8.tgz
+60 silly fetchAndShaCheck shasum 9b770f6ae0a93c49c64fb614625a63cc5a22d1fd
+61 verbose addTmpTarball /tmp/npm-1465-1dae41e6/registry.npmjs.org/n/-/n-2.1.8.tgz not in flight; adding
+62 verbose addTmpTarball already have metadata; skipping unpack for n@2.1.8
+63 silly cache afterAdd n@2.1.8
+64 verbose afterAdd /home/courtney/.npm/n/2.1.8/package/package.json not in flight; writing
+65 verbose afterAdd /home/courtney/.npm/n/2.1.8/package/package.json written
+66 silly loadAllDepsIntoIdealTree Finishing
+67 silly idealTree:prePrune lib
+67 silly idealTree:prePrune └── n@2.1.8
+68 silly loadIdealTree Finishing
+69 silly currentTree lib
+70 silly idealTree lib
+70 silly idealTree └── n@2.1.8
+71 silly generateActionsToTake Starting
+72 silly install generateActionsToTake
+73 warn checkPermissions Missing write access to /usr/local/lib/node_modules
+74 silly rollbackFailedOptional Starting
+75 silly rollbackFailedOptional Finishing
+76 silly runTopLevelLifecycles Starting
+77 silly runTopLevelLifecycles Finishing
+78 silly install printInstalled
+79 verbose stack Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+79 verbose stack     at Error (native)
+80 verbose cwd /home/courtney/bigbluetutor-client/ionic-BigBlueTutor
+81 error Linux 4.10.0-33-generic
+82 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "n"
+83 error node v4.7.2
+84 error npm  v3.5.2
+85 error path /usr/local/lib/node_modules
+86 error code EACCES
+87 error errno -13
+88 error syscall access
+89 error Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+89 error     at Error (native)
+89 error  { [Error: EACCES: permission denied, access '/usr/local/lib/node_modules']
+89 error   errno: -13,
+89 error   code: 'EACCES',
+89 error   syscall: 'access',
+89 error   path: '/usr/local/lib/node_modules' }
+90 error Please try running this command again as root/Administrator.
+91 verbose exit [ -13, true ]

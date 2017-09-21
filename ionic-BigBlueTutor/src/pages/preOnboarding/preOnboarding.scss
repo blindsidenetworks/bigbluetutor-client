@@ -1,0 +1,51 @@
+.onboarding{
+  .slider-pager{
+    margin-bottom: 300px;
+  }
+
+  .slide-zoom{
+    padding-bottom: 100px;
+  }
+
+  .onboardingimg{
+    background: none;
+    contain: none;
+    padding-bottom: 30px;
+    width: 85%;
+    height: auto;
+  }
+
+  @media screen and (min-width : 400px){
+      .onboardingimg{
+        width: 30%;
+        height: auto;
+      }
+  }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 24%;
+  }
+
+  .onboardingtitle{
+    font-size: 20px;
+    width: 65%;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 10px;
+    color: #606060;
+  }
+
+  .onboardingtext{
+    font-size: 12px;
+    width: 70%;
+    line-height: 1.5em;
+    margin: auto;
+    color: grey;
+  }
+}
+
+.btndiv{
+  width: 100%;
+  bottom: 70px;
+  position: fixed;
+}
