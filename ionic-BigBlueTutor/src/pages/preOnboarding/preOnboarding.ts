@@ -5,10 +5,10 @@ import { TutorRegister } from '../tutorRegister/tutorRegister'
 import { DsService } from '../../shared/ds.service';
 
 @Component({
-  selector: 'page-onboarding',
-  templateUrl: 'onboarding.html',
+  selector: 'page-preOnboarding',
+  templateUrl: 'preOnboarding.html',
 })
-export class OnboardingPage {
+export class PreOnboardingPage {
   constructor(public navCtrl: NavController, public navParams:NavParams, private ds: DsService) {
   }
 }
