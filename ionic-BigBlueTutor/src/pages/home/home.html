@@ -18,9 +18,18 @@
     <ion-list-header>
       Categories
     </ion-list-header>
-    <button ion-item *ngFor="let category of categories" (click)="categorySelected(category)">
-      {{ category }}
-    </button>
+    <div *ngFor="let category of categories">
+      <button ion-item (click)="categorySelected(category)">
+        {{ category }}
+      </button>
+      <ion-list>
+        <ion-item *ngFor="let tutor of tutorsData[category]" (click)="userSelected(tutor)">
+          {{ tutor.username }}
+          {{ tutor.position }}
+          {{ tutor.catagories }}
+        </ion-item>
+      </ion-list>
+    </div>
   </ion-list>
   <ion-list>
     <ion-list-header>

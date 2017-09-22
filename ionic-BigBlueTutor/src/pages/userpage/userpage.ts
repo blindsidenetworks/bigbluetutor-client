@@ -5,7 +5,7 @@ import { PopoverController } from 'ionic-angular';
 
 import { Inbox } from '../inbox/inbox';
 import { Message } from '../message/message';
-import { RequestPopover } from './request';
+import { RequestPopover } from '../request/request';
 
 @Component({
   selector: 'page-user',
@@ -35,7 +35,7 @@ export class UserPage {
   }
 
   request(myEvent) {
-    var popover = this.pc.create(RequestPopover, {categories: this.categories})
+    var popover = this.pc.create(RequestPopover, {user: this.user})
     popover.present({
       ev: myEvent
     });
