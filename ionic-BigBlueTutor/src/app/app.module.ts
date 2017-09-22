@@ -11,13 +11,13 @@ import {Message} from '../pages/message/message';
 import {ProfilePage} from '../pages/profilepage/profilepage';
 import {LoginPage} from '../pages/login/login';
 import {UserPage} from '../pages/userpage/userpage';
-import {OnboardingPage} from '../pages/onboarding/onboarding';
+import {OnboardingPage} from '../pages/onboarding/roleChoice/roleChoice';
 import {TutorRegister} from '../pages/tutorRegister/tutorRegister';
 import {Category} from '../pages/category/category';
 import { DsService } from '../shared/ds.service';
 import { RecordListenService } from '../shared/recordlisten.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { RequestPopover } from '../pages/userpage/request'
+import { RequestPopover } from '../pages/request/request'
 
 @NgModule({
   declarations: [
