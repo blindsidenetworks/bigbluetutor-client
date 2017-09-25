@@ -19,31 +19,23 @@ export class HomePage {
     var categoryData = ds.dataRecord.get('categories');
     this.categories = [];
     this.tutorsData = {};
+    this.tutors = {};
     for (var category in categoryData) {
       var subCategories = categoryData[category];
       for (var i =0;i<subCategories.length;i++) {
         this.categories.push(subCategories[i]);
-        var queryString = JSON.stringify({
-          table: 'user',
-          query: [
-            ['tutor', 'eq', true]
-          ]
-        });
-        var tutorList = this.ds.dsInstance.record.getList('search?'+ queryString);
-        this.tutorsData[subCategories[i]] = [];
-        var sub = subCategories[i];
-        var self = this;
-        tutorList.whenReady( function(tutorList) {
-          var entries = arguments[1].getEntries();
-          for (var entry in entries) {
-            this.ds.dsInstance.record.snapshot('user/'+entries[entry], function(error,data) {
-              var user = arguments[2];
-              if (user.categories.includes(arguments[0])) {
-                self.tutorsData[arguments[0]].push(arguments[2]);
-              }
-            }.bind(this, arguments[0]));
-          }
-        }.bind(this, sub));
+        ds.dsInstance.event.subscribe('search/'+subCategories[i], function(data) {
+          this.tutorsData[data.subject.split('/')[1]] = data.data;
+          this.tutors[data.subject.split('/')[1]] = data.data;
+          /*var tutors = data.data;
+          this.tutorsData[data.subject.split('/')[1]] = []
+          for (var tutor in tutors) {
+            this.ds.dsInstance.record.snapshot('user/'+tutors[tutor], function(error,data) {
+              this.tutorsData[data.subject.split('/')[1]].push(data);
+            })
+          }*/
+          //this.tutors = this.tutorsData[data.subject.split('/')[1]];
+        }.bind(this))
       }
     }
   }
@@ -61,7 +53,7 @@ export class HomePage {
       return text.includes(this.search);
     }.bind(this));
 
-  //  this.tutors = tutorsData.filter(function(text) {
+//    this.tutors = tutorsData.filter(function(text) {
 //      return text.includes(this.search);
 //    }.bind(this));
   }
