@@ -23,22 +23,12 @@
         {{ category }}
       </button>
       <ion-list>
-        <ion-item *ngFor="let tutor of tutorsData[category]" (click)="userSelected(tutor)">
+        <ion-item *ngFor="let tutor of tutors[category]" (click)="userSelected(tutor)">
           {{ tutor.username }}
           {{ tutor.position }}
           {{ tutor.catagories }}
         </ion-item>
       </ion-list>
     </div>
-  </ion-list>
-  <ion-list>
-    <ion-list-header>
-      Users
-    </ion-list-header>
-    <button ion-item *ngFor="let tutor of tutors" (click)="userSelected(tutor)">
-      {{ tutor.username }}
-      {{ tutor.position }}
-      {{ tutor.catagories }}
-    </button>
   </ion-list>
 </ion-content>
