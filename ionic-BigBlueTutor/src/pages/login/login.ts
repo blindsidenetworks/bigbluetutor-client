@@ -29,6 +29,20 @@ export class LoginPage {
   }
 
   linkProfile(error, hasRecord) {
+
+//DELETE THIS
+var userRecord = this.ds.getRecord('user/'+this.username)
+var user = {
+      username:this.username,
+      position: 'no position',
+      description: '',
+      ratings: {},
+      profilePic: "http://www.freeiconspng.com/uploads/msn-people-person-profile-user-icon--icon-search-engine-16.png",
+      tutor: false
+    }
+userRecord.set(user);
+//END
+
     var record = this.ds.getRecord("profile/"+this.username);
     if(!hasRecord) {
       record.set({

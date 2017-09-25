@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DsService } from '../../shared/ds.service';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-tutorRegister',

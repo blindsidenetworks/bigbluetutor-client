@@ -1,10 +1,10 @@
 .categoryitem{
   text-transform: uppercase;
   font-weight: bold;
-  background-color: $lightgrey;
   padding: 4px;
   border-radius: 27px;
   padding-left: 20px;
+  background-color: none;
 }
 
 .list-ios .item-block .item-inner {
@@ -16,20 +16,18 @@
 }
 
 .onboardingnav{
-
+  padding-top: 45px;
+  padding-bottom: 30px;
 }
 
-.categorydiv{
-    border: 2px solid #D1D1D1;
-    border-radius: 27px;
-    margin-bottom: 12px;
-}
-.categorydiv:active{
-  border: 2px solid $blue;
+.categorycontainer{
+   border: 2px solid #D1D1D1;
+   border-radius: 27px;
+   margin-bottom: 12px;
 }
 
 .subcategoryitem{
-  border-radius: 50%;
+  border-radius: 70px;
 }
 
 .selected{
@@ -40,4 +38,14 @@
   max-width: 500px;
   display: block;
   margin: auto;
+}
+
+.space{
+  height: 40px;
+  width:100vw;
+}
+
+.headertitle{
+  padding-right:45px;
+
 }

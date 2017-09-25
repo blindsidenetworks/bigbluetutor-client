@@ -3,18 +3,19 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>
-      Register as Tutor
+    <ion-title class="center headertitle">
+      WHAT COURSES DO YOU TUTOR?
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <div class="space"></div>
   <div class="allcategories">
   <ion-list>
     <div *ngFor="let category of categories">
 
-      <div class="categorydiv">
+      <div class="categorycontainer">
 
         <ion-item class="categoryitem"
           (click)="toggleCategories(category)">
