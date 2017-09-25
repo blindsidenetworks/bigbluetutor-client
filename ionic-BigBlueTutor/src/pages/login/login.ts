@@ -52,6 +52,7 @@ userRecord.set(user);
         pendingMeetings: [],
         requestMeetings: [],
         messages: {},
+        profilePic: "http://www.freeiconspng.com/uploads/msn-people-person-profile-user-icon--icon-search-engine-16.png",
         meeting: ""
       });
       this.ds.profileRecord = record;
