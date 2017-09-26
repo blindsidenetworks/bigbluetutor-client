@@ -17,6 +17,7 @@
 
 $blue: #5576FF;
 $lightgrey: #F7F7F7;
+$yellow: #ffe83a;
 
 h1, p{
   font-family: 'Karla', sans-serif;
@@ -54,4 +55,14 @@ button{
   display: block;
   margin: auto;
   text-align: center;
+}
+
+.buttonicon{
+  height: 25px;
+}
+
+.icononlybtn{
+  background-color: white !important;
+  color: none;
+  outline: none;
 }

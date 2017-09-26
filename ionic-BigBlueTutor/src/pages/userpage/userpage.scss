@@ -12,6 +12,26 @@ page-user
 
   #imageContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+  .profilepic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: left;
+  }
+
+  .favourite{
+    color: $yellow;
+    font-size: 25px;
+  }
+  .profilename{
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 2px;
+  }
+  .favouritebtn{
+
   }
 }
