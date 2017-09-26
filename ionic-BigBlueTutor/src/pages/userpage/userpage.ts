@@ -36,8 +36,8 @@ export class UserPage {
   }
 
   request(myEvent) {
-    //var popover = this.pc.create(RequestPopover, {user: this.user})
-    let contactModal = this.modalCtrl.create(RequestPopover, {user: this.user});
+
+    let contactModal = this.modalCtrl.create(RequestPopover, {user: this.user, username: this.user.username});
     contactModal.present({
       ev: myEvent
     });

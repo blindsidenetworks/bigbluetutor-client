@@ -17,7 +17,6 @@ export class TutorRegister {
     this.categoriesData = ds.dataRecord.get('categories');
     this.categories = Object.keys(this.categoriesData);
     this.categoriesSelected = {};
-    console.log(this.categories);
     this.openCategory = "";
   }
 

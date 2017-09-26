@@ -6,7 +6,7 @@ webpackJsonp([0],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -46,7 +46,7 @@ ProfilePage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Inbox; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__message_message__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -91,7 +91,7 @@ Inbox = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Message; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_recordlisten_service__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_in_app_browser__ = __webpack_require__(207);
@@ -167,7 +167,7 @@ var Message = (function () {
 }());
 Message = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-message',template:/*ion-inline-start:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\'menu\'></ion-icon>\n    </button>\n    <ion-title>\n      <div id="header">\n        <strong>{{username}}</strong>\n      </div>\n      <div id="requestContainer">\n        <button id="requestButton" (click)="requestMeeting()" ion-button>Request Meeting</button>\n    </div>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <div *ngFor="let msg of messages" [ngSwitch]="msg.special">\n        <button *ngSwitchCase="true">REQUEST</button>\n        <button *ngSwitchDefault ion-item><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>\n    </div>\n  </ion-list>\n  <div>\n    <ion-input [(ngModel)]="input"></ion-input>\n    <button (click)="sendMessage()" ion-button>Send</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/
+        selector: 'page-message',template:/*ion-inline-start:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/'<ion-header>\n  <ion-navbar class="messageheader">\n    <button ion-button menuToggle>\n      <ion-icon name=\'menu\'></ion-icon>\n    </button>\n    <ion-title>\n      <div id="header">\n        <strong>{{username}}</strong>\n      </div>\n      <div id="requestContainer">\n        <button id="requestButton" (click)="requestMeeting()" ion-button>Request<br/> Meeting</button>\n      </div>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <div *ngFor="let msg of messages" [ngSwitch]="msg.special">\n        <button ion-button round class="bbbrequest"*ngSwitchCase="true">REQUEST</button>\n        <button *ngSwitchDefault ion-item><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>\n    </div>\n  </ion-list>\n  <div class=messagefield>\n    <ion-input [(ngModel)]="input" placeholder="Type a message..." class="inputmessage"></ion-input>\n    <button (click)="sendMessage()" class="msgsend" ion-button round>Send</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__["a" /* DsService */], __WEBPACK_IMPORTED_MODULE_3__shared_recordlisten_service__["a" /* RecordListenService */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
 ], Message);
@@ -182,7 +182,7 @@ Message = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecordListenService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ds_service__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -307,7 +307,7 @@ webpackEmptyAsyncContext.id = 162;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RequestPopover; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -328,10 +328,12 @@ var RequestPopover = (function () {
         this.navParams = navParams;
         this.categoriesSelected = {};
         this.user = navParams.data.user;
+        this.username = navParams.data.username;
         this.categories = navParams.data.user.categories;
         this.times = [15, 30, 45, 60, 90, 120];
     }
     RequestPopover.prototype.request = function () {
+        this.viewCtrl.dismiss();
         var categories = this.categoriesSelected;
         var selected = [];
         for (var category in categories) {
@@ -344,11 +346,14 @@ var RequestPopover = (function () {
             this.viewCtrl.dismiss();
         }
     };
+    RequestPopover.prototype.closeModal = function () {
+        this.viewCtrl.dismiss();
+    };
     return RequestPopover;
 }());
 RequestPopover = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-request',template:/*ion-inline-start:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/request/request.html"*/'<ion-header>\n</ion-header>\n\n\n  <ion-content>\n    <ion-list>\n      <ion-list-header>I need help in: <ion-icon name="close" class="closebtn"></ion-icon></ion-list-header>\n      <ion-item *ngFor="let category of categories">\n        <ion-label>{{ category }}</ion-label>\n        <ion-checkbox [(ngModel)]="categoriesSelected[category]"></ion-checkbox>\n      </ion-item>\n    </ion-list>\n    <ion-list radio-group [(ngModel)]="time">\n      <ion-list-header>Duration:</ion-list-header>\n      <ion-item *ngFor="let time of times">\n        <ion-label>{{ time }}</ion-label>\n        <ion-radio [value]="time">\n        </ion-radio>\n      </ion-item>\n    </ion-list>\n    <button (click)="request()" ion-button>\n      Request Meeting\n    </button>\n  </ion-content>\n'/*ion-inline-end:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/request/request.html"*/,
+        selector: 'page-request',template:/*ion-inline-start:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/request/request.html"*/'<ion-header>\n</ion-header>\n\n\n  <ion-content>\n    <div class="requestmodal">\n      <ion-list-header class="requestheader">\n        <p class="headertext">Request Session with:</p>\n        <h1 class="requesttitle"> {{username}} </h1>\n        <ion-icon name="ios-close-circle-outline" class="closebtn" (click)=closeModal()></ion-icon>\n      </ion-list-header>\n      <ion-list>\n        <ion-list-header><h1 class="requesttitle" item-left>I need help in: </h1></ion-list-header>\n        <ion-item *ngFor="let category of categories">\n          <ion-label>{{ category }}</ion-label>\n          <ion-checkbox [(ngModel)]="categoriesSelected[category]"></ion-checkbox>\n        </ion-item>\n      </ion-list>\n      <ion-list radio-group [(ngModel)]="time">\n        <ion-list-header><h1 class="requesttitle" item-left> Duration: </h1></ion-list-header>\n        <ion-item *ngFor="let time of times">\n          <ion-label>{{ time }}</ion-label>\n          <ion-radio [value]="time">\n          </ion-radio>\n        </ion-item>\n      </ion-list>\n      <button (click)="request()"round ion-button class="requestbtn">\n        Request Meeting\n      </button>\n    </div>\n  </ion-content>\n'/*ion-inline-end:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/request/request.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__["a" /* DsService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
 ], RequestPopover);
@@ -363,7 +368,7 @@ RequestPopover = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Category; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profilepage_profilepage__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__userpage_userpage__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_ds_service__ = __webpack_require__(14);
@@ -426,7 +431,7 @@ Category = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__onboarding_roleChoice_roleChoice__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_ds_service__ = __webpack_require__(14);
@@ -450,7 +455,6 @@ var LoginPage = (function () {
         this.ds = ds;
     }
     LoginPage.prototype.login = function () {
-        console.log(this.username);
         this.ds.login({ username: this.username, password: this.password }, this.handleLogin.bind(this));
     };
     LoginPage.prototype.handleLogin = function (success, data) {
@@ -526,7 +530,7 @@ LoginPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OnboardingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tutorRegister_tutorRegister__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_ds_service__ = __webpack_require__(14);
@@ -575,7 +579,7 @@ OnboardingPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TutorRegister; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_ds_service__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -599,7 +603,6 @@ var TutorRegister = (function () {
         this.categoriesData = ds.dataRecord.get('categories');
         this.categories = Object.keys(this.categoriesData);
         this.categoriesSelected = {};
-        console.log(this.categories);
         this.openCategory = "";
     }
     TutorRegister.prototype.isOpen = function (category) {
@@ -662,7 +665,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(281);
@@ -763,12 +766,12 @@ AppModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_inbox_inbox__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_userpage_userpage__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_profilepage_profilepage__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(210);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -793,7 +796,7 @@ var MyApp = (function () {
         this.rootPage = __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */];
         this.pages = [
             { title: "Home", component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
-            { title: "Profile", component: __WEBPACK_IMPORTED_MODULE_6__pages_userpage_userpage__["a" /* UserPage */] },
+            { title: "Profile", component: __WEBPACK_IMPORTED_MODULE_6__pages_profilepage_profilepage__["a" /* ProfilePage */] },
             { title: "Inbox", component: __WEBPACK_IMPORTED_MODULE_5__pages_inbox_inbox__["a" /* Inbox */] }
         ];
         platform.ready().then(function () {
@@ -836,7 +839,7 @@ MyApp = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profilepage_profilepage__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__userpage_userpage__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__category_category__ = __webpack_require__(209);
@@ -869,22 +872,15 @@ var HomePage = (function () {
         this.tutorsData = {};
         this.tutors = {};
         for (var category in categoryData) {
-            var subCategories = categoryData[category];
-            for (var i = 0; i < subCategories.length; i++) {
-                this.categories.push(subCategories[i]);
-                ds.dsInstance.event.subscribe('search/' + subCategories[i], function (data) {
-                    this.tutorsData[data.subject.split('/')[1]] = data.data;
-                    this.tutors[data.subject.split('/')[1]] = data.data;
-                    /*var tutors = data.data;
-                    this.tutorsData[data.subject.split('/')[1]] = []
-                    for (var tutor in tutors) {
-                      this.ds.dsInstance.record.snapshot('user/'+tutors[tutor], function(error,data) {
-                        this.tutorsData[data.subject.split('/')[1]].push(data);
-                      })
-                    }*/
-                    //this.tutors = this.tutorsData[data.subject.split('/')[1]];
-                }.bind(this));
-            }
+            this.categories.push(category);
+            ds.dsInstance.rpc.make('search/tutor', { subject: category }, function (error, data) {
+                this.tutorsData[data.subject] = data.data;
+                this.tutors[data.subject] = data.data;
+            }.bind(this));
+            ds.dsInstance.event.subscribe('tutor/' + category, function (data) {
+                this.tutorsData[data.subject] = data.data;
+                this.tutors[data.subject] = data.data;
+            }.bind(this));
         }
     }
     HomePage.prototype.onInput = function (event) {
@@ -907,7 +903,6 @@ var HomePage = (function () {
         this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__category_category__["a" /* Category */], { category: category });
     };
     HomePage.prototype.userSelected = function (tutor) {
-        console.log(tutor);
         if (tutor === this.ds.profileRecord.get('username')) {
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__profilepage_profilepage__["a" /* ProfilePage */]);
         }
@@ -919,7 +914,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      BigBlueTutor\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-searchbar\n    [(ngModel)]="search"\n    (ionInput)="onInput($event)">\n  </ion-searchbar>\n  <ion-list>\n    <ion-list-header>\n      Categories\n    </ion-list-header>\n    <div *ngFor="let category of categories">\n      <button ion-item (click)="categorySelected(category)" class="home_categorytitle">\n        <h1 id="tutors-heading2">{{ category }}</h1>\n      </button>\n      <ion-list>\n        <ion-item *ngFor="let tutor of tutors[category]" (click)="userSelected(tutor)">\n          {{ tutor.username }}\n          {{ tutor.position }}\n          {{ tutor.catagories }}\n        </ion-item>\n      </ion-list>\n    </div>\n  </ion-list>\n</ion-content>\n\n\n\n<!--\n<img src="{{ user.profilepic }}" class="home_profilepic">\n<ion-view title="Tutors" id="page1" style="">\n  <ion-nav-buttons side="left" class="has-header">\n    <button class="button button-icon icon ion-android-menu"></button>\n  </ion-nav-buttons>\n  <ion-nav-buttons side="right" class="has-header">\n    <button class="button button-icon icon ion-search"></button>\n  </ion-nav-buttons>\n  <ion-content padding="true" class="has-header">\n    <h1 id="tutors-heading2" style="color: rgb(0, 0, 0);">Science</h1>\n    <ion-list id="tutors-list1">\n      <ion-item class="item-avatar" id="tutors-list-item9" style="">\n        <img src="img/0kaMmv60TA2A23Nz9WDM_Oy_q2hdl_400x400-1.jpg">\n        <h2>Tyler Copeland</h2>\n        <p>Calculus | Linear Algebra | Datamantement</p>\n      </ion-item>\n      <ion-item class="item-avatar" id="tutors-list-item10" style="">\n        <img src="img/0kaMmv60TA2A23Nz9WDM_Oy_q2hdl_400x400-1.jpg">\n        <h2>Tyler Copeland</h2>\n        <p>Calculus | Linear Algebra | Datamantement</p>\n      </ion-item>\n    </ion-list>\n    <button id="tutors-button1" class="button button-positive button-small button-clear">View All</button>\n    <h1 id="tutors-heading1" style="color: rgb(0, 0, 0);">Math</h1>\n    <div class="list card" id="tutors-card22">\n      <ion-item class="item-avatar card-header" id="tutors-list-item5" style="">\n        <img src="img/xPLRt6ASQamPM6LTzdTg_Oy_q2hdl_400x400-1.jpg">\n        <h2>Tyler Copeland</h2>\n      </ion-item>\n      <div class="item item-body" id="tutors-list-item-container3" style="">\n        <div id="tutors-markdown3" class="show-list-numbers-and-dots">\n          <ul>\n            <li>Calculus</li>\n            <li>Linear Algebra</li>\n            <li>Data Mangement</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <button id="tutors-button2" class="button button-positive button-small button-clear">View All</button>\n  </ion-content>\n</ion-view>\n\n-->\n'/*ion-inline-end:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      BigBlueTutor\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-searchbar\n    [(ngModel)]="search"\n    (ionInput)="onInput($event)">\n  </ion-searchbar>\n  <ion-list>\n    <ion-list-header>\n      Categories\n    </ion-list-header>\n    <div *ngFor="let category of categories">\n      <button ion-item class="home_categorytitle">\n        <h1 id="tutors-heading2">{{ category }}</h1>\n      </button>\n      <ion-list>\n        <ion-item *ngFor="let tutor of tutors[category]" (click)="userSelected(tutor)">\n          {{ tutor.username }}\n          {{ tutor.position }}\n          {{ tutor.catagories }}\n        </ion-item>\n      </ion-list>\n    </div>\n  </ion-list>\n</ion-content>\n\n\n\n<!--\n<img src="{{ user.profilepic }}" class="home_profilepic">\n<ion-view title="Tutors" id="page1" style="">\n  <ion-nav-buttons side="left" class="has-header">\n    <button class="button button-icon icon ion-android-menu"></button>\n  </ion-nav-buttons>\n  <ion-nav-buttons side="right" class="has-header">\n    <button class="button button-icon icon ion-search"></button>\n  </ion-nav-buttons>\n  <ion-content padding="true" class="has-header">\n    <h1 id="tutors-heading2" style="color: rgb(0, 0, 0);">Science</h1>\n    <ion-list id="tutors-list1">\n      <ion-item class="item-avatar" id="tutors-list-item9" style="">\n        <img src="img/0kaMmv60TA2A23Nz9WDM_Oy_q2hdl_400x400-1.jpg">\n        <h2>Tyler Copeland</h2>\n        <p>Calculus | Linear Algebra | Datamantement</p>\n      </ion-item>\n      <ion-item class="item-avatar" id="tutors-list-item10" style="">\n        <img src="img/0kaMmv60TA2A23Nz9WDM_Oy_q2hdl_400x400-1.jpg">\n        <h2>Tyler Copeland</h2>\n        <p>Calculus | Linear Algebra | Datamantement</p>\n      </ion-item>\n    </ion-list>\n    <button id="tutors-button1" class="button button-positive button-small button-clear">View All</button>\n    <h1 id="tutors-heading1" style="color: rgb(0, 0, 0);">Math</h1>\n    <div class="list card" id="tutors-card22">\n      <ion-item class="item-avatar card-header" id="tutors-list-item5" style="">\n        <img src="img/xPLRt6ASQamPM6LTzdTg_Oy_q2hdl_400x400-1.jpg">\n        <h2>Tyler Copeland</h2>\n      </ion-item>\n      <div class="item item-body" id="tutors-list-item-container3" style="">\n        <div id="tutors-markdown3" class="show-list-numbers-and-dots">\n          <ul>\n            <li>Calculus</li>\n            <li>Linear Algebra</li>\n            <li>Data Mangement</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <button id="tutors-button2" class="button button-positive button-small button-clear">View All</button>\n  </ion-content>\n</ion-view>\n\n-->\n'/*ion-inline-end:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_5__shared_ds_service__["a" /* DsService */], __WEBPACK_IMPORTED_MODULE_6__shared_recordlisten_service__["a" /* RecordListenService */]])
 ], HomePage);
@@ -934,7 +929,7 @@ HomePage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__inbox_inbox__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__message_message__ = __webpack_require__(112);
@@ -979,8 +974,7 @@ var UserPage = (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__message_message__["a" /* Message */], { username: this.user.username });
     };
     UserPage.prototype.request = function (myEvent) {
-        //var popover = this.pc.create(RequestPopover, {user: this.user})
-        var contactModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_5__request_request__["a" /* RequestPopover */], { user: this.user });
+        var contactModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_5__request_request__["a" /* RequestPopover */], { user: this.user, username: this.user.username });
         contactModal.present({
             ev: myEvent
         });
@@ -989,7 +983,7 @@ var UserPage = (function () {
 }());
 UserPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-user',template:/*ion-inline-start:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/userpage/userpage.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\'menu\'></ion-icon>\n    </button>\n    <ion-title>\n      {{username}}\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div id="userInfo">\n    <div id="imageContainer">\n      <img class="profilepic" src="images/icon.png"/>\n    </div>\n\n    <button (click)="star()" class="icononlybtn favouritebtn"><ion-icon name="star" class="favourite"></ion-icon></button>\n    <div id="name" class="profilename">{{username}}</div>\n    \n    <button (click)="request($event)" ion-button round>Request Session</button>\n    <button (click)="message()" ion-button round><img class="buttonicon" src="/assets/icon/messageicon.png"/></button>\n  </div>\n  <ion-list>\n    <ion-item *ngFor="let category of categories">\n      {{ category }}\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/userpage/userpage.html"*/,
+        selector: 'page-user',template:/*ion-inline-start:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/userpage/userpage.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\'menu\'></ion-icon>\n    </button>\n    <ion-title>\n      {{username}}\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div id="userInfo">\n    <div id="imageContainer">\n      <img class="profilepic" src="images/icon.png"/>\n          <button (click)="star()" class="icononlybtn favouritebtn" item-left><ion-icon name="star" class="favourite"></ion-icon></button>\n    </div>\n    <div id="name" class="profilename">{{username}}</div>\n\n    <button (click)="request($event)" ion-button round>Request Session</button>\n    <button (click)="message()" ion-button round><img class="buttonicon" src="/assets/icon/messageicon.png"/></button>\n  </div>\n  <ion-list>\n    <ion-item *ngFor="let category of categories">\n      {{ category }}\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/courtney/bigbluetutor-client/ionic-BigBlueTutor/src/pages/userpage/userpage.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__["a" /* DsService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PopoverController */]])
 ], UserPage);

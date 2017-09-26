@@ -16,7 +16,6 @@ export class LoginPage {
   }
 
   login() {
-    console.log(this.username);
     this.ds.login({ username: this.username, password: this.password }, this.handleLogin.bind(this));
   }
 

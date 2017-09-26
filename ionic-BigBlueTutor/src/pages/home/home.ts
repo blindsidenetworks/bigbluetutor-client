@@ -21,22 +21,15 @@ export class HomePage {
     this.tutorsData = {};
     this.tutors = {};
     for (var category in categoryData) {
-      var subCategories = categoryData[category];
-      for (var i =0;i<subCategories.length;i++) {
-        this.categories.push(subCategories[i]);
-        ds.dsInstance.event.subscribe('search/'+subCategories[i], function(data) {
-          this.tutorsData[data.subject.split('/')[1]] = data.data;
-          this.tutors[data.subject.split('/')[1]] = data.data;
-          /*var tutors = data.data;
-          this.tutorsData[data.subject.split('/')[1]] = []
-          for (var tutor in tutors) {
-            this.ds.dsInstance.record.snapshot('user/'+tutors[tutor], function(error,data) {
-              this.tutorsData[data.subject.split('/')[1]].push(data);
-            })
-          }*/
-          //this.tutors = this.tutorsData[data.subject.split('/')[1]];
-        }.bind(this))
-      }
+      this.categories.push(category);
+      ds.dsInstance.rpc.make('search/tutor', {subject:category}, function(error, data) {
+        this.tutorsData[data.subject] = data.data;
+        this.tutors[data.subject] = data.data;
+      }.bind(this));
+      ds.dsInstance.event.subscribe('tutor/'+category, function(data) {
+        this.tutorsData[data.subject] = data.data;
+        this.tutors[data.subject] = data.data;
+      }.bind(this));
     }
   }
 
@@ -63,7 +56,6 @@ export class HomePage {
   }
 
   userSelected(tutor) {
-    console.log(tutor);
     if (tutor === this.ds.profileRecord.get('username')) {
       this.navCtrl.push(ProfilePage);
     }else {
