@@ -43,14 +43,35 @@ h1, p{
     }
 }
 
-button{
+.bluebutton{
   font-family: 'Karla', sans-serif;
   background-color: $blue;
   font-weight: bold;
+  color: white;
 }
 
-.ion-button, .button-ios, .button-ios.activated{
+.bluebutton:active{
+  background-color: white !important;
+  color: $blue !important;
+  border: 1px solid $blue;
+
+}
+
+.whitebutton{
+  font-family: 'Karla', sans-serif;
+  background-color: $lightgrey;
+  border: 1px solid $blue;
+  color: $blue;
+  font-weight: bold;
+}
+
+.whitebutton:active{
+  color: white;
+}
+
+.button-ios.activated{
   background-color: $blue;
+  color: white;
 }
 
 .center{
@@ -68,4 +89,8 @@ button{
   background-color: white !important;
   color: none;
   outline: none;
+}
+
+.nomargin{
+  margin: 0px;
 }

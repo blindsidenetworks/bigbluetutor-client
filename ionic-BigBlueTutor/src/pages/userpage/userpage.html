@@ -13,12 +13,11 @@
   <div id="userInfo">
     <div id="imageContainer">
       <img class="profilepic" src="images/icon.png"/>
-          <button (click)="star()" class="icononlybtn favouritebtn" item-left><ion-icon name="star" class="favourite"></ion-icon></button>
+          <button (click)="star()" class="icononlybtn favouritebtn"><ion-icon name="star" class="favourite"></ion-icon></button>
     </div>
     <div id="name" class="profilename">{{username}}</div>
-
-    <button (click)="request($event)" ion-button round>Request Session</button>
-    <button (click)="message()" ion-button round><img class="buttonicon" src="/assets/icon/messageicon.png"/></button>
+    <button (click)="request($event)" class="bluebutton" ion-button round>Request Session</button>
+    <button (click)="message()" ion-button round class="bluebutton"><img class="buttonicon" src="/assets/icon/messageicon.png"/></button>
   </div>
   <ion-list>
     <ion-item *ngFor="let category of categories">

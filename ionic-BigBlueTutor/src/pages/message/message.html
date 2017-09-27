@@ -8,7 +8,7 @@
         <strong>{{username}}</strong>
       </div>
       <div id="requestContainer">
-        <button id="requestButton" (click)="requestMeeting()" ion-button>Request<br/> Meeting</button>
+        <button id="requestButton" (click)="requestMeeting()" class="bluebutton" ion-button>Request<br/> Meeting</button>
       </div>
     </ion-title>
   </ion-navbar>
@@ -17,12 +17,20 @@
 <ion-content>
   <ion-list>
     <div *ngFor="let msg of messages" [ngSwitch]="msg.special">
-        <button ion-button round class="bbbrequest"*ngSwitchCase="true">REQUEST</button>
+      <div class="sessionreq" *ngSwitchCase="true" >
+        <button ion-button class="msg_bbbsession_title bluebutton">SESSION REQUEST</button>
+        <div class="msg_bbbsession_body">
+          <div class="msg_bbbsession_buttons">
+            <button ion-button round class="bluebutton">JOIN</button>
+            <button ion-button round class="whitebutton">DECLINE</button>
+          </div>
+        </div>
+      </div>
         <button *ngSwitchDefault ion-item><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>
     </div>
   </ion-list>
   <div class=messagefield>
     <ion-input [(ngModel)]="input" placeholder="Type a message..." class="inputmessage"></ion-input>
-    <button (click)="sendMessage()" class="msgsend" ion-button round>Send</button>
+    <button (click)="sendMessage()" class="msgsend bluebutton" ion-button round>Send</button>
   </div>
 </ion-content>

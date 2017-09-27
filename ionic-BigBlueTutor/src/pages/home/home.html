@@ -9,11 +9,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-searchbar
     [(ngModel)]="search"
     (ionInput)="onInput($event)">
   </ion-searchbar>
+</ion-content>
+
+<ion-content padding class="categorycontainer">
   <ion-list>
     <ion-list-header>
       Categories
@@ -22,12 +25,17 @@
       <button ion-item class="home_categorytitle">
         <h1 id="tutors-heading2">{{ category }}</h1>
       </button>
-      <ion-list>
-        <ion-item *ngFor="let tutor of tutors[category]" (click)="userSelected(tutor)">
-          {{ tutor.username }}
-          {{ tutor.position }}
-          {{ tutor.catagories }}
-        </ion-item>
+      <ion-list class="nomargin">
+        <ion-col *ngFor="let tutor of tutors[category]">
+          <ion-item item-left class="profileitem" (click)="userSelected(tutor)">
+            <div class="profilecard">
+              <img src="/assets/icon/default-profile.png" class="home_profilepic"/>
+              <h1>{{ tutor.username }}</h1>
+              <p>{{ tutor.position }}
+              {{ tutor.catagories }}</p>
+            </div>
+          </ion-item>
+      </ion-col>
       </ion-list>
     </div>
   </ion-list>

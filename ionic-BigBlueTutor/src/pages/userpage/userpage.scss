@@ -12,13 +12,12 @@ page-user
 
   #imageContainer {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .profilepic{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    text-align: left;
   }
 
   .favourite{
@@ -27,9 +26,7 @@ page-user
   }
   .profilename{
     font-size: 20px;
-    text-align: left;
     margin-bottom: 10px;
-    margin-left: 2px;
   }
   .favouritebtn{
 

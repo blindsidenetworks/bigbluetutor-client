@@ -1,17 +1,32 @@
 page-home {
+  .home_categorytitle{
+      border: none;
+  }
 
-}
+  .home_profilepic{
+    margin-right: 16px;
+    height: 50px;
+    width: 50px;
+    border: 1px solid $grey;
+    border-radius: 50%;
+  }
 
-.home_categorytitle{
+  .categorycontainer{
+    margin-top: 50px;
     border: none;
-}
+  }
 
-.home_profilepic{
-  display: inline;
-  margin-right: 16px;
-  float: left;
-  height: 50px;
-  width: 50px;
-  border: 1px solid black;
-  border-radius: 50%;
+  .profilecard{
+    display: block;
+    width: 45%;
+    border: 1px solid $grey;
+    border-radius: 16px;
+    contain: auto;
+    padding: 8px;
+    float: left
+  }
+  .profileitem{
+    float: left;
+
+  }
 }
