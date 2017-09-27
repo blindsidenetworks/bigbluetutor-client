@@ -21,7 +21,7 @@ export class RequestPopover {
     this.times = [15,30,45,60,90,120];
   }
 
-  request() {  this.viewCtrl.dismiss();
+  request() {
     var categories = this.categoriesSelected;
     var selected = [];
     for (var category in categories) {
