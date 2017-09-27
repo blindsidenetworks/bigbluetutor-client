@@ -14,4 +14,21 @@ page-user
     display: flex;
     justify-content: center;
   }
+  .profilepic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .favourite{
+    color: $yellow;
+    font-size: 25px;
+  }
+  .profilename{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .favouritebtn{
+
+  }
 }

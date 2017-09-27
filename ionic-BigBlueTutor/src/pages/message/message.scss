@@ -1,10 +1,76 @@
 page-message {
   #header {
-    display: flex;
-    justify-content: center;
+    //display: flex;
+    //justify-content: center;
   }
   #requestContainer {
+    //display: flex;
+    //justify-content:flex-end;
+  }
+  .messageheader{
     display: flex;
-    justify-content:flex-end;
+    height: 100px;
+    padding: 15px;
+  }
+  #requestButton{
+    font-size: 12px;
+    width: 75px;
+    height: 45px;
+    position: absolute;
+    right: 15px;
+    top: 25px;
+  }
+  .inputmessage{
+    width: 100%;
+    margin: auto;
+    padding-left: 20px;
+  }
+  .messagefield{
+    border-top: 1px solid $grey;
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .msgsend{
+      font-size: 14px;
+      width: 80px;
+  }
+
+  .sessionreq{
+    display: block;
+    width: 230px;
+    justify-content: center;
+    margin:auto;
+
+  }
+  .msg_bbbsession_buttons{
+    margin: auto;
+    vertical-align: middle;
+  }
+  .msg_bbbsession_title{
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    width: inherit;
+    border-radius: 18px 18px 0px 0px;
+    background-color: $blue;
+  }
+  .msg_bbbsession_body{
+    margin-top: -1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+
+    background-color: white;
+    width: inherit;
+    height: 70px;
+    border: 1px solid $blue;
+    border-radius: 0px 0px 18px 18px;
+    display: flex;
+    justify-content: center;
   }
 }

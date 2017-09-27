@@ -1,12 +1,16 @@
 <ion-content padding>
-    <h1 class="iAm">I AM A</h1>
-    <div class="fulldiv">
-      <ion-img class="studentimg img" src="/assets/OBimgs/student.png"></ion-img>
+  <h1 class="iAm">I AM A</h1>
+
+  <div class="selection">
+    <div class="vertical_side" id="left">
+      <ion-img class="img" id="studentimg" src="/assets/OBimgs/student.png"></ion-img>
       <button (click)="student()" ion-button round class="whitebtn nextbtn">STUDENT</button>
     </div>
-    <div class="fulldiv">
-      <ion-img class="tutorimg img" src="/assets/OBimgs/tutor.png"></ion-img>
+    <div class="vertical_side" id="right">
+      <ion-img class="img" id="tutorimg" src="/assets/OBimgs/tutor.png"></ion-img>
       <button (click)="tutor()" ion-button round class="whitebtn nextbtn">TUTOR</button>
     </div>
-    <button ion-button class="choicenext"> NEXT </button>
+  </div>
+
+  <!--button ion-button class="choicenext fulldiv"> NEXT </button-->
 </ion-content>

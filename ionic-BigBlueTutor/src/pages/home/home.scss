@@ -1,3 +1,32 @@
 page-home {
+  .home_categorytitle{
+      border: none;
+  }
 
+  .home_profilepic{
+    margin-right: 16px;
+    height: 50px;
+    width: 50px;
+    border: 1px solid $grey;
+    border-radius: 50%;
+  }
+
+  .categorycontainer{
+    margin-top: 50px;
+    border: none;
+  }
+
+  .profilecard{
+    display: block;
+    width: 45%;
+    border: 1px solid $grey;
+    border-radius: 16px;
+    contain: auto;
+    padding: 8px;
+    float: left
+  }
+  .profileitem{
+    float: left;
+
+  }
 }

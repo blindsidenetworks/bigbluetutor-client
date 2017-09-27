@@ -17,6 +17,10 @@
 
 $blue: #5576FF;
 $lightgrey: #F7F7F7;
+$yellow: #ffe83a;
+$grey: #969696;
+
+
 
 h1, p{
   font-family: 'Karla', sans-serif;
@@ -39,17 +43,54 @@ h1, p{
     }
 }
 
-button{
+.bluebutton{
   font-family: 'Karla', sans-serif;
   background-color: $blue;
   font-weight: bold;
+  color: white;
 }
 
-.ion-button, .button-ios, .button-ios.activated{
+.bluebutton:active{
+  background-color: white !important;
+  color: $blue !important;
+  border: 1px solid $blue;
+
+}
+
+.whitebutton{
+  font-family: 'Karla', sans-serif;
+  background-color: $lightgrey;
+  border: 1px solid $blue;
+  color: $blue;
+  font-weight: bold;
+}
+
+.whitebutton:active{
+  color: white;
+}
+
+.button-ios.activated{
   background-color: $blue;
+  color: white;
 }
 
 .center{
+  width: 100%;
   display: block;
   margin: auto;
+  text-align: center;
+}
+
+.buttonicon{
+  height: 25px;
+}
+
+.icononlybtn{
+  background-color: white !important;
+  color: none;
+  outline: none;
+}
+
+.nomargin{
+  margin: 0px;
 }

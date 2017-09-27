@@ -12,9 +12,11 @@ export class RequestPopover {
   times;
   time;
   user;
+  username;
   constructor(public viewCtrl: ViewController, private ds: DsService, private navParams: NavParams) {
     this.categoriesSelected = {};
     this.user = navParams.data.user;
+    this.username = navParams.data.username;
     this.categories = navParams.data.user.categories;
     this.times = [15,30,45,60,90,120];
   }
@@ -31,5 +33,9 @@ export class RequestPopover {
       this.ds.dsInstance.rpc.make('requestMeeting', {client: this.ds.profileRecord.get('username'), contact:this.user.username, data: {categories:selected}}, () => {});
       this.viewCtrl.dismiss();
     }
+  }
+
+  closeModal(){
+      this.viewCtrl.dismiss();
   }
 }
