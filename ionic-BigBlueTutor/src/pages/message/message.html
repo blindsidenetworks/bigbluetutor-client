@@ -15,7 +15,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list class="sentmsgfield">
     <div *ngFor="let msg of messages" [ngSwitch]="msg.special">
       <div class="sessionreq" *ngSwitchCase="true" >
         <button ion-button class="msg_bbbsession_title bluebutton">SESSION REQUEST</button>
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-        <button *ngSwitchDefault ion-item><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>
+        <button class="message" *ngSwitchDefault ion-item><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>
     </div>
   </ion-list>
   <div class=messagefield>

@@ -11,6 +11,7 @@ page-message {
     display: flex;
     height: 100px;
     padding: 15px;
+    background-color: white;
   }
   #requestButton{
     font-size: 12px;
@@ -29,7 +30,8 @@ page-message {
     border-top: 1px solid $grey;
     display: flex;
     justify-content: flex-start;
-    position: absolute;
+    position: fixed;
+    background-color: white;
     bottom: 0;
     left: 0;
     right: 0;
@@ -37,6 +39,12 @@ page-message {
   .msgsend{
       font-size: 14px;
       width: 80px;
+  }
+  .sentmsgfield{
+    background-color: $lightgrey;
+    min-height: calc(100vh - 147px);
+    margin-bottom: 48px;
+
   }
 
   .sessionreq{
@@ -72,5 +80,8 @@ page-message {
     border-radius: 0px 0px 18px 18px;
     display: flex;
     justify-content: center;
+  }
+  .message{
+    background-color: $lightgrey;
   }
 }

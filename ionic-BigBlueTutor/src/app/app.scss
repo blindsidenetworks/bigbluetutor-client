@@ -19,6 +19,7 @@ $blue: #5576FF;
 $lightgrey: #F7F7F7;
 $yellow: #ffe83a;
 $grey: #969696;
+$background: #F9FBFF;
 
 
 
@@ -59,7 +60,7 @@ h1, p{
 
 .whitebutton{
   font-family: 'Karla', sans-serif;
-  background-color: $lightgrey;
+  background-color: white;
   border: 1px solid $blue;
   color: $blue;
   font-weight: bold;
