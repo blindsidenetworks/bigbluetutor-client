@@ -25199,11 +25199,199 @@ ion-navbar.toolbar {
   }
 }
 
-page-login ion-list {
-  width: 20%;
+h1, p {
+  font-family: 'Karla', sans-serif;
 }
 
-page-message #header {
+.nextbtn {
+  padding: 10px;
+  width: 180px;
+  display: block;
+  max-width: 300px;
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 400px) {
+  .nextbtn {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.bluebutton {
+  font-family: 'Karla', sans-serif;
+  background-color: #5576FF;
+  font-weight: bold;
+  color: white;
+}
+
+.bluebutton:active {
+  background-color: white !important;
+  color: #5576FF !important;
+  border: 1px solid #5576FF;
+}
+
+.whitebutton {
+  font-family: 'Karla', sans-serif;
+  background-color: #F7F7F7;
+  border: 1px solid #5576FF;
+  color: #5576FF;
+  font-weight: bold;
+}
+
+.whitebutton:active {
+  color: white;
+}
+
+.button-ios.activated {
+  background-color: #5576FF;
+  color: white;
+}
+
+.center {
+  width: 100%;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.buttonicon {
+  height: 25px;
+}
+
+.icononlybtn {
+  background-color: white !important;
+  color: none;
+  outline: none;
+}
+
+.nomargin {
+  margin: 0px;
+}
+
+page-home .home_categorytitle {
+  border: none;
+}
+
+page-home .home_profilepic {
+  margin-right: 16px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #969696;
+  border-radius: 50%;
+}
+
+page-home .categorycontainer {
+  margin-top: 50px;
+  border: none;
+}
+
+page-home .profilecard {
+  display: block;
+  width: 45%;
+  border: 1px solid #969696;
+  border-radius: 16px;
+  contain: auto;
+  padding: 8px;
+  float: left;
+}
+
+page-home .profileitem {
+  float: left;
+}
+
+page-login ion-list {
+  width: 20%;
+  min-width: 343px;
+}
+
+page-login .loginbtn {
+  max-width: 10%;
+  min-width: 343px;
+}
+
+page-message .messageheader {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  padding: 15px;
+}
+
+page-message #requestButton {
+  font-size: 12px;
+  width: 75px;
+  height: 45px;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+}
+
+page-message .inputmessage {
+  width: 100%;
+  margin: auto;
+  padding-left: 20px;
+}
+
+page-message .messagefield {
+  border-top: 1px solid #969696;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+page-message .msgsend {
+  font-size: 14px;
+  width: 80px;
+}
+
+page-message .sessionreq {
+  display: block;
+  width: 230px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: auto;
+}
+
+page-message .msg_bbbsession_buttons {
+  margin: auto;
+  vertical-align: middle;
+}
+
+page-message .msg_bbbsession_title {
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  width: inherit;
+  border-radius: 18px 18px 0px 0px;
+  background-color: #5576FF;
+}
+
+page-message .msg_bbbsession_body {
+  margin-top: -1px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: inherit;
+  height: 70px;
+  border: 1px solid #5576FF;
+  border-radius: 0px 0px 18px 18px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25214,15 +25402,153 @@ page-message #header {
   justify-content: center;
 }
 
-page-message #requestContainer {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+.iAm {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.img {
+  background: none;
+  contain: none;
+  height: auto;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+#studentimg {
+  padding-bottom: 8px;
+  width: 60%;
+}
+
+#tutorimg {
+  padding-bottom: 5px;
+  width: 65%;
+}
+
+.fulldiv {
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.vertical_side {
+  position: relative;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+@media screen and (min-width: 600px) {
+  .vertical_side {
+    height: 50vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40% !important;
+    float: left;
+  }
+  #studentimg {
+    width: 350px;
+  }
+  #tutorimg {
+    width: 350px;
+  }
+  .img {
+    position: absolute;
+    bottom: 60px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .whitebtn {
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .choicenext {
+    padding-top: 100px !important;
+  }
+}
+
+.whitebtn {
+  color: #5576FF;
+  background-color: white;
+  font-family: 'Karla', sans-serif;
+  border: 2px solid #5576FF;
+  font-weight: bold;
+}
+
+.whitebtn:active {
+  color: white;
+  background-color: #5576FF;
+  border: 2px solid #5576FF;
+}
+
+.choicenext {
+  background-color: white;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  color: #5576FF;
+  margin: auto;
+  display: block;
+}
+
+.choicenext:active {
+  background-color: white;
+}
+
+.onboarding .slider-pager {
+  margin-bottom: 300px;
+}
+
+.onboarding .slide-zoom {
+  padding-bottom: 100px;
+}
+
+.onboarding .onboardingimg {
+  background: none;
+  contain: none;
+  padding-bottom: 30px;
+  width: 85%;
+  height: auto;
+}
+
+@media screen and (min-width: 400px) {
+  .onboarding .onboardingimg {
+    width: 30%;
+    height: auto;
+  }
+}
+
+.onboarding .swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 24%;
+}
+
+.onboarding .onboardingtitle {
+  font-size: 20px;
+  width: 65%;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 10px;
+  color: #606060;
+}
+
+.onboarding .onboardingtext {
+  font-size: 12px;
+  width: 70%;
+  line-height: 1.5em;
+  margin: auto;
+  color: grey;
+}
+
+.btndiv {
+  width: 100%;
+  bottom: 70px;
+  position: fixed;
 }
 
 page-profile #profileInfo {
@@ -25231,6 +25557,92 @@ page-profile #profileInfo {
 
 page-profile #name {
   font-size: 36px;
+}
+
+.closebtn {
+  font-size: 24px;
+  margin: auto;
+  font-weight: bold;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+ion-list-header {
+  width: 100%;
+}
+
+.requesttitle {
+  font-size: 16px;
+}
+
+.requestbtn {
+  display: block;
+  margin: auto;
+  margin-bottom: 32px;
+}
+
+.requestmodal {
+  padding: 20px;
+}
+
+.requestheader {
+  height: 100px;
+}
+
+.headertext {
+  display: block;
+}
+
+.categoryitem {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 4px;
+  border-radius: 27px;
+  padding-left: 20px;
+  background-color: none;
+}
+
+.list-ios .item-block .item-inner {
+  border-bottom: 0;
+}
+
+.moreoptions {
+  float: right;
+}
+
+.onboardingnav {
+  padding-top: 45px;
+  padding-bottom: 30px;
+}
+
+.categorycontainer {
+  border: 2px solid #D1D1D1;
+  border-radius: 27px;
+  margin-bottom: 12px;
+}
+
+.subcategoryitem {
+  border-radius: 70px;
+}
+
+.selected {
+  border: 2px solid #5576FF;
+}
+
+.allcategories {
+  max-width: 500px;
+  display: block;
+  margin: auto;
+}
+
+.space {
+  height: 40px;
+  width: 100vw;
+}
+
+.headertitle {
+  padding-right: 45px;
 }
 
 page-user #userInfo {
@@ -25250,4 +25662,20 @@ page-user #imageContainer {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+page-user .profilepic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+page-user .favourite {
+  color: #ffe83a;
+  font-size: 25px;
+}
+
+page-user .profilename {
+  font-size: 20px;
+  margin-bottom: 10px;
 }

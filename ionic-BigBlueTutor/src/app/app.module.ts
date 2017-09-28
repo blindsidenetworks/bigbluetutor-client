@@ -14,10 +14,12 @@ import {UserPage} from '../pages/userpage/userpage';
 import {OnboardingPage} from '../pages/onboarding/roleChoice/roleChoice';
 import {TutorRegister} from '../pages/tutorRegister/tutorRegister';
 import {Category} from '../pages/category/category';
+import {PreOnboarding} from '../pages/preOnboarding/preOnboarding';
 import { DsService } from '../shared/ds.service';
 import { RecordListenService } from '../shared/recordlisten.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RequestPopover } from '../pages/request/request'
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { RequestPopover } from '../pages/request/request'
     OnboardingPage,
     TutorRegister,
     Category,
-    RequestPopover
+    RequestPopover,
+    PreOnboarding
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { RequestPopover } from '../pages/request/request'
     DsService,
     RecordListenService,
     InAppBrowser,
+    AndroidPermissions,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

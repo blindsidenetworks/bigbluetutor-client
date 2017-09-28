@@ -8,7 +8,7 @@ import { DsService } from '../../shared/ds.service';
   selector: 'page-preOnboarding',
   templateUrl: 'preOnboarding.html',
 })
-export class PreOnboardingPage {
+export class PreOnboarding {
   constructor(public navCtrl: NavController, public navParams:NavParams, private ds: DsService) {
   }
 }
