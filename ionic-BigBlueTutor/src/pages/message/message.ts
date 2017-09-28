@@ -4,7 +4,6 @@ import { Events } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
 import { RecordListenService } from '../../shared/recordlisten.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 @Component({
   selector: 'page-message',
@@ -15,7 +14,7 @@ export class Message {
   username: any;
   input: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService, private iab: InAppBrowser, private androidPermissions: AndroidPermissions) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService, private iab: InAppBrowser) {
     this.username = navParams.get('username');
     if (this.ds.profileRecord.get('messages')[this.username]) {
       this.messages = this.ds.profileRecord.get('messages')[this.username];
@@ -41,18 +40,6 @@ export class Message {
         }
       }
     })
-  }
-
-  androidLaunch() {
-    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.MICROPHONE).then(
-      success => console.log('permission granted'),
-      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.MICROPHONE)
-    );
-    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.RECORD_AUDIO).then(
-      success => console.log('permission granted'),
-      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.RECORD_AUDIO)
-    );
-    this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.MICROPHONE, this.androidPermissions.PERMISSION.RECORD_AUDIO]);
   }
 
   sendMessage() {
