@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { HomePage } from '../../home/home';
 import { TutorRegister } from '../../tutorRegister/tutorRegister'
 import { DsService } from '../../../shared/ds.service';
@@ -9,7 +9,7 @@ import { DsService } from '../../../shared/ds.service';
   templateUrl: 'roleChoice.html',
 })
 export class OnboardingPage {
-  constructor(public navCtrl: NavController, public navParams:NavParams, private ds: DsService) {
+  constructor(public navCtrl: NavController, public navParams:NavParams,public menuCtrl:MenuController, private ds: DsService) {
   }
 
   student() {
@@ -18,5 +18,13 @@ export class OnboardingPage {
 
   tutor() {
     this.navCtrl.push(TutorRegister);
+  }
+  
+  ionViewWillEnter() {
+    this.menuCtrl.swipeEnable( false )
+  }
+  //Enable swipe again
+  ionViewDidLeave() {
+   this.menuCtrl.swipeEnable( true )
   }
 }

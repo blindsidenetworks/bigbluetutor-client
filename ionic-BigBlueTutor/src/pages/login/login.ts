@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { OnboardingPage } from '../onboarding/roleChoice/roleChoice';
 import { DsService } from '../../shared/ds.service';
@@ -11,7 +11,7 @@ import { DsService } from '../../shared/ds.service';
 export class LoginPage {
   username;
   password;
-  constructor(public navCtrl: NavController, private ds: DsService) {
+  constructor(public navCtrl: NavController, public menuCtrl:MenuController, private ds: DsService) {
 
   }
 
@@ -61,5 +61,9 @@ export class LoginPage {
 
   goToHome() {
     this.navCtrl.setRoot(HomePage);
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.swipeEnable( false )
   }
 }
