@@ -30,8 +30,7 @@
         <button ion-button class="msg_bbbsession_title bluebutton">Meeting Request</button>
         <div class="msg_bbbsession_body">
           <div class="msg_bbbsession_buttons">
-            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
-            <button ion-button round class="whitebutton">DECLINE</button>
+            <p>Waiting for {{msg.user}}...</p>
           </div>
         </div>
       </div>
@@ -39,8 +38,7 @@
         <button ion-button class="msg_bbbsession_title bluebutton">Active Session</button>
         <div class="msg_bbbsession_body">
           <div class="msg_bbbsession_buttons">
-            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
-            <button ion-button round class="whitebutton">DECLINE</button>
+            <p>Tutoring Session currently in progress</p>
           </div>
         </div>
       </div>
@@ -48,11 +46,10 @@
         <button ion-button class="msg_bbbsession_title bluebutton">Declined</button>
         <div class="msg_bbbsession_body">
           <div class="msg_bbbsession_buttons">
-            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
-            <button ion-button round class="whitebutton">DECLINE</button>
+            <p>{{msg.user}} has declined.</p>
           </div>
 
-          
+
 
         </div>
       </div>
