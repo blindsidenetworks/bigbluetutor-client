@@ -19,6 +19,7 @@ import { DsService } from '../shared/ds.service';
 import { RecordListenService } from '../shared/recordlisten.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RequestPopover } from '../pages/request/request'
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { RequestPopover } from '../pages/request/request'
     DsService,
     RecordListenService,
     InAppBrowser,
+    AndroidPermissions,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
