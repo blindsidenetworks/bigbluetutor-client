@@ -17,11 +17,38 @@
 <ion-content>
   <ion-list>
     <div *ngFor="let msg of messages" [ngSwitch]="msg.special">
-      <div class="sessionreq" *ngSwitchCase="true" >
+      <div class="sessionreq" *ngSwitchCase="'IncomingRequest'" >
         <button ion-button class="msg_bbbsession_title bluebutton">SESSION REQUEST</button>
         <div class="msg_bbbsession_body">
           <div class="msg_bbbsession_buttons">
-            <button ion-button round class="bluebutton">JOIN</button>
+            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
+            <button ion-button round class="whitebutton" (click)="declineMeeting()">DECLINE</button>
+          </div>
+        </div>
+      </div>
+      <div class="sessionreq" *ngSwitchCase="'OutgoingRequest'" >
+        <button ion-button class="msg_bbbsession_title bluebutton">Meeting Request</button>
+        <div class="msg_bbbsession_body">
+          <div class="msg_bbbsession_buttons">
+            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
+            <button ion-button round class="whitebutton">DECLINE</button>
+          </div>
+        </div>
+      </div>
+      <div class="sessionreq" *ngSwitchCase="'ActiveSession'" >
+        <button ion-button class="msg_bbbsession_title bluebutton">Active Session</button>
+        <div class="msg_bbbsession_body">
+          <div class="msg_bbbsession_buttons">
+            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
+            <button ion-button round class="whitebutton">DECLINE</button>
+          </div>
+        </div>
+      </div>
+      <div class="sessionreq" *ngSwitchCase="'DeclinedRequest'" >
+        <button ion-button class="msg_bbbsession_title bluebutton">Declined</button>
+        <div class="msg_bbbsession_body">
+          <div class="msg_bbbsession_buttons">
+            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
             <button ion-button round class="whitebutton">DECLINE</button>
           </div>
         </div>
