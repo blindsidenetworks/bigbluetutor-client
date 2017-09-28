@@ -1,15 +1,8 @@
 <ion-nav [root]="rootPage" #content></ion-nav>
 
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Pages</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let page of pages" (click)="openPage(page)">{{page.title}}</button>
-    </ion-list>
+  <ion-content class="menu">
+    <h1>{{username}}</h1>
+    <button ion-item *ngFor="let page of pages" (click)="openPage(page)">{{page.title}}</button>
   </ion-content>
 </ion-menu>

@@ -1,6 +1,21 @@
 page-home {
+  .searchbar{
+    position: fixed;
+    z-index: 100;
+    overflow: auto;
+  }
   .home_categorytitle{
       border: none;
+  }
+  .categoryheading{
+    margin-left: 15px;
+  }
+  .tutorchoices{
+    overflow: auto;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    width: 100%;
+    border-bottom: 2px solid $lightgrey;
   }
 
   .home_profilepic{
@@ -12,21 +27,70 @@ page-home {
   }
 
   .categorycontainer{
-    margin-top: 50px;
+    border-radius: 0px !important;
     border: none;
+    overflow: visible;
+    margin-bottom: 100px;
+    background-color: $background;
   }
 
   .profilecard{
     display: block;
-    width: 45%;
-    border: 1px solid $grey;
-    border-radius: 16px;
+    background-color: white;
+    border: 1px solid $lightgrey;
+    border-radius: 12px;
     contain: auto;
-    padding: 8px;
-    float: left
+    padding: 10px;
+    float: left;
+    width: 100%;
+
+    box-shadow: 0px 1px 2px $grey;
   }
+
+  @media screen and (max-width: 375px) {
+      .profilecard {
+          max-width: 155px;
+      }
+  }
+
   .profileitem{
     float: left;
+    width: 45%;
+    overflow: visible;
+    margin: 2.5%;
+  }
 
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .profileitem {
+          width: 28.5%;
+          margin-left: 2.3%;
+      }
+  }
+  @media screen and (min-width: 1025px){
+      .tutorchoices{
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+      }
+      .profileitem {
+          width: 21%;
+          margin-left: 1.5%;
+      }
+  }
+
+
+  .card_name{
+    margin-top: 10px;
+  }
+  .card_info{
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .listbottomspace{
+    margin-bottom: 200px;
+    overflow: visible;
+  }
+  .space{
+    height: 20px;
+    width: 100vw;
   }
 }

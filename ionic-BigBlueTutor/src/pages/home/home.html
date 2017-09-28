@@ -7,84 +7,25 @@
       BigBlueTutor
     </ion-title>
   </ion-navbar>
-</ion-header>
-
-<ion-content>
-  <ion-searchbar
-    [(ngModel)]="search"
-    (ionInput)="onInput($event)">
+  <ion-searchbar class="searchbar" [(ngModel)]="search" (ionInput)="onInput($event)">
   </ion-searchbar>
-</ion-content>
+  <div class="space"></div>
+</ion-header>
 
 <ion-content padding class="categorycontainer">
   <ion-list>
-    <ion-list-header>
-      Categories
-    </ion-list-header>
-    <div *ngFor="let category of categories">
-      <button ion-item class="home_categorytitle">
-        <h1 id="tutors-heading2">{{ category }}</h1>
-      </button>
+    <div *ngFor="let category of categories" class="tutorchoices">
+      <h1 id="tutors-heading2" class="categoryheading">{{ category }}</h1>
       <ion-list class="nomargin">
-        <ion-col *ngFor="let tutor of tutors[category]">
-          <ion-item item-left class="profileitem" (click)="userSelected(tutor)">
-            <div class="profilecard">
-              <img src="/assets/icon/default-profile.png" class="home_profilepic"/>
-              <h1>{{ tutor.username }}</h1>
-              <p>{{ tutor.position }}
-              {{ tutor.catagories }}</p>
-            </div>
-          </ion-item>
-      </ion-col>
+        <div *ngFor="let tutor of tutors[category]" class="profileitem" (click)="userSelected(tutor)">
+          <div class="profilecard">
+            <img src="/assets/icon/default-profile.png" class="home_profilepic"/>
+            <h1 class="card_name">{{ tutor.username }}</h1>
+            <p class="card_info">{{ tutor.position }}
+            {{ tutor.catagories }}</p>
+          </div>
+        </div>
       </ion-list>
     </div>
   </ion-list>
 </ion-content>
-
-
-
-<!--
-<img src="{{ user.profilepic }}" class="home_profilepic">
-<ion-view title="Tutors" id="page1" style="">
-  <ion-nav-buttons side="left" class="has-header">
-    <button class="button button-icon icon ion-android-menu"></button>
-  </ion-nav-buttons>
-  <ion-nav-buttons side="right" class="has-header">
-    <button class="button button-icon icon ion-search"></button>
-  </ion-nav-buttons>
-  <ion-content padding="true" class="has-header">
-    <h1 id="tutors-heading2" style="color: rgb(0, 0, 0);">Science</h1>
-    <ion-list id="tutors-list1">
-      <ion-item class="item-avatar" id="tutors-list-item9" style="">
-        <img src="img/0kaMmv60TA2A23Nz9WDM_Oy_q2hdl_400x400-1.jpg">
-        <h2>Tyler Copeland</h2>
-        <p>Calculus | Linear Algebra | Datamantement</p>
-      </ion-item>
-      <ion-item class="item-avatar" id="tutors-list-item10" style="">
-        <img src="img/0kaMmv60TA2A23Nz9WDM_Oy_q2hdl_400x400-1.jpg">
-        <h2>Tyler Copeland</h2>
-        <p>Calculus | Linear Algebra | Datamantement</p>
-      </ion-item>
-    </ion-list>
-    <button id="tutors-button1" class="button button-positive button-small button-clear">View All</button>
-    <h1 id="tutors-heading1" style="color: rgb(0, 0, 0);">Math</h1>
-    <div class="list card" id="tutors-card22">
-      <ion-item class="item-avatar card-header" id="tutors-list-item5" style="">
-        <img src="img/xPLRt6ASQamPM6LTzdTg_Oy_q2hdl_400x400-1.jpg">
-        <h2>Tyler Copeland</h2>
-      </ion-item>
-      <div class="item item-body" id="tutors-list-item-container3" style="">
-        <div id="tutors-markdown3" class="show-list-numbers-and-dots">
-          <ul>
-            <li>Calculus</li>
-            <li>Linear Algebra</li>
-            <li>Data Mangement</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <button id="tutors-button2" class="button button-positive button-small button-clear">View All</button>
-  </ion-content>
-</ion-view>
-
--->
