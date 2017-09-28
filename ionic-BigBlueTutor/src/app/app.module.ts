@@ -18,7 +18,7 @@ import {PreOnboarding} from '../pages/preOnboarding/preOnboarding';
 import { DsService } from '../shared/ds.service';
 import { RecordListenService } from '../shared/recordlisten.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { RequestPopover } from '../pages/request/request'
+import { RequestPopover } from '../pages/request/request';
 
 @NgModule({
   declarations: [
