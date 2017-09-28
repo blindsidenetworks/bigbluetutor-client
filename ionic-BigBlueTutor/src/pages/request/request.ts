@@ -18,7 +18,7 @@ export class RequestPopover {
     this.user = navParams.data.user;
     this.username = navParams.data.username;
     this.categories = navParams.data.user.categories;
-    this.times = [15,30,45,60,90,120];
+    this.times = [30,60,90,120];
   }
 
   request() {
