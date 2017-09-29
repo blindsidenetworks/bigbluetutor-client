@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { ViewController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
+
+import { Message } from '../message/message';
 
 @Component({
   selector: 'page-request',
@@ -13,7 +16,7 @@ export class RequestPopover {
   time;
   user;
   username;
-  constructor(public viewCtrl: ViewController, private ds: DsService, private navParams: NavParams) {
+  constructor( public navCtrl: NavController, public viewCtrl: ViewController, private ds: DsService, private navParams: NavParams) {
     this.categoriesSelected = {};
     this.user = navParams.data.user;
     this.username = navParams.data.username;
@@ -31,7 +34,7 @@ export class RequestPopover {
     }
     if(selected.length>0 && this.time) {
       this.ds.dsInstance.rpc.make('requestMeeting', {client: this.ds.profileRecord.get('username'), contact:this.user.username, data: {categories:selected}}, () => {});
-      this.viewCtrl.dismiss();
+      this.navCtrl.push(Message, {username: this.user.username});
     }
   }
 
