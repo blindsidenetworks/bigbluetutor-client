@@ -16,7 +16,7 @@
   <ion-list class="sentmsgfield">
     <div *ngFor="let msg of messages" [ngSwitch]="msg.special">
       <div class="sessionreq" *ngSwitchCase="'IncomingRequest'" >
-        <button ion-button class="msg_bbbsession_title bluebutton">SESSION REQUEST</button>
+        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext">SESSION REQUEST</h1></div>
         <div class="msg_bbbsession_body">
           <div class="msg_bbbsession_buttons">
             <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
@@ -25,25 +25,49 @@
         </div>
       </div>
       <div class="sessionreq" *ngSwitchCase="'OutgoingRequest'" >
-        <button ion-button class="msg_bbbsession_title bluebutton">Meeting Request</button>
+        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext"> MEETING REQUEST</h1></div>
         <div class="msg_bbbsession_body">
             <p class="sessionmsg">Waiting for {{username}}...</p>
         </div>
       </div>
       <div class="sessionreq" *ngSwitchCase="'ActiveSession'" >
-        <button ion-button class="msg_bbbsession_title bluebutton">Active Session</button>
+        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext">ACTIVE SESSION</h1></div>
         <div class="msg_bbbsession_body">
             <p class="sessionmsg">Tutoring Session currently in progress</p>
         </div>
       </div>
       <div class="sessionreq" *ngSwitchCase="'DeclinedRequest'" >
-        <button ion-button class="msg_bbbsession_title bluebutton">Declined</button>
+        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext">SESSION DECLINED</h1></div>
         <div class="msg_bbbsession_body">
             <p class="sessionmsg">{{msg.user}} has declined.</p>
         </div>
       </div>
-        <button class="message" *ngSwitchDefault ion-item><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>
-    </div>
+        <div class="message" *ngSwitchDefault ion-item>
+
+          <div class="" [ngSwitch]="msg.user">
+
+            <div *ngSwitchDefault class="mymessages">
+              <div class="textusername myusername">
+                <b>{{msg.user}}</b>
+              </div>
+              <div class="textmessagebox mytextmsgbox">
+                <p class="textmessage mytextmsg">{{msg.message}}</p>
+              </div>
+            </div>
+
+            <div *ngSwitchCase="this.username">
+              <div class="textusername otherusername" >
+                <b>{{msg.user}}</b>
+              </div>
+              <div class="textmessagebox othertextmsgbox">
+                <p class="textmessage othertextmsg">{{msg.message}}</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
   </ion-list>
   <div class=messagefield>
     <ion-input #textInput [(ngModel)]="input" placeholder="Type a message..." class="inputmessage"></ion-input>
