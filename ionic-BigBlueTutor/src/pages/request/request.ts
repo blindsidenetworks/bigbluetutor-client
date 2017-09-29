@@ -34,7 +34,8 @@ export class RequestPopover {
     }
     if(selected.length>0 && this.time) {
       this.ds.dsInstance.rpc.make('requestMeeting', {client: this.ds.profileRecord.get('username'), contact:this.user.username, data: {categories:selected}}, () => {});
-      this.navCtrl.push(Message, {username: this.user.username});
+      this.closeModal();
+      this.navCtrl.setRoot(Message, {username: this.user.username});
     }
   }
 
