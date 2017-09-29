@@ -12,7 +12,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content #content>
   <ion-list class="sentmsgfield">
     <div *ngFor="let msg of messages" [ngSwitch]="msg.special">
       <div class="sessionreq" *ngSwitchCase="'IncomingRequest'" >
@@ -46,7 +46,7 @@
     </div>
   </ion-list>
   <div class=messagefield>
-    <ion-input [(ngModel)]="input" placeholder="Type a message..." class="inputmessage"></ion-input>
+    <ion-input #textInput [(ngModel)]="input" placeholder="Type a message..." class="inputmessage"></ion-input>
     <button (click)="sendMessage()" class="msgsend bluebutton" ion-button round>Send</button>
   </div>
 </ion-content>
