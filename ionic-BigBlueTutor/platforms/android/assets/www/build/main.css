@@ -25279,6 +25279,10 @@ h1, p {
   background-color: linear-gradient(224deg, #0F65D1, #5F99E3) !important;
 }
 
+page-home #header {
+  text-align: center;
+}
+
 page-home .searchbar {
   position: fixed;
   z-index: 100;
@@ -25413,6 +25417,24 @@ page-login .loginbtn {
   min-width: 343px;
 }
 
+page-message #header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin-left: 55px;
+}
+
+page-message .username {
+  margin: auto;
+  width: 100%;
+}
+
 page-message .messageheader {
   display: -webkit-box;
   display: -webkit-flex;
@@ -25427,9 +25449,7 @@ page-message #requestButton {
   font-size: 12px;
   width: 75px;
   height: 45px;
-  position: absolute;
-  right: 15px;
-  top: 25px;
+  margin-left: auto;
 }
 
 page-message .inputmessage {
@@ -25464,6 +25484,10 @@ page-message .sentmsgfield {
   background-color: #F7F7F7;
   min-height: calc(100vh - 147px);
   margin-bottom: 48px;
+}
+
+page-message .sessionmsg {
+  text-align: center;
 }
 
 page-message .sessionreq {
