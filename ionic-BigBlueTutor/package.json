@@ -23,6 +23,7 @@
         "@ionic-native/android-permissions": "^4.2.1",
         "@ionic-native/core": "3.12.1",
         "@ionic-native/in-app-browser": "^4.2.1",
+        "@ionic-native/keyboard": "^4.3.0",
         "@ionic-native/splash-screen": "3.12.1",
         "@ionic-native/status-bar": "3.12.1",
         "@ionic/storage": "2.0.1",
