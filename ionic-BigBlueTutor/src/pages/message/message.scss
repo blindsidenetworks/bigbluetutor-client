@@ -1,11 +1,13 @@
 page-message {
   #header {
-    //display: flex;
-    //justify-content: center;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    margin-left: 55px;
   }
-  #requestContainer {
-    //display: flex;
-    //justify-content:flex-end;
+  .username{
+      margin: auto;
+      width: 100%;
   }
   .messageheader{
     display: flex;
@@ -17,9 +19,7 @@ page-message {
     font-size: 12px;
     width: 75px;
     height: 45px;
-    position: absolute;
-    right: 15px;
-    top: 25px;
+    margin-left: auto;
   }
   .inputmessage{
     width: 100%;
@@ -45,6 +45,9 @@ page-message {
     min-height: calc(100vh - 147px);
     margin-bottom: 48px;
 
+  }
+  .sessionmsg{
+    text-align: center;
   }
 
   .sessionreq{
