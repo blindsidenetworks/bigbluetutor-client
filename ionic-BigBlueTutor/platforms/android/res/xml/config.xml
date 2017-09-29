@@ -28,7 +28,7 @@
     <name>BigBlueTutor</name>
     <description>Tutoring on the go!</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">BigBlueButton/Blindside Networks Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://10.130.218.126:8100" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
