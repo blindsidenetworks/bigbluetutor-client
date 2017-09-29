@@ -1,12 +1,73 @@
 page-login
 {
-  ion-list
-  {
+  .login{
+    display: block;
+  }
+  .loginenter{
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    min-width: 330px;
     width: 20%;
-    min-width: 343px;
+    margin: auto;
+  }
+  ion-list{
+    width: 100%;
+    min-width: 310px;
+    margin: auto;
+  }
+  .loginlist{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
   }
   .loginbtn{
     max-width: 10%;
-    min-width: 343px;
+    min-width: 330px;
+    margin: auto;
+    margin-top: 30px;
   }
+  .logo{
+    display: block;
+    background-color: transparent;
+    margin-top: 15%;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .logoimg{
+    background: none;
+    width: 40%;
+    height: auto;
+    max-width: 200px;
+    contain: none;
+  }
+  .content-ios, .content-md, .content-wp{
+    background-color: transparent;
+  }
+  .background{
+    position: absolute;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(left, #7791FB, #264CEC);
+    background: -webkit-gradient(linear, left top, right top, from(#7791FB), to(#264CEC));
+  }
+  .welcome{
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+  }
+
+  @media screen and (min-height : 700px){
+    .logo{
+      margin-top: 5% !important;
+
+    }
+  }
+
 }
