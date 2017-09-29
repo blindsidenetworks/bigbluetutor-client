@@ -10,7 +10,7 @@ webpackJsonp([0],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__inbox_inbox__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__message_message__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__request_request__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__request_request__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -202,7 +202,7 @@ webpackEmptyAsyncContext.id = 162;
 
 /***/ }),
 
-/***/ 209:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -267,7 +267,7 @@ RequestPopover = __decorate([
 
 /***/ }),
 
-/***/ 210:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -330,7 +330,7 @@ Category = __decorate([
 
 /***/ }),
 
-/***/ 211:
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -338,7 +338,7 @@ Category = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__onboarding_roleChoice_roleChoice__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__onboarding_roleChoice_roleChoice__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_ds_service__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -412,7 +412,7 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/login/login.html"*/'<ion-content view-title="Login" name="login-view">\n  <ion-content padding>\n    <div class="list list-inset">\n      <ion-list>\n      <ion-item class="item item-input">\n        <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>\n      </ion-item>\n      <ion-item class="item item-input">\n        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>\n      </ion-item>\n      </ion-list>\n    </div>\n    <button ion-button round class="button button-block bluebutton loginbtn" (tap)="login()" (click)="login()">LOGIN</button>\n  </ion-content>\n</ion-content>\n'/*ion-inline-end:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/login/login.html"*/
+        selector: 'page-login',template:/*ion-inline-start:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/login/login.html"*/'<ion-content view-title="Login" name="login-view">\n  <div class=background>\n      <img class="circles" src="./assets/icon/circles.png"/>\n  </div>\n\n  <ion-content padding>\n    <div class="logincontent">\n      <div class="logo">\n        <ion-img class="logoimg" src="./assets/icon/logo.png"></ion-img>\n      </div>\n      <h1 class="welcome">Welcome to <br/> BigBlueTutor</h1>\n\n      <div class="loginenter">\n        <div class="loginlist">\n          <div class="list list-inset">\n            <ion-list>\n            <ion-item class="item item-input">\n              <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>\n            </ion-item>\n            <ion-item class="item item-input">\n              <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>\n            </ion-item>\n            </ion-list>\n          </div>\n        </div>\n      </div>\n\n      <div class="login">\n        <button ion-button round class="button button-block whitebutton loginbtn" (tap)="login()" (click)="login()">LOGIN</button>\n      </div>\n    </div>\n  </ion-content>\n\n</ion-content>\n'/*ion-inline-end:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/login/login.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_4__shared_ds_service__["a" /* DsService */]])
 ], LoginPage);
@@ -421,7 +421,7 @@ LoginPage = __decorate([
 
 /***/ }),
 
-/***/ 212:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -429,7 +429,7 @@ LoginPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tutorRegister_tutorRegister__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tutorRegister_tutorRegister__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_ds_service__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -478,7 +478,7 @@ OnboardingPage = __decorate([
 
 /***/ }),
 
-/***/ 213:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -547,13 +547,13 @@ TutorRegister = __decorate([
 
 /***/ }),
 
-/***/ 214:
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__ = __webpack_require__(14);
 
 
@@ -563,7 +563,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 233:
+/***/ 232:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -573,22 +573,22 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_keyboard__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_keyboard__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_inbox_inbox__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_message_message__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_profilepage_profilepage__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_userpage_userpage__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_onboarding_roleChoice_roleChoice__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tutorRegister_tutorRegister__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_category_category__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_onboarding_roleChoice_roleChoice__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tutorRegister_tutorRegister__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_category_category__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_preOnboarding_preOnboarding__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_ds_service__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__shared_recordlisten_service__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_in_app_browser__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_request_request__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_in_app_browser__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_request_request__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -683,7 +683,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_inbox_inbox__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_profilepage_profilepage__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(210);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -799,7 +799,7 @@ PreOnboarding = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profilepage_profilepage__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__userpage_userpage__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__category_category__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__category_category__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_ds_service__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_recordlisten_service__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -927,10 +927,9 @@ ProfilePage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Message; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_keyboard__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_ds_service__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_recordlisten_service__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_recordlisten_service__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_in_app_browser__ = __webpack_require__(207);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -945,9 +944,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var Message = (function () {
-    function Message(navCtrl, navParams, platform, events, ds, rls, iab, keyboard) {
+    function Message(navCtrl, navParams, platform, events, ds, rls, iab) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -956,7 +954,6 @@ var Message = (function () {
         this.ds = ds;
         this.rls = rls;
         this.iab = iab;
-        this.keyboard = keyboard;
         this.username = navParams.get('username');
         if (this.ds.profileRecord.get('messages')[this.username]) {
             this.messages = this.ds.profileRecord.get('messages')[this.username];
@@ -1001,10 +998,7 @@ var Message = (function () {
             this.input = "";
         }
         this.textInput.setFocus();
-        //this.keyboard.show();
-        //setTimeout(()=>{
-        //  this.keyboard.show();
-        //},10);
+        //this.content.scrollToBottom(100);
     };
     Message.prototype.requestMeeting = function () {
         this.ds.dsInstance.rpc.make('requestMeeting', { client: this.ds.profileRecord.get('username'), contact: this.username }, function () { });
@@ -1024,9 +1018,9 @@ __decorate([
 ], Message.prototype, "textInput", void 0);
 Message = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-message',template:/*ion-inline-start:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/'<ion-header>\n  <ion-navbar class="messageheader">\n    <ion-title>\n      <div id="header">\n        <button ion-button menuToggle>\n          <ion-icon name=\'menu\'></ion-icon>\n        </button>\n        <strong class="username">{{username}}</strong>\n        <button id="requestButton" (click)="requestMeeting()" class="bluebutton" ion-button item-right>Request<br/> Meeting</button>\n      </div>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content #content>\n  <ion-list class="sentmsgfield">\n    <div *ngFor="let msg of messages" [ngSwitch]="msg.special">\n      <div class="sessionreq" *ngSwitchCase="\'IncomingRequest\'" >\n        <button ion-button class="msg_bbbsession_title bluebutton">SESSION REQUEST</button>\n        <div class="msg_bbbsession_body">\n          <div class="msg_bbbsession_buttons">\n            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>\n            <button ion-button round class="whitebutton" (click)="declineMeeting()">DECLINE</button>\n          </div>\n        </div>\n      </div>\n      <div class="sessionreq" *ngSwitchCase="\'OutgoingRequest\'" >\n        <button ion-button class="msg_bbbsession_title bluebutton">Meeting Request</button>\n        <div class="msg_bbbsession_body">\n            <p class="sessionmsg">Waiting for {{username}}...</p>\n        </div>\n      </div>\n      <div class="sessionreq" *ngSwitchCase="\'ActiveSession\'" >\n        <button ion-button class="msg_bbbsession_title bluebutton">Active Session</button>\n        <div class="msg_bbbsession_body">\n            <p class="sessionmsg">Tutoring Session currently in progress</p>\n        </div>\n      </div>\n      <div class="sessionreq" *ngSwitchCase="\'DeclinedRequest\'" >\n        <button ion-button class="msg_bbbsession_title bluebutton">Declined</button>\n        <div class="msg_bbbsession_body">\n            <p class="sessionmsg">{{msg.user}} has declined.</p>\n        </div>\n      </div>\n        <button class="message" *ngSwitchDefault ion-item><b>{{msg.user}}</b>&emsp;&emsp;{{msg.message}}</button>\n    </div>\n  </ion-list>\n  <div class=messagefield>\n    <ion-input #textInput [(ngModel)]="input" placeholder="Type a message..." class="inputmessage"></ion-input>\n    <button (click)="sendMessage()" class="msgsend bluebutton" ion-button round>Send</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/
+        selector: 'page-message',template:/*ion-inline-start:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/'<ion-header>\n  <ion-navbar class="messageheader">\n    <ion-title>\n      <div id="header">\n        <button ion-button menuToggle>\n          <ion-icon name=\'menu\'></ion-icon>\n        </button>\n        <strong class="username">{{username}}</strong>\n        <button id="requestButton" (click)="requestMeeting()" class="bluebutton" ion-button item-right>Request<br/> Meeting</button>\n      </div>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content #content>\n  <ion-list class="sentmsgfield">\n    <div *ngFor="let msg of messages" [ngSwitch]="msg.special">\n      <div class="sessionreq" *ngSwitchCase="\'IncomingRequest\'" >\n        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext">SESSION REQUEST</h1></div>\n        <div class="msg_bbbsession_body">\n          <div class="msg_bbbsession_buttons">\n            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>\n            <button ion-button round class="whitebutton" (click)="declineMeeting()">DECLINE</button>\n          </div>\n        </div>\n      </div>\n      <div class="sessionreq" *ngSwitchCase="\'OutgoingRequest\'" >\n        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext"> MEETING REQUEST</h1></div>\n        <div class="msg_bbbsession_body">\n            <p class="sessionmsg">Waiting for {{username}}...</p>\n        </div>\n      </div>\n      <div class="sessionreq" *ngSwitchCase="\'ActiveSession\'" >\n        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext">ACTIVE SESSION</h1></div>\n        <div class="msg_bbbsession_body">\n            <p class="sessionmsg">Tutoring Session currently in progress</p>\n        </div>\n      </div>\n      <div class="sessionreq" *ngSwitchCase="\'DeclinedRequest\'" >\n        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext">SESSION DECLINED</h1></div>\n        <div class="msg_bbbsession_body">\n            <p class="sessionmsg">{{msg.user}} has declined.</p>\n        </div>\n      </div>\n        <div class="message" *ngSwitchDefault ion-item>\n\n          <div class="" [ngSwitch]="msg.user">\n\n            <div *ngSwitchDefault class="mymessages">\n              <div class="textusername myusername">\n                <b>{{msg.user}}</b>\n              </div>\n              <div class="textmessagebox mytextmsgbox">\n                <p class="textmessage mytextmsg">{{msg.message}}</p>\n              </div>\n            </div>\n\n            <div *ngSwitchCase="this.username">\n              <div class="textusername otherusername" >\n                <b>{{msg.user}}</b>\n              </div>\n              <div class="textmessagebox othertextmsgbox">\n                <p class="textmessage othertextmsg">{{msg.message}}</p>\n              </div>\n            </div>\n\n          </div>\n\n        </div>\n      </div>\n  </ion-list>\n  <div class=messagefield>\n    <ion-input #textInput [(ngModel)]="input" placeholder="Type a message..." class="inputmessage"></ion-input>\n    <button (click)="sendMessage()" class="msgsend bluebutton" ion-button round>Send</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/src/pages/message/message.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */], __WEBPACK_IMPORTED_MODULE_3__shared_ds_service__["a" /* DsService */], __WEBPACK_IMPORTED_MODULE_4__shared_recordlisten_service__["a" /* RecordListenService */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__["a" /* InAppBrowser */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_keyboard__["a" /* Keyboard */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */], __WEBPACK_IMPORTED_MODULE_2__shared_ds_service__["a" /* DsService */], __WEBPACK_IMPORTED_MODULE_3__shared_recordlisten_service__["a" /* RecordListenService */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
 ], Message);
 
 //# sourceMappingURL=message.js.map
@@ -1078,5 +1072,5 @@ RecordListenService = __decorate([
 
 /***/ })
 
-},[214]);
+},[213]);
 //# sourceMappingURL=main.js.map
