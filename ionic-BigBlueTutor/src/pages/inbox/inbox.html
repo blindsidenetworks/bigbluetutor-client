@@ -12,7 +12,7 @@
 <ion-content>
   <ion-list>
     <div *ngFor="let msg of messages" class="inbox_msg">
-      <img src="/assets/icon/default-profile.png" class="inbox_profilepic"/>
+      <img src="./assets/icon/default-profile.png" class="inbox_profilepic"/>
       <button class="inbox_name" ion-item (click)="viewMessage(msg)">{{msg}}</button>
     </div>
   </ion-list>
