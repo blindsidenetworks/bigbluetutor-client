@@ -25199,8 +25199,45 @@ ion-navbar.toolbar {
   }
 }
 
-page-login ion-list {
-  width: 20%;
+h1, p {
+  font-family: 'Karla', sans-serif;
+}
+
+.nextbtn {
+  padding: 10px;
+  width: 180px;
+  display: block;
+  max-width: 300px;
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 400px) {
+  .nextbtn {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+button {
+  font-family: 'Karla', sans-serif;
+  background-color: #5576FF;
+  font-weight: bold;
+}
+
+.ion-button, .button-ios, .button-ios.activated {
+  background-color: #5576FF;
+}
+
+.center {
+  display: block;
+  margin: auto;
+}
+
+page-login .loginbtn {
+  max-width: 10%;
+  min-width: 343px;
 }
 
 page-message #header {
@@ -25225,12 +25262,108 @@ page-message #requestContainer {
   justify-content: flex-end;
 }
 
+.iAm {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.img {
+  background: none;
+  contain: none;
+  height: auto;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.studentimg {
+  padding-bottom: 5px;
+  width: 50%;
+  max-width: 300px;
+}
+
+.tutorimg {
+  padding-bottom: 5px;
+  width: 55%;
+  max-width: 300px;
+}
+
+.fulldiv {
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.whitebtn {
+  color: #5576FF;
+  background-color: white;
+  border: 2px solid #5576FF;
+}
+
+.whitebtn:active {
+  color: white;
+  background-color: #5576FF;
+  border: 2px solid #5576FF;
+}
+
+.choicenext {
+  background-color: white;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  color: #5576FF;
+  margin: auto;
+  display: block;
+}
+
 page-profile #profileInfo {
   text-align: center;
 }
 
 page-profile #name {
   font-size: 36px;
+}
+
+.categoryitem {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #F7F7F7;
+  padding: 4px;
+  border-radius: 27px;
+  padding-left: 20px;
+}
+
+.list-ios .item-block .item-inner {
+  border-bottom: 0;
+}
+
+.moreoptions {
+  float: right;
+}
+
+.categorydiv {
+  border: 2px solid #D1D1D1;
+  border-radius: 27px;
+  margin-bottom: 12px;
+}
+
+.categorydiv:active {
+  border: 2px solid #5576FF;
+}
+
+.subcategoryitem {
+  border-radius: 50%;
+}
+
+.selected {
+  border: 2px solid #5576FF;
+}
+
+.allcategories {
+  max-width: 500px;
+  display: block;
+  margin: auto;
 }
 
 page-user #userInfo {

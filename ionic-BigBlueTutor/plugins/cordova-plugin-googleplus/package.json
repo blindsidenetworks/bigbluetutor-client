@@ -1,0 +1,57 @@
+{
+  "_from": "git+https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git",
+  "_id": "cordova-plugin-googleplus@5.1.1",
+  "_inBundle": false,
+  "_integrity": "sha1-4/1kBZXIC6difDJ1+BLepBofytQ=",
+  "_location": "/cordova-plugin-googleplus",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus",
+    "rawSpec": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus",
+    "saveSpec": "git+https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git",
+    "fetchSpec": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git#4895ca397ca89b4fae006f5968c3f85844a76c89",
+  "_spec": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus",
+  "_where": "/home/cody/Desktop/bigbluetutor-client/ionic-BigBlueTutor/node_modules",
+  "bundleDependencies": false,
+  "cordova_name": "Google SignIn",
+  "deprecated": false,
+  "description": "Use your Google account to authenticate with the app.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "issue": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus/issues",
+  "keywords": [
+    "Google",
+    "Google SignIn",
+    "Google Sign In",
+    "GoogleSignIn",
+    "Google Login",
+    "Google Plus",
+    "Login",
+    "OAuth",
+    "Identity",
+    "Authentication",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-googleplus",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git",
+  "version": "5.1.1"
+}
