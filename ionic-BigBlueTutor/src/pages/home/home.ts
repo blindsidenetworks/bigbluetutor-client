@@ -103,4 +103,14 @@ export class HomePage {
       this.navCtrl.setRoot(UserPage, {user:tutor});
     }
   }
+
+  searchbar(){
+    $('#backgroundcontent, .categorycontainer').animate({'opacity':'0'},200)
+      .queue(function(next){
+        $('#backgroundcontent, .categorycontainer').css({'display':'none'})
+      next();
+      });
+    $('.search').animate({'top':'7vh'},300);
+  }
+
 }
