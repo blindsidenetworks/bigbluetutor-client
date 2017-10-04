@@ -1,20 +1,4 @@
 page-home {
-  #header{
-    text-align: center;
-  }
-  .home_categorytitle{
-      border: none;
-  }
-  .categoryheading{
-    margin-left: 15px;
-  }
-  .tutorchoices{
-    overflow: auto;
-    padding-bottom: 20px;
-    margin-top: 30px;
-    width: 100%;
-    border-bottom: 2px solid $lightgrey;
-  }
 
   .home_profilepic{
     margin-right: 16px;
@@ -22,14 +6,6 @@ page-home {
     width: 50px;
     border: 1px solid $grey;
     border-radius: 50%;
-  }
-
-  .categorycontainer{
-    border-radius: 0px !important;
-    border: none;
-    overflow: visible;
-    margin-bottom: 100px;
-    background-color: $background;
   }
 
   .profilecard{
@@ -65,10 +41,6 @@ page-home {
       }
   }
   @media screen and (min-width: 1025px){
-      .tutorchoices{
-        padding-left: 10% !important;
-        padding-right: 10% !important;
-      }
       .profileitem {
           width: 21%;
           margin-left: 1.5%;
@@ -77,24 +49,15 @@ page-home {
 
 
   .card_name{
+
+
+
     margin-top: 10px;
   }
   .card_info{
     margin-bottom: 5px;
     margin-top: 5px;
   }
-  .listbottomspace{
-    margin-bottom: 200px;
-    overflow: visible;
-  }
-  .space{
-    height: 20px;
-    width: 100vw;
-  }
-
-
-
-
 
 
   .logo{
@@ -142,6 +105,8 @@ page-home {
   }
 
   .categorycontainer{
+    border-radius: 0px !important;
+    border: none;
     max-width: 100vw;
     margin-left: auto;
     margin-right: auto;

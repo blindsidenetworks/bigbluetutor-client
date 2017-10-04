@@ -100,12 +100,12 @@ export class HomePage {
   }
 
   searchbar(){
-    $('#backgroundcontent').animate({'opacity':'0'})
+    $('#backgroundcontent, .categorycontainer').animate({'opacity':'0'},200)
       .queue(function(next){
-        $('#backgroundcontent').css({'display':'none'})
+        $('#backgroundcontent, .categorycontainer').css({'display':'none'})
       next();
       });
-    $('.search').animate({'top':'7vh'});
+    $('.search').animate({'top':'7vh'},300);
   }
 
 }

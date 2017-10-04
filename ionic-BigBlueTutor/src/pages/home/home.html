@@ -31,41 +31,26 @@
       </div>
     </div>
   </div>
-</ion-content>
 
-<!--ion-content padding class="categorycontainer">
-  <ion-list>
-    <div *ngFor="let category of categories" class="tutorchoices">
-      <h1 id="tutors-heading2" class="categoryheading">{{ category }}</h1>
-      <ion-list class="nomargin">
-        <div *ngFor="let tutor of tutors[category]" class="profileitem" (click)="userSelected(tutor)">
+  <div class="searchresults">
+    <ion-list>
+        <div *ngFor="let searchTutor of searchTutors" class="profileitem" (click)="userSelected(tutor)">
           <div class="profilecard">
             <img src="./assets/icon/default-profile.png" class="home_profilepic"/>
-            <h1 class="card_name">{{ tutor.username }}</h1>
-            <p class="card_info">{{ tutor.position }}
-            {{ tutor.catagories }}</p>
+            <h1 class="card_name">{{ searchTutor.username }}</h1>
+            <p class="card_info">{{ searchTutor.position }}
+            {{ searchTutor.catagories }}</p>
           </div>
         </div>
-      </ion-list>
-    </div>
-  </ion-list>
+    </ion-list>
 
-  <ion-list>
-      <div *ngFor="let searchTutor of searchTutors" class="profileitem" (click)="userSelected(tutor)">
-        <div class="profilecard">
-          <img src="./assets/icon/default-profile.png" class="home_profilepic"/>
-          <h1 class="card_name">{{ searchTutor.username }}</h1>
-          <p class="card_info">{{ searchTutor.position }}
-          {{ searchTutor.catagories }}</p>
+    <ion-list>
+      <div *ngFor="let category of searchCategories">
+        <div>
+          {{category}}
         </div>
       </div>
-  </ion-list>
+    </ion-list>
+  </div>
 
-  <ion-list>
-    <div *ngFor="let category of searchCategories">
-      <div>
-        {{category}}
-      </div>
-    </div>
-  </ion-list>
-</ion-content-->
+</ion-content>
