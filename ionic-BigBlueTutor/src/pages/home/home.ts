@@ -5,6 +5,7 @@ import { UserPage } from '../userpage/userpage';
 import { Category } from '../category/category';
 import { DsService } from '../../shared/ds.service';
 import { RecordListenService } from '../../shared/recordlisten.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'page-home',
@@ -23,6 +24,7 @@ export class HomePage {
     for (var category in categoryData) {
       this.categories.push(category);
       ds.dsInstance.rpc.make('search/tutor', {subject:category}, function(error, data) {
+        if (error) throw error
         this.tutorsData[data.subject] = data.data;
         this.tutors[data.subject] = data.data;
       }.bind(this));
@@ -62,5 +64,4 @@ export class HomePage {
       this.navCtrl.setRoot(UserPage, {user:tutor});
     }
   }
-
 }
