@@ -49,8 +49,7 @@ export class HomePage {
   onInput(event) {
     this.ds.dsInstance.rpc.make('search', {param: this.search}, function(error, data) {
       this.searchTutors = data.data;
-      console.log(this.searchTutors)
-    })
+    }.bind(this));
     var categoryData = this.ds.dataRecord.get('categories');
     this.searchCategories = [];
     for (var category in categoryData) {
