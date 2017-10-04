@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <!--ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,12 +7,33 @@
       BigBlueTutor
     </ion-title>
   </ion-navbar>
-  <ion-searchbar class="searchbar" [(ngModel)]="search" (ionInput)="onInput($event)">
-  </ion-searchbar>
-  <div class="space"></div>
+
+  <div class="space"></div-->
 </ion-header>
 
-<ion-content padding class="categorycontainer">
+<ion-content>
+  <div class="home-bkg">
+    <div id="backgroundcontent">
+      <img class="circles" src="./assets/icon/circles.png"/>
+      <div class="logo">
+        <ion-img class="logoimg" src="./assets/icon/logo.png"></ion-img>
+      </div>
+    </div>
+    <div class="search">
+      <ion-searchbar class="searchbar" (click)="searchbar();" [(ngModel)]="search" (ionInput)="onInput($event)"></ion-searchbar>
+    </div>
+  </div>
+  <div class="categorycontainer">
+    <div class="maincategories">
+      <div class="categorycard" *ngFor="let category of categories">
+        <img class="categoryimg" src="./assets/icon/math.png"/>
+        <p class="categoryname">{{ category }}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<!--ion-content padding class="categorycontainer">
   <ion-list>
     <div *ngFor="let category of categories" class="tutorchoices">
       <h1 id="tutors-heading2" class="categoryheading">{{ category }}</h1>
@@ -37,4 +58,4 @@
       <div >
       </div>
   </ion-list>
-</ion-content>
+</ion-content-->

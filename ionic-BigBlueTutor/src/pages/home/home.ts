@@ -64,4 +64,14 @@ export class HomePage {
       this.navCtrl.setRoot(UserPage, {user:tutor});
     }
   }
+
+  searchbar(){
+    $('#backgroundcontent').animate({'opacity':'0'})
+      .queue(function(next){
+        $('#backgroundcontent').css({'display':'none'})
+      next();
+      });
+    $('.search').animate({'top':'7vh'});
+  }
+
 }

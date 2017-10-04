@@ -33,7 +33,7 @@ page-login
   .logo{
     display: block;
     background-color: transparent;
-    margin-top: 15%;
+    margin-top: 12%;
     margin-bottom: 50px;
     text-align: center;
   }
@@ -64,9 +64,9 @@ page-login
     margin-bottom: 50px;
   }
 
-  @media screen and (min-height : 700px){
+  @media screen and (max-height : 660px){
     .logo{
-      margin-top: 5% !important;
+      margin-top: 6% !important;
 
     }
   }
