@@ -47,28 +47,33 @@ export class HomePage {
   }
 
   onInput(event) {
-    this.ds.dsInstance.rpc.make('search', {param: this.search}, function(error, data) {
-      this.searchTutors = data.data;
-    }.bind(this));
-    var categoryData = this.ds.dataRecord.get('categories');
-    this.searchCategories = [];
-    for (var category in categoryData) {
-      this.searchCategories.push(category);
-    }
-    for (var category in categoryData) {
-      var subCategories = categoryData[category];
-      for (var i =0;i<subCategories.length;i++) {
-        this.searchCategories.push(subCategories[i]);
+    if (this.search == "") {
+      this.searchCategories = [];
+      this.searchTutors = [];
+    }else {
+      this.ds.dsInstance.rpc.make('search', {param: this.search}, function(error, data) {
+        this.searchTutors = data.data;
+      }.bind(this));
+      var categoryData = this.ds.dataRecord.get('categories');
+      this.searchCategories = [];
+      for (var category in categoryData) {
+        this.searchCategories.push(category);
       }
+      for (var category in categoryData) {
+        var subCategories = categoryData[category];
+        for (var i =0;i<subCategories.length;i++) {
+          this.searchCategories.push(subCategories[i]);
+        }
+      }
+      this.searchCategories = this.searchCategories.filter(function(text) {
+        return text.includes(this.search);
+      }.bind(this));
+      this.searchCategories = this.searchCategories.sort(function(a, b){
+        if(a.firstname < b.firstname) return -1;
+        if(a.firstname > b.firstname) return 1;
+        return 0;
+      });
     }
-    this.searchCategories = this.searchCategories.filter(function(text) {
-      return text.includes(this.search);
-    }.bind(this));
-    this.searchCategories = this.searchCategories.sort(function(a, b){
-      if(a.firstname < b.firstname) return -1;
-      if(a.firstname > b.firstname) return 1;
-      return 0;
-    });
     /*
     var categoryData = this.ds.dataRecord.get('categories');
     this.categories = [];
