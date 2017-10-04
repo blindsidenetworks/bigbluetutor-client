@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <!--ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,44 +7,50 @@
       BigBlueTutor
     </ion-title>
   </ion-navbar>
-  <ion-searchbar class="searchbar" [(ngModel)]="search" (ionInput)="onInput($event)">
-  </ion-searchbar>
-  <div class="space"></div>
+
+  <div class="space"></div-->
 </ion-header>
 
-<ion-content padding class="categorycontainer">
-  <ion-list>
-    <div *ngFor="let category of categories" class="tutorchoices">
-      <h1 id="tutors-heading2" class="categoryheading">{{ category }}</h1>
-      <ion-list class="nomargin">
-        <div *ngFor="let tutor of tutors[category]" class="profileitem" (click)="userSelected(tutor)">
+<ion-content>
+  <div class="home-bkg">
+    <div id="backgroundcontent">
+      <img class="circles" src="./assets/icon/circles.png"/>
+      <div class="logo">
+        <ion-img class="logoimg" src="./assets/icon/logo.png"></ion-img>
+      </div>
+    </div>
+    <div class="search">
+      <ion-searchbar class="searchbar" (click)="searchbar();" [(ngModel)]="search" (ionInput)="onInput($event)"></ion-searchbar>
+    </div>
+  </div>
+  <div class="categorycontainer">
+    <div class="maincategories">
+      <div class="categorycard" *ngFor="let category of categories">
+        <img class="categoryimg" src="./assets/icon/math.png"/>
+        <p class="categoryname">{{ category }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="searchresults">
+    <ion-list>
+        <div *ngFor="let searchTutor of searchTutors" class="profileitem" (click)="userSelected(tutor)">
           <div class="profilecard">
             <img src="./assets/icon/default-profile.png" class="home_profilepic"/>
-            <h1 class="card_name">{{ tutor.username }}</h1>
-            <p class="card_info">{{ tutor.position }}
-            {{ tutor.catagories }}</p>
+            <h1 class="card_name">{{ searchTutor.username }}</h1>
+            <p class="card_info">{{ searchTutor.position }}
+            {{ searchTutor.catagories }}</p>
           </div>
         </div>
-      </ion-list>
-    </div>
-  </ion-list>
+    </ion-list>
 
-  <ion-list>
-      <div *ngFor="let searchTutor of searchTutors" class="profileitem" (click)="userSelected(tutor)">
-        <div class="profilecard">
-          <img src="./assets/icon/default-profile.png" class="home_profilepic"/>
-          <h1 class="card_name">{{ searchTutor.username }}</h1>
-          <p class="card_info">{{ searchTutor.position }}
-          {{ searchTutor.catagories }}</p>
+    <ion-list>
+      <div *ngFor="let category of searchCategories">
+        <div>
+          {{category}}
         </div>
       </div>
-  </ion-list>
+    </ion-list>
+  </div>
 
-  <ion-list>
-    <div *ngFor="let category of searchCategories">
-      <div>
-        {{category}}
-      </div>
-    </div>
-  </ion-list>
 </ion-content>
