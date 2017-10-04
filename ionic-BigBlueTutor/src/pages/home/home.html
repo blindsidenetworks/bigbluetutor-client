@@ -30,11 +30,21 @@
   </ion-list>
 
   <ion-list>
-    <div *ngFor="let category of searchCategories">
-    </div>
-  </ion-list>
-  <ion-list>
-      <div >
+      <div *ngFor="let searchTutor of searchTutors" class="profileitem" (click)="userSelected(tutor)">
+        <div class="profilecard">
+          <img src="./assets/icon/default-profile.png" class="home_profilepic"/>
+          <h1 class="card_name">{{ searchTutor.username }}</h1>
+          <p class="card_info">{{ searchTutor.position }}
+          {{ searchTutor.catagories }}</p>
+        </div>
       </div>
+  </ion-list>
+
+  <ion-list>
+    <div *ngFor="let category of searchCategories">
+      <div>
+        {{category}}
+      </div>
+    </div>
   </ion-list>
 </ion-content>

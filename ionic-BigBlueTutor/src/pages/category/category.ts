@@ -16,13 +16,13 @@ export class Category {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService) {
     this.category = navParams.get('category');
-    var tutors = ds.dataRecord.get('tutors');
-    this.tutors = [];
-    for (var i in tutors) {
-      if (tutors[i].categories.indexOf(this.category) != -1) {
-        this.tutors.push(tutors[i]);
-      }
-    }
+    ds.dsInstance.rpc.make('searchTutor', {subject: this.category}, function(error, data) {
+      if (error) throw error
+      this.tutors = data.data;
+    }.bind(this));
+    ds.dsInstance.event.subscribe('tutor/'+this.category, function(data) {
+      this.tutors = data.data;
+    }.bind(this));
   }
 
   userSelected(tutor) {
