@@ -11,8 +11,9 @@ import {Message} from '../pages/message/message';
 import {ProfilePage} from '../pages/profilepage/profilepage';
 import {LoginPage} from '../pages/login/login';
 import {UserPage} from '../pages/userpage/userpage';
-import {OnboardingPage} from '../pages/onboarding/roleChoice/roleChoice';
-import {TutorRegister} from '../pages/tutorRegister/tutorRegister';
+import {RoleChoice} from '../pages/onboarding/roleChoice/roleChoice';
+import {OnboardingPage} from '../pages/onboarding/onboarding/onboarding';
+import {TutorRegister} from '../pages/onboarding/tutorRegister/tutorRegister';
 import {Category} from '../pages/category/category';
 import {PreOnboarding} from '../pages/preOnboarding/preOnboarding';
 import { DsService } from '../shared/ds.service';
@@ -29,6 +30,7 @@ import { RequestPopover } from '../pages/request/request';
     ProfilePage,
     LoginPage,
     UserPage,
+    RoleChoice,
     OnboardingPage,
     TutorRegister,
     Category,
@@ -44,6 +46,7 @@ import { RequestPopover } from '../pages/request/request';
     MyApp,
     HomePage,
     Inbox,
+    RoleChoice,
     OnboardingPage,
     Message,
     ProfilePage,

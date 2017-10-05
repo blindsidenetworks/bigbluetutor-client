@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
-import { DsService } from '../../shared/ds.service';
+import { HomePage } from '../../home/home';
+import { DsService } from '../../../shared/ds.service';
 import { ToastController } from 'ionic-angular';
+import {OnboardingPage} from '../onboarding/onboarding';
 
 @Component({
   selector: 'page-tutorRegister',
@@ -43,7 +44,7 @@ export class TutorRegister {
       }
     }
     this.ds.dsInstance.rpc.make('registerTutor', {auth:this.ds.auth, categories: selected}, ()=> {})
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(OnboardingPage);
   }
 
 }

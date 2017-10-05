@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { OnboardingPage } from '../onboarding/roleChoice/roleChoice';
+import { RoleChoice } from '../onboarding/roleChoice/roleChoice';
 import { DsService } from '../../shared/ds.service';
 
 @Component({
@@ -56,7 +56,7 @@ export class LoginPage {
   }
 
   goToOnboarding() {
-    this.navCtrl.setRoot(OnboardingPage);
+    this.navCtrl.setRoot(RoleChoice);
   }
 
   goToHome() {

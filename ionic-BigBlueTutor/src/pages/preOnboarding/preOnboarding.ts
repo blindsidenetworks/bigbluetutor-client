@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { TutorRegister } from '../tutorRegister/tutorRegister'
+import { TutorRegister } from '../onboarding/tutorRegister/tutorRegister'
 import { DsService } from '../../shared/ds.service';
 
 @Component({
