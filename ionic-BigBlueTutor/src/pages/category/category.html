@@ -9,14 +9,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-    <ion-list-header>
-      Tutors
-    </ion-list-header>
-    <button ion-item *ngFor="let tutor of tutors" (click)="userSelected(tutor)">
-      {{ tutor.username }}
-      {{ tutor.position }}
-    </button>
+<ion-content>
+  <ion-list class="tutorresults">
+    <h1 class="resulttext categorytutors"> TUTORS</h1>
+    <div  *ngFor="let tutor of tutors" class="profileitem" (click)="userSelected(tutor)">
+      <div class="profilecard">
+        <img src="./assets/icon/default-profile.png" class="home_profilepic"/>
+        <h1 class="card_name">{{ tutor.username }}</h1>
+        <p class="card_info">{{ tutor.position }}</p>
+      </div>
+    </div>
   </ion-list>
 </ion-content>
