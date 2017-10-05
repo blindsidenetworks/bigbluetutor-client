@@ -159,13 +159,17 @@ page-home {
 
   }
   .categoryimg{
-    height:60%;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
+    max-height:80%;
+    max-width: 80%;
+    vertical-align: middle;
     display: block;
+    margin: auto;
     text-align: center;
+  }
+  .categoryimgcontainer{
+    height:80%;
+    margin: auto;
+    display: flex;
   }
   .searchcancel{
     color: black;
@@ -204,7 +208,7 @@ page-home {
         font-size: 14px !important;
       }
       .categoryimg{
-        margin-top: 10px !important;
+        //margin-top: 10px !important;
       }
       .categorycard{
         height: 30vw;
