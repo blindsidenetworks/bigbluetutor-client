@@ -3,22 +3,18 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { HomePage } from '../../home/home';
 import { TutorRegister } from '../tutorRegister/tutorRegister'
 import { DsService } from '../../../shared/ds.service';
-import {OnboardingPage} from '../onboarding/onboarding';
 
 @Component({
-  selector: 'page-roleChoice',
-  templateUrl: 'roleChoice.html',
+  selector: 'page-onboarding',
+  templateUrl: 'onboarding.html',
 })
-export class RoleChoice {
+export class OnboardingPage {
   constructor(public navCtrl: NavController, public navParams:NavParams,public menuCtrl:MenuController, private ds: DsService) {
   }
 
-  student() {
-    this.navCtrl.setRoot(OnboardingPage);
-  }
-
-  tutor() {
-    this.navCtrl.push(TutorRegister);
+  register() {
+    //do additional calls first
+    this.navCtrl.setRoot(HomePage);
   }
 
   ionViewWillEnter() {
