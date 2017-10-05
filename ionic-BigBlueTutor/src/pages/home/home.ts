@@ -74,25 +74,7 @@ export class HomePage {
         return 0;
       });
     }
-    /*
-    var categoryData = this.ds.dataRecord.get('categories');
-    this.categories = [];
-    for (var category in categoryData) {
-      var subCategories = categoryData[category];
-      for (var i =0;i<subCategories.length;i++) {
-        this.categories.push(subCategories[i]);
-      }
-    }
-    this.categories = this.categories.filter(function(text) {
-      return text.includes(this.search);
-    }.bind(this));*/
-
-//    this.tutors = tutorsData.filter(function(text) {
-//      return text.includes(this.search);
-//    }.bind(this));
-
     $('.searchresults').css({'display':'block'});
-
   }
 
   categorySelected(category) {
