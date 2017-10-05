@@ -30,8 +30,8 @@
   <div class="categorycontainer">
     <div class="maincategories">
       <div class="categorycard" *ngFor="let category of categories">
-        <img class="categoryimg" src="./assets/icon/math.png"/>
-        <p class="categoryname">{{ category }}</p>
+        <div class="categoryimgcontainer"><img class="categoryimg" src="{{category.img}}"/></div>
+        <p class="categoryname">{{category.category}}</p>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
       <h1 class="resulttext">CATEGORIES</h1>
       <div *ngFor="let searchCategory of searchCategories" (click)="categorySelected(searchCategory)">
         <div>
-          <h1 class="categoryresults"> {{searchCategory}} </h1>
+          <h1 class="categoryresults">{{searchCategory}}</h1>
         </div>
       </div>
     </ion-list>
@@ -56,7 +56,6 @@
           </div>
         </div>search
     </ion-list>
-    <br/><br/><br/><br/><br/>
   </div>
 
 </ion-content>
