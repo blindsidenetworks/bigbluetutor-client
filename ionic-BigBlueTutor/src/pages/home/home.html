@@ -28,7 +28,7 @@
   </div>
   <div class="categorycontainer">
     <div class="maincategories">
-      <div class="categorycard" *ngFor="let category of categories">
+      <div class="categorycard" *ngFor="let category of categories" (click)="categorySelected(category.category)">
         <div class="categoryimgcontainer"><img class="categoryimg" src="{{category.img}}"/></div>
         <p class="categoryname">{{category.category}}</p>
       </div>
