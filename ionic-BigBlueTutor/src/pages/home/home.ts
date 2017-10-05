@@ -103,7 +103,7 @@ export class HomePage {
     if (tutor.username === this.ds.profileRecord.get('username')) {
       this.navCtrl.setRoot(ProfilePage);
     }else {
-      this.navCtrl.setRoot(UserPage, {user:tutor});
+      this.navCtrl.push(UserPage, {user:tutor});
     }
   }
 
