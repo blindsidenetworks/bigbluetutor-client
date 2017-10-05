@@ -39,22 +39,22 @@
   <div class="searchresults">
     <ion-list class="tutorresults">
       <h1 class="resulttext">CATEGORIES</h1>
-      <div *ngFor="let category of searchCategories">
+      <div *ngFor="let searchCategory of searchCategories" (click)="categorySelected(searchCategory)">
         <div>
-          <h1 class="categoryresults"> {{category}} </h1>
+          <h1 class="categoryresults"> {{searchCategory}} </h1>
         </div>
       </div>
     </ion-list>
     <ion-list class="tutorresults">
         <h1 class="resulttext">TUTORS</h1>
-        <div *ngFor="let searchTutor of searchTutors" class="profileitem" (click)="userSelected(tutor)">
+        <div *ngFor="let searchTutor of searchTutors" class="profileitem" (click)="userSelected(searchTutor)">
           <div class="profilecard">
             <img src="./assets/icon/default-profile.png" class="home_profilepic"/>
             <h1 class="card_name">{{ searchTutor.username }}</h1>
             <p class="card_info">{{ searchTutor.position }}
             {{ searchTutor.catagories }}</p>
           </div>
-        </div>
+        </div>search
     </ion-list>
     <br/><br/><br/><br/><br/>
   </div>

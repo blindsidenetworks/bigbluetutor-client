@@ -21,28 +21,28 @@ export class HomePage {
   imageLocations;
   constructor(public navCtrl: NavController, public events: Events, private ds: DsService, private rls:RecordListenService) {
     this.imageLocations = {
-      "Language" : "./assets/icon/math.png",
-      "Math": "./assets/icon/language.png",
-      "Business": "./assets/icon/social.png",
+      "Math" : "./assets/icon/math.png",
+      "Language": "./assets/icon/language.png",
+      "Social Sciences": "./assets/icon/social.png",
       "Science": "./assets/icon/science.png",
-      "Social Sciences": "./assets/icon/art.png",
-      "Arts": "./assets/icon/business.png"
+      "Arts": "./assets/icon/art.png",
+      "Business": "./assets/icon/business.png"
     }
     var categoryData = ds.dataRecord.get('categories');
     this.categories = [];
-    this.tutorsData = {};
-    this.tutors = {};
+    //this.tutorsData = {};
+    //this.tutors = {};
     for (var category in categoryData) {
       this.categories.push({category: category, img: this.imageLocations[category]});
-      ds.dsInstance.rpc.make('search/tutor', {subject:category}, function(error, data) {
-        if (error) throw error
-        this.tutorsData[data.subject] = data.data;
-        this.tutors[data.subject] = data.data;
-      }.bind(this));
-      ds.dsInstance.event.subscribe('tutor/'+category, function(data) {
-        this.tutorsData[data.subject] = data.data;
-        this.tutors[data.subject] = data.data;
-      }.bind(this));
+      //ds.dsInstance.rpc.make('search/tutor', {subject:category}, function(error, data) {
+      //  if (error) throw error
+      //  this.tutorsData[data.subject] = data.data;
+      //  this.tutors[data.subject] = data.data;
+      //}.bind(this));
+      //ds.dsInstance.event.subscribe('tutor/'+category, function(data) {
+      //  this.tutorsData[data.subject] = data.data;
+      //  this.tutors[data.subject] = data.data;
+      //}.bind(this));
     }
   }
 
