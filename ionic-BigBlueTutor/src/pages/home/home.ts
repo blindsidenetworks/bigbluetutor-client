@@ -90,6 +90,9 @@ export class HomePage {
 //    this.tutors = tutorsData.filter(function(text) {
 //      return text.includes(this.search);
 //    }.bind(this));
+
+    $('.searchresults').css({'display':'block'});
+
   }
 
   categorySelected(category) {
@@ -105,12 +108,38 @@ export class HomePage {
   }
 
   searchbar(){
+    $('.home-bkg').animate({'height':'20vh','opacity':'0.5'}, 300);
     $('#backgroundcontent, .categorycontainer').animate({'opacity':'0'},200)
       .queue(function(next){
         $('#backgroundcontent, .categorycontainer').css({'display':'none'})
       next();
       });
-    $('.search').animate({'top':'7vh'},300);
+    $('.menubtn').hide();
+    $('.search').animate({'top':'7vh'},300)
+      .queue(function(next){
+        $('.searchcancel').animate({'opacity':'1'});
+        $('.searchcancel').css('display','block');
+      next();
+    });
+  }
+
+  cancelsearch(ev){
+    var HTMLElement = document.getElementsByClassName("searchbar");
+    console.log(HTMLElement);
+    //ev.HTMLElement.value = '';
+    $('.menubtn').show();
+    $('.searchresults').css('display','none');
+    $('.home-bkg').animate({'height':'63vh','opacity':'1'}, 300);
+    $('#backgroundcontent').css({'display':'block'})
+    $('.categorycontainer').css({'display':'flex'})
+    $('#backgroundcontent, .categorycontainer').animate({'opacity':'1'},400);
+    $('.searchcancel').animate({'opacity':'0'},300);
+    $('.search').animate({'top':'37vh'},300)
+      .queue(function(next){
+        $('.searchcancel').css('display','none');
+      next();
+    });
+
   }
 
 }

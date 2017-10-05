@@ -12,6 +12,9 @@
 </ion-header>
 
 <ion-content>
+  <button class="menubtn" menuToggle>
+    <ion-icon class="menuicon" name="menu"></ion-icon>
+  </button>
   <div class="home-bkg">
     <div id="backgroundcontent">
       <img class="circles" src="./assets/icon/circles.png"/>
@@ -20,7 +23,8 @@
       </div>
     </div>
     <div class="search">
-      <ion-searchbar class="searchbar" (click)="searchbar();" [(ngModel)]="search" (ionInput)="onInput($event)"></ion-searchbar>
+      <p class="searchcancel" (click)="cancelsearch($event);">Cancel</p>
+      <ion-searchbar [showCancelButton]="false" class="searchbar" (click)="searchbar();" [(ngModel)]="search" (ionInput)="onInput($event)"></ion-searchbar>
     </div>
   </div>
   <div class="categorycontainer">
@@ -33,7 +37,16 @@
   </div>
 
   <div class="searchresults">
-    <ion-list>
+    <ion-list class="tutorresults">
+      <h1 class="resulttext">CATEGORIES</h1>
+      <div *ngFor="let category of searchCategories">
+        <div>
+          <h1 class="categoryresults"> {{category}} </h1>
+        </div>
+      </div>
+    </ion-list>
+    <ion-list class="tutorresults">
+        <h1 class="resulttext">TUTORS</h1>
         <div *ngFor="let searchTutor of searchTutors" class="profileitem" (click)="userSelected(tutor)">
           <div class="profilecard">
             <img src="./assets/icon/default-profile.png" class="home_profilepic"/>
@@ -43,14 +56,7 @@
           </div>
         </div>
     </ion-list>
-
-    <ion-list>
-      <div *ngFor="let category of searchCategories">
-        <div>
-          {{category}}
-        </div>
-      </div>
-    </ion-list>
+    <br/><br/><br/><br/><br/>
   </div>
 
 </ion-content>
