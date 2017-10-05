@@ -16,11 +16,17 @@ export class Category {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService) {
     this.category = navParams.get('category');
-    ds.dsInstance.rpc.make('searchTutor', {subject: this.category}, function(error, data) {
+    var type = "category";
+    if (Object.keys(this.ds.dataRecord.get('categories')).indexOf(this.category) != -1) {
+      type = "subject";
+    }
+
+    ds.dsInstance.rpc.make(type+'/tutor', {subject: this.category}, function(error, data) {
       if (error) throw error
       this.tutors = data.data;
     }.bind(this));
-    ds.dsInstance.event.subscribe('tutor/'+this.category, function(data) {
+
+    ds.dsInstance.event.subscribe(type+'/tutor/'+this.category, function(data) {
       this.tutors = data.data;
     }.bind(this));
   }
