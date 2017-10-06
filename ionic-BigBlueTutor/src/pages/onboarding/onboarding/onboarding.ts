@@ -10,10 +10,13 @@ import * as $ from 'jquery';
   templateUrl: 'onboarding.html',
 })
 export class OnboardingPage {
+  bio;
   constructor(public navCtrl: NavController, public navParams:NavParams,public menuCtrl:MenuController, private ds: DsService) {
   }
 
   register() {
+    console.log('hi');
+    this.ds.dsInstance.rpc.make('changeDescription', {description: this.bio}, () => {})
     //do additional calls first
     this.navCtrl.setRoot(HomePage);
   }
@@ -28,4 +31,5 @@ export class OnboardingPage {
   bioInput(){
     $('.bioInput').css('border-color','#5576FF');
   }
+
 }
