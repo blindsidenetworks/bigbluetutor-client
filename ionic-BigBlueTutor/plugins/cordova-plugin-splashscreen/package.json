@@ -1,5 +1,5 @@
 {
-  "_from": "cordova-plugin-splashscreen@~4.0.1",
+  "_from": "cordova-plugin-splashscreen@^4.0.3",
   "_id": "cordova-plugin-splashscreen@4.0.3",
   "_inBundle": false,
   "_integrity": "sha1-dzzRNjwfO6y5kBZj6eN5PdPgoZ0=",
@@ -8,12 +8,12 @@
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-splashscreen@~4.0.1",
+    "raw": "cordova-plugin-splashscreen@^4.0.3",
     "name": "cordova-plugin-splashscreen",
     "escapedName": "cordova-plugin-splashscreen",
-    "rawSpec": "~4.0.1",
+    "rawSpec": "^4.0.3",
     "saveSpec": null,
-    "fetchSpec": "~4.0.1"
+    "fetchSpec": "^4.0.3"
   },
   "_requiredBy": [
     "#USER",
@@ -21,8 +21,8 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-splashscreen/-/cordova-plugin-splashscreen-4.0.3.tgz",
   "_shasum": "773cd1363c1f3bacb9901663e9e3793dd3e0a19d",
-  "_spec": "cordova-plugin-splashscreen@~4.0.1",
-  "_where": "/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/node_modules",
+  "_spec": "cordova-plugin-splashscreen@^4.0.3",
+  "_where": "/home/cody/Desktop/bigbluetutor-client/ionic-BigBlueTutor/node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },

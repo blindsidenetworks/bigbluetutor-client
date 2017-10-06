@@ -1,19 +1,19 @@
 {
-  "_from": "cordova-plugin-inappbrowser@1.7.1",
+  "_from": "cordova-plugin-inappbrowser@^1.7.1",
   "_id": "cordova-plugin-inappbrowser@1.7.1",
   "_inBundle": false,
   "_integrity": "sha1-Q1tD9ZH+e/qV6pjb4ABIQf5ZulE=",
   "_location": "/cordova-plugin-inappbrowser",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-inappbrowser@1.7.1",
+    "raw": "cordova-plugin-inappbrowser@^1.7.1",
     "name": "cordova-plugin-inappbrowser",
     "escapedName": "cordova-plugin-inappbrowser",
-    "rawSpec": "1.7.1",
+    "rawSpec": "^1.7.1",
     "saveSpec": null,
-    "fetchSpec": "1.7.1"
+    "fetchSpec": "^1.7.1"
   },
   "_requiredBy": [
     "#USER",
@@ -21,8 +21,8 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-inappbrowser/-/cordova-plugin-inappbrowser-1.7.1.tgz",
   "_shasum": "435b43f591fe7bfa95ea98dbe0004841fe59ba51",
-  "_spec": "cordova-plugin-inappbrowser@1.7.1",
-  "_where": "/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/node_modules",
+  "_spec": "cordova-plugin-inappbrowser@^1.7.1",
+  "_where": "/home/cody/Desktop/bigbluetutor-client/ionic-BigBlueTutor/node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },

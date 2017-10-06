@@ -1,28 +1,28 @@
 {
-  "_from": "cordova-plugin-statusbar@2.2.2",
-  "_id": "cordova-plugin-statusbar@2.2.2",
+  "_from": "cordova-plugin-statusbar@^2.2.2",
+  "_id": "cordova-plugin-statusbar@2.2.3",
   "_inBundle": false,
-  "_integrity": "sha1-nFM0JqKb0ojnOx86iXLuFkRQ+2s=",
+  "_integrity": "sha1-UcXgKtQzvr0LDcl3pEbrkd/uFQI=",
   "_location": "/cordova-plugin-statusbar",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-statusbar@2.2.2",
+    "raw": "cordova-plugin-statusbar@^2.2.2",
     "name": "cordova-plugin-statusbar",
     "escapedName": "cordova-plugin-statusbar",
-    "rawSpec": "2.2.2",
+    "rawSpec": "^2.2.2",
     "saveSpec": null,
-    "fetchSpec": "2.2.2"
+    "fetchSpec": "^2.2.2"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.2.2.tgz",
-  "_shasum": "9c533426a29bd288e73b1f3a8972ee164450fb6b",
-  "_spec": "cordova-plugin-statusbar@2.2.2",
-  "_where": "/home/robin/ionic-BigBlueTutor/bigbluetutor-client/ionic-BigBlueTutor/node_modules",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.2.3.tgz",
+  "_shasum": "51c5e02ad433bebd0b0dc977a446eb91dfee1502",
+  "_spec": "cordova-plugin-statusbar@^2.2.2",
+  "_where": "/home/cody/Desktop/bigbluetutor-client/ionic-BigBlueTutor/node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },
@@ -77,5 +77,5 @@
     "test": "npm run jshint"
   },
   "types": "./types/index.d.ts",
-  "version": "2.2.2"
+  "version": "2.2.3"
 }
