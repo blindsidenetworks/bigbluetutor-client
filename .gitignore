@@ -1,4 +1,9 @@
 Pods/
 node_modules/
-node-modules/
 www/build/
+www/
+*.swp
+*.DS_Store
+platforms/
+plugins/
+.sourcemaps/
