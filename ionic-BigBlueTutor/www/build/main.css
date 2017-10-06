@@ -25220,24 +25220,272 @@ h1, p {
   }
 }
 
-button {
+.bluebutton {
   font-family: 'Karla', sans-serif;
   background-color: #5576FF;
   font-weight: bold;
+  color: white;
 }
 
-.ion-button, .button-ios, .button-ios.activated {
+.bluebutton:active {
+  background-color: white !important;
+  color: #5576FF !important;
+  border: 1px solid #5576FF;
+}
+
+.whitebutton {
+  font-family: 'Karla', sans-serif;
+  background-color: white;
+  border: 1px solid #5576FF;
+  color: #5576FF;
+  font-weight: bold;
+}
+
+.whitebutton:active {
+  color: white;
+}
+
+.button-ios.activated {
   background-color: #5576FF;
+  color: white;
 }
 
 .center {
+  width: 100%;
   display: block;
   margin: auto;
+  text-align: center;
+}
+
+.buttonicon {
+  height: 25px;
+}
+
+.icononlybtn {
+  background-color: white !important;
+  color: none;
+  outline: none;
+}
+
+.nomargin {
+  margin: 0px;
+}
+
+.searchbar-ios {
+  background: #969696;
+}
+
+.menu {
+  background-color: linear-gradient(224deg, #0F65D1, #5F99E3) !important;
+}
+
+page-home #header {
+  text-align: center;
+}
+
+page-home .searchbar {
+  position: fixed;
+  z-index: 100;
+  overflow: auto;
+}
+
+page-home .home_categorytitle {
+  border: none;
+}
+
+page-home .categoryheading {
+  margin-left: 15px;
+}
+
+page-home .tutorchoices {
+  overflow: auto;
+  padding-bottom: 20px;
+  margin-top: 30px;
+  width: 100%;
+  border-bottom: 2px solid #F7F7F7;
+}
+
+page-home .home_profilepic {
+  margin-right: 16px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #969696;
+  border-radius: 50%;
+}
+
+page-home .categorycontainer {
+  border-radius: 0px !important;
+  border: none;
+  overflow: visible;
+  margin-bottom: 100px;
+  background-color: #F9FBFF;
+}
+
+page-home .profilecard {
+  display: block;
+  background-color: white;
+  border: 1px solid #F7F7F7;
+  border-radius: 12px;
+  contain: auto;
+  padding: 10px;
+  float: left;
+  width: 100%;
+  -webkit-box-shadow: 0px 1px 2px #969696;
+  box-shadow: 0px 1px 2px #969696;
+}
+
+@media screen and (max-width: 375px) {
+  page-home .profilecard {
+    max-width: 155px;
+  }
+}
+
+page-home .profileitem {
+  float: left;
+  width: 45%;
+  overflow: visible;
+  margin: 2.5%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  page-home .profileitem {
+    width: 28.5%;
+    margin-left: 2.3%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  page-home .tutorchoices {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+  page-home .profileitem {
+    width: 21%;
+    margin-left: 1.5%;
+  }
+}
+
+page-home .card_name {
+  margin-top: 10px;
+}
+
+page-home .card_info {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+page-home .listbottomspace {
+  margin-bottom: 200px;
+  overflow: visible;
+}
+
+page-home .space {
+  height: 20px;
+  width: 100vw;
+}
+
+page-inbox .inbox_msg {
+  border-bottom: 1px solid #969696;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+page-inbox .inbox_profilepic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #969696;
+  display: inline;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 16px;
+}
+
+page-inbox .inbox_name {
+  display: inline;
+}
+
+page-login .login {
+  display: block;
+}
+
+page-login .loginenter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  border-radius: 20px;
+  min-width: 330px;
+  width: 20%;
+  margin: auto;
+}
+
+page-login ion-list {
+  width: 100%;
+  min-width: 310px;
+  margin: auto;
+}
+
+page-login .loginlist {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
 }
 
 page-login .loginbtn {
   max-width: 10%;
-  min-width: 343px;
+  min-width: 330px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+page-login .logo {
+  display: block;
+  background-color: transparent;
+  margin-top: 15%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+page-login .logoimg {
+  background: none;
+  width: 40%;
+  height: auto;
+  max-width: 200px;
+  contain: none;
+}
+
+page-login .content-ios, page-login .content-md, page-login .content-wp {
+  background-color: transparent;
+}
+
+page-login .background {
+  position: absolute;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(left, #7791FB, #264CEC);
+  background: -webkit-gradient(linear, left top, right top, from(#7791FB), to(#264CEC));
+}
+
+page-login .welcome {
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+}
+
+@media screen and (min-height: 700px) {
+  page-login .logo {
+    margin-top: 5% !important;
+  }
 }
 
 page-message #header {
@@ -25249,17 +25497,197 @@ page-message #header {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  vertical-align: middle;
+  margin-left: 55px;
 }
 
-page-message #requestContainer {
+page-message .username {
+  margin: auto;
+  width: 100%;
+}
+
+page-message .messageheader {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  height: 100px;
+  padding: 15px;
+  background-color: white;
+}
+
+page-message #requestButton {
+  font-size: 12px;
+  width: 75px;
+  height: 45px;
+  margin-left: auto;
+}
+
+page-message .inputmessage {
+  width: 100%;
+  margin: auto;
+  padding-left: 20px;
+}
+
+page-message .messagefield {
+  border-top: 1px solid #969696;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  position: fixed;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+page-message .msgsend {
+  font-size: 14px;
+  width: 80px;
+}
+
+page-message .sentmsgfield {
+  background-color: #F7F7F7;
+  min-height: calc(100vh - 147px);
+  margin-bottom: 48px;
+  border: none;
+}
+
+page-message .sessionmsg {
+  text-align: center;
+}
+
+page-message .sessionreq {
+  display: block;
+  width: 230px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: auto;
+}
+
+page-message .reqtext {
+  font-size: 16px;
+  font-weight: bold;
+  vertical-align: middle;
+  overflow: inherit;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+page-message .msg_bbbsession_buttons {
+  margin: auto;
+  vertical-align: middle;
+}
+
+page-message .msg_bbbsession_title {
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  width: inherit;
+  border-radius: 12px 12px 0px 0px;
+  background-color: #5576FF;
+  text-align: center;
+  height: 32px;
+  vertical-align: middle;
+  line-height: 32px;
+  overflow: auto;
+}
+
+page-message .msg_bbbsession_body {
+  margin-top: -1px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: inherit;
+  height: 70px;
+  border: 1px solid #5576FF;
+  border-radius: 0px 0px 12px 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+page-message .textusername {
+  display: inline-block;
+}
+
+page-message .myusername {
+  margin-right: 8px;
+  margin-left: 16px;
+  float: right;
+  vertical-align: bottom;
+}
+
+page-message .otherusername {
+  margin-right: 16px;
+  margin-left: 8px;
+}
+
+page-message .message {
+  background-color: #F7F7F7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: inline-block;
+}
+
+page-message .textmessagebox {
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  max-width: 80%;
+}
+
+page-message .othertextmsgbox {
+  background-color: #dddddd;
+  border-radius: 2px 10px 10px 10px;
+}
+
+page-message .mytextmsgbox {
+  background: -webkit-gradient(linear, left top, left bottom, from(left), color-stop(#7791FB), to(#264CEC));
+  background: linear-gradient(left, #7791FB, #264CEC);
+  background: -webkit-gradient(linear, left top, right top, from(#7791FB), to(#264CEC));
+  background-color: #264CEC;
+  float: right;
+  border-radius: 10px 2px 10px 10px;
+}
+
+page-message .textmessage {
+  font-weight: 500;
+}
+
+page-message .mytextmsg {
+  color: white !important;
+}
+
+page-message .othertextmsg {
+  color: black;
+}
+
+page-message .mymessages {
+  float: right;
+}
+
+page-message ion-label {
+  white-space: normal;
 }
 
 .iAm {
@@ -25278,16 +25706,14 @@ page-message #requestContainer {
   margin: auto;
 }
 
-.studentimg {
-  padding-bottom: 5px;
-  width: 50%;
-  max-width: 300px;
+#studentimg {
+  padding-bottom: 8px;
+  width: 60%;
 }
 
-.tutorimg {
+#tutorimg {
   padding-bottom: 5px;
-  width: 55%;
-  max-width: 300px;
+  width: 65%;
 }
 
 .fulldiv {
@@ -25296,10 +25722,52 @@ page-message #requestContainer {
   padding-bottom: 24px;
 }
 
+.vertical_side {
+  position: relative;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+@media screen and (min-width: 600px) {
+  .vertical_side {
+    height: 50vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40% !important;
+    float: left;
+  }
+  #studentimg {
+    width: 350px;
+  }
+  #tutorimg {
+    width: 350px;
+  }
+  .img {
+    position: absolute;
+    bottom: 60px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .whitebtn {
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .choicenext {
+    padding-top: 100px !important;
+  }
+}
+
 .whitebtn {
   color: #5576FF;
   background-color: white;
+  font-family: 'Karla', sans-serif;
   border: 2px solid #5576FF;
+  font-weight: bold;
 }
 
 .whitebtn:active {
@@ -25317,6 +25785,10 @@ page-message #requestContainer {
   display: block;
 }
 
+.choicenext:active {
+  background-color: white;
+}
+
 page-profile #profileInfo {
   text-align: center;
 }
@@ -25325,13 +25797,48 @@ page-profile #name {
   font-size: 36px;
 }
 
+.closebtn {
+  font-size: 24px;
+  margin: auto;
+  font-weight: bold;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+ion-list-header {
+  width: 100%;
+}
+
+.requesttitle {
+  font-size: 16px;
+}
+
+.requestbtn {
+  display: block;
+  margin: auto;
+  margin-bottom: 32px;
+}
+
+.requestmodal {
+  padding: 20px;
+}
+
+.requestheader {
+  height: 100px;
+}
+
+.headertext {
+  display: block;
+}
+
 .categoryitem {
   text-transform: uppercase;
   font-weight: bold;
-  background-color: #F7F7F7;
   padding: 4px;
   border-radius: 27px;
   padding-left: 20px;
+  background-color: none;
 }
 
 .list-ios .item-block .item-inner {
@@ -25342,18 +25849,19 @@ page-profile #name {
   float: right;
 }
 
-.categorydiv {
+.onboardingnav {
+  padding-top: 45px;
+  padding-bottom: 30px;
+}
+
+.categorycontainer {
   border: 2px solid #D1D1D1;
   border-radius: 27px;
   margin-bottom: 12px;
 }
 
-.categorydiv:active {
-  border: 2px solid #5576FF;
-}
-
 .subcategoryitem {
-  border-radius: 50%;
+  border-radius: 70px;
 }
 
 .selected {
@@ -25364,6 +25872,15 @@ page-profile #name {
   max-width: 500px;
   display: block;
   margin: auto;
+}
+
+.space {
+  height: 40px;
+  width: 100vw;
+}
+
+.headertitle {
+  padding-right: 45px;
 }
 
 page-user #userInfo {
@@ -25383,4 +25900,20 @@ page-user #imageContainer {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+page-user .profilepic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+page-user .favourite {
+  color: #ffe83a;
+  font-size: 25px;
+}
+
+page-user .profilename {
+  font-size: 20px;
+  margin-bottom: 10px;
 }

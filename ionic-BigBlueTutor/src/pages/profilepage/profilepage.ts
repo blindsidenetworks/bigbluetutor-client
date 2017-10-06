@@ -8,8 +8,9 @@ import { DsService } from '../../shared/ds.service';
 })
 export class ProfilePage {
   username:any;
+  user:any;
   constructor(public navCtrl: NavController, private ds: DsService) {
-    console.log(ds)
-    this.username = this.ds.profileRecord.get("username")
+    this.username = this.ds.profileRecord.get("username");
+    this.user = this.ds.getRecord("user/"+this.username);
   }
 }

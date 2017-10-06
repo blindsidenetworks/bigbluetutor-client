@@ -48,16 +48,16 @@ export class CreateUsernamePage {
                 var user = googleRecord.get();
                 if(user && user.username && user.googleID)
                 {
-                  this.ds.getRecord(googleRecord.get("username")).whenReady(profileRecord =>
+                  this.ds.getRecord("profile/" + googleRecord.get("username")).whenReady(profileRecord =>
                   {
                     this.ds.profileRecord = profileRecord;
                     this.ds.getRecord("data").whenReady(dataRecord =>
                     {
                       this.ds.dataRecord = dataRecord;
-                      if(!profileRecord.get("onboardingComplete"))
+                      // if(profileRecord.get("onboardingComplete"))
                         this.goToOnboarding();
-                      else
-                        this.goToHome();
+                      // else
+                        // this.goToOnboarding();
                     });
                   });
                 }

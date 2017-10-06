@@ -7,29 +7,32 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.blindsidenetworks.bigbluetutor"
+        },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.blindsidenetworks.bigbluetutor"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.blindsidenetworks.bigbluetutor"
         },
         "cordova-plugin-googleplus": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.blindsidenetworks.bigbluetutor"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.blindsidenetworks.bigbluetutor"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.blindsidenetworks.bigbluetutor"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.blindsidenetworks.bigbluetutor"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.blindsidenetworks.bigbluetutor"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.blindsidenetworks.bigbluetutor"
         }
     },
     "dependent_plugins": {}

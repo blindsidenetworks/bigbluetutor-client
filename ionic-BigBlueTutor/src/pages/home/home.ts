@@ -15,7 +15,7 @@ export class HomePage {
   categories;
   tutors;
   tutorsData;
-  constructor(public navCtrl: NavController, public events: Events, private ds: DsService, private rls:RecordListenService) {
+  constructor(public navCtrl: NavController, public events: Events, private ds: DsService, private rls: RecordListenService) {
     var categoryData = ds.dataRecord.get('categories');
     this.categories = [];
     this.tutorsData = {};
@@ -31,6 +31,7 @@ export class HomePage {
         this.tutors[data.subject] = data.data;
       }.bind(this));
     }
+    ds.dsInstance.rpc.make("getMessages", {username: ds.profileRecord.get("username"), googleID: ds.profileRecord.get("googleID")}, function(error, result){if(error) console.log(error);});
   }
 
   onInput(event) {
@@ -56,8 +57,8 @@ export class HomePage {
   }
 
   userSelected(tutor) {
-    if (tutor === this.ds.profileRecord.get('username')) {
-      this.navCtrl.push(ProfilePage);
+    if (tutor.username === this.ds.profileRecord.get('username')) {
+      this.navCtrl.setRoot(ProfilePage);
     }else {
       this.navCtrl.setRoot(UserPage, {user:tutor});
     }

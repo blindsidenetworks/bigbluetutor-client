@@ -1,19 +1,35 @@
 <ion-content view-title="Login" name="login-view">
+  <div class=background>
+      <img class="circles" src="./assets/icon/circles.png"/>
+  </div>
+
   <ion-content padding>
-    <!--
-    <div class="list list-inset">
-      <ion-list>
-      <ion-item class="item item-input">
-        <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
-      </ion-item>
-      <ion-item class="item item-input">
-        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
-      </ion-item>
-      </ion-list>
+    <div class="logincontent">
+      <div class="logo">
+        <ion-img class="logoimg" src="./assets/icon/logo.png"></ion-img>
+      </div>
+      <h1 class="welcome">Welcome to <br/> BigBlueTutor</h1>
+
+      <div class="loginenter">
+        <div class="loginlist">
+          <div class="list list-inset">
+            <ion-list>
+            <ion-item class="item item-input">
+              <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+            </ion-item>
+            <ion-item class="item item-input">
+              <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+
+      <div class="login">
+        <button ion-button round class="button button-block whitebutton loginbtn" (tap)="login()">LOGIN</button>
+        <button ion-button round class="button button-block whitebutton loginbtn" (tap)="googleLogin()">Login with Google Account</button>
+      </div>
     </div>
-    <button ion-button style="width:20%" class="button button-block button-calm" (tap)="login()">Login</button>
-    <br/><br/>
-  -->
-    <button ion-button style="width:50%" class="button button-block button-calm" (tap)="googleLogin()">Login with Google Account</button>
   </ion-content>
+
 </ion-content>

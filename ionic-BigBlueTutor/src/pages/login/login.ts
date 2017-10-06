@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { OnboardingPage } from '../onboarding/roleChoice/roleChoice';
 import { CreateUsernamePage } from '../createusername/createusername'
@@ -15,7 +15,7 @@ export class LoginPage {
   googleID: string;
   password: string;
   browser: any;
-  constructor(public navCtrl: NavController, private ds: DsService, private googlePlus: GooglePlus) {
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, private ds: DsService, private googlePlus: GooglePlus) {
   }
 
   login() {
@@ -31,6 +31,7 @@ export class LoginPage {
   }
 
   linkProfile(error, hasRecord) {
+
     var record = this.ds.getRecord("profile/"+this.username);
     if(!hasRecord) {
       record.set({
@@ -70,7 +71,8 @@ export class LoginPage {
   }
 
   handleGoogleLogin(success, data) {
-    console.log(success);
+    console.log("Google login success:", success);
+    console.log(data);
     if(success) {
       this.ds.dsInstance.record.has("googleID/"+this.googleID, this.linkGoogleProfile.bind(this));
     }
@@ -85,16 +87,16 @@ export class LoginPage {
         var user = googleRecord.get();
         if(user && user.username && user.googleID)
         {
-          this.ds.getRecord(googleRecord.get("username")).whenReady(profileRecord =>
+          this.ds.getRecord("profile/" + googleRecord.get("username")).whenReady(profileRecord =>
           {
             this.ds.profileRecord = profileRecord;
             this.ds.getRecord("data").whenReady(dataRecord =>
             {
               this.ds.dataRecord = dataRecord;
-              if(!profileRecord.get("onboardingComplete"))
+              // if(profileRecord.get("onboardingComplete"))
                 this.goToHome();
-              else
-                this.goToHome();
+              // else
+                // this.goToOnboarding();
             });
           });
         }
@@ -122,5 +124,9 @@ export class LoginPage {
 
   goToHome() {
     this.navCtrl.setRoot(HomePage);
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.swipeEnable( false )
   }
 }
