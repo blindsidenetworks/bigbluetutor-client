@@ -4,7 +4,7 @@
       <ion-slide>
         <div class="OBcontainer">
           <h2 class="OBTitle">Tell us a little about yourself</h2>
-          <div class="bioInput">
+          <div class="bioInput" [(ngModel)]="bio">
             <ion-input (click)="bioInput()" placeholder="Tap to Start Typing"></ion-input>
           </div>
         </div>
@@ -32,34 +32,11 @@
             </div>
           </div>
         </div>
-      </ion-slide>
-
-      <!--TUTORS ONLY-->
-      <ion-slide>
-        <div class="OBcontainer">
-          <h2 class="OBTitle">What grade level would you like to tutor?</h2>
-          <div class="gradeLevel">
-            <div class="gradecol">
-              <button class="gradebutton">
-                <img class="gradeimg" src="./assets/OBimgs/K-8.png"/>
-                <p class="gradetext">K-8</p>
-              </button>
-              <button class="gradebutton">
-                <img class="gradeimg" src="./assets/OBimgs/Highschool.png"/>
-                <p class="gradetext">Highschool</p>
-              </button>
-              <button class="gradebutton">
-                <img class="gradeimg" src="./assets/OBimgs/Uni.png"/>
-                <p class="gradetext">University</p>
-              </button>
-            </div>
-          </div>
+        <div class="OBbuttondiv" (click)="register()" >
+          <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
         </div>
       </ion-slide>
 
     </ion-slides>
-    <div class="OBbuttondiv">
-      <button ion-button round (click)="register()" class="nextbtn bluebutton registerbtn">REGISTER</button>
-    </div>
   </div>
 </ion-content>
