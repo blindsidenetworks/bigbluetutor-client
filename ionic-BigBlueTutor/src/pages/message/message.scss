@@ -27,7 +27,7 @@ page-message {
     padding-left: 20px;
   }
   .messagefield{
-    border-top: 1px solid $grey;
+    border-top: 1px solid $lightgrey;
     display: flex;
     justify-content: flex-start;
     position: fixed;
@@ -41,7 +41,7 @@ page-message {
       width: 80px;
   }
   .sentmsgfield{
-    background-color: $lightgrey;
+    background-color: $lightbkggrey;
     min-height: calc(100vh - 147px);
     margin-bottom: 48px;
     border: none;

@@ -16,7 +16,8 @@
 // automatically applied to the <body> element in the app.
 
 $blue: #5576FF;
-$lightgrey: #F7F7F7;
+$lightgrey: #e2e2e2;
+$lightbkggrey: #f7f7f7;
 $yellow: #ffe83a;
 $grey: #7C7C7C;
 $background: #F9FBFF;
@@ -101,6 +102,13 @@ h1, p{
   background: $grey;
 }
 
+.OBtitle{
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 50px;
+}
+
 
 
 
@@ -114,7 +122,7 @@ h1, p{
   float: left;
   width: 100%;
 
-  box-shadow: 0px 1px 2px $grey;
+  box-shadow: 0px 1px 2px $lightgrey;
 }
 @media screen and (max-width: 375px) {
     .profilecard {
@@ -144,10 +152,16 @@ h1, p{
 
 .home_profilepic{
   margin-right: 16px;
-  height: 50px;
-  width: 50px;
-  border: 1px solid $grey;
+  height: 60px;
+  width: 60px;
+  border: 1px solid $lightgrey;
   border-radius: 50%;
+}
+
+.cardline{
+  width: 100%;
+  height: 1px;
+  background-color: $lightgrey;
 }
 
 .tutorresults{
@@ -164,9 +178,12 @@ h1, p{
 }
 
 .card_name{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 6px;
   margin-top: 10px;
 }
 .card_info{
   margin-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 6px;
 }
