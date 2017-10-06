@@ -3,6 +3,7 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { HomePage } from '../../home/home';
 import { TutorRegister } from '../tutorRegister/tutorRegister'
 import { DsService } from '../../../shared/ds.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'page-onboarding',
@@ -23,5 +24,8 @@ export class OnboardingPage {
   //Enable swipe again
   ionViewDidLeave() {
    this.menuCtrl.swipeEnable( true )
+  }
+  bioInput(){
+    $('.bioInput').css('border-color','#5576FF');
   }
 }
