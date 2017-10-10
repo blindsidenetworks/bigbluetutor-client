@@ -4,6 +4,7 @@ import { HomePage } from '../../home/home';
 import { DsService } from '../../../shared/ds.service';
 import { ToastController } from 'ionic-angular';
 import {OnboardingPage} from '../onboarding/onboarding';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'page-tutorRegister',

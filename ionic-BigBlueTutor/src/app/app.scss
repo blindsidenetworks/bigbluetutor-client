@@ -18,6 +18,7 @@
 $blue: #5576FF;
 $lightgrey: #e2e2e2;
 $lightbkggrey: #f7f7f7;
+$darkgrey: #565656;
 $yellow: #ffe83a;
 $grey: #7C7C7C;
 $background: #F9FBFF;
@@ -109,6 +110,9 @@ h1, p{
   padding-top: 50px;
 }
 
+.list-ios .item-block .item-inner {
+    border-bottom: none !important;
+}
 
 
 

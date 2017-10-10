@@ -3,6 +3,11 @@ page-user
   #userInfo
   {
     text-align: center;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid $lightgrey;
+    background: linear-gradient(bottom, #DCE3EC, #FFFFFF);
+    background: -webkit-gradient(linear, top, bottom, from(#DCE3EC), to(#FFFFFF));
   }
 
   #name
@@ -27,8 +32,42 @@ page-user
   .profilename{
     font-size: 20px;
     margin-bottom: 10px;
+    color: $darkgrey;
+    font-weight: 400;
   }
   .favouritebtn{
 
+  }
+
+
+  .profilecontent{
+    padding: 16px;
+  }
+  .profiletitle{
+    margin-top: 8px;
+    font-weight: bold;
+    color: $darkgrey;
+  }
+  .biotext{
+    color: $grey;
+  }
+  .gradebutton{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: white;
+    border: 2px solid $lightgrey;
+    height: 95px;
+    width: 112px;
+  }
+  .gradeimg{
+    height: 50%;
+    width: auto;
+  }
+  .gradetext{
+    margin-top: 8px;
+    margin-bottom: 0px;
   }
 }
