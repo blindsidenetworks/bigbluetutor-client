@@ -1,5 +1,5 @@
 {
-  "_from": "cordova-plugin-statusbar@^2.2.2",
+  "_from": "cordova-plugin-statusbar@^2.2.3",
   "_id": "cordova-plugin-statusbar@2.2.3",
   "_inBundle": false,
   "_integrity": "sha1-UcXgKtQzvr0LDcl3pEbrkd/uFQI=",
@@ -8,12 +8,12 @@
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-statusbar@^2.2.2",
+    "raw": "cordova-plugin-statusbar@^2.2.3",
     "name": "cordova-plugin-statusbar",
     "escapedName": "cordova-plugin-statusbar",
-    "rawSpec": "^2.2.2",
+    "rawSpec": "^2.2.3",
     "saveSpec": null,
-    "fetchSpec": "^2.2.2"
+    "fetchSpec": "^2.2.3"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.2.3.tgz",
   "_shasum": "51c5e02ad433bebd0b0dc977a446eb91dfee1502",
-  "_spec": "cordova-plugin-statusbar@^2.2.2",
+  "_spec": "cordova-plugin-statusbar@^2.2.3",
   "_where": "/home/cody/Desktop/bigbluetutor-client/ionic-BigBlueTutor/node_modules",
   "author": {
     "name": "Apache Software Foundation"

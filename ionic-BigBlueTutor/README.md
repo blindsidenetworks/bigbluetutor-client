@@ -1,26 +1,33 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+#BBT-client
 
-## How to use this template
+A BigBlueButton platform app for tutors and students.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+Current Platforms:
+Android
+Browser
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+Future Platforms:
+iOS
 
-### With the Ionic CLI:
+ionic plugins required:
+InAppBrowser
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+How it works:
+Tutors:
+1. Sign up
+2. Choose categories
+3. Students will now find you!
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+Students:
+1. Sign up
+2. Choose categories
+3. Find tutors for categories
+4. Connect with Tutors!
 
-Then, to run it, cd into `myBlank` and run:
+Installation:
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
 
-Substitute ios for android if not on a Mac.
-
+details:
+This project is built with the ionic client for mobile and web applications.
+This repository contains only the client code required and connects to a single server currently
+To enter meetings, all tutor-student interactions are done through [BigBlueButton](https://github.com/bigbluebutton/bigbluebutton)

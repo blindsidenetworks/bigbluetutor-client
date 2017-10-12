@@ -17,25 +17,30 @@ import { Message } from '../pages/message/message';
 import { ProfilePage } from '../pages/profilepage/profilepage';
 import { LoginPage } from '../pages/login/login';
 import { UserPage } from '../pages/userpage/userpage';
-import { OnboardingPage } from '../pages/onboarding/roleChoice/roleChoice';
-import { TutorRegister } from '../pages/tutorRegister/tutorRegister';
+import { RoleChoice } from '../pages/onboarding/roleChoice/roleChoice';
+import { TutorRegister } from '../pages/onboarding/tutorRegister/tutorRegister';
 import { Category } from '../pages/category/category';
-import { CreateUsernamePage } from '../pages/createusername/createusername'
+import { CreateUsernamePage } from '../pages/createusername/createusername';
+import { PreOnboarding } from '../pages/preOnboarding/preOnboarding';
+import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     Inbox,
+    RoleChoice,
+    OnboardingPage,
     Message,
     ProfilePage,
     LoginPage,
     UserPage,
-    OnboardingPage,
     TutorRegister,
     Category,
     RequestPopover,
-    CreateUsernamePage
+    CreateUsernamePage,
+    PreOnboarding,
+    OnboardingPage
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,7 @@ import { CreateUsernamePage } from '../pages/createusername/createusername'
     MyApp,
     HomePage,
     Inbox,
+    RoleChoice,
     OnboardingPage,
     Message,
     ProfilePage,
@@ -54,7 +60,9 @@ import { CreateUsernamePage } from '../pages/createusername/createusername'
     TutorRegister,
     Category,
     RequestPopover,
-    CreateUsernamePage
+    CreateUsernamePage,
+    PreOnboarding,
+    OnboardingPage
   ],
   providers: [
     StatusBar,

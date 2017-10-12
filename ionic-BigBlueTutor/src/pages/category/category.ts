@@ -16,21 +16,27 @@ export class Category {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService) {
     this.category = navParams.get('category');
-    var tutors = ds.dataRecord.get('tutors');
-    this.tutors = [];
-    for (var i in tutors) {
-      if (tutors[i].categories.indexOf(this.category) != -1) {
-        this.tutors.push(tutors[i]);
-      }
+    var type = "category";
+    if (Object.keys(this.ds.dataRecord.get('categories')).indexOf(this.category) != -1) {
+      type = "subject";
     }
+
+    ds.dsInstance.rpc.make(type+'/tutor', {subject: this.category}, function(error, data) {
+      if (error) throw error
+      this.tutors = data.data;
+    }.bind(this));
+
+    ds.dsInstance.event.subscribe(type+'/tutor/'+this.category, function(data) {
+      this.tutors = data.data;
+    }.bind(this));
   }
 
   userSelected(tutor) {
-    console.log(tutor);
+    //console.log(tutor);
     if (tutor === this.ds.profileRecord.get('username')) {
-      this.navCtrl.push(ProfilePage);
+      this.navCtrl.setRoot(ProfilePage);
     }else {
-      this.navCtrl.setRoot(UserPage, {user:tutor});
+      this.navCtrl.push(UserPage, {user:tutor});
     }
   }
 
