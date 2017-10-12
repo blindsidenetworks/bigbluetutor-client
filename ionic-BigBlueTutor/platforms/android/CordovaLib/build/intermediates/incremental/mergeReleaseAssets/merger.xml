@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/cody/Desktop/bigbluetutor-client/ionic-BigBlueTutor/platforms/android/CordovaLib/assets"/><source path="/home/cody/Desktop/bigbluetutor-client/ionic-BigBlueTutor/platforms/android/CordovaLib/build/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/home/cody/Desktop/bigbluetutor-client/ionic-BigBlueTutor/platforms/android/CordovaLib/src/release/assets"/></dataSet></merger>
