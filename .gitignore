@@ -5,3 +5,4 @@ ionic-BigBlueTutor/www/
 ionic-BigBlueTutor/platforms/
 ionic-BigblueTutor/.sourcemaps/
 Pods/
+package-lock.json
