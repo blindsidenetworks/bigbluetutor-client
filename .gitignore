@@ -1,7 +1,7 @@
-Pods/
 node_modules/
-www/
+ionic-BigBlueTutor/www/
 *.swp
 *.DS_Store
-platforms/
-.sourcemaps/
+ionic-BigBlueTutor/platforms/
+ionic-BigblueTutor/.sourcemaps/
+Pods/
