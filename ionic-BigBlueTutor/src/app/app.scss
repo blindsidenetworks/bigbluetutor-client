@@ -16,9 +16,10 @@
 // automatically applied to the <body> element in the app.
 
 $blue: #5576FF;
-$lightgrey: #F7F7F7;
+$lightgrey: #e2e2e2;
+$lightbkggrey: #f7f7f7;
 $yellow: #ffe83a;
-$grey: #969696;
+$grey: #7C7C7C;
 $background: #F9FBFF;
 
 
@@ -99,4 +100,90 @@ h1, p{
 
 .searchbar-ios{
   background: $grey;
+}
+
+.OBtitle{
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+
+
+
+.profilecard{
+  display: block;
+  background-color: white;
+  border: 1px solid $lightgrey;
+  border-radius: 12px;
+  contain: auto;
+  padding: 10px;
+  float: left;
+  width: 100%;
+
+  box-shadow: 0px 1px 2px $lightgrey;
+}
+@media screen and (max-width: 375px) {
+    .profilecard {
+        max-width: 155px;
+    }
+}
+
+.profileitem{
+  float: left;
+  width: 45%;
+  overflow: visible;
+  margin: 2.5%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .profileitem {
+        width: 28.5%;
+        margin-left: 2.3%;
+    }
+}
+@media screen and (min-width: 1025px){
+    .profileitem {
+        width: 21%;
+        margin-left: 1.5%;
+    }
+}
+
+.home_profilepic{
+  margin-right: 16px;
+  height: 60px;
+  width: 60px;
+  border: 1px solid $lightgrey;
+  border-radius: 50%;
+}
+
+.cardline{
+  width: 100%;
+  height: 1px;
+  background-color: $lightgrey;
+}
+
+.tutorresults{
+  width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.resulttext{
+  font-size: 16px;
+  color: $grey;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.card_name{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+.card_info{
+  margin-bottom: 5px;
+  margin-top: 6px;
 }

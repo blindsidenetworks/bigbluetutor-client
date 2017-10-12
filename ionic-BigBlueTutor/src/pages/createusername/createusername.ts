@@ -2,8 +2,9 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, Platform} from 'ionic-angular';
 import { Events } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
-import { OnboardingPage } from '../onboarding/roleChoice/roleChoice'
+import { RoleChoice } from '../onboarding/roleChoice/roleChoice'
 import { HomePage } from '../home/home'
+import { LoginPage } from '../login/login'
 
 @Component({
   selector: 'page-createusername',
@@ -11,30 +12,35 @@ import { HomePage } from '../home/home'
 })
 export class CreateUsernamePage {
   username: string;
-  googleID: string;
+  idToken: string;
+  error:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public events: Events, private ds: DsService)
   {
-    this.googleID = navParams.get("googleID");
+    this.idToken = navParams.get("idToken");
+    this.username = "";
   }
 
   createUsername()
   {
-    this.ds.dsInstance.rpc.make("createUser", {googleID: this.googleID, username: this.username}, (error, result) =>
+    this.ds.login({idToken: this.idToken, username: this.username}, (success, data) =>
     {
-      if(error)
+      if(!success && data && data.googleError)
       {
-        console.log(error);
+        //Verifying the idToken failed, so go back to the home page
+        this.goToLogin();
       }
-      else if(result && result.error && !result.success)
+      else if(data && data.error && !data.username)
       {
+        //Creating the user failed with an error messase, so display the message
         var errorText = document.getElementById("error");
-        errorText.innerHTML = result.error;
         errorText.style.visibility = "visible";
+        this.error = data.error;
       }
-      else if(result && result.success)
+      else if(data && !data.error && data.username)
       {
-        this.ds.dsInstance.record.has("googleID/"+this.googleID, (error, hasRecord) =>
+        //Creating the user succeeded
+        this.ds.dsInstance.record.has("profile/"+data.username, (error, hasRecord) =>
         {
           if(error)
           {
@@ -43,57 +49,37 @@ export class CreateUsernamePage {
           }
           if(hasRecord)
           {
-            this.ds.getRecord("googleID/"+this.googleID).whenReady(googleRecord =>
+            this.ds.getRecord("profile/" + data.username).whenReady(profileRecord =>
             {
-                var user = googleRecord.get();
-                if(user && user.username && user.googleID)
-                {
-                  this.ds.getRecord("profile/" + googleRecord.get("username")).whenReady(profileRecord =>
-                  {
-                    this.ds.profileRecord = profileRecord;
-                    this.ds.getRecord("data").whenReady(dataRecord =>
-                    {
-                      this.ds.dataRecord = dataRecord;
-                      // if(profileRecord.get("onboardingComplete"))
-                        this.goToOnboarding();
-                      // else
-                        // this.goToOnboarding();
-                    });
-                  });
-                }
+              this.ds.profileRecord = profileRecord;
+              this.ds.getRecord("data").whenReady(dataRecord =>
+              {
+                this.ds.dataRecord = dataRecord;
+                // if(profileRecord.get("onboardingComplete"))
+                  this.goToOnboarding();
+                // else
+                  // this.goToOnboarding();
+              });
             });
           }
         });
-      }
-      /*
-      var record = this.ds.getRecord("googleID/"+this.googleID);
-      record.set({
-        username: this.username,
-        password: '',
-        stars: [],
-        pendingMeetings: [],
-        requestMeetings: [],
-        messages: {},
-        profilePic: "http://www.freeiconspng.com/uploads/msn-people-person-profile-user-icon--icon-search-engine-16.png",
-        meeting: ""
-      });
-      this.ds.profileRecord = record;
-      this.ds.dataRecord = this.ds.getRecord("data")
-      this.ds.dataRecord.whenReady(() => {
-        this.goToOnboarding();
-      })
-      */
+      } //In all other cases, do nothing
     });
   }
 
   goToOnboarding()
   {
-    this.navCtrl.setRoot(OnboardingPage);
+    this.navCtrl.setRoot(RoleChoice);
   }
 
   goToHome()
   {
     this.navCtrl.setRoot(HomePage);
+  }
+
+  goToLogin()
+  {
+    this.navCtrl.setRoot(LoginPage);
   }
 
   hideError()

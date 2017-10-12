@@ -9,8 +9,21 @@ import { DsService } from '../../shared/ds.service';
 export class ProfilePage {
   username:any;
   user:any;
+  online: boolean;
+  status: string;
+
   constructor(public navCtrl: NavController, private ds: DsService) {
     this.username = this.ds.profileRecord.get("username");
     this.user = this.ds.getRecord("user/"+this.username);
+    this.online = false;
+    this.status = "Offline";
+    this.ds.dsInstance.presence.getAll([this.username], (result) =>
+    {
+      if (result)
+      {
+        this.online = result[this.username]
+        this.status =  this.online ? "Online" : "Offline";
+      }
+    });
   }
 }

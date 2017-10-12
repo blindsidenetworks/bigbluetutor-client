@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { OnboardingPage } from '../onboarding/roleChoice/roleChoice';
 import { CreateUsernamePage } from '../createusername/createusername'
+import { RoleChoice } from '../onboarding/roleChoice/roleChoice';
 import { DsService } from '../../shared/ds.service';
 import { GooglePlus } from '@ionic-native/google-plus';
 
@@ -12,8 +12,8 @@ import { GooglePlus } from '@ionic-native/google-plus';
 })
 export class LoginPage {
   username: string;
-  googleID: string;
   password: string;
+  idToken: string;
   browser: any;
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, private ds: DsService, private googlePlus: GooglePlus) {
   }
@@ -60,10 +60,11 @@ export class LoginPage {
 
   googleLogin()
   {
+    this.googleLogout();
     this.googlePlus.login({webClientId: "591220975174-hqfbvf7iuegj6nf1h6jkldeuh3ia72v7.apps.googleusercontent.com", offline: true}).then(res =>
     {
-      this.googleID = res.userId;
-      this.ds.login({idToken: res.idToken}, this.handleGoogleLogin.bind(this));
+      this.idToken = res.idToken;
+      this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
     }).catch(error =>
     {
       console.log("Login error:", error);
@@ -72,54 +73,57 @@ export class LoginPage {
 
   handleGoogleLogin(success, data) {
     console.log("Google login success:", success);
-    console.log(data);
-    if(success) {
-      this.ds.dsInstance.record.has("googleID/"+this.googleID, this.linkGoogleProfile.bind(this));
+    if(success && data && data.username) {
+      this.username = data.username;
+      this.ds.dsInstance.record.has("profile/"+this.username, this.linkGoogleProfile.bind(this));
+    }
+    else if(data && data.needsUsername)
+    {
+      this.goToCreateUsername();
     }
   }
 
   linkGoogleProfile(error, hasRecord) {
-    if(!hasRecord) {
+    if(!hasRecord)
+    {
       this.goToCreateUsername();
-    } else {
-      this.ds.getRecord("googleID/"+this.googleID).whenReady(googleRecord =>
+    }
+    else
+    {
+      this.ds.getRecord("profile/"+this.username).whenReady(profileRecord =>
       {
-        var user = googleRecord.get();
-        if(user && user.username && user.googleID)
+        this.ds.profileRecord = profileRecord;
+        this.ds.getRecord("data").whenReady(dataRecord =>
         {
-          this.ds.getRecord("profile/" + googleRecord.get("username")).whenReady(profileRecord =>
-          {
-            this.ds.profileRecord = profileRecord;
-            this.ds.getRecord("data").whenReady(dataRecord =>
-            {
-              this.ds.dataRecord = dataRecord;
-              // if(profileRecord.get("onboardingComplete"))
-                this.goToHome();
-              // else
-                // this.goToOnboarding();
-            });
-          });
-        }
+          this.ds.dataRecord = dataRecord;
+          // if(profileRecord.get("onboardingComplete"))
+            this.goToHome();
+          // else
+            // this.goToOnboarding();
+        });
       });
     }
   }
 
   googleLogout()
   {
-    //this.ds.dsInstance.close();
-    this.googlePlus.logout().then(() =>
+    if(this.ds.dsInstance) this.ds.dsInstance.close();
+    this.googlePlus.disconnect().then(() =>
     {
       console.log("Logged out of Google Account");
+    }).catch(error =>
+    {
+      console.log("Logout error:", error);
     });
   }
 
   goToCreateUsername()
   {
-    this.navCtrl.setRoot(CreateUsernamePage, {googleID: this.googleID});
+    this.navCtrl.setRoot(CreateUsernamePage, {idToken: this.idToken});
   }
 
   goToOnboarding() {
-    this.navCtrl.setRoot(OnboardingPage);
+    this.navCtrl.setRoot(RoleChoice);
   }
 
   goToHome() {

@@ -1,0 +1,73 @@
+page-onboarding{
+  .OBpage{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .OBcontainer{
+      width: 80vw;
+      margin: auto;
+      display: block;
+  }
+  .OBTitle{
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: $blue;
+  }
+  .bioInput{
+    border: 2px solid $lightgrey;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    height: 50vh;
+  }
+  .registerbtn{
+    margin-bottom: 50px;
+  }
+  .slide-zoom{
+    padding-bottom: 50px !important;
+  }
+  .onboarding .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 20%;
+  }
+  .OBbuttondiv{
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    justify-content: center;
+  }
+  .gradeLevel{
+    width: 100%;
+    display: flex;
+    margin-bottom: 65px;
+  }
+  .gradecol{
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .gradebutton{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: white;
+    border: 2px solid $lightgrey;
+    height: 95px;
+    width: 110px;
+  }
+  .gradeimg{
+    height: 50%;
+    width: auto;
+  }
+  .gradetext{
+    margin-top: 8px;
+    margin-bottom: 0px;
+  }
+}

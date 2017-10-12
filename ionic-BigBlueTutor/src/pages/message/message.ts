@@ -15,7 +15,6 @@ export class Message {
   @ViewChild('content') content: Content;
   @ViewChild('textInput') textInput;
 
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService, private iab: InAppBrowser) {
     this.username = navParams.get('username');
     if (this.ds.profileRecord.get('messages')[this.username]) {
@@ -30,7 +29,7 @@ export class Message {
       this.messages = this.ds.profileRecord.get('messages')[this.username];
     });
     events.subscribe('user:meeting', () => {
-      console.log(this.messages);
+      //console.log(this.messages);
       var url = this.ds.profileRecord.get('meeting');
       if (url !== "") {
         if (this.platform.is('ios')) {
@@ -49,11 +48,11 @@ export class Message {
   }
 
   sendMessage() {
-    console.log(this.input)
+    //console.log(this.input)
     if(this.input != "") {
       this.ds.dsInstance.rpc.make('sendMessage', {client:this.ds.profileRecord.get('username'), contact:this.username, message:this.input}, ( error, result ) => {});
       var tempMessages = this.ds.profileRecord.get('messages');
-      console.log(tempMessages);
+      //console.log(tempMessages);
       tempMessages[this.username].push({user:this.ds.profileRecord.get('username'), message:this.input})
       this.ds.profileRecord.set('messages', tempMessages);
       this.messages = this.ds.profileRecord.get('messages')[this.username];
