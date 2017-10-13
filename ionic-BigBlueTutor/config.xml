@@ -92,5 +92,4 @@
         <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.591220975174-osk9erq27jsbdcbpiukggnihurgsfk0a" />
     </plugin>
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
-    <engine name="android" spec="~6.2.3" />
 </widget>
