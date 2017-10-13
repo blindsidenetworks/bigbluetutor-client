@@ -23,6 +23,7 @@ import { Category } from '../pages/category/category';
 import { CreateUsernamePage } from '../pages/createusername/createusername';
 import { PreOnboarding } from '../pages/preOnboarding/preOnboarding';
 import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
     RequestPopover,
     CreateUsernamePage,
     PreOnboarding,
-    OnboardingPage
+    OnboardingPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
     RequestPopover,
     CreateUsernamePage,
     PreOnboarding,
-    OnboardingPage
+    OnboardingPage,
+    TabsPage
   ],
   providers: [
     StatusBar,

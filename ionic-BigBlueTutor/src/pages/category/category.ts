@@ -34,7 +34,7 @@ export class Category {
   userSelected(tutor) {
     //console.log(tutor);
     if (tutor === this.ds.profileRecord.get('username')) {
-      this.navCtrl.setRoot(ProfilePage);
+      this.navCtrl.push(ProfilePage);
     }else {
       this.navCtrl.push(UserPage, {user:tutor});
     }

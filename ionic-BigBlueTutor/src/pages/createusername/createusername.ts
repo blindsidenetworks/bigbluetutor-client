@@ -5,6 +5,7 @@ import { DsService } from '../../shared/ds.service';
 import { RoleChoice } from '../onboarding/roleChoice/roleChoice'
 import { HomePage } from '../home/home'
 import { LoginPage } from '../login/login'
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-createusername',
@@ -74,7 +75,7 @@ export class CreateUsernamePage {
 
   goToHome()
   {
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(TabsPage);
   }
 
   goToLogin()
