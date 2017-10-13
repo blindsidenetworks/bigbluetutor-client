@@ -13,7 +13,7 @@ export class Inbox {
 
   constructor(public navCtrl: NavController, private ds: DsService, public events:Events, private rls:RecordListenService) {
     this.messages = Object.keys(this.ds.profileRecord.get("messages"));
-      //console.log(this.messages);
+    //console.log(this.messages);
     events.subscribe('user:message', () => {
       this.messages = Object.keys(this.ds.profileRecord.get('messages'));
     });
