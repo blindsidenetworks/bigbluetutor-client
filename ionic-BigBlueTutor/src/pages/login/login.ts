@@ -5,6 +5,7 @@ import { CreateUsernamePage } from '../createusername/createusername'
 import { RoleChoice } from '../onboarding/roleChoice/roleChoice';
 import { DsService } from '../../shared/ds.service';
 import { GooglePlus } from '@ionic-native/google-plus';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-login',
@@ -127,7 +128,7 @@ export class LoginPage {
   }
 
   goToHome() {
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(TabsPage);
   }
 
   ionViewWillEnter() {

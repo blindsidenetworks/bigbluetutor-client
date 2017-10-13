@@ -1,0 +1,5 @@
+<ion-content>
+  <ion-tabs>
+    <ion-tab *ngFor="let page of pages" tabTitle="{{page.title}}" tabIcon="{{page.icon}}" [root]="page.component"></ion-tab>
+  </ion-tabs>
+</ion-content>
