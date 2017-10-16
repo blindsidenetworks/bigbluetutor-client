@@ -19,6 +19,7 @@ export class HomePage {
   searchCategories;
   searchTutors;
   imageLocations;
+
   constructor(public navCtrl: NavController, public events: Events, private ds: DsService, private rls:RecordListenService) {
     this.imageLocations = {
       "Math" : "./assets/icon/math.png",
@@ -66,7 +67,7 @@ export class HomePage {
         }
       }
       this.searchCategories = this.searchCategories.filter(function(text) {
-        return text.includes(this.search);
+        return text.toLowerCase().includes(this.search.toLowerCase());
       }.bind(this));
       this.searchCategories = this.searchCategories.sort(function(a, b){
         if(a.firstname < b.firstname) return -1;
@@ -78,7 +79,7 @@ export class HomePage {
   }
 
   categorySelected(category) {
-    this.navCtrl.setRoot(Category, {category:category});
+    this.navCtrl.push(Category, {category:category});
   }
 
   userSelected(tutor) {

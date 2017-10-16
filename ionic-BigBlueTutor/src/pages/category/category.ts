@@ -32,7 +32,7 @@ export class Category {
   }
 
   userSelected(tutor) {
-    console.log(tutor);
+    //console.log(tutor);
     if (tutor === this.ds.profileRecord.get('username')) {
       this.navCtrl.setRoot(ProfilePage);
     }else {

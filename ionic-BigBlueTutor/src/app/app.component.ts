@@ -15,14 +15,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage:any = LoginPage;
-  pages: Array<{title: string, component: any}>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menu: MenuController) {
-    this.pages = [
-      {title: "Home", component: HomePage},
-      {title: "Profile", component: ProfilePage},
-      {title: "Inbox", component: Inbox}
-    ];
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
