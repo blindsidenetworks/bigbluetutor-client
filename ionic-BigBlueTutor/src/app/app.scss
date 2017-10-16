@@ -18,6 +18,7 @@
 $blue: #5576FF;
 $lightgrey: #e2e2e2;
 $lightbkggrey: #f7f7f7;
+$darkgrey: #565656;
 $yellow: #ffe83a;
 $grey: #7C7C7C;
 $background: #F9FBFF;
@@ -97,7 +98,6 @@ h1, p{
   margin: 0px;
 }
 
-
 .searchbar-ios{
   background: $grey;
 }
@@ -109,8 +109,9 @@ h1, p{
   padding-top: 50px;
 }
 
-
-
+.list-ios .item-block .item-inner {
+    border-bottom: none !important;
+}
 
 .profilecard{
   display: block;
@@ -121,7 +122,6 @@ h1, p{
   padding: 10px;
   float: left;
   width: 100%;
-
   box-shadow: 0px 1px 2px $lightgrey;
 }
 @media screen and (max-width: 375px) {
@@ -186,4 +186,8 @@ h1, p{
 .card_info{
   margin-bottom: 5px;
   margin-top: 6px;
+}
+
+.list-md .item-block .item-inner{
+  border-bottom: none !important;
 }

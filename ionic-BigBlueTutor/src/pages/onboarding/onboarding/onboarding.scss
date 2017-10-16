@@ -10,6 +10,7 @@ page-onboarding{
       width: 80vw;
       margin: auto;
       display: block;
+      max-width: 500px;
   }
   .OBTitle{
     margin-bottom: 20px;
@@ -44,18 +45,41 @@ page-onboarding{
   }
   .gradeLevel{
     width: 100%;
+    height: 50vh;
     display: flex;
     margin-bottom: 65px;
   }
   .gradecol{
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-top: 50px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .bioInput{
+      height: 35vh;
+    }
+    .gradeLevel{
+      height: 35vh;
+    }
+    .gradecol{
+      margin-left: 0%;
+      margin-right: 0%;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .gradebutton{
+      margin-top: 50px;
+
+    }
+    .onboarding .swiper-container-horizontal > .swiper-pagination-bullets {
+      bottom: 28%;
+    }
+    .registerbtn{
+      margin-bottom: 70px;
+    }
   }
   .gradebutton{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     border-radius: 4px;
     background-color: white;
     border: 2px solid $lightgrey;
