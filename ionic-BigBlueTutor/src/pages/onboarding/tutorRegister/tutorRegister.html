@@ -3,69 +3,61 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title class="center headertitle">
-      WHAT COURSES DO YOU TUTOR?
-    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-slides>
     <ion-slide>
-      <div class="space"></div>
+      <h2 class="OBTitle">What courses do you tutor?</h2>
       <div class="allcategories">
-      <ion-list>
-        <div *ngFor="let category of categories">
-
-          <div class="categorycontainer">
-
-            <ion-item class="categoryitem"
-              (click)="toggleCategories(category)">
-              {{ category }}
-              <ion-icon ios="ios-add" class="moreoptions" md="md-add"></ion-icon>
-            </ion-item>
-
-            <div *ngIf="isOpen(category)">
-              <ion-item class="subcategoryitem"
-                *ngFor="let subcategory of categoriesData[category]">
-                <ion-label>
-                  {{ subcategory }}
-                </ion-label>
-                <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
-                </ion-checkbox>
+        <ion-list>
+          <div *ngFor="let category of categories">
+            <div class="categorycontainer">
+              <ion-item class="categoryitem"
+                (click)="toggleCategories(category)">
+                {{ category }}
+                <ion-icon ios="ios-add" class="moreoptions" md="md-add"></ion-icon>
               </ion-item>
+
+              <div *ngIf="isOpen(category)">
+                <ion-item class="subcategoryitem"
+                  *ngFor="let subcategory of categoriesData[category]">
+                  <ion-label>
+                    {{ subcategory }}
+                  </ion-label>
+                  <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
+                  </ion-checkbox>
+                </ion-item>
+              </div>
             </div>
-
           </div>
-
-        </div>
-      </ion-list>
-    </div>
-  </ion-slide>
-  <ion-slide>
-    <div class="OBcontainer">
-      <h2 class="OBTitle">What grade level would you like to tutor?</h2>
-      <div class="gradeLevel">
-        <div class="gradecol">
-          <button class="gradebutton">
-            <img class="gradeimg" src="./assets/OBimgs/K-8.png"/>
-            <p class="gradetext">K-8</p>
-          </button>
-          <button class="gradebutton">
-            <img class="gradeimg" src="./assets/OBimgs/Highschool.png"/>
-            <p class="gradetext">Highschool</p>
-          </button>
-          <button class="gradebutton">
-            <img class="gradeimg" src="./assets/OBimgs/Uni.png"/>
-            <p class="gradetext">University</p>
-          </button>
+        </ion-list>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="OBcontainer">
+        <h2 class="OBTitle">What grade level would you like to tutor?</h2>
+        <div class="gradeLevel">
+          <div class="gradecol">
+            <button class="gradebutton">
+              <img class="gradeimg" src="./assets/OBimgs/K-8.png"/>
+              <p class="gradetext">K-8</p>
+            </button>
+            <button class="gradebutton">
+              <img class="gradeimg" src="./assets/OBimgs/Highschool.png"/>
+              <p class="gradetext">Highschool</p>
+            </button>
+            <button class="gradebutton">
+              <img class="gradeimg" src="./assets/OBimgs/Uni.png"/>
+              <p class="gradetext">University</p>
+            </button>
+          </div>
         </div>
       </div>
-      <button ion-button round class="center"
-        (click)="tutor()">
-        REGISTER
-      </button>
-    </div>
-  </ion-slide>
-</ion-slides>
+      <div class="OBbuttondiv" (click)="tutor()" >
+        <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
+      </div>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

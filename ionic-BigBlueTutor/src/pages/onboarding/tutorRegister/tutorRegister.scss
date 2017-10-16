@@ -1,51 +1,125 @@
-.categoryitem{
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 4px;
-  border-radius: 27px;
-  padding-left: 20px;
-  background-color: none;
-}
+page-tutorRegister{
+  .categoryitem{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 4px;
+    border-radius: 27px;
+    padding-left: 20px;
+    background-color: none;
+  }
 
-.list-ios .item-block .item-inner {
-  border-bottom: 0;
-}
+  .list-ios .item-block .item-inner {
+    border-bottom: 0;
+  }
 
-.moreoptions{
-  float: right;
-}
+  .moreoptions{
+    float: right;
+  }
 
-.onboardingnav{
-  padding-top: 45px;
-  padding-bottom: 30px;
-}
+  .onboardingnav{
+  }
 
-.categorycontainer{
-   border: 2px solid #D1D1D1;
-   border-radius: 27px;
-   margin-bottom: 12px;
-}
+  .categorycontainer{
+     border: 2px solid #D1D1D1;
+     border-radius: 27px;
+     margin-bottom: 12px;
+  }
 
-.subcategoryitem{
-  border-radius: 70px;
-}
+  .subcategoryitem{
+    border-radius: 70px;
+  }
 
-.selected{
-  border: 2px solid $blue;
-}
+  .selected{
+    border: 2px solid $blue;
+  }
 
-.allcategories{
-  max-width: 500px;
-  display: block;
-  margin: auto;
-}
+  .allcategories{
+    max-width: 500px;
+    display: block;
+    margin-top: 38px;
+    margin-bottom: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
-.space{
-  height: 40px;
-  width:100vw;
-}
+  .headertitle{
+    padding-right:45px;
 
-.headertitle{
-  padding-right:45px;
+  }
+
+  .OBTitle{
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: $blue;
+  }
+
+  .gradeLevel{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    margin-bottom: 24px;
+  }
+  .gradecol{
+    margin-left: 25%;
+    margin-right: 25%;
+  }    position: fixed;
+
+  @media screen and (min-width: 768px) {
+    .bioInput{
+      height: 35vh;
+    }
+    .gradeLevel{
+      height: 35vh;
+    }
+    .gradecol{
+      margin-left: 0%;
+      margin-right: 0%;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 50px;
+    }
+    .gradebutton{
+      margin-top: 50px;
+
+    }
+    .onboarding .swiper-container-horizontal > .swiper-pagination-bullets {
+      bottom: 8%;
+    }
+    .registerbtn{
+      margin-bottom: 70px;
+    }
+  }
+  .gradebutton{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: white;
+    border: 2px solid $lightgrey;
+    height: 95px;
+    width: 110px;
+  }
+  .gradeimg{
+    height: 50%;
+    width: auto;
+  }
+  .gradetext{
+    margin-top: 8px;
+    margin-bottom: 0px;
+  }
+  .slide-zoom{
+    padding-bottom: 50px !important;
+  }
+  .onboarding .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 5%;
+  }
+  .OBbuttondiv{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+  }
 
 }
