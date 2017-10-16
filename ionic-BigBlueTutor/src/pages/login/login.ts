@@ -134,8 +134,4 @@ export class LoginPage {
   ionViewWillEnter() {
     this.menuCtrl.swipeEnable( false )
   }
-
-  ionViewWillEnter() {
-    this.menuCtrl.swipeEnable( false )
-  }
 }

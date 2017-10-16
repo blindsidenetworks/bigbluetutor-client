@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
-import { HomePage } from '../../home/home';
+import { TabsPage } from '../../tabs/tabs';
 import { TutorRegister } from '../tutorRegister/tutorRegister'
 import { DsService } from '../../../shared/ds.service';
 import * as $ from 'jquery';
@@ -15,9 +15,9 @@ export class OnboardingPage {
   }
 
   register() {
-    this.ds.dsInstance.rpc.make('changeDescription', {description: this.bio}, () => {})
+    this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {})
     //do additional calls first
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(TabsPage);
   }
 
   ionViewWillEnter() {

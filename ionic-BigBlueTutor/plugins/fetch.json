@@ -1,16 +1,42 @@
 {
-    "cordova-plugin-console": {
+    "cordova-plugin-googleplus": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-console@^1.1.0"
+            "id": "cordova-plugin-googleplus"
         },
         "is_top_level": true,
-        "variables": {}
+        "variables": {
+            "REVERSED_CLIENT_ID": "com.googleusercontent.apps.591220975174-osk9erq27jsbdcbpiukggnihurgsfk0a"
+        }
     },
     "cordova-plugin-device": {
         "source": {
             "type": "registry",
             "id": "cordova-plugin-device@^1.1.6"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-inappbrowser": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-inappbrowser@^1.7.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-android-permissions": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-android-permissions@^1.0.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console@^1.1.0"
         },
         "is_top_level": true,
         "variables": {}
@@ -43,32 +69,6 @@
         "source": {
             "type": "registry",
             "id": "ionic-plugin-keyboard@^2.2.1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-inappbrowser": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-inappbrowser@^1.7.1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-googleplus": {
-        "source": {
-            "type": "registry",
-            "id": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus"
-        },
-        "is_top_level": true,
-        "variables": {
-            "REVERSED_CLIENT_ID": "com.googleusercontent.apps.591220975174-osk9erq27jsbdcbpiukggnihurgsfk0a"
-        }
-    },
-    "cordova-plugin-android-permissions": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-android-permissions@^1.0.0"
         },
         "is_top_level": true,
         "variables": {}
