@@ -98,7 +98,6 @@ h1, p{
   margin: 0px;
 }
 
-
 .searchbar-ios{
   background: $grey;
 }
@@ -114,8 +113,6 @@ h1, p{
     border-bottom: none !important;
 }
 
-
-
 .profilecard{
   display: block;
   background-color: white;
@@ -125,7 +122,6 @@ h1, p{
   padding: 10px;
   float: left;
   width: 100%;
-
   box-shadow: 0px 1px 2px $lightgrey;
 }
 @media screen and (max-width: 375px) {
@@ -190,4 +186,8 @@ h1, p{
 .card_info{
   margin-bottom: 5px;
   margin-top: 6px;
+}
+
+.list-md .item-block .item-inner{
+  border-bottom: none !important;
 }

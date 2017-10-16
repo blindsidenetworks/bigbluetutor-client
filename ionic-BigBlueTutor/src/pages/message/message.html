@@ -16,7 +16,7 @@
   <div class="sentmsgfield">
     <div *ngFor="let msg of messages" [ngSwitch]="msg.special">
       <div class="sessionreq" *ngSwitchCase="'IncomingRequest'" >
-        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext">SESSION REQUEST</h1></div>
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">SESSION REQUEST</h1></div>
         <div class="msg_bbbsession_body">
           <div class="msg_bbbsession_buttons">
             <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
@@ -25,19 +25,19 @@
         </div>
       </div>
       <div class="sessionreq" *ngSwitchCase="'OutgoingRequest'" >
-        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext"> MEETING REQUEST</h1></div>
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext"> MEETING REQUEST</h1></div>
         <div class="msg_bbbsession_body">
             <p class="sessionmsg">Waiting for {{username}}...</p>
         </div>
       </div>
       <div class="sessionreq" *ngSwitchCase="'ActiveSession'" >
-        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext">ACTIVE SESSION</h1></div>
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">ACTIVE SESSION</h1></div>
         <div class="msg_bbbsession_body">
             <p class="sessionmsg">Tutoring Session currently in progress</p>
         </div>
       </div>
       <div class="sessionreq" *ngSwitchCase="'DeclinedRequest'" >
-        <div class="msg_bbbsession_title bluebutton"><h1 class="reqtext">SESSION DECLINED</h1></div>
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">SESSION DECLINED</h1></div>
         <div class="msg_bbbsession_body">
             <p class="sessionmsg">{{msg.user}} has declined.</p>
         </div>

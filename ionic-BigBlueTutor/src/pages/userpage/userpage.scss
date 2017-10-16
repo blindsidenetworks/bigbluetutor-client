@@ -35,11 +35,6 @@ page-user
     color: $darkgrey;
     font-weight: 400;
   }
-  .favouritebtn{
-
-  }
-
-
   .profilecontent{
     padding: 16px;
   }
@@ -70,4 +65,11 @@ page-user
     margin-top: 8px;
     margin-bottom: 0px;
   }
+
+    @media screen and (min-width: 768px) {
+      .userpage{
+        margin-left: 25%;
+        margin-right: 25%;
+      }
+    }
 }
