@@ -1,9 +1,10 @@
 node_modules/
-ionic-BigBlueTutor/www/
 *.swp
 *.DS_Store
-ionic-BigBlueTutor/platforms/
-ionic-BigblueTutor/.sourcemaps/
 Pods/
 package-lock.json
 .directory
+ionic-BigBlueTutor/www/
+ionic-BigBlueTutor/platforms/
+ionic-BigblueTutor/.sourcemaps/
+ionic-BigBlueTutor/plugins
