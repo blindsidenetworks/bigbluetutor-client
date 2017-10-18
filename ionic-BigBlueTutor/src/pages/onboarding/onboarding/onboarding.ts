@@ -11,6 +11,7 @@ import * as $ from 'jquery';
 })
 export class OnboardingPage {
   bio;
+  accept;
   constructor(public navCtrl: NavController, public navParams:NavParams,public menuCtrl:MenuController, private ds: DsService) {
   }
 
@@ -30,5 +31,4 @@ export class OnboardingPage {
   bioInput(){
     $('.bioInput').css('border-color','#5576FF');
   }
-
 }
