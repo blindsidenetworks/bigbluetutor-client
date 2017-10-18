@@ -1,0 +1,5 @@
+<ion-content>
+  <ion-input placeholder="Enter your username here" [(ngModel)]="username" (input)="hideError()"></ion-input>
+  <button ion-button (tap)="createUsername()">Set Username</button>
+  <p id="error" style="color:red;visibility:hidden">{{error}}</p>
+</ion-content>

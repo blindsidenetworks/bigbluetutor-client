@@ -44,7 +44,7 @@ export class TutorRegister {
         selected.push(category);
       }
     }
-    this.ds.dsInstance.rpc.make('registerTutor', {auth:this.ds.auth, categories: selected}, ()=> {})
+    this.ds.dsInstance.rpc.make('registerTutor', {username: this.ds.profileRecord.get("username"), categories: selected}, ()=> {});
     this.navCtrl.setRoot(OnboardingPage);
   }
 
