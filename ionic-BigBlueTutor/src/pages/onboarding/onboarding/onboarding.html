@@ -34,8 +34,14 @@
             </div>
           </div>
         </div>
-        <div class="OBbuttondiv" (click)="register()" >
-          <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
+      </ion-slide>
+      <ion-slide>
+        <div class="OBcontainer">
+          <ion-checkbox [(ngModel)]="accept"></ion-checkbox>
+          <ion-label>I Accept</ion-label>
+          <div *ngIf="accept" class="OBbuttondiv" (click)="register()" >
+            <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
+          </div>
         </div>
       </ion-slide>
     </ion-slides>
