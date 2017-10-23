@@ -6,6 +6,7 @@ import { RoleChoice } from '../onboarding/roleChoice/roleChoice';
 import { DsService } from '../../shared/ds.service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { TabsPage } from '../tabs/tabs';
+import { Platform } from 'ionic-angular';
 
 @Component({
   selector: 'page-login',
@@ -16,7 +17,37 @@ export class LoginPage {
   password: string;
   idToken: string;
   browser: any;
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController, private ds: DsService, private googlePlus: GooglePlus) {
+  auth2: any;
+
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private ds: DsService, private googlePlus: GooglePlus) {
+    console.log("Native:", this.hasGooglePlusNative());
+    if(!this.hasGooglePlusNative())
+    {
+      gapi.load("auth2", () =>
+      {
+        gapi.auth2.init({
+          client_id: "591220975174-hqfbvf7iuegj6nf1h6jkldeuh3ia72v7.apps.googleusercontent.com",
+          scope: 'profile',
+          fetch_basic_profile: false
+        }).then((auth2) =>
+        {
+          this.auth2 = auth2;
+          console.log(this.auth2);
+          //this.auth2.signOut().catch(error => console.log(error));
+          this.auth2.attachClickHandler(document.getElementById('googleBrowser'),{}, profile =>
+          {
+            if(profile)
+            {
+              this.idToken = profile.getAuthResponse().id_token;
+              this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
+            }
+          }, error =>
+          {
+            console.log("Login error:", error);
+          });
+        }, (error) => {console.log(error)});
+      });
+    }
   }
 
   login() {
@@ -64,8 +95,11 @@ export class LoginPage {
     this.googleLogout();
     this.googlePlus.login({webClientId: "591220975174-hqfbvf7iuegj6nf1h6jkldeuh3ia72v7.apps.googleusercontent.com", offline: true}).then(res =>
     {
-      this.idToken = res.idToken;
-      this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
+      if(res)
+      {
+        this.idToken = res.idToken;
+        this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
+      }
     }).catch(error =>
     {
       console.log("Login error:", error);
@@ -116,6 +150,11 @@ export class LoginPage {
     {
       console.log("Logout error:", error);
     });
+  }
+
+  hasGooglePlusNative()
+  {
+    return this.platform.is("ios") || this.platform.is("android");
   }
 
   goToCreateUsername()

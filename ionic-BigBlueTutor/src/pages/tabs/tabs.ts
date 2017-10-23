@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
 import { HomePage } from '../home/home';
@@ -10,6 +10,7 @@ import { Inbox } from '../inbox/inbox';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
+  @ViewChild("tabs") tabs: any;
   username: string;
   pages: Array<{title: string, icon: string, component: any}>;
   page:any;
