@@ -92,9 +92,9 @@ export class HomePage {
 
   searchbar(){
     $('.home-bkg').animate({'height':'20vh','opacity':'0.5'}, 300);
-    $('#backgroundcontent, .categorycontainer').animate({'opacity':'0'},200)
+    $('#backgroundcontent, .categorycontainer, .logo').animate({'opacity':'0'},200)
       .queue(function(next){
-        $('#backgroundcontent, .categorycontainer').css({'display':'none'})
+        $('#backgroundcontent, .categorycontainer, .logo').css({'display':'none'})
       next();
       });
     $('.menubtn').hide();
@@ -113,9 +113,9 @@ export class HomePage {
     $('.menubtn').show();
     $('.searchresults').css('display','none');
     $('.home-bkg').animate({'height':'63vh','opacity':'1'}, 300);
-    $('#backgroundcontent').css({'display':'block'})
+    $('#backgroundcontent, .logo').css({'display':'block'})
     $('.categorycontainer').css({'display':'flex'})
-    $('#backgroundcontent, .categorycontainer').animate({'opacity':'1'},400);
+    $('#backgroundcontent, .categorycontainer, .logo').animate({'opacity':'1'},400);
     $('.searchcancel').animate({'opacity':'0'},300);
     $('.search').animate({'top':'37vh'},300)
       .queue(function(next){
