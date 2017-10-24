@@ -10,31 +10,34 @@
   <ion-slides pager>
     <ion-slide>
       <h2 class="OBTitle">What courses do you tutor?</h2>
-      <div class="allcategories">
-        <ion-list>
-          <div *ngFor="let category of categories">
-            <div class="categorycontainer">
-              <ion-item class="categoryitem"
-                (click)="toggleCategories(category)">
-                {{ category }}
-                <ion-icon ios="ios-add" class="moreoptions" md="md-add"></ion-icon>
-              </ion-item>
-
-              <div *ngIf="isOpen(category)">
-                <ion-item class="subcategoryitem"
-                  *ngFor="let subcategory of categoriesData[category]">
-                  <ion-label>
-                    {{ subcategory }}
-                  </ion-label>
-                  <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
-                  </ion-checkbox>
+      <div class="categoryCONT">
+        <div class="allcategories">
+          <ion-list>
+            <div *ngFor="let category of categories">
+              <div class="categorycontainer">
+                <ion-item class="categoryitem"
+                  (click)="toggleCategories(category)">
+                  {{ category }}
+                  <ion-icon ios="ios-add" class="moreoptions" md="md-add"></ion-icon>
                 </ion-item>
+
+                <div *ngIf="isOpen(category)">
+                  <ion-item class="subcategoryitem"
+                    *ngFor="let subcategory of categoriesData[category]">
+                    <ion-label>
+                      {{ subcategory }}
+                    </ion-label>
+                    <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
+                    </ion-checkbox>
+                  </ion-item>
+                </div>
               </div>
             </div>
-          </div>
-        </ion-list>
+          </ion-list>
+        </div>
       </div>
     </ion-slide>
+
     <ion-slide>
       <div class="OBcontainer">
         <h2 class="OBTitle">What grade level would you like to tutor?</h2>
@@ -54,9 +57,9 @@
             </button>
           </div>
         </div>
-      </div>
-      <div class="OBbuttondiv" (click)="tutor()" >
-        <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
+        <div class="OBbuttondiv" (click)="tutor()" >
+          <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
+        </div>
       </div>
     </ion-slide>
   </ion-slides>
