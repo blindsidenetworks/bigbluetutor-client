@@ -11,8 +11,8 @@ import * as $ from 'jquery';
 })
 export class OnboardingPage {
   @ViewChild(Slides) slides: Slides;
-  bio;
-  accept;
+  bio: string;
+  accept: any;
   constructor(public navCtrl: NavController, public navParams:NavParams,public menuCtrl:MenuController, private ds: DsService) {
   }
 

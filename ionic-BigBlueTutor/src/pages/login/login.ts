@@ -20,6 +20,8 @@ export class LoginPage {
   auth2: any;
 
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private ds: DsService, private googlePlus: GooglePlus) {
+    this.username = this.password = this.idToken = "";
+
     console.log("Native:", this.hasGooglePlusNative());
     if(!this.hasGooglePlusNative())
     {
@@ -28,11 +30,10 @@ export class LoginPage {
         gapi.auth2.init({
           client_id: "591220975174-hqfbvf7iuegj6nf1h6jkldeuh3ia72v7.apps.googleusercontent.com",
           scope: 'profile',
-          fetch_basic_profile: false
+          fetch_basic_profile: true
         }).then((auth2) =>
         {
           this.auth2 = auth2;
-          console.log(this.auth2);
           //this.auth2.signOut().catch(error => console.log(error));
           this.auth2.attachClickHandler(document.getElementById('googleBrowser'),{}, profile =>
           {
@@ -127,6 +128,7 @@ export class LoginPage {
     {
       this.ds.getRecord("profile/"+this.username).whenReady(profileRecord =>
       {
+        // profileRecord.set("profilePic", this.profilePicture);
         this.ds.profileRecord = profileRecord;
         this.ds.getRecord("data").whenReady(dataRecord =>
         {
