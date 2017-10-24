@@ -135,6 +135,7 @@ export class LoginPage {
           this.ds.dataRecord = dataRecord;
           // if(profileRecord.get("onboardingComplete"))
             this.goToHome();
+            // this.goToOnboarding();
           // else
             // this.goToOnboarding();
         });
@@ -156,7 +157,7 @@ export class LoginPage {
 
   hasGooglePlusNative()
   {
-    return this.platform.is("ios") || this.platform.is("android");
+    return (this.platform.is("ios") || this.platform.is("android")) && this.platform.is("cordova");
   }
 
   goToCreateUsername()
