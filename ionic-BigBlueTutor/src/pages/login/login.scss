@@ -55,7 +55,7 @@ page-login
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(left, #7791FB, #264CEC);
+    background: linear-gradient(to right, #7791FB, #264CEC);
     background: -webkit-gradient(linear, left top, right top, from(#7791FB), to(#264CEC));
     z-index: -1;
   }

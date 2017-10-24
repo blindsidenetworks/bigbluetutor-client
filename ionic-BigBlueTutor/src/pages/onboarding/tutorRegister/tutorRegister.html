@@ -7,34 +7,30 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-slides pager>
-    <ion-slide>
-      <h2 class="OBTitle">What courses do you tutor?</h2>
-      <div class="categoryCONT">
-        <div class="allcategories">
-          <ion-list>
-            <div *ngFor="let category of categories">
-              <div class="categorycontainer">
-                <ion-item class="categoryitem"
-                  (click)="toggleCategories(category)">
-                  {{ category }}
-                  <ion-icon ios="ios-add" class="moreoptions" md="md-add"></ion-icon>
-                </ion-item>
+  <h2 class="OBTitle">What courses do you tutor?</h2>
+  <div class="categoryCONT">
+    <div class="allcategories">
+      <ion-list>
+        <div *ngFor="let category of categories">
+          <div class="categorycontainer">
+            <ion-item class="categoryitem"
+              (click)="toggleCategories(category)">
+              {{ category }}
+              <ion-icon ios="ios-add" class="moreoptions" md="md-add"></ion-icon>
+            </ion-item>
 
-                <div *ngIf="isOpen(category)">
-                  <ion-item class="subcategoryitem"
-                    *ngFor="let subcategory of categoriesData[category]">
-                    <ion-label>
-                      {{ subcategory }}
-                    </ion-label>
-                    <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
-                    </ion-checkbox>
-                  </ion-item>
-                </div>
-              </div>
+            <div *ngIf="isOpen(category)">
+              <ion-item class="subcategoryitem"
+                *ngFor="let subcategory of categoriesData[category]">
+                <ion-label>
+                  {{ subcategory }}
+                </ion-label>
+                <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
+                </ion-checkbox>
+              </ion-item>
             </div>
-          </ion-list>
-        </div>
+          </div>
+        </ion-list>
       </div>
     </ion-slide>
 
@@ -57,10 +53,10 @@
             </button>
           </div>
         </div>
-        <div class="OBbuttondiv" (click)="tutor()" >
-          <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
-        </div>
+      </ion-list>
       </div>
-    </ion-slide>
-  </ion-slides>
+  </div>
+  <div class="OBbuttondiv" (click)="tutor()" >
+    <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
+  </div>
 </ion-content>

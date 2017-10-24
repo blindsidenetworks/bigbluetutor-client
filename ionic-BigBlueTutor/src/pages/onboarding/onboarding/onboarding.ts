@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, MenuController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, MenuController, Slides } from 'ionic-angular';
 import { TabsPage } from '../../tabs/tabs';
 import { TutorRegister } from '../tutorRegister/tutorRegister'
 import { DsService } from '../../../shared/ds.service';
@@ -10,8 +10,9 @@ import * as $ from 'jquery';
   templateUrl: 'onboarding.html',
 })
 export class OnboardingPage {
-  bio;
-  accept;
+  @ViewChild(Slides) slides: Slides;
+  bio: string;
+  accept: any;
   constructor(public navCtrl: NavController, public navParams:NavParams,public menuCtrl:MenuController, private ds: DsService) {
   }
 
@@ -28,7 +29,11 @@ export class OnboardingPage {
   ionViewDidLeave() {
    this.menuCtrl.swipeEnable( true )
   }
-  bioInput(){
+  bioInput() {
     $('.bioInput').css('border-color','#5576FF');
+  }
+
+  next() {
+    this.slides.slideTo(2, 500);
   }
 }
