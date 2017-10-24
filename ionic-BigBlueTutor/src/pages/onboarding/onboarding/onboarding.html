@@ -1,43 +1,14 @@
 <ion-content padding class="onboarding">
   <div class="OBpage">
-    <ion-slides pager>
+    <ion-slides>
       <ion-slide>
         <div class="OBcontainer">
           <h2 class="OBTitle">Tell us a little about yourself</h2>
           <div class="bioInput" [(ngModel)]="bio">
             <ion-input (click)="bioInput()" placeholder="Tap to Start Typing"></ion-input>
           </div>
-          <div class="OBbuttondiv">
-            <button ion-button round class="nextbtn bluebutton registerbtn">NEXT</button>
-          </div>
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <div class="OBcontainer">
-          <h2 class="OBTitle">What is your current grade level</h2>
-          <div class="gradeLevel">
-            <div class="gradecol">
-              <button class="gradebutton">
-                <img class="gradeimg" src="./assets/OBimgs/K-8.png"/>
-                <p class="gradetext">K-8</p>
-              </button>
-              <button class="gradebutton">
-                <img class="gradeimg" src="./assets/OBimgs/Highschool.png"/>
-                <p class="gradetext">Highschool</p>
-              </button>
-              <button class="gradebutton">
-                <img class="gradeimg" src="./assets/OBimgs/Uni.png"/>
-                <p class="gradetext">University</p>
-              </button>
-              <button class="gradebutton">
-                <img class="gradeimg" src="./assets/OBimgs/Uni.png"/>
-                <p class="gradetext">Post Grad</p>
-              </button>
-            </div>
-          </div>
-          <div class="OBbuttondiv">
-            <button ion-button round class="nextbtn bluebutton registerbtn">NEXT</button>
+          <div class="OBbuttondiv" id="next">
+            <button ion-button round class="nextbtn bluebutton registerbtn" (click)="next()">NEXT</button>
           </div>
         </div>
       </ion-slide>
