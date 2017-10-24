@@ -132,7 +132,8 @@ export class LoginPage {
         {
           this.ds.dataRecord = dataRecord;
           // if(profileRecord.get("onboardingComplete"))
-            this.goToOnboarding();
+            this.goToHome();
+            // this.goToOnboarding();
           // else
             // this.goToOnboarding();
         });

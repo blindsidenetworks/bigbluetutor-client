@@ -12,8 +12,8 @@ page-home {
   .logo{
     display: block;
     background-color: transparent;
-    margin-top: 12%;
-    margin-bottom: 50px;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
     text-align: center;
   }
   .logoimg{
@@ -34,7 +34,7 @@ page-home {
     position: fixed;
     width: 100vw;
     height: 63vh;
-    background: linear-gradient(top, #0F65D1, #FFFFFF);
+    background: linear-gradient(to bottom, #0F65D1, #FFFFFF);
     background: -webkit-gradient(linear, bottom, top, from(#0F65D1), to(#FFFFFF));
     //background: #0F65D1;
     z-index: -1;
@@ -46,10 +46,11 @@ page-home {
   }
 
   .search{
-    top: 37vh;
+    top: 36vh;
     width: 100vw;
     margin: auto;
     display: block;
+    position: fixed;
   }
   #backgroundcontent{
     display: block;
@@ -62,7 +63,7 @@ page-home {
     max-width: 100vw;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5vh;
+    margin-top: 20vh;
     margin-bottom: 0px;
     display: flex;
     justify-content: center;
@@ -82,6 +83,10 @@ page-home {
     float: left;
     display: inline;
     position: relative;
+  }
+
+  .categorycard:hover{
+    cursor: pointer;
   }
   .categoryname{
     width: 90%;
@@ -110,7 +115,9 @@ page-home {
   .searchcancel{
     color: black;
     float: right;
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 0;
     z-index: 10;
     margin-right: 9%;
     font-size: 16px;
