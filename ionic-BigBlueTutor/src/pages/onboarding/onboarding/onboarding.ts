@@ -10,7 +10,7 @@ import * as $ from 'jquery';
   templateUrl: 'onboarding.html',
 })
 export class OnboardingPage {
-  bio;
+  bio: string;
   constructor(public navCtrl: NavController, public navParams:NavParams,public menuCtrl:MenuController, private ds: DsService) {
   }
 
