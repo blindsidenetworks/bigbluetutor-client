@@ -33,9 +33,9 @@ page-home {
   .home-bkg{
     position: fixed;
     width: 100vw;
-    height: 63vh;
-    background: linear-gradient(to bottom, #0F65D1, #FFFFFF);
-    background: -webkit-gradient(linear, bottom, top, from(#0F65D1), to(#FFFFFF));
+    height: 80vh;
+    background: linear-gradient(to top, #FFFFFF, #264CEC);
+    background: webkit-gradient(linear, bottom, top, from(#264CEC), to(#FFFFFF));
     //background: #0F65D1;
     z-index: -1;
   }

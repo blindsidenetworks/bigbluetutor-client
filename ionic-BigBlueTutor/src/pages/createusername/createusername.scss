@@ -7,8 +7,9 @@ page-createusername {
   }
   .username{
     text-align: center;
-    margin-top: 30%;
-    margin-bottom: 70%;
+    margin-top: 30vh;
+    margin-bottom: 70vh;
+    position: fixed;
   }
   .createTitle{
     margin-bottom: 50px;
@@ -31,14 +32,14 @@ page-createusername {
     width: 300px;
   }
   .background{
-    position: absolute;
+    position: fixed;
     opacity: 1;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(left, #7791FB, #264CEC);
+    background: linear-gradient(to right, #7791FB, #264CEC);
     background: -webkit-gradient(linear, left top, right top, from(#7791FB), to(#264CEC));
     z-index: -1;
   }
