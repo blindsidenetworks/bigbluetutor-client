@@ -34,6 +34,8 @@ page-tutorRegister{
   }
 
   .allcategories{
+    padding-top: 20px;
+    width: 100%;
     max-width: 500px;
     display: block;
     margin-top: 38px;
@@ -82,9 +84,9 @@ page-tutorRegister{
     }
     .gradebutton{
       margin-top: 50px;
-
     }
     .onboarding .swiper-container-horizontal > .swiper-pagination-bullets {
+      position: fixed;
       bottom: 8%;
     }
     .registerbtn{
@@ -112,13 +114,18 @@ page-tutorRegister{
   }
   .slide-zoom{
     padding-bottom: 50px !important;
+    height: 100%;
   }
   .onboarding .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: 5%;
   }
   .OBbuttondiv{
     display: flex;
-    width: 100vw;
+    justify-content: center;
+  }
+
+  .categoryCONT{
+    display: flex;
     justify-content: center;
   }
 

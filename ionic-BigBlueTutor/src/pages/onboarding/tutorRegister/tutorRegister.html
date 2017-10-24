@@ -7,9 +7,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-slides pager>
-    <ion-slide>
-      <h2 class="OBTitle">What courses do you tutor?</h2>
+  <h2 class="OBTitle">What courses do you tutor?</h2>
+    <div class="categoryCONT">
       <div class="allcategories">
         <ion-list>
           <div *ngFor="let category of categories">
@@ -34,30 +33,8 @@
           </div>
         </ion-list>
       </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="OBcontainer">
-        <h2 class="OBTitle">What grade level would you like to tutor?</h2>
-        <div class="gradeLevel">
-          <div class="gradecol">
-            <button class="gradebutton">
-              <img class="gradeimg" src="./assets/OBimgs/K-8.png"/>
-              <p class="gradetext">K-8</p>
-            </button>
-            <button class="gradebutton">
-              <img class="gradeimg" src="./assets/OBimgs/Highschool.png"/>
-              <p class="gradetext">Highschool</p>
-            </button>
-            <button class="gradebutton">
-              <img class="gradeimg" src="./assets/OBimgs/Uni.png"/>
-              <p class="gradetext">University</p>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="OBbuttondiv" (click)="tutor()" >
-        <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
-      </div>
-    </ion-slide>
-  </ion-slides>
-</ion-content>
+    </div>
+    <div class="OBbuttondiv" (click)="tutor()" >
+      <button ion-button round class="nextbtn bluebutton registerbtn">REGISTER</button>
+    </div>
+  </ion-content>
