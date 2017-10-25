@@ -13,13 +13,27 @@ import { RequestPopover } from '../request/request';
   templateUrl: 'userpage.html',
 })
 export class UserPage {
-  username:any;
+  username:string;
   user:any;
-  categories;
+  bio: string;
+  categories: any;
+  online: boolean;
+  status: string;
+
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams:NavParams, private ds:DsService, private pc:PopoverController) {
     this.user = navParams.get('user');
     this.username = this.user.username;
     this.categories = this.user.categories;
+    this.bio = this.user.description;
+
+    this.ds.dsInstance.presence.getAll([this.username], (result) =>
+    {
+      if (result)
+      {
+        this.online = result[this.username]
+        this.status =  this.online ? "Online" : "Offline";
+      }
+    });
   }
 
   star() {

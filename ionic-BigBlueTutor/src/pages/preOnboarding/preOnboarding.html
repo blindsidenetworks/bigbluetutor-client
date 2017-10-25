@@ -1,10 +1,13 @@
 <ion-content padding class="onboarding">
-  <ion-slides pager>
+  <ion-slides>
     <ion-slide>
       <ion-img class="onboardingimg" src="./assets/OBimgs/OB1.png"></ion-img>
       <h1 class="onboardingtitle">TUTORING ANYWHERE ANYTIME</h1>
       <p class="onboardingtext">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lobortis sapien, vel semper risus.</p>
+      <div class="btndiv" ng-controller="slideCtrl">
+        <button [navPush]="TutorRegister" ion-button round class="nextbtn" (click)="onboard(false)">NEXT</button>
+      </div>
     </ion-slide>
 
     <ion-slide>
@@ -12,18 +15,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lobortis sap
       <h1 class="onboardingtitle">QUICKLY CONNECT</h1>
       <p class="onboardingtext">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div class="btndiv" ng-controller="slideCtrl">
+        <button [navPush]="TutorRegister" ion-button round class="nextbtn" (click)="onboard(true)">NEXT</button>
+      </div>
     </ion-slide>
 
+<!--
     <ion-slide>
       <ion-img class="onboardingimg" src="./assets/OBimgs/OB3.png"></ion-img>
       <h1 class="onboardingtitle">DOWNLOAD BIGBLUEBUTTON</h1>
       <p class="onboardingtext">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lobortis sapien, vel semper risus.</p>
-    </ion-slide>
+
+      <div class="btndiv" ng-controller="slideCtrl">
+        <button [navPush]="TutorRegister" ion-button round class="nextbtn" (click)="onboard(4)">NEXT</button>
+      </div>
+    </ion-slide> -->
   </ion-slides>
 
 </ion-content>
-
-<div class="btndiv" ng-controller="slideCtrl">
-  <button [navPush]="TutorRegister" ion-button round class="nextbtn">NEXT</button>
-</div>

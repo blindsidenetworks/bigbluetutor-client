@@ -3,32 +3,38 @@
       <img class="circles" src="./assets/icon/circles.png"/>
   </div>
 
-  <ion-content padding>
-    <div class="logincontent">
-      <div class="logo">
-        <ion-img class="logoimg" src="./assets/icon/logo.png"></ion-img>
-      </div>
-      <h1 class="welcome">Welcome to <br/> BigBlueTutor</h1>
+  <div class="logincontent">
+    <div class="logo">
+      <ion-img class="logoimg" src="./assets/icon/logo.png"></ion-img>
+    </div>
+    <h1 class="welcome">Welcome to <br/> BigBlueTutor</h1>
 
-      <div class="loginenter">
-        <div class="loginlist">
-          <div class="list list-inset">
-            <ion-list>
+    <!-- <div class="loginenter">
+      <div class="loginlist">
+        <div class="list list-inset">
+          <ion-list>
             <ion-item class="item item-input">
               <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
             </ion-item>
             <ion-item class="item item-input">
               <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
             </ion-item>
-            </ion-list>
-          </div>
+          </ion-list>
         </div>
       </div>
+    </div> -->
 
-      <div class="login">
-        <button ion-button round class="button button-block whitebutton loginbtn" (tap)="login()" (click)="login()">LOGIN</button>
-      </div>
+    <div class="login">
+      <!-- <button ion-button round class="button button-block whitebutton loginbtn" (tap)="login()">LOGIN</button> -->
+      <button *ngIf="hasGooglePlusNative()" ion-button round class="button button-block whitebutton loginbtn" (tap)="googleLogin()">
+        <img src="./assets/icon/btn_google_light_normal_ios.svg"/>
+        Sign in with Google
+      </button>
+      <button id="googleBrowser" *ngIf="!hasGooglePlusNative()" ion-button round class="button button-block whitebutton loginbtn">
+        <img src="./assets/icon/btn_google_light_normal_ios.svg"/>
+        Sign in with Google
+      </button>
     </div>
-  </ion-content>
+  </div>
 
 </ion-content>

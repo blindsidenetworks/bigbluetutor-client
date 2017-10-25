@@ -38,25 +38,24 @@
 }
 
 @media screen and (min-width : 600px){
+    .selection{
+      display: flex;
+    }
     .vertical_side{
       height: 50vh;
-      margin-left: 5%;
-      margin-right: 5%;
-      width: 40% !important;
+      width: 50% !important;
       float:left;
+      padding: none;
     }
-    #studentimg{
-      width: 350px;
-    }
-
-    #tutorimg{
-      width: 350px;
+    #studentimgoToOnboardingg{
+      width: 100%;
     }
     .img{
       position: absolute;
       bottom: 60px;
       margin: 0 auto;
       left: 0;
+      width: 100%;
       right: 0;
     }
     .whitebtn{

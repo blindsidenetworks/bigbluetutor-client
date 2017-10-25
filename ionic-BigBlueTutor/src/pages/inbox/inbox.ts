@@ -12,8 +12,8 @@ export class Inbox {
   messages;
 
   constructor(public navCtrl: NavController, private ds: DsService, public events:Events, private rls:RecordListenService) {
-    console.log(Object.keys(this.ds.profileRecord.get("messages")))
     this.messages = Object.keys(this.ds.profileRecord.get("messages"));
+    //console.log(this.messages);
     events.subscribe('user:message', () => {
       this.messages = Object.keys(this.ds.profileRecord.get('messages'));
     });

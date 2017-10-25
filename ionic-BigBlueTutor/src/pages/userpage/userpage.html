@@ -10,7 +10,7 @@
   <div class="userpage">
     <div id="userInfo">
       <div id="imageContainer">
-        <img class="profilepic" src="images/icon.png"/>
+        <img class="profilepic" src="./assets/icon/default-profile.png"/>
             <!--button (click)="star()" class="icononlybtn favouritebtn"><ion-icon name="star" class="favourite"></ion-icon></button-->
       </div>
       <div id="name" class="profilename">{{username}}</div>
@@ -21,7 +21,7 @@
       <h1 class="profiletitle">Overview</h1>
       <div class="biobox">
         <!--REPLACE BIO TEXT-->
-        <p class="biotext">I am a tutor that is very passionate about math and science! Lorem ipsum dolor sit amet consectetur adipiscing elit. Fuxce rhoncus nisl iaculis, efficitur tortor at.</p>
+        <p class="biotext">{{bio}}</p>
       </div>
       <h1 class="profiletitle">Subjects</h1>
       <ion-list>
@@ -29,6 +29,7 @@
           {{ category }}
         </ion-item>
       </ion-list>
+<!--
       <h1 class="profiletitle">Grade Level</h1>
       <button class="gradebutton">
         <img class="gradeimg" src="./assets/OBimgs/K-8.png"/>
@@ -42,6 +43,7 @@
         <img class="gradeimg" src="./assets/OBimgs/Uni.png"/>
         <p class="gradetext">University</p>
       </button>
+    -->
     </div>
   </div>
 </ion-content>
