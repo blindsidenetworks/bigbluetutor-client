@@ -31,19 +31,8 @@ export class HomePage {
     }
     var categoryData = ds.dataRecord.get('categories');
     this.categories = [];
-    //this.tutorsData = {};
-    //this.tutors = {};
     for (var category in categoryData) {
       this.categories.push({category: category, img: this.imageLocations[category]});
-      //ds.dsInstance.rpc.make('search/tutor', {subject:category}, function(error, data) {
-      //  if (error) throw error
-      //  this.tutorsData[data.subject] = data.data;
-      //  this.tutors[data.subject] = data.data;
-      //}.bind(this));
-      //ds.dsInstance.event.subscribe('tutor/'+category, function(data) {
-      //  this.tutorsData[data.subject] = data.data;
-      //  this.tutors[data.subject] = data.data;
-      //}.bind(this));
     }
   }
 

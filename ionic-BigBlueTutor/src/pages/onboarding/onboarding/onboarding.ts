@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, MenuController, Slides } from 'ionic-angular';
 import { TabsPage } from '../../tabs/tabs';
+=======
+import { Component } from '@angular/core';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
+>>>>>>> afa671b6063f4ff48213a3be18115770a91012ad
 import { TutorRegister } from '../tutorRegister/tutorRegister'
+import { HomePage } from '../../home/home'
 import { DsService } from '../../../shared/ds.service';
 import * as $ from 'jquery';
 
@@ -19,7 +25,7 @@ export class OnboardingPage {
   register() {
     this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {})
     //do additional calls first
-    this.navCtrl.setRoot(TabsPage);
+    this.navCtrl.setRoot(HomePage);
   }
 
   ionViewWillEnter() {
