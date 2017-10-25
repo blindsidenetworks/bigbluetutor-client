@@ -9,12 +9,16 @@ import { DsService } from '../../shared/ds.service';
 export class ProfilePage {
   username:any;
   user:any;
+  profilePicture: string;
+  bio: string;
   online: boolean;
   status: string;
 
   constructor(public navCtrl: NavController, private ds: DsService) {
     this.username = this.ds.profileRecord.get("username");
     this.user = this.ds.getRecord("user/"+this.username);
+    this.profilePicture = this.ds.profileRecord.get("profilePic");
+    this.bio = this.ds.profileRecord.get("bio");
     this.online = false;
     this.status = "Offline";
     this.ds.dsInstance.presence.getAll([this.username], (result) =>
