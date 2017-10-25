@@ -1,25 +1,14 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="home"></ion-icon>
-    </button>
-    <ion-title>
-      Onboarding
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding class="onboarding">
   <div class="OBpage">
-    <ion-slides>
+    <ion-slides pager>
       <ion-slide>
         <div class="OBcontainer">
           <h2 class="OBTitle">Tell us a little about yourself</h2>
           <div class="bioInput" [(ngModel)]="bio">
             <ion-input (click)="bioInput()" placeholder="Tap to Start Typing"></ion-input>
           </div>
-          <div class="OBbuttondiv" id="next">
-            <button ion-button round class="nextbtn bluebutton registerbtn" (click)="next()">NEXT</button>
+          <div class="OBbuttondiv">
+            <button ion-button round class="nextbtn bluebutton registerbtn">NEXT</button>
           </div>
         </div>
       </ion-slide>
