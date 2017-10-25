@@ -15,15 +15,17 @@ import { RequestPopover } from '../request/request';
 export class UserPage {
   username:string;
   user:any;
-  bio;
-  categories;
+  bio: string;
+  categories: any;
   online: boolean;
   status: string;
+
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams:NavParams, private ds:DsService, private pc:PopoverController) {
     this.user = navParams.get('user');
     this.username = this.user.username;
     this.categories = this.user.categories;
     this.bio = this.user.description;
+
     this.ds.dsInstance.presence.getAll([this.username], (result) =>
     {
       if (result)
