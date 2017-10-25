@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Slides } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 import { TutorRegister } from '../onboarding/tutorRegister/tutorRegister'
 import { DsService } from '../../shared/ds.service';
 
@@ -9,14 +9,16 @@ import { DsService } from '../../shared/ds.service';
   templateUrl: 'preOnboarding.html',
 })
 export class PreOnboarding {
+  @ViewChild(Slides) slides: Slides;
+
   constructor(public navCtrl: NavController, public navParams:NavParams, private ds: DsService) {
   }
-}
 
-/*.controller('slideCtrl', ['$scope', '$ionicSlideBoxDelegate', function($scope, $ionicSlideBoxDelegate) {
-
-    $scope.slideNext = function() {
-
-        $ionicSlideBoxDelegate.next();
+  onboard(i) {
+    if (i) {
+      this.navCtrl.setRoot(LoginPage);
+    } else {
+      this.slides.slideTo(2, 500);
     }
-});*/
+  }
+}
