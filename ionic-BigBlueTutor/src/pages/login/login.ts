@@ -64,7 +64,6 @@ export class LoginPage {
   }
 
   linkProfile(error, hasRecord) {
-
     var record = this.ds.getRecord("profile/"+this.username);
     if(!hasRecord) {
       record.set({
