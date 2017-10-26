@@ -14,6 +14,11 @@ export class PreOnboarding {
   constructor(public navCtrl: NavController, public navParams:NavParams, private ds: DsService) {
   }
 
+
+  ionViewWillEnter() {
+    this.menuCtrl.swipeEnable(false)
+  }
+
   onboard(i) {
     if (i) {
       this.navCtrl.setRoot(LoginPage);
