@@ -21,14 +21,6 @@ export class OnboardingPage {
     //do additional calls first
     this.navCtrl.setRoot(HomePage);
   }
-
-  ionViewWillEnter() {
-    this.menuCtrl.swipeEnable( false )
-  }
-  //Enable swipe again
-  ionViewDidLeave() {
-   this.menuCtrl.swipeEnable( true )
-  }
   bioInput() {
     $('.bioInput').css('border-color','#5576FF');
   }
