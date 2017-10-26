@@ -20,12 +20,4 @@ export class RoleChoice {
   tutor() {
     this.navCtrl.push(TutorRegister);
   }
-
-  ionViewWillEnter() {
-    this.menuCtrl.swipeEnable( false )
-  }
-  //Enable swipe again
-  ionViewDidLeave() {
-   this.menuCtrl.swipeEnable( true )
-  }
 }

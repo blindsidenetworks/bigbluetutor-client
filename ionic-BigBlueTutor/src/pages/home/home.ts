@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Events } from 'ionic-angular';
+import { NavController, Events, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profilepage/profilepage';
 import { UserPage } from '../userpage/userpage';
 import { Category } from '../category/category';
@@ -20,7 +20,7 @@ export class HomePage {
   searchTutors;
   imageLocations;
 
-  constructor(public navCtrl: NavController, public events: Events, private ds: DsService, private rls:RecordListenService) {
+  constructor(public navCtrl: NavController, public menuCtrl:MenuController, public events: Events, private ds: DsService, private rls:RecordListenService) {
     this.imageLocations = {
       "Math" : "./assets/icon/math.png",
       "Language": "./assets/icon/language.png",
@@ -34,6 +34,10 @@ export class HomePage {
     for (var category in categoryData) {
       this.categories.push({category: category, img: this.imageLocations[category]});
     }
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.swipeEnable(true);
   }
 
   onInput(event) {
