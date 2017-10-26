@@ -1,4 +1,4 @@
-<ion-header>
+<!--ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
@@ -7,9 +7,12 @@
       Profile
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header-->
 
 <ion-content padding>
+  <button class="hamburger" ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
   <div id="profileInfo">
     <img width="150px" height="150px" src="{{profilePicture}}"/>
     <div id="name">{{username}}</div>
