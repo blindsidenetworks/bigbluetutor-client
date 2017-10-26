@@ -130,6 +130,7 @@ h1, p{
   padding: 10px;
   float: left;
   width: 100%;
+  min-height: 150px;
   box-shadow: 0px 1px 2px $lightgrey;
 }
 @media screen and (max-width: 375px) {
@@ -211,4 +212,22 @@ h1, p{
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+.profilecontent{
+  padding: 16px;
+}
+.profiletitle{
+  margin-top: 8px;
+  font-weight: bold;
+  color: $darkgrey;
+}
+.biotext{
+  color: $grey;
+}
+@media screen and (min-width: 768px) {
+  .userpage{
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 }
