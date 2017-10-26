@@ -1,3 +1,52 @@
 .menu{
-    background-color: linear-gradient(224deg,#0F65D1, #5F99E3) !important; 
+    background: linear-gradient(to right,#5e8eff, #264cec);
+}
+
+#menuline{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 1px;
+  border-radius: 1px;
+  background-color: white;
+}
+.space{
+  height: 10px;
+  width: 100%;
+}
+
+.menulogo{
+  display: block;
+  background-color: transparent;
+  margin-top: 15vh;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.menulogoimg{
+  background: none;
+  width: 40%;
+  height: auto;
+  max-width: 200px;
+  contain: none;
+}
+
+.menuOption{
+  background: transparent;
+  border: none;
+  padding-right: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.menuText{
+  color: white;
+  text-transform: uppercase;
+  text-align: right;
+  font-weight: bold !important;
+  font-size: 24px !important;
+}
+
+.item-inner{
+  border-bottom: none !important;
 }
