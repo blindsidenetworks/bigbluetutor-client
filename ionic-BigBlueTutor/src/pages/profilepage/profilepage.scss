@@ -3,6 +3,11 @@ page-profile
   #profileInfo
   {
     text-align: center;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid $lightgrey;
+    background: linear-gradient(to top, #DCE3EC, #FFFFFF);
+    background: -webkit-gradient(linear, top, bottom, from(#DCE3EC), to(#FFFFFF));
   }
 
   #name

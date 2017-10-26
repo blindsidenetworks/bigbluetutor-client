@@ -6,7 +6,7 @@ page-user
     padding-top: 32px;
     padding-bottom: 16px;
     border-bottom: 2px solid $lightgrey;
-    background: linear-gradient(bottom, #DCE3EC, #FFFFFF);
+    background: linear-gradient(to top, #DCE3EC, #FFFFFF);
     background: -webkit-gradient(linear, top, bottom, from(#DCE3EC), to(#FFFFFF));
   }
 
@@ -35,17 +35,6 @@ page-user
     color: $darkgrey;
     font-weight: 400;
   }
-  .profilecontent{
-    padding: 16px;
-  }
-  .profiletitle{
-    margin-top: 8px;
-    font-weight: bold;
-    color: $darkgrey;
-  }
-  .biotext{
-    color: $grey;
-  }
   .gradebutton{
     margin-left: auto;
     margin-right: auto;
@@ -65,11 +54,4 @@ page-user
     margin-top: 8px;
     margin-bottom: 0px;
   }
-
-    @media screen and (min-width: 768px) {
-      .userpage{
-        margin-left: 25%;
-        margin-right: 25%;
-      }
-    }
 }

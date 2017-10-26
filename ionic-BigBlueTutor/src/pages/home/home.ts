@@ -81,6 +81,7 @@ export class HomePage {
 
   searchbar(){
     $('.home-bkg').animate({'height':'20vh','opacity':'0.5'}, 300);
+    $('.hamburger').fadeOut();
     $('#backgroundcontent, .categorycontainer, .logo').animate({'opacity':'0'},200)
       .queue(function(next){
         $('#backgroundcontent, .categorycontainer, .logo').css({'display':'none'})
@@ -99,6 +100,7 @@ export class HomePage {
     var HTMLElement = document.getElementsByClassName("searchbar");
     console.log(HTMLElement);
     //ev.HTMLElement.value = '';
+    $('.hamburger').fadeIn();
     $('.menubtn').show();
     $('.searchresults').css('display','none');
     $('.home-bkg').animate({'height':'63vh','opacity':'1'}, 300);
