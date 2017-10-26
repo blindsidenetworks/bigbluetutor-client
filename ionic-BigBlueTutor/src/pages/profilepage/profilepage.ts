@@ -18,7 +18,9 @@ export class ProfilePage {
     this.username = this.ds.profileRecord.get("username");
     this.user = this.ds.getRecord("user/"+this.username);
     this.profilePicture = this.ds.profileRecord.get("profilePic");
-    this.bio = this.ds.profileRecord.get("bio");
+    this.user.whenReady(record => {
+      this.bio = record.get("description");
+    })
     this.online = false;
     this.status = "Offline";
     this.ds.dsInstance.presence.getAll([this.username], (result) =>
