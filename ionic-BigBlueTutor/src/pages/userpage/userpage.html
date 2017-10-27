@@ -16,6 +16,13 @@
       </div>
 
       <div id="name" class="profilename">{{username}}</div>
+
+      <!--REPLACE THE #00aa00 with {{color}} and online with {{status}}-->
+      <div id="on-off-status">
+        <div class="online-dot" style="background-color: #00aa00"></div>
+        <p class="online">online</p>
+      </div>
+
       <button (click)="request($event)" class="bluebutton" ion-button round>Request Session</button>
       <button (click)="message()" ion-button round class="bluebutton"><img class="buttonicon" src="./assets/icon/messageicon.png"/></button>
     </div>
