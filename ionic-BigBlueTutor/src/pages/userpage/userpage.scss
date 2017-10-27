@@ -12,7 +12,9 @@ page-user
 
   #name
   {
-    font-size: 36px;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
   }
 
   #imageContainer {
@@ -54,4 +56,26 @@ page-user
     margin-top: 8px;
     margin-bottom: 0px;
   }
+}
+
+#on-off-status{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.online-dot{
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+
+.online{
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  line-height: 8px;
+  font-style: italic;
 }

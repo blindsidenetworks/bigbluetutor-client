@@ -12,6 +12,13 @@ page-profile
 
   #name
   {
-    font-size: 36px;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  .profilepage-pic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
 }

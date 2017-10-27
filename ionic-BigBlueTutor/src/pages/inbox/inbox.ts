@@ -10,6 +10,7 @@ import {RecordListenService} from '../../shared/recordlisten.service';
 })
 export class Inbox {
   messages;
+  tutors;
 
   constructor(public navCtrl: NavController, private ds: DsService, public events:Events, private rls:RecordListenService) {
     this.messages = Object.keys(this.ds.profileRecord.get("messages"));
