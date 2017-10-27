@@ -57,7 +57,7 @@ export class Message {
       //console.log(tempMessages);
       tempMessages[this.username].messages.push({user:this.ds.profileRecord.get('username'), message:this.input})
       this.ds.profileRecord.set('messages', tempMessages);
-      this.messages = this.ds.profileRecord.get('messages')[this.username];
+      this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
       this.input = ""
     }
       this.textInput.setFocus();

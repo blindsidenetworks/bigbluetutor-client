@@ -17,6 +17,7 @@ export class Inbox {
     this.messagesRecord = this.ds.profileRecord.get("messages");
     this.messages = Object.keys(this.messagesRecord);
     events.subscribe('user:message', () => {
+      this.messagesRecord = this.ds.profileRecord.get("messages");
       this.messages = Object.keys(this.ds.profileRecord.get('messages'));
     });
   }
