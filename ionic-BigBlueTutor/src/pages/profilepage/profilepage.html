@@ -18,7 +18,7 @@
       <img class="profilepage-pic" src="{{profilePicture}}"/>
       <div id="name">{{username}}</div>
       <div id="on-off-status">
-        <div class="online-dot" style="background-color: #00aa00"></div>
+        <div class="online-dot" [style.backgroundColor] = "this.statusColour"></div>
         <p class="online">online</p>
       </div>
     </div>

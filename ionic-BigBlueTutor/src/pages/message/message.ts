@@ -55,7 +55,7 @@ export class Message {
       this.ds.dsInstance.rpc.make('sendMessage', {client:this.ds.profileRecord.get('username'), contact:this.username, message:this.input}, ( error, result ) => {});
       var tempMessages = this.ds.profileRecord.get('messages');
       //console.log(tempMessages);
-      tempMessages[this.username].push({user:this.ds.profileRecord.get('username'), message:this.input})
+      tempMessages[this.username].messages.push({user:this.ds.profileRecord.get('username'), message:this.input})
       this.ds.profileRecord.set('messages', tempMessages);
       this.messages = this.ds.profileRecord.get('messages')[this.username];
       this.input = ""
