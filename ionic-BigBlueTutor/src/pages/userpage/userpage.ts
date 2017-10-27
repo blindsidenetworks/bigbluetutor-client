@@ -20,6 +20,7 @@ export class UserPage {
   online: boolean;
   status: string;
   profilePicture;
+  statusColour;
 
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams:NavParams, private ds:DsService, private pc:PopoverController) {
     this.user = navParams.get('user');
@@ -34,6 +35,7 @@ export class UserPage {
       {
         this.online = result[this.username]
         this.status =  this.online ? "Online" : "Offline";
+        this.statusColour = this.online ? '#00aa00' : '#444';
       }
     });
   }

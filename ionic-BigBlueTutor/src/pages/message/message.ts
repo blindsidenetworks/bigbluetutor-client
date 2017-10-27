@@ -17,23 +17,25 @@ export class Message {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService, private iab: InAppBrowser) {
     this.username = navParams.get('username');
-    if (this.ds.profileRecord.get('messages')[this.username]) {
-      this.messages = this.ds.profileRecord.get('messages')[this.username];
+    if (this.ds.profileRecord.get('messages') && this.ds.profileRecord.get('messages')[this.username]) {
+      this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
     } else {
-      var tempMessages = this.ds.profileRecord.get('messages');
-      tempMessages[this.username] = [];
-      this.ds.profileRecord.set('messages', tempMessages);
-      this.messages = this.ds.profileRecord.get('messages')[this.username];
+      var userRecord = this.ds.dsInstance.record.getRecord('user/'+this.username);
+      userRecord.whenReady(() => {
+        var tempMessages = this.ds.profileRecord.get('messages');
+        tempMessages[this.username] = {pic: userRecord.get('profilePic'),messages:[]};
+        this.ds.profileRecord.set('messages', tempMessages);
+        this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
+      })
     }
     events.subscribe('user:message', () => {
-      this.messages = this.ds.profileRecord.get('messages')[this.username];
+      this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
     });
     events.subscribe('user:meeting', () => {
-      //console.log(this.messages);
       var url = this.ds.profileRecord.get('meeting');
       if (url !== "") {
         if (this.platform.is('ios')) {
-          var room = iab.create(url, '_system')
+          var room = iab.create(url, '_system');
         } else if (this.platform.is('android')) {
           var room = iab.create(url, '_system');
         } else {
@@ -53,9 +55,9 @@ export class Message {
       this.ds.dsInstance.rpc.make('sendMessage', {client:this.ds.profileRecord.get('username'), contact:this.username, message:this.input}, ( error, result ) => {});
       var tempMessages = this.ds.profileRecord.get('messages');
       //console.log(tempMessages);
-      tempMessages[this.username].push({user:this.ds.profileRecord.get('username'), message:this.input})
+      tempMessages[this.username].messages.push({user:this.ds.profileRecord.get('username'), message:this.input})
       this.ds.profileRecord.set('messages', tempMessages);
-      this.messages = this.ds.profileRecord.get('messages')[this.username];
+      this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
       this.input = ""
     }
       this.textInput.setFocus();

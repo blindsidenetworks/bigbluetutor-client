@@ -19,8 +19,8 @@
 
       <!--REPLACE THE #00aa00 with {{color}} and online with {{status}}-->
       <div id="on-off-status">
-        <div class="online-dot" style="background-color: #00aa00"></div>
-        <p class="online">online</p>
+        <div class="online-dot" [style.backgroundColor] = "statusColour"></div>
+        <p class="online">{{status}}</p>
       </div>
 
       <button (click)="request($event)" class="bluebutton" ion-button round>Request Session</button>

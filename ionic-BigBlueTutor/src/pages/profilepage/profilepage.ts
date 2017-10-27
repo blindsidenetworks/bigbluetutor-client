@@ -12,6 +12,7 @@ export class ProfilePage {
   profilePicture: string;
   bio: string;
   online: boolean;
+  statusColour;
   status: string;
 
   constructor(public navCtrl: NavController, private ds: DsService) {
@@ -29,6 +30,7 @@ export class ProfilePage {
       {
         this.online = result[this.username]
         this.status =  this.online ? "Online" : "Offline";
+        this.statusColour = this.online ? '#00aa00' : '#444';
       }
     });
   }
