@@ -162,10 +162,9 @@ page-home {
 
     .searchresults{
       display: none;
-      height: 75vh;
+      top: 130px;
       position: fixed;
       overflow: scroll;
-      bottom: 0;
     }
 
     .categoryresults{
