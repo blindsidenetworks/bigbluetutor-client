@@ -53,7 +53,7 @@
         <h1 class="resulttext">TUTORS</h1>
         <div *ngFor="let searchTutor of searchTutors" class="profileitem" (click)="userSelected(searchTutor)">
           <div class="profilecard">
-            <img src="./assets/icon/default-profile.png" class="home_profilepic"/>
+            <img src="{{ searchTutor.profilePic }}" class="home_profilepic"/>
             <h1 class="card_name">{{ searchTutor.username }}</h1>
           </div>
         </div>

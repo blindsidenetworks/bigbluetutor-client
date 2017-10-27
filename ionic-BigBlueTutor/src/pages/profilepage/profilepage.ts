@@ -17,8 +17,8 @@ export class ProfilePage {
   constructor(public navCtrl: NavController, private ds: DsService) {
     this.username = this.ds.profileRecord.get("username");
     this.user = this.ds.getRecord("user/"+this.username);
-    this.profilePicture = this.ds.profileRecord.get("profilePic");
     this.user.whenReady(record => {
+      this.profilePicture = this.user.get('profilePic');
       this.bio = record.get("description");
     })
     this.online = false;
