@@ -36,6 +36,27 @@ page-onboarding{
   .registerbtn{
     margin-bottom: 50px;
   }
+
+  .terms{
+    height: 50vh;
+    border: 1px solid $grey;
+    border-radius: 20px;
+    padding: 10px;
+    overflow: scroll;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  .termtext{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .acceptLabel{
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 0px;
+  }
   .slide-zoom{
     padding-bottom: 50px !important;
   }
