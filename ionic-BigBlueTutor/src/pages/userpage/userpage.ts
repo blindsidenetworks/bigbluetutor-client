@@ -19,12 +19,14 @@ export class UserPage {
   categories: any;
   online: boolean;
   status: string;
+  profilePicture;
 
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams:NavParams, private ds:DsService, private pc:PopoverController) {
     this.user = navParams.get('user');
     this.username = this.user.username;
     this.categories = this.user.categories;
     this.bio = this.user.description;
+    this.profilePicture = this.user.profilePic;
 
     this.ds.dsInstance.presence.getAll([this.username], (result) =>
     {
