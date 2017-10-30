@@ -162,9 +162,13 @@ page-home {
 
     .searchresults{
       display: none;
-      top: 130px;
-      position: fixed;
+    }
+
+    .resultscont{
+      transform: translateY(130px);
+      height: calc(100vh - 130px);
       overflow: scroll;
+          -webkit-transform: translateY(130px);
     }
 
     .categoryresults{
