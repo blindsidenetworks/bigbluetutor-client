@@ -34,6 +34,7 @@ export class HomePage {
     for (var category in categoryData) {
       this.categories.push({category: category, img: this.imageLocations[category]});
     }
+    this.search = "";
   }
 
   ionViewWillEnter() {
@@ -99,12 +100,12 @@ export class HomePage {
         $('.searchcancel').css('display','block');
       next();
     });
+    this.onInput("");
   }
 
   cancelsearch(ev){
     var HTMLElement = document.getElementsByClassName("searchbar");
-    console.log(HTMLElement);
-    //ev.HTMLElement.value = '';
+    this.search = "";
     $('.hamburger').fadeIn();
     $('.menubtn').show();
     $('.searchresults').css('display','none');
