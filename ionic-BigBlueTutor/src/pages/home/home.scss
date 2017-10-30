@@ -167,8 +167,9 @@ page-home {
     .resultscont{
       transform: translateY(130px);
       height: calc(100vh - 130px);
+      display: none;
       overflow: scroll;
-          -webkit-transform: translateY(130px);
+      -webkit-transform: translateY(130px);
     }
 
     .categoryresults{

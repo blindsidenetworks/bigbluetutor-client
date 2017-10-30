@@ -7,7 +7,9 @@ page-message {
   }
   .username{
       margin: auto;
-      width: 100%;
+      width: 50%;
+      text-align: center;
+      word-break: break-all;
   }
   .messageheader{
     display: flex;
