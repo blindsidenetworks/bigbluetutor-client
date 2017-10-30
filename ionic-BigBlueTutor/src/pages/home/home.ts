@@ -91,6 +91,7 @@ export class HomePage {
         $('#backgroundcontent, .categorycontainer, .logo').css({'display':'none'})
       next();
       });
+    $('.resultscont').css("display","block");
     $('.menubtn').hide();
     $('.search').animate({'top':'7vh'},300)
       .queue(function(next){
@@ -107,6 +108,7 @@ export class HomePage {
     $('.hamburger').fadeIn();
     $('.menubtn').show();
     $('.searchresults').css('display','none');
+    $('.resultscont').css("display","none");
     $('.home-bkg').animate({'height':'63vh','opacity':'1'}, 300);
     $('#backgroundcontent, .logo').css({'display':'block'})
     $('.categorycontainer').css({'display':'flex'})
