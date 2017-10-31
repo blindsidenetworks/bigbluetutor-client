@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Events } from 'ionic-angular';
+import { NavController, Events, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profilepage/profilepage';
 import { UserPage } from '../userpage/userpage';
 import { Category } from '../category/category';
@@ -19,7 +19,8 @@ export class HomePage {
   searchCategories;
   searchTutors;
   imageLocations;
-  constructor(public navCtrl: NavController, public events: Events, private ds: DsService, private rls:RecordListenService) {
+
+  constructor(public navCtrl: NavController, public menuCtrl:MenuController, public events: Events, private ds: DsService, private rls:RecordListenService) {
     this.imageLocations = {
       "Math" : "./assets/icon/math.png",
       "Language": "./assets/icon/language.png",
@@ -30,20 +31,14 @@ export class HomePage {
     }
     var categoryData = ds.dataRecord.get('categories');
     this.categories = [];
-    //this.tutorsData = {};
-    //this.tutors = {};
     for (var category in categoryData) {
       this.categories.push({category: category, img: this.imageLocations[category]});
-      //ds.dsInstance.rpc.make('search/tutor', {subject:category}, function(error, data) {
-      //  if (error) throw error
-      //  this.tutorsData[data.subject] = data.data;
-      //  this.tutors[data.subject] = data.data;
-      //}.bind(this));
-      //ds.dsInstance.event.subscribe('tutor/'+category, function(data) {
-      //  this.tutorsData[data.subject] = data.data;
-      //  this.tutors[data.subject] = data.data;
-      //}.bind(this));
     }
+    this.search = "";
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.swipeEnable(true);
   }
 
   onInput(event) {
@@ -66,7 +61,7 @@ export class HomePage {
         }
       }
       this.searchCategories = this.searchCategories.filter(function(text) {
-        return text.includes(this.search);
+        return text.toLowerCase().includes(this.search.toLowerCase());
       }.bind(this));
       this.searchCategories = this.searchCategories.sort(function(a, b){
         if(a.firstname < b.firstname) return -1;
@@ -78,7 +73,7 @@ export class HomePage {
   }
 
   categorySelected(category) {
-    this.navCtrl.setRoot(Category, {category:category});
+    this.navCtrl.push(Category, {category:category});
   }
 
   userSelected(tutor) {
@@ -91,11 +86,13 @@ export class HomePage {
 
   searchbar(){
     $('.home-bkg').animate({'height':'20vh','opacity':'0.5'}, 300);
-    $('#backgroundcontent, .categorycontainer').animate({'opacity':'0'},200)
+    $('.hamburger').fadeOut();
+    $('#backgroundcontent, .categorycontainer, .logo').animate({'opacity':'0'},200)
       .queue(function(next){
-        $('#backgroundcontent, .categorycontainer').css({'display':'none'})
+        $('#backgroundcontent, .categorycontainer, .logo').css({'display':'none'})
       next();
       });
+    $('.resultscont').css("display","block");
     $('.menubtn').hide();
     $('.search').animate({'top':'7vh'},300)
       .queue(function(next){
@@ -103,18 +100,20 @@ export class HomePage {
         $('.searchcancel').css('display','block');
       next();
     });
+    this.onInput("");
   }
 
   cancelsearch(ev){
     var HTMLElement = document.getElementsByClassName("searchbar");
-    console.log(HTMLElement);
-    //ev.HTMLElement.value = '';
+    this.search = "";
+    $('.hamburger').fadeIn();
     $('.menubtn').show();
     $('.searchresults').css('display','none');
+    $('.resultscont').css("display","none");
     $('.home-bkg').animate({'height':'63vh','opacity':'1'}, 300);
-    $('#backgroundcontent').css({'display':'block'})
+    $('#backgroundcontent, .logo').css({'display':'block'})
     $('.categorycontainer').css({'display':'flex'})
-    $('#backgroundcontent, .categorycontainer').animate({'opacity':'1'},400);
+    $('#backgroundcontent, .categorycontainer, .logo').animate({'opacity':'1'},400);
     $('.searchcancel').animate({'opacity':'0'},300);
     $('.search').animate({'top':'37vh'},300)
       .queue(function(next){

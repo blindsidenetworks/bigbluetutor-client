@@ -8,17 +8,17 @@ export class DsService {
   public dsInstance;
   public profileRecord;
   public dataRecord;
-  public auth;
 
   constructor() {
   }
 
   login (credentials?, loginHandler?) {
+    if(this.ds)
+      this.ds.close();
     //this code is moved here to prevent the login timeouts
-    this.ds = this.dsInstance = deepstream('tutor-back.blindside-dev.com:6020')
+    this.ds = this.dsInstance = deepstream('bbt.blindsidenetworks.com:6020')
       .on('error', error => console.log(error));
     this.ds.login(credentials, loginHandler);
-    this.auth = credentials;
   }
 
   getRecord(name) {
