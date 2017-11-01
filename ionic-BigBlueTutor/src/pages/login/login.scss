@@ -3,6 +3,10 @@ page-login
   .login{
     display: block;
   }
+  .google{
+    height: 80%;
+    margin-right: 20px;
+  }
   .loginenter{
     display: flex;
     background-color: white;
@@ -30,10 +34,10 @@ page-login
     margin: auto;
     margin-top: 30px;
   }
-  .logo{
+  .loginlogo{
     display: block;
     background-color: transparent;
-    margin-top: 12vh;
+    margin-top: 15vh;
     margin-bottom: 50px;
     text-align: center;
   }

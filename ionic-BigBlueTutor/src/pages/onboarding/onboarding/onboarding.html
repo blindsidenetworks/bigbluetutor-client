@@ -1,14 +1,3 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="home"></ion-icon>
-    </button>
-    <ion-title>
-      Onboarding
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding class="onboarding">
   <div class="OBpage">
     <ion-slides>
@@ -18,15 +7,28 @@
           <div class="bioInput" [(ngModel)]="bio">
             <ion-textarea rows="15" cols="50" (click)="bioInput()" class="bioTextBox" placeholder="Tap to Start Typing"></ion-textarea>
           </div>
-          <div class="OBbuttondiv" id="next">
-            <button ion-button round class="nextbtn bluebutton registerbtn" (click)="next()">NEXT</button>
+          <div class="OBbuttondiv">
+            <button ion-button round class="nextbtn bluebutton registerbtn" (tap)="next()">NEXT</button>
           </div>
         </div>
       </ion-slide>
       <ion-slide>
         <div class="OBcontainer">
+          <div class="terms">
+          <p class="termtext">“As Is” Services. Blindside Networks Inc. (“Blindside Networks”) grants You a non-exclusive, non-transferable, limited, and revocable license to use select Blindside Networks services (“Services”) for personal, non-commercial purposes and in accordance with these Terms of Use. You acknowledge and agree that all Services provided to You by Blindside Networks pursuant to these Terms of Use are on an “as is” basis, without representations, warranties, and condition of any kind and may be modified or discontinued by Blindside Networks at any time. To the extent that the Services relate to the BigBlueButton open source software project, your license to that software is subject to the licenses then in effect for it in addition to these Terms of Use.
+            <br/><br/>
+            Use & Content. You acknowledge and agree that the Services may not be used in violation of any legislation or license applicable to You or that is any way fraudulent or unlawful including without limitation, to send, knowingly receive, download, upload, use or re-use any audio, video, text, or images (“Content”) that is abusive, defamatory, in breach of confidence, obscene or menacing, in breach of copyright or privacy or any other rights; or to damage Blindside Networks’ property, interfere with or disrupt Blindside Networks’ system or other users. You agree to allow Blindside Networks and its applicable contractors to freely host, reproduce, transmit, modify, display and otherwise use your Content (in whole or in part) as reasonably necessary to provide the Services to you. You acknowledge and agree that Blindside Networks does not control or monitor the Content nor guarantee the accuracy, integrity, security or quality of such Content or the Services.
+<br/><br/>
+            Termination & Removal of Content. Blindside Networks reserves the right to terminate Your license to use the Services at any time in Blindside Networks’ sole and unfettered discretion. Blindside Networks also reserves the right to remove Content which it deems, in its sole discretion, will or may subject it to liability or is dangerous, offensive, pornographic, or in violation of law or regulations currently in effect. Such termination or removal may be immediate and without notice.
+<br/><br/>
+            Indemnification. You Customer agree to indemnify, defend, and hold harmless Blindside Networks and its directors, officers, employees, members, volunteers, affiliates, subcontractors, independent contractors, distributors, and agents from and against all losses, damages, actions or causes of action, suits, claims, demands, penalties and interest arising in connection with or out of your use of the Services.
+<br/><br/>
+            These Terms of Use are the final, complete and exclusive agreement of the parties with respect to the subject matter hereof; they supersede and merge all prior discussions between the parties with respect to such subject matter.
+<br/><br/>
+            January 19, 2017</p>
+          </div>
           <ion-checkbox [(ngModel)]="accept"></ion-checkbox>
-          <ion-label>I Accept</ion-label>
+          <ion-label class="acceptLabel">I Accept</ion-label>
           <div *ngIf="accept" class="OBbuttondiv"  >
             <button ion-button round class="nextbtn bluebutton registerbtn" (tap)="register()">REGISTER</button>
           </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Events } from 'ionic-angular';
+import { NavController, Events, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profilepage/profilepage';
 import { UserPage } from '../userpage/userpage';
 import { Category } from '../category/category';
@@ -20,7 +20,7 @@ export class HomePage {
   searchTutors;
   imageLocations;
 
-  constructor(public navCtrl: NavController, public events: Events, private ds: DsService, private rls:RecordListenService) {
+  constructor(public navCtrl: NavController, public menuCtrl:MenuController, public events: Events, private ds: DsService, private rls:RecordListenService) {
     this.imageLocations = {
       "Math" : "./assets/icon/math.png",
       "Language": "./assets/icon/language.png",
@@ -31,20 +31,14 @@ export class HomePage {
     }
     var categoryData = ds.dataRecord.get('categories');
     this.categories = [];
-    //this.tutorsData = {};
-    //this.tutors = {};
     for (var category in categoryData) {
       this.categories.push({category: category, img: this.imageLocations[category]});
-      //ds.dsInstance.rpc.make('search/tutor', {subject:category}, function(error, data) {
-      //  if (error) throw error
-      //  this.tutorsData[data.subject] = data.data;
-      //  this.tutors[data.subject] = data.data;
-      //}.bind(this));
-      //ds.dsInstance.event.subscribe('tutor/'+category, function(data) {
-      //  this.tutorsData[data.subject] = data.data;
-      //  this.tutors[data.subject] = data.data;
-      //}.bind(this));
     }
+    this.search = "";
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.swipeEnable(true);
   }
 
   onInput(event) {
@@ -92,11 +86,13 @@ export class HomePage {
 
   searchbar(){
     $('.home-bkg').animate({'height':'20vh','opacity':'0.5'}, 300);
+    $('.hamburger').fadeOut();
     $('#backgroundcontent, .categorycontainer, .logo').animate({'opacity':'0'},200)
       .queue(function(next){
         $('#backgroundcontent, .categorycontainer, .logo').css({'display':'none'})
       next();
       });
+    $('.resultscont').css("display","block");
     $('.menubtn').hide();
     $('.search').animate({'top':'7vh'},300)
       .queue(function(next){
@@ -104,14 +100,16 @@ export class HomePage {
         $('.searchcancel').css('display','block');
       next();
     });
+    this.onInput("");
   }
 
   cancelsearch(ev){
     var HTMLElement = document.getElementsByClassName("searchbar");
-    console.log(HTMLElement);
-    //ev.HTMLElement.value = '';
+    this.search = "";
+    $('.hamburger').fadeIn();
     $('.menubtn').show();
     $('.searchresults').css('display','none');
+    $('.resultscont').css("display","none");
     $('.home-bkg').animate({'height':'63vh','opacity':'1'}, 300);
     $('#backgroundcontent, .logo').css({'display':'block'})
     $('.categorycontainer').css({'display':'flex'})

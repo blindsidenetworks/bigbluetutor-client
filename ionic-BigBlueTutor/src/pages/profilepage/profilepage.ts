@@ -8,15 +8,20 @@ import { DsService } from '../../shared/ds.service';
 })
 export class ProfilePage {
   username:any;
+  user:any;
   profilePicture: string;
   bio: string;
   online: boolean;
+  statusColour;
   status: string;
 
   constructor(public navCtrl: NavController, private ds: DsService) {
     this.username = this.ds.profileRecord.get("username");
-    this.profilePicture = this.ds.profileRecord.get("profilePic");
-    this.bio = this.ds.profileRecord.get("bio");
+    this.user = this.ds.getRecord("user/"+this.username);
+    this.user.whenReady(record => {
+      this.profilePicture = this.user.get('profilePic');
+      this.bio = record.get("description");
+    })
     this.online = false;
     this.status = "Offline";
     this.ds.dsInstance.presence.getAll([this.username], (result) =>
@@ -25,6 +30,7 @@ export class ProfilePage {
       {
         this.online = result[this.username]
         this.status =  this.online ? "Online" : "Offline";
+        this.statusColour = this.online ? '#00aa00' : '#444';
       }
     });
   }

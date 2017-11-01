@@ -4,7 +4,7 @@
   </div>
 
   <div class="logincontent">
-    <div class="logo">
+    <div class="loginlogo">
       <ion-img class="logoimg" src="./assets/icon/logo.png"></ion-img>
     </div>
     <h1 class="welcome">Welcome to <br/> BigBlueTutor</h1>
@@ -27,11 +27,11 @@
     <div class="login">
       <!-- <button ion-button round class="button button-block whitebutton loginbtn" (tap)="login()">LOGIN</button> -->
       <button *ngIf="hasGooglePlusNative()" ion-button round class="button button-block whitebutton loginbtn" (tap)="googleLogin()">
-        <img src="./assets/icon/btn_google_light_normal_ios.svg"/>
+        <img class="google" src="./assets/icon/google.png"/>
         Sign in with Google
       </button>
       <button id="googleBrowser" *ngIf="!hasGooglePlusNative()" ion-button round class="button button-block whitebutton loginbtn">
-        <img src="./assets/icon/btn_google_light_normal_ios.svg"/>
+        <img class="google" src="./assets/icon/google.png"/>
         Sign in with Google
       </button>
     </div>

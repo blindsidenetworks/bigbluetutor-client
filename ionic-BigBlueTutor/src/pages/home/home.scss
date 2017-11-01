@@ -100,8 +100,8 @@ page-home {
 
   }
   .categoryimg{
-    max-height:80%;
-    max-width: 80%;
+    max-height:65%;
+    max-width: 65%;
     vertical-align: middle;
     display: block;
     margin: auto;
@@ -147,6 +147,9 @@ page-home {
       .categoryname{
         margin: 5px !important;
         font-size: 14px !important;
+        height: 20px;
+        line-height: 14px;
+        display: inline-table;
       }
       .categorycard{
         height: 30vw;
@@ -159,10 +162,14 @@ page-home {
 
     .searchresults{
       display: none;
-      height: 75vh;
-      position: fixed;
+    }
+
+    .resultscont{
+      transform: translateY(130px);
+      height: calc(100vh - 130px);
+      display: none;
       overflow: scroll;
-      bottom: 0;
+      -webkit-transform: translateY(130px);
     }
 
     .categoryresults{

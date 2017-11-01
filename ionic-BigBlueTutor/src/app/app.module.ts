@@ -9,6 +9,7 @@ import { RecordListenService } from '../shared/recordlisten.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RequestPopover } from '../pages/request/request';
 import { GooglePlus } from '@ionic-native/google-plus';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -23,7 +24,6 @@ import { Category } from '../pages/category/category';
 import { CreateUsernamePage } from '../pages/createusername/createusername';
 import { PreOnboarding } from '../pages/preOnboarding/preOnboarding';
 import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
-import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
@@ -41,12 +41,12 @@ import { TabsPage } from '../pages/tabs/tabs';
     RequestPopover,
     CreateUsernamePage,
     PreOnboarding,
-    OnboardingPage,
-    TabsPage
+    OnboardingPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -64,8 +64,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     RequestPopover,
     CreateUsernamePage,
     PreOnboarding,
-    OnboardingPage,
-    TabsPage
+    OnboardingPage
   ],
   providers: [
     StatusBar,

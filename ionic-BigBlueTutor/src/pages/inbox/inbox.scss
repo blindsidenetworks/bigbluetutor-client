@@ -1,4 +1,19 @@
 page-inbox {
+  .header{
+    width: 100vw;
+    text-align: center;
+    height: 80px;
+    display: inline-flex;
+  }
+
+  .title{
+    font-size: 28px;
+    text-align: center;
+    width: 100vw;
+    display: inline-table;
+    line-height: 45px;
+  }
+
   .inbox_msg{
       border-bottom: 1px solid $grey;
       display: flex;

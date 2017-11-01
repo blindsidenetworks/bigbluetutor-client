@@ -19,12 +19,15 @@ export class UserPage {
   categories: any;
   online: boolean;
   status: string;
+  profilePicture;
+  statusColour;
 
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams:NavParams, private ds:DsService, private pc:PopoverController) {
     this.user = navParams.get('user');
     this.username = this.user.username;
     this.categories = this.user.categories;
     this.bio = this.user.description;
+    this.profilePicture = this.user.profilePic;
 
     this.ds.dsInstance.presence.getAll([this.username], (result) =>
     {
@@ -32,6 +35,7 @@ export class UserPage {
       {
         this.online = result[this.username]
         this.status =  this.online ? "Online" : "Offline";
+        this.statusColour = this.online ? '#00aa00' : '#444';
       }
     });
   }

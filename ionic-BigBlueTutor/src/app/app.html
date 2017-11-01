@@ -1,1 +1,15 @@
 <ion-nav [root]="rootPage" #content></ion-nav>
+
+<ion-menu [content]="content">
+  <ion-content class="menu">
+  <div class="menulogo">
+    <img class="menulogoimg" src="./assets/icon/logo.png"/>
+  </div>
+  <div id="menuline"></div>
+  <div class="space"></div>
+  <h1>{{username}}</h1>
+  <button ion-item *ngFor="let page of pages" class="menuOption" (click)="openPage(page)">
+      <h1 class="menuText">{{page.title}}</h1>
+  </button>
+  </ion-content>
+</ion-menu>

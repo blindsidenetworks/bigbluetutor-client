@@ -1,4 +1,4 @@
-<ion-header>
+<!--ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
@@ -7,12 +7,18 @@
       Inbox
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header-->
 
 <ion-content>
+  <div class="header">
+    <button class="hamburger" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <h1 class="title">Inbox</h1>
+  </div>
   <ion-list>
     <div *ngFor="let msg of messages" class="inbox_msg" (click)="viewMessage(msg)">
-      <img src="./assets/icon/default-profile.png" class="inbox_profilepic"/>
+      <img src="{{messagesRecord[msg].pic}}" class="inbox_profilepic"/>
       <button class="inbox_name" ion-item>{{msg}}</button>
     </div>
   </ion-list>

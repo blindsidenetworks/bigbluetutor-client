@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, MenuController, Slides } from 'ionic-angular';
-import { TabsPage } from '../../tabs/tabs';
 import { TutorRegister } from '../tutorRegister/tutorRegister'
+import { HomePage } from '../../home/home'
 import { DsService } from '../../../shared/ds.service';
 import * as $ from 'jquery';
 
@@ -19,15 +19,7 @@ export class OnboardingPage {
   register() {
     this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {})
     //do additional calls first
-    this.navCtrl.setRoot(TabsPage);
-  }
-
-  ionViewWillEnter() {
-    this.menuCtrl.swipeEnable( false )
-  }
-  //Enable swipe again
-  ionViewDidLeave() {
-   this.menuCtrl.swipeEnable( true )
+    this.navCtrl.setRoot(HomePage);
   }
   bioInput() {
     $('.bioInput').css('border-color','#5576FF');
