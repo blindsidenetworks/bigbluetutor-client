@@ -91,17 +91,34 @@ export class LoginPage {
 
   googleLogin()
   {
-    this.googleLogout();
-    this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res =>
+    this.googlePlus.disconnect().then(() =>
     {
-      if(res)
+      console.log("Logged out of Google Account");
+      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res =>
       {
-        this.idToken = res.idToken;
-        this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
-      }
+        if(res)
+        {
+          this.idToken = res.idToken;
+          this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
+        }
+      }).catch(error =>
+      {
+        console.log("Login error:", error);
+      });
     }).catch(error =>
     {
-      console.log("Login error:", error);
+      console.log("Logout error:", error);
+      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res =>
+      {
+        if(res)
+        {
+          this.idToken = res.idToken;
+          this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
+        }
+      }).catch(error =>
+      {
+        console.log("Login error:", error);
+      });
     });
   }
 
@@ -143,7 +160,6 @@ export class LoginPage {
 
   googleLogout()
   {
-    if(this.ds.dsInstance) this.ds.dsInstance.close();
     this.googlePlus.disconnect().then(() =>
     {
       console.log("Logged out of Google Account");
