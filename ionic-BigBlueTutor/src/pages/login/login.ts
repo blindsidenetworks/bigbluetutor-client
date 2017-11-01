@@ -94,7 +94,7 @@ export class LoginPage {
     this.googlePlus.disconnect().then(() =>
     {
       console.log("Logged out of Google Account");
-      this.googlePlus.login({webClientId: "591220975174-hqfbvf7iuegj6nf1h6jkldeuh3ia72v7.apps.googleusercontent.com", offline: true}).then(res =>
+      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res =>
       {
         if(res)
         {
@@ -108,7 +108,7 @@ export class LoginPage {
     }).catch(error =>
     {
       console.log("Logout error:", error);
-      this.googlePlus.login({webClientId: "591220975174-hqfbvf7iuegj6nf1h6jkldeuh3ia72v7.apps.googleusercontent.com", offline: true}).then(res =>
+      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res =>
       {
         if(res)
         {
