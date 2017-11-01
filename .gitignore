@@ -10,3 +10,4 @@ ionic-BigblueTutor/.sourcemaps/
 ionic-BigBlueTutor/plugins
 *.apk
 *.keystore
+env.ts
