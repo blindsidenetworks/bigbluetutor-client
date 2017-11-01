@@ -33,13 +33,25 @@
       <div class="sessionreq" *ngSwitchCase="'ActiveSession'" >
         <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">ACTIVE SESSION</h1></div>
         <div class="msg_bbbsession_body">
-            <p class="sessionmsg">Tutoring Session currently in progress</p>
+            <div>
+              <p class="sessionmsg">Tutoring Session currently in progress</p>
+              <div class="msg_bbbsession_buttons">
+                <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
+                <button ion-button round class="whitebutton" (click)="endMeeting()">END</button>
+              </div>
+            </div>
         </div>
       </div>
       <div class="sessionreq" *ngSwitchCase="'DeclinedRequest'" >
         <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">SESSION DECLINED</h1></div>
         <div class="msg_bbbsession_body">
             <p class="sessionmsg">{{msg.user}} has declined.</p>
+        </div>
+      </div>
+      <div class="sessionreq" *ngSwitchCase="'EndedSession'" >
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">SESSION ENDED</h1></div>
+        <div class="msg_bbbsession_body">
+            <p class="sessionmsg">Tutoring Session Ended</p>
         </div>
       </div>
         <div class="message" *ngSwitchDefault ion-item>

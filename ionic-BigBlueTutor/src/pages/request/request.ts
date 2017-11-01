@@ -32,11 +32,11 @@ export class RequestPopover {
     var selected = [];
     for (var category in categories) {
       if(categories[category]) {
-        selected.push(categories[category]);
+        selected.push(category);
       }
     }
     if(selected.length>0 && this.time) {
-      this.ds.dsInstance.rpc.make('requestMeeting', {client: this.ds.profileRecord.get('username'), contact:this.user.username, data: {categories:selected}}, () => {});
+      this.ds.dsInstance.rpc.make('requestMeeting', {client: this.ds.profileRecord.get('username'), contact:this.user.username, data: {categories:selected, time: this.time}}, () => {});
       this.viewCtrl.dismiss();
       this.userpage.navCtrl.setRoot(Inbox);
       this.userpage.navCtrl.push(Message, {username: this.user.username});
