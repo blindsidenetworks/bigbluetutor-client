@@ -22,6 +22,7 @@ export class ProfilePage {
       this.profilePicture = this.user.get('profilePic');
       this.bio = record.get("description");
     })
+
     this.online = false;
     this.status = "Offline";
     this.ds.dsInstance.presence.getAll([this.username], (result) =>
@@ -31,6 +32,7 @@ export class ProfilePage {
         this.online = result[this.username]
         this.status =  this.online ? "Online" : "Offline";
         this.statusColour = this.online ? '#00aa00' : '#444';
+        document.getElementById("onlineDot").style.backgroundColor = this.statusColour;
       }
     });
   }

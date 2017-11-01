@@ -29,6 +29,8 @@ export class UserPage {
     this.bio = this.user.description;
     this.profilePicture = this.user.profilePic;
 
+    this.online = false;
+    this.status = "Offline";
     this.ds.dsInstance.presence.getAll([this.username], (result) =>
     {
       if (result)
@@ -36,6 +38,7 @@ export class UserPage {
         this.online = result[this.username]
         this.status =  this.online ? "Online" : "Offline";
         this.statusColour = this.online ? '#00aa00' : '#444';
+        document.getElementById("onlineDot").style.backgroundColor = this.statusColour;
       }
     });
   }

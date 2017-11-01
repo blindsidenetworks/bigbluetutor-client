@@ -16,6 +16,7 @@ export class Message {
   @ViewChild('textInput') textInput;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService, private iab: InAppBrowser) {
+    this.input = "";
     this.username = navParams.get('username');
     if (this.ds.profileRecord.get('messages') && this.ds.profileRecord.get('messages')[this.username]) {
       this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
@@ -32,16 +33,7 @@ export class Message {
       this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
     });
     events.subscribe('user:meeting', () => {
-      var url = this.ds.profileRecord.get('meeting');
-      if (url !== "") {
-        if (this.platform.is('ios')) {
-          var room = iab.create(url, '_system');
-        } else if (this.platform.is('android')) {
-          var room = iab.create(url, '_system');
-        } else {
-          window.open(url, '_blank');
-        }
-      }
+      this.joinMeeting();
     })
   }
 
@@ -54,11 +46,9 @@ export class Message {
   }
 
   sendMessage() {
-    //console.log(this.input)
     if(this.input != "") {
       this.ds.dsInstance.rpc.make('sendMessage', {client:this.ds.profileRecord.get('username'), contact:this.username, message:this.input}, ( error, result ) => {});
       var tempMessages = this.ds.profileRecord.get('messages');
-      //console.log(tempMessages);
       tempMessages[this.username].messages.push({user:this.ds.profileRecord.get('username'), message:this.input})
       this.ds.profileRecord.set('messages', tempMessages);
       this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
@@ -68,11 +58,28 @@ export class Message {
     //this.content.scrollToBottom(100);
   }
 
+  joinMeeting() {
+    var url = this.ds.profileRecord.get('meeting');
+    if (url !== "") {
+      if (this.platform.is('ios')) {
+        var room = iab.create(url, '_system');
+      } else if (this.platform.is('android')) {
+        var room = iab.create(url, '_system');
+      } else {
+        window.open(url, '_blank');
+      }
+    }
+  }
+
   requestMeeting() {
     this.ds.dsInstance.rpc.make('requestMeeting', {client: this.ds.profileRecord.get('username'), contact:this.username}, () => {})
   }
 
   declineMeeting() {
     this.ds.dsInstance.rpc.make('declineMeeting', {client: this.ds.profileRecord.get('username'), contact:this.username}, () => {})
+  }
+
+  endMeeting() {
+    this.ds.dsInstance.rpc.make('endMeeting', {client: this.ds.profileRecord.get('username'), contact:this.username}, () => {})
   }
 }
