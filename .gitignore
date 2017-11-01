@@ -8,3 +8,6 @@ ionic-BigBlueTutor/www/
 ionic-BigBlueTutor/platforms/
 ionic-BigblueTutor/.sourcemaps/
 ionic-BigBlueTutor/plugins
+*.apk
+*.keystore
+env.ts
