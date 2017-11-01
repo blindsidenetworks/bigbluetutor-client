@@ -6,6 +6,7 @@ import { RoleChoice } from '../onboarding/roleChoice/roleChoice';
 import { DsService } from '../../shared/ds.service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Platform } from 'ionic-angular';
+import { ENV } from '../../config/env';
 
 @Component({
   selector: 'page-login',
@@ -20,14 +21,13 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private ds: DsService, private googlePlus: GooglePlus) {
     this.username = this.password = this.idToken = "";
-
     console.log("Native:", this.hasGooglePlusNative());
     if(!this.hasGooglePlusNative())
     {
       gapi.load("auth2", () =>
       {
         gapi.auth2.init({
-          client_id: "591220975174-hqfbvf7iuegj6nf1h6jkldeuh3ia72v7.apps.googleusercontent.com",
+          client_id: ENV.googleOAuthKey,
           scope: 'profile',
           fetch_basic_profile: true
         }).then((auth2) =>
