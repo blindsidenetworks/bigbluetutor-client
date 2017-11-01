@@ -7,7 +7,7 @@ page-message {
   }
   .username{
       margin: auto;
-      margin-left: 50px;
+      margin-left: 8.2%;
       width: 75%;
       text-align: center;
       word-break: break-all;
@@ -25,7 +25,13 @@ page-message {
 
   .whitefade{
     width:50px;
-    background: linear-gradient(to top, rbga(255,255,255,0), rbga(255,255,255,1));
+    height: 100%;
+    position: absolute;
+    right: 17%;
+    z-index: 100;
+    top: 0px;
+    background: linear-gradient(to right, rbga(255,255,255,0), rbga(255,255,255,1));
+    background-color:  linear-gradient(to right, rbga(255,255,255,0), rbga(255,255,255,1));
   }
   #requestButton{
     font-size: 12px;
@@ -179,15 +185,19 @@ page-message {
     line-height: 32px;
     overflow: auto;
   }
+  .flex{
+    display: flex;
+  }
   .msg_bbbsession_body{
     margin-top: -1px;
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 10px;
+    padding: 5px;
 
     background-color: white;
     width: inherit;
-    height: 70px;
+    min-height: 70px;
     border: 1px solid $blue;
     border-radius: 0px 0px 12px 12px;
     display: flex;
