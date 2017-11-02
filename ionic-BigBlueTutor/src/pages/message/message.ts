@@ -56,7 +56,7 @@ export class Message {
 
   joinMeeting() {
     var url = this.ds.profileRecord.get('meeting');
-    if (url !== "") {
+    if (url && url !== "") {
       if (this.platform.is('ios')) {
         var room = this.iab.create(url, '_system');
       } else if (this.platform.is('android')) {

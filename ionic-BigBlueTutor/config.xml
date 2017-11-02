@@ -3,7 +3,7 @@
     <name>BigBlueTutor</name>
     <description>Tutoring on the go!</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">BigBlueButton/Blindside Networks Team</author>
-    <content original-src="index.html" src="http://10.130.218.198:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
@@ -83,6 +83,7 @@
     <allow-navigation href="http://10.130.218.126:8100" />
     <allow-navigation href="http://10.130.218.198:8100" />
     <allow-navigation href="http://10.130.218.126:8100" />
+    <allow-navigation href="http://10.130.218.198:8101" />
     <engine name="android" spec="^6.3.0" />
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
