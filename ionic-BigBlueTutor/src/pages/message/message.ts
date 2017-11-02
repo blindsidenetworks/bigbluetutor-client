@@ -42,7 +42,7 @@ export class Message {
   }
 
   ionViewDidEnter() {
-    this.content.scrollToBottom(0);
+    //this.content.scrollToBottom(0);
   }
 
   sendMessage() {
