@@ -3,25 +3,44 @@ page-message {
     display: flex;
     justify-content: center;
     vertical-align: middle;
-    margin-left: 55px;
+    overflow: auto;
   }
   .username{
       margin: auto;
-      width: 50%;
+      margin-left: 8.2%;
+      width: 75%;
       text-align: center;
       word-break: break-all;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      overflow: scroll;
+      font-weight: bold;
   }
   .messageheader{
     display: flex;
-    height: 100px;
+    height: 100px;;
     padding: 15px;
     background-color: white;
   }
+
+  .whitefade{
+    width:50px;
+    height: 100%;
+    position: absolute;
+    right: 17%;
+    z-index: 100;
+    top: 0px;
+    background: linear-gradient(to right, rbga(255,255,255,0), rbga(255,255,255,1));
+    background-color:  linear-gradient(to right, rbga(255,255,255,0), rbga(255,255,255,1));
+  }
   #requestButton{
     font-size: 12px;
-    width: 75px;
+    width: 85px;
+    min-width: 85px;
     height: 45px;
     margin-left: auto;
+    padding: 0px;
+    overflow: auto;
   }
   .inputmessage{
     width: 100%;
@@ -32,91 +51,16 @@ page-message {
     border-top: 1px solid $lightbkggrey;
     display: flex;
     justify-content: flex-start;
+    bottom: 0px;
+    width: 100vw;
     position: fixed;
-    background-color: white;page-user
-{
-  #userInfo
-  {
-    text-align: center;
-    padding-top: 32px;
-    padding-bottom: 16px;
-    border-bottom: 2px solid $lightgrey;
-    background: linear-gradient(bottom, #DCE3EC, #FFFFFF);
-    background: -webkit-gradient(linear, top, bottom, from(#DCE3EC), to(#FFFFFF));
-  }
-
-  #name
-  {
-    font-size: 36px;
-  }      margin-left: 5%;
-      margin-right: 5%;
-
-  #imageContainer {
-    display: flex;
-    justify-content: center;
-  }
-  .profilepic{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-
-  .favourite{
-    color: $yellow;
-    font-size: 25px;
-  }
-  .profilename{
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: $darkgrey;
-    font-weight: 400;
-  }
-  .profilecontent{
-    padding: 16px;
-  }
-  .profiletitle{
-    margin-top: 8px;
-    font-weight: bold;
-    color: $darkgrey;
-  }
-  .biotext{
-    color: $grey;
-  }
-  .gradebutton{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
     background-color: white;
-    border: 2px solid $lightgrey;
-    height: 95px;
-    width: 112px;
-  }
-  .gradeimg{
-    height: 50%;
-    width: auto;
-  }
-  .gradetext{
-    margin-top: 8px;
-    margin-bottom: 0px;
   }
 
-    @media screen and (min-width: 768px) {
-      .userpage{
-        margin-left: 25%;
-        margin-right: 25%;
-      }
-    }
-}
-
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
   .msgsend{
       font-size: 14px;
       width: 80px;
+      padding: 0px;
   }
   .sentmsgfield{
     background-color: $lightbkggrey;
@@ -166,15 +110,19 @@ page-message {
     line-height: 32px;
     overflow: auto;
   }
+  .flex{
+    display: flex;
+  }
   .msg_bbbsession_body{
     margin-top: -1px;
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 10px;
+    padding: 5px;
 
     background-color: white;
     width: inherit;
-    height: 70px;
+    min-height: 70px;
     border: 1px solid $blue;
     border-radius: 0px 0px 12px 12px;
     display: flex;
@@ -240,5 +188,8 @@ page-message {
     background-color: $blue;
     font-weight: bold;
     color: white;
+  }
+  .button-inner{
+    width: inherit;
   }
 }

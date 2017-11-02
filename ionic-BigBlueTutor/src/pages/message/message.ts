@@ -37,6 +37,10 @@ export class Message {
     })
   }
 
+  seeUsername(){
+
+  }
+
   ionViewDidEnter() {
     this.content.scrollToBottom(0);
   }
