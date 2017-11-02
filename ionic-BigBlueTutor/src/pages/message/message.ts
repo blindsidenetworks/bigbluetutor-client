@@ -37,6 +37,10 @@ export class Message {
     })
   }
 
+  seeUsername(){
+
+  }
+
   ionViewDidEnter() {
     this.content.scrollToBottom(0);
   }
@@ -58,9 +62,9 @@ export class Message {
     var url = this.ds.profileRecord.get('meeting');
     if (url !== "") {
       if (this.platform.is('ios')) {
-        var room = iab.create(url, '_system');
+        var room = this.iab.create(url, '_system');
       } else if (this.platform.is('android')) {
-        var room = iab.create(url, '_system');
+        var room = this.iab.create(url, '_system');
       } else {
         window.open(url, '_blank');
       }
