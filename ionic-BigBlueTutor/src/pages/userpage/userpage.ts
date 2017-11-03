@@ -31,6 +31,7 @@ export class UserPage {
 
     this.online = false;
     this.status = "Offline";
+
     this.ds.dsInstance.presence.getAll([this.username], (result) =>
     {
       if (result)
@@ -41,6 +42,20 @@ export class UserPage {
         document.getElementById("onlineDot").style.backgroundColor = this.statusColour;
       }
     });
+  }
+  ionViewDidEnter() {
+    this.ds.dsInstance.presence.subscribe(this.username, (online, username) => {
+      console.log(username);
+      console.log(online);
+      this.online = online;
+      this.status =  this.online ? "Online" : "Offline";
+      this.statusColour = this.online ? '#00aa00' : '#444';
+      document.getElementById("onlineDot").style.backgroundColor = this.statusColour;
+    });
+  }
+
+  ionViewWillLeave() {
+    this.ds.dsInstance.presence.unsubscribe(this.username);
   }
 
   star() {
