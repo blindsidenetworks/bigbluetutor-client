@@ -7,7 +7,7 @@ page-message {
   }
   .username{
       margin: auto;
-      margin-left: 8.2%;
+      margin-left: 8%;
       width: 75%;
       text-align: center;
       word-break: break-all;
@@ -23,16 +23,6 @@ page-message {
     background-color: white;
   }
 
-  .whitefade{
-    width:50px;
-    height: 100%;
-    position: absolute;
-    right: 17%;
-    z-index: 100;
-    top: 0px;
-    background: linear-gradient(to right, rbga(255,255,255,0), rbga(255,255,255,1));
-    background-color:  linear-gradient(to right, rbga(255,255,255,0), rbga(255,255,255,1));
-  }
   #requestButton{
     font-size: 12px;
     width: 85px;
@@ -52,10 +42,12 @@ page-message {
     display: flex;
     justify-content: flex-start;
     position: fixed;
-    background-color: white;page-user
-{
-  #userInfo
-  {
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  #userInfo{
     text-align: center;
     padding-top: 32px;
     padding-bottom: 16px;
@@ -64,11 +56,9 @@ page-message {
     background: -webkit-gradient(linear, top, bottom, from(#DCE3EC), to(#FFFFFF));
   }
 
-  #name
-  {
+  #name{
     font-size: 36px;
-  }      margin-left: 5%;
-      margin-right: 5%;
+  }
 
   #imageContainer {
     display: flex;
@@ -127,12 +117,7 @@ page-message {
         margin-right: 25%;
       }
     }
-}
 
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
   .msgsend{
       font-size: 14px;
       width: 80px;
@@ -263,8 +248,5 @@ page-message {
     background-color: $blue;
     font-weight: bold;
     color: white;
-  }
-  .button-inner{
-    width: inherit;
   }
 }
