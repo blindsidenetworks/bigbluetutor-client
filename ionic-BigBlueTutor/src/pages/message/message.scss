@@ -3,25 +3,34 @@ page-message {
     display: flex;
     justify-content: center;
     vertical-align: middle;
-    margin-left: 55px;
+    overflow: auto;
   }
   .username{
       margin: auto;
-      width: 50%;
+      margin-left: 8%;
+      width: 75%;
       text-align: center;
       word-break: break-all;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      overflow: scroll;
+      font-weight: bold;
   }
   .messageheader{
     display: flex;
-    height: 100px;
+    height: 100px;;
     padding: 15px;
     background-color: white;
   }
+
   #requestButton{
     font-size: 12px;
-    width: 75px;
+    width: 85px;
+    min-width: 85px;
     height: 45px;
     margin-left: auto;
+    padding: 0px;
+    overflow: auto;
   }
   .inputmessage{
     width: 100%;
@@ -33,23 +42,23 @@ page-message {
     display: flex;
     justify-content: flex-start;
     position: fixed;
-    background-color: white;page-user
-{
-  #userInfo
-  {
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  #userInfo{
     text-align: center;
     padding-top: 32px;
     padding-bottom: 16px;
     border-bottom: 2px solid $lightgrey;
-    background: linear-gradient(bottom, #DCE3EC, #FFFFFF);
+    background: linear-gradient(to top, #DCE3EC, #FFFFFF);
     background: -webkit-gradient(linear, top, bottom, from(#DCE3EC), to(#FFFFFF));
   }
 
-  #name
-  {
+  #name{
     font-size: 36px;
-  }      margin-left: 5%;
-      margin-right: 5%;
+  }
 
   #imageContainer {
     display: flex;
@@ -108,12 +117,7 @@ page-message {
         margin-right: 25%;
       }
     }
-}
 
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
   .msgsend{
       font-size: 14px;
       width: 80px;
@@ -166,15 +170,19 @@ page-message {
     line-height: 32px;
     overflow: auto;
   }
+  .flex{
+    display: flex;
+  }
   .msg_bbbsession_body{
     margin-top: -1px;
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 10px;
+    padding: 5px;
 
     background-color: white;
     width: inherit;
-    height: 70px;
+    min-height: 70px;
     border: 1px solid $blue;
     border-radius: 0px 0px 12px 12px;
     display: flex;
