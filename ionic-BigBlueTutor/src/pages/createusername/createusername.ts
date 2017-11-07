@@ -55,10 +55,10 @@ export class CreateUsernamePage {
               this.ds.getRecord("data").whenReady(dataRecord =>
               {
                 this.ds.dataRecord = dataRecord;
-                // if(profileRecord.get("onboardingComplete"))
+                if(profileRecord.get("onboardingComplete"))
+                  this.goToHome();
+                else
                   this.goToOnboarding();
-                // else
-                  // this.goToOnboarding();
               });
             });
           }

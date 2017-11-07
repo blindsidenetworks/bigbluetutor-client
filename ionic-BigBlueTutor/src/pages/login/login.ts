@@ -148,11 +148,10 @@ export class LoginPage {
         this.ds.getRecord("data").whenReady(dataRecord =>
         {
           this.ds.dataRecord = dataRecord;
-          // if(profileRecord.get("onboardingComplete"))
+          if(profileRecord.get("onboardingComplete"))
             this.goToHome();
-            //this.goToOnboarding();
-          // else
-            // this.goToOnboarding();
+          else
+            this.goToOnboarding();
         });
       });
     }

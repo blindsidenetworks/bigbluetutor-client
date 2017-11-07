@@ -17,10 +17,27 @@ export class OnboardingPage {
   }
 
   register() {
-    this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {})
-    //do additional calls first
-    this.navCtrl.setRoot(HomePage);
+    if(this.navParams.get("categories"))
+    {
+      this.ds.dsInstance.rpc.make('registerTutor', {username: this.ds.profileRecord.get("username"), categories: this.navParams.get("categories")}, ()=> {
+        this.finishOnboarding();
+      });
+    }
+    else
+    {
+      this.finishOnboarding();
+    }
   }
+
+  finishOnboarding()
+  {
+      this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {
+        //do additional calls first
+        this.ds.profileRecord.set("onboardingComplete", true);
+        this.navCtrl.setRoot(HomePage);
+      });
+  }
+
   bioInput() {
     $('.bioInput').css('border-color','#5576FF');
   }
