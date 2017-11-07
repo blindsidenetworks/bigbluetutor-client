@@ -25,7 +25,7 @@ export class MyApp {
 
 
 
-   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController) {
+   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController, public push: Push) {
     this.pages = [
       {title: "Home", component: HomePage},
       {title: "Profile", component: ProfilePage},
@@ -54,7 +54,7 @@ export class MyApp {
       }
       const options: PushOptions = {
         android: {
-          senderID: ENV.senderId;
+          senderID: ENV.senderId
         },
         ios: {
           alert: 'true',
