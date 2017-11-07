@@ -22,8 +22,7 @@ export class Inbox {
     });
   }
 
-  viewMessage(message)
-  {
+  viewMessage(message) {
     this.navCtrl.push(Message, {username:message});
   }
 

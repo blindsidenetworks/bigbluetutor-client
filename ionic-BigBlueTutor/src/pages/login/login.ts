@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { AppPreferences } from '@ionic-native/app-preferences';
 import { NavController, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { CreateUsernamePage } from '../createusername/createusername'
 import { RoleChoice } from '../onboarding/roleChoice/roleChoice';
+import { PushService } from '../../shared/push.service';
 import { DsService } from '../../shared/ds.service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Platform } from 'ionic-angular';
@@ -12,6 +15,7 @@ import { ENV } from '../../config/env';
   selector: 'page-login',
   templateUrl: 'login.html'
 })
+
 export class LoginPage {
   username: string;
   password: string;
@@ -19,37 +23,31 @@ export class LoginPage {
   browser: any;
   auth2: any;
 
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private ds: DsService, private googlePlus: GooglePlus) {
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private ds: DsService, private ps: PushService, private googlePlus: GooglePlus,  private storage: Storage, private appPreferences: AppPreferences) {
     this.username = this.password = this.idToken = "";
+    //browser
     console.log("Native:", this.hasGooglePlusNative());
-    if(!this.hasGooglePlusNative())
-    {
-      gapi.load("auth2", () =>
-      {
+    if(!this.hasGooglePlusNative()) {
+      gapi.load("auth2", () => {
         gapi.auth2.init({
           client_id: ENV.googleOAuthKey,
           scope: 'profile',
           fetch_basic_profile: true
-        }).then((auth2) =>
-        {
+        }).then((auth2) => {
           this.auth2 = auth2;
-          //this.auth2.signOut().catch(error => console.log(error));
-          this.auth2.attachClickHandler(document.getElementById('googleBrowser'),{}, profile =>
-          {
-            if(profile)
-            {
+          this.auth2.attachClickHandler(document.getElementById('googleBrowser'),{}, profile => {
+            if(profile) {
               this.idToken = profile.getAuthResponse().id_token;
               this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
             }
-          }, error =>
-          {
+          }, error => {
             console.log("Login error:", error);
           });
         }, (error) => {console.log(error)});
       });
     }
   }
-
+/*
   login() {
     this.ds.login({ username: this.username, password: this.password }, this.handleLogin.bind(this));
   }
@@ -57,11 +55,12 @@ export class LoginPage {
   handleLogin(success, data) {
     if(success) {
       this.ds.dsInstance.record.has("profile/"+this.username, this.linkProfile.bind(this));
-    }else {
+    } else {
       console.log(success);
     }
   }
-
+*/
+/*
   linkProfile(error, hasRecord) {
     var record = this.ds.getRecord("profile/"+this.username);
     if(!hasRecord) {
@@ -72,7 +71,6 @@ export class LoginPage {
         pendingMeetings: [],
         requestMeetings: [],
         messages: {},
-        profilePic: "http://www.freeiconspng.com/uploads/msn-people-person-profile-user-icon--icon-search-engine-16.png",
         meeting: ""
       });
       this.ds.profileRecord = record;
@@ -88,35 +86,28 @@ export class LoginPage {
       });
     }
   }
+  */
 
-  googleLogin()
-  {
+  googleLogin() {
     this.googlePlus.disconnect().then(() =>
     {
       console.log("Logged out of Google Account");
-      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res =>
-      {
-        if(res)
-        {
+      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res => {
+        if(res) {
           this.idToken = res.idToken;
           this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
         }
-      }).catch(error =>
-      {
+      }).catch(error => {
         console.log("Login error:", error);
       });
-    }).catch(error =>
-    {
+    }).catch(error => {
       console.log("Logout error:", error);
-      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res =>
-      {
-        if(res)
-        {
+      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res => {
+        if(res) {
           this.idToken = res.idToken;
           this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
         }
-      }).catch(error =>
-      {
+      }).catch(error => {
         console.log("Login error:", error);
       });
     });
@@ -128,54 +119,44 @@ export class LoginPage {
       this.username = data.username;
       this.ds.dsInstance.record.has("profile/"+this.username, this.linkGoogleProfile.bind(this));
     }
-    else if(data && data.needsUsername)
-    {
+    else if(data && data.needsUsername) {
       this.goToCreateUsername();
     }
   }
 
   linkGoogleProfile(error, hasRecord) {
-    if(!hasRecord)
-    {
+    if(!hasRecord) {
       this.goToCreateUsername();
-    }
-    else
-    {
-      this.ds.getRecord("profile/"+this.username).whenReady(profileRecord =>
-      {
-        // profileRecord.set("profilePic", this.profilePicture);
+    } else {
+      this.ds.getRecord("profile/"+this.username).whenReady(profileRecord => {
         this.ds.profileRecord = profileRecord;
-        this.ds.getRecord("data").whenReady(dataRecord =>
-        {
+        this.ds.getRecord("data").whenReady(dataRecord => {
           this.ds.dataRecord = dataRecord;
-          // if(profileRecord.get("onboardingComplete"))
+          this.appPreferences.fetch('username').then((res) => {
+            if (this.ds.profileRecord.get('username') != res) {
+              this.appPreferences.store('username', this.ds.profileRecord.get('username'));
+              this.ps.initPushNotification(this.ds);
+            }
             this.goToHome();
-            //this.goToOnboarding();
-          // else
-            // this.goToOnboarding();
+          })
         });
       });
     }
   }
 
-  googleLogout()
-  {
-    this.googlePlus.disconnect().then(() =>
-    {
+  googleLogout() {
+    this.googlePlus.disconnect().then(() => {
       console.log("Logged out of Google Account");
-    }).catch(error =>
-    {
+    }).catch(error => {
       console.log("Logout error:", error);
     });
   }
 
-  hasGooglePlusNative()
-  {
+  hasGooglePlusNative() {
     return (this.platform.is("ios") || this.platform.is("android")) && this.platform.is("cordova");
   }
 
-  goToCreateUsername()
-  {
+  goToCreateUsername() {
     this.navCtrl.setRoot(CreateUsernamePage, {idToken: this.idToken});
   }
 
