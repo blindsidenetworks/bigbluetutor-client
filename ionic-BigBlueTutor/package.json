@@ -76,7 +76,7 @@
       },
       "cordova-sqlite-storage": {},
       "phonegap-plugin-push": {
-        "FCM_VERSION": "11.4.2"
+        "FCM_VERSION": "11488183209"
       },
       "cordova-plugin-app-preferences": {}
     },
