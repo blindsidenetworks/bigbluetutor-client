@@ -20,7 +20,7 @@ export class HomePage {
   searchTutors;
   imageLocations;
 
-  constructor(public navCtrl: NavController, public menuCtrl:MenuController, public events: Events, private ds: DsService, private rls:RecordListenService) {
+  constructor(public navCtrl: NavController, public menuCtrl:MenuController, public events: Events, private ds: DsService, private rls: RecordListenService) {
     this.imageLocations = {
       "Math" : "./assets/icon/math.png",
       "Language": "./assets/icon/language.png",
@@ -42,13 +42,16 @@ export class HomePage {
   }
 
   onInput(event) {
+    //doesn't show anything if it is empty
     if (this.search == "") {
       this.searchCategories = [];
       this.searchTutors = [];
     }else {
+      //rpc call to get tutors
       this.ds.dsInstance.rpc.make('search', {param: this.search}, function(error, data) {
         this.searchTutors = data.data;
       }.bind(this));
+      //sort categories
       var categoryData = this.ds.dataRecord.get('categories');
       this.searchCategories = [];
       for (var category in categoryData) {
@@ -60,6 +63,7 @@ export class HomePage {
           this.searchCategories.push(subCategories[i]);
         }
       }
+      //local sorting of categories
       this.searchCategories = this.searchCategories.filter(function(text) {
         return text.toLowerCase().includes(this.search.toLowerCase());
       }.bind(this));
@@ -84,6 +88,7 @@ export class HomePage {
     }
   }
 
+  //searchbar animation
   searchbar(){
     $('.home-bkg').animate({'height':'20vh','opacity':'0.5'}, 300);
     $('.hamburger').fadeOut();

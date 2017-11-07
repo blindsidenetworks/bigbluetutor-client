@@ -3,8 +3,10 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { AppPreferences } from '@ionic-native/app-preferences';
 
 import { DsService } from '../shared/ds.service';
+// import { PushService } from '../shared/push.service';
 import { RecordListenService } from '../shared/recordlisten.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RequestPopover } from '../pages/request/request';
@@ -69,11 +71,13 @@ import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
   providers: [
     StatusBar,
     SplashScreen,
+    AppPreferences,
     DsService,
     RecordListenService,
+    // PushService,
     InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GooglePlus
+    GooglePlus,
   ]
 })
 export class AppModule {}

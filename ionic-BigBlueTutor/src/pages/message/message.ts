@@ -15,7 +15,7 @@ export class Message {
   @ViewChild('content') content: Content;
   @ViewChild('textInput') textInput;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService, private iab: InAppBrowser, public push: Push) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService, private rls:RecordListenService, private iab: InAppBrowser) {
     this.input = "";
     this.username = navParams.get('username');
     if (this.ds.profileRecord.get('messages') && this.ds.profileRecord.get('messages')[this.username]) {
