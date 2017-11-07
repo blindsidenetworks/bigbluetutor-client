@@ -11,3 +11,5 @@ ionic-BigBlueTutor/plugins
 *.apk
 *.keystore
 env.ts
+debug-signing.properties
+.sourcemaps
