@@ -47,46 +47,6 @@ export class LoginPage {
       });
     }
   }
-/*
-  login() {
-    this.ds.login({ username: this.username, password: this.password }, this.handleLogin.bind(this));
-  }
-
-  handleLogin(success, data) {
-    if(success) {
-      this.ds.dsInstance.record.has("profile/"+this.username, this.linkProfile.bind(this));
-    } else {
-      console.log(success);
-    }
-  }
-*/
-/*
-  linkProfile(error, hasRecord) {
-    var record = this.ds.getRecord("profile/"+this.username);
-    if(!hasRecord) {
-      record.set({
-        username: this.username,
-        password: '',
-        stars: [],
-        pendingMeetings: [],
-        requestMeetings: [],
-        messages: {},
-        meeting: ""
-      });
-      this.ds.profileRecord = record;
-      this.ds.dataRecord = this.ds.getRecord("data")
-      this.ds.dataRecord.whenReady(() => {
-        this.goToOnboarding();
-      })
-    } else {
-      this.ds.profileRecord = record;
-      this.ds.dataRecord = this.ds.getRecord("data")
-      this.ds.dataRecord.whenReady(() => {
-        this.goToHome();
-      });
-    }
-  }
-  */
 
   googleLogin() {
     this.googlePlus.disconnect().then(() =>
@@ -137,7 +97,10 @@ export class LoginPage {
               this.appPreferences.store('username', this.ds.profileRecord.get('username'));
               this.ps.initPushNotification(this.ds);
             }
-            this.goToHome();
+            if(profileRecord.get("onboardingComplete"))
+              this.goToHome();
+            else
+              this.goToOnboarding();
           })
         });
       });
