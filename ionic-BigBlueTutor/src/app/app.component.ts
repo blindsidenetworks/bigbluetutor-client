@@ -9,6 +9,7 @@ import {PreOnboarding} from '../pages/preOnboarding/preOnboarding';
 import {Inbox} from '../pages/inbox/inbox';
 import {ProfilePage} from '../pages/profilepage/profilepage';
 import {LoginPage} from '../pages/login/login';
+import {PushService} from '../shared/push.service';
 import {ENV} from '../config/env';
 
 @Component({
@@ -18,13 +19,12 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  //rootPage:any = LoginPage;
   rootPage:any = LoginPage;
   pages: Array<{title: string, component: any}>;
 
 
 
-   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController) {
+   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController, private ps:PushService) {
     this.pages = [
       {title: "Home", component: HomePage},
       {title: "Profile", component: ProfilePage},
@@ -42,6 +42,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      ps.nav = this.nav;
     });
   }
 

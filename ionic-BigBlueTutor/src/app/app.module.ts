@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AppPreferences } from '@ionic-native/app-preferences';
+import { Push } from '@ionic-native/push';
 
 import { DsService } from '../shared/ds.service';
 import { PushService } from '../shared/push.service';
@@ -76,6 +77,7 @@ import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
     RecordListenService,
     PushService,
     InAppBrowser,
+    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GooglePlus
   ]

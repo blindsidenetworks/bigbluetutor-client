@@ -5,17 +5,21 @@ import { ENV } from '../config/env';
 
 @Injectable()
 export class PushService {
+  nav;
 
   constructor(public push:Push, public platform: Platform) {
   }
 
   initPushNotification(ds) {
+    console.log(ds);
     if (!this.platform.is('cordova')) {
       console.warn('Push notifications not initialized. Cordova is not available - Run in physical device');
       return;
     }
     const options: PushOptions = {
-      android: {},
+      android: {
+        senderID:ENV.senderId
+      },
       ios: {
         alert: 'true',
         badge: false,

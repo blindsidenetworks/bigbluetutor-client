@@ -95,8 +95,8 @@
         <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.591220975174-osk9erq27jsbdcbpiukggnihurgsfk0a" />
     </plugin>
     <plugin name="cordova-sqlite-storage" spec="^2.0.4" />
-    <plugin name="phonegap-plugin-push" spec="^1.10.5">
-        <variable name="FCM_VERSION" value="11.4.2" />
-    </plugin>
     <plugin name="cordova-plugin-app-preferences" spec="^0.99.3" />
+    <plugin name="phonegap-plugin-push" spec="^1.10.5">
+        <variable name="SENDER_ID" value="SENDERID" />
+    </plugin>
 </widget>

@@ -19,16 +19,27 @@ export class OnboardingPage {
   }
 
   register() {
-    this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {})
-    //do additional calls first
-    this.appPreferences.fetch('username').then((res) => {
-      if (this.ds.profileRecord.get('username') != res) {
-        this.appPreferences.store('username', this.ds.profileRecord.get('username'));
-        this.ps.initPushNotification(this.ds);
-      }
-      this.navCtrl.setRoot(HomePage);
-    })
+    if(this.navParams.get("categories")) {
+      this.ds.dsInstance.rpc.make('registerTutor', {username: this.ds.profileRecord.get("username"), categories: this.navParams.get("categories")}, ()=> {
+        this.finishOnboarding();
+      });
+    } else {
+      this.finishOnboarding();
+    }
   }
+
+  finishOnboarding() {
+    this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {
+      //do additional calls first
+      this.appPreferences.fetch('username').then((res) => {
+        this.appPreferences.store('username', this.ds.profileRecord.get('username'));
+        this.ds.profileRecord.set("onboardingComplete", true);
+        this.ps.initPushNotification(this.ds);
+        this.navCtrl.setRoot(HomePage);
+      });
+    });
+  }
+
   bioInput() {
     $('.bioInput').css('border-color','#5576FF');
   }
