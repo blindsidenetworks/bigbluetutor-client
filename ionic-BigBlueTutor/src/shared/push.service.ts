@@ -37,7 +37,8 @@ export class PushService {
     pushObject.on('registration').subscribe((data: any) => {
       console.log('device token -> ' + data.registrationId);
       //TODO - send device token to server
-      ds.profileRecord.set('deviceToken', data.registrationId);
+      ds.dsInstance.rpc.make('addDeviceToken', {username: this.ds.profileRecord.get('username'), deviceToken: data.registrationId}, () => {});
+      //ds.profileRecord.set('deviceToken', data.registrationId);
     });
 
     pushObject.on('notification').subscribe((data: any) => {
@@ -50,6 +51,8 @@ export class PushService {
         //TODO: Your logic on click of push notification directly
         //this.nav.push(DetailsPage, { message: data.message });
 
+        this.nav.setRoot(Inbox);
+        /*
         this.os.googleLogin((id) => {
           this.idToken = id;
           this.ds.login({idToken: this.idToken}, (success, data) => {
@@ -72,6 +75,8 @@ export class PushService {
             }
           });
         });
+
+      */
         console.log('Push notification clicked');
       }
     });

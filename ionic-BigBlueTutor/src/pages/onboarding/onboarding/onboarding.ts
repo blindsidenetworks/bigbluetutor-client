@@ -21,9 +21,11 @@ export class OnboardingPage {
   register() {
     if(this.navParams.get("categories")) {
       this.ds.dsInstance.rpc.make('registerTutor', {username: this.ds.profileRecord.get("username"), categories: this.navParams.get("categories")}, ()=> {
+        this.navCtrl.setRoot(HomePage);
         this.finishOnboarding();
       });
     } else {
+      this.navCtrl.setRoot(HomePage);
       this.finishOnboarding();
     }
   }
@@ -31,12 +33,8 @@ export class OnboardingPage {
   finishOnboarding() {
     this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {
       //do additional calls first
-      this.appPreferences.fetch('username').then((res) => {
-        this.appPreferences.store('username', this.ds.profileRecord.get('username'));
-        this.ds.profileRecord.set("onboardingComplete", true);
-        this.ps.initPushNotification(this.ds);
-        this.navCtrl.setRoot(HomePage);
-      });
+      this.ds.profileRecord.set("onboardingComplete", true);
+      this.ps.initPushNotification(this.ds);
     });
   }
 
