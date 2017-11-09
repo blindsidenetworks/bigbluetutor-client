@@ -10,6 +10,8 @@ import {Inbox} from '../pages/inbox/inbox';
 import {ProfilePage} from '../pages/profilepage/profilepage';
 import {LoginPage} from '../pages/login/login';
 import {PushService} from '../shared/push.service';
+import {OAuthService} from '../shared/oauth.service';
+import {DsService} from '../shared/ds.service';
 import {ENV} from '../config/env';
 
 @Component({
@@ -22,9 +24,7 @@ export class MyApp {
   rootPage:any = LoginPage;
   pages: Array<{title: string, component: any}>;
 
-
-
-   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController, private ps:PushService) {
+   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController, private ps:PushService, private os:OAuthService, private ds:DsService) {
     this.pages = [
       {title: "Home", component: HomePage},
       {title: "Profile", component: ProfilePage},
