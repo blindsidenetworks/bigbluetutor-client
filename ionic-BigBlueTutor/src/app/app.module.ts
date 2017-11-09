@@ -8,6 +8,7 @@ import { Push } from '@ionic-native/push';
 
 import { DsService } from '../shared/ds.service';
 import { PushService } from '../shared/push.service';
+import { OAuthService } from '../shared/oauth.service';
 import { RecordListenService } from '../shared/recordlisten.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RequestPopover } from '../pages/request/request';
@@ -73,6 +74,7 @@ import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
     StatusBar,
     SplashScreen,
     AppPreferences,
+    OAuthService,
     DsService,
     RecordListenService,
     PushService,
