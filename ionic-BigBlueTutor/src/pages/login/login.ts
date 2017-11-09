@@ -82,16 +82,8 @@ export class LoginPage {
         this.ds.getRecord("data").whenReady(dataRecord => {
           this.ds.dataRecord = dataRecord;
           if(profileRecord.get("onboardingComplete")) {
-            this.appPreferences.fetch('username').then((res) => {
-              console.log(res);
-              if(this.username != res) {
-                console.log('1');
-                this.appPreferences.store('username', this.ds.profileRecord.get('username'));
-                this.ds.profileRecord.set("onboardingComplete", true);
-                this.ps.initPushNotification(this.ds);
-              }
-              this.goToHome();
-            });
+            this.goToHome();
+            this.ps.initPushNotification(this.ds);
           } else {
             this.goToOnboarding();
           }
