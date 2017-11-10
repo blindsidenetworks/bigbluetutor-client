@@ -38,11 +38,12 @@ export class Message {
   }
 
   seeUsername(){
-
+    //var messages = this.ds.profileRecord.get('messages')[this.username];
   }
 
   ionViewDidEnter() {
     //this.content.scrollToBottom(0);
+
   }
 
   sendMessage() {
@@ -54,7 +55,7 @@ export class Message {
       this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
       this.input = ""
     }
-      this.textInput.setFocus();
+    this.textInput.setFocus();
     //this.content.scrollToBottom(100);
   }
 
