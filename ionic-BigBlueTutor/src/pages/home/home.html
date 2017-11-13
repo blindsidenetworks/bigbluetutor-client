@@ -12,8 +12,12 @@
 
 <ion-content>
 
-  <button class="hamburger" ion-button menuToggle>
+  <button *ngIf="navCtrl.indexOf(this.viewCtrl) === 0" class="hamburger" ion-button menuToggle>
     <ion-icon name="menu"></ion-icon>
+  </button>
+
+  <button *ngIf="navCtrl.indexOf(this.viewCtrl) !== 0" class="hamburger" (tap)="navCtrl.pop()" ion-button>
+    <ion-icon name="arrow-back"></ion-icon>
   </button>
 
   <div class="home-bkg">

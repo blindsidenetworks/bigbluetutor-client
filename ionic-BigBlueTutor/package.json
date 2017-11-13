@@ -58,11 +58,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "2.1.4",
-<<<<<<< HEAD
     "ionic": "3.18.0",
-=======
-    "ionic": "3.17.0",
->>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
     "typescript": "2.3.4"
   },
   "description": "An Ionic project",

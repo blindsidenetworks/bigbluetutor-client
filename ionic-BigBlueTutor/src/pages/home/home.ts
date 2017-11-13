@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Events, MenuController } from 'ionic-angular';
+import { NavController, Events, MenuController, ViewController } from 'ionic-angular';
 import { ProfilePage } from '../profilepage/profilepage';
 import { UserPage } from '../userpage/userpage';
 import { Category } from '../category/category';
@@ -20,7 +20,7 @@ export class HomePage {
   searchTutors;
   imageLocations;
 
-  constructor(public navCtrl: NavController, public menuCtrl:MenuController, public events: Events, private ds: DsService, private rls: RecordListenService) {
+  constructor(public navCtrl: NavController, public menuCtrl:MenuController, public viewCtrl: ViewController, public events: Events, private ds: DsService, private rls: RecordListenService) {
     this.imageLocations = {
       "Math" : "./assets/icon/math.png",
       "Language": "./assets/icon/language.png",

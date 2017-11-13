@@ -5,12 +5,8 @@ import { NavController, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { CreateUsernamePage } from '../createusername/createusername'
 import { RoleChoice } from '../onboarding/roleChoice/roleChoice';
-<<<<<<< HEAD
-// import { PushService } from '../../shared/push.service';
-=======
 import { PushService } from '../../shared/push.service';
 import { OAuthService } from '../../shared/oauth.service';
->>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
 import { DsService } from '../../shared/ds.service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Platform } from 'ionic-angular';
@@ -28,11 +24,7 @@ export class LoginPage {
   browser: any;
   auth2: any;
 
-<<<<<<< HEAD
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private ds: DsService, /*private ps: PushService,*/ private googlePlus: GooglePlus,  private storage: Storage, private appPreferences: AppPreferences) {
-=======
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private os: OAuthService, private ds: DsService, private ps: PushService, private googlePlus: GooglePlus,  private storage: Storage, private appPreferences: AppPreferences) {
->>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
     this.username = this.password = this.idToken = "";
     //browser
     /*
@@ -89,25 +81,12 @@ export class LoginPage {
         this.ds.profileRecord = profileRecord;
         this.ds.getRecord("data").whenReady(dataRecord => {
           this.ds.dataRecord = dataRecord;
-<<<<<<< HEAD
-          this.appPreferences.fetch('username').then((res) => {
-            if (this.ds.profileRecord.get('username') != res) {
-              this.appPreferences.store('username', this.ds.profileRecord.get('username'));
-              // this.ps.initPushNotification(this.ds);
-            }
-            if(profileRecord.get("onboardingComplete"))
-              this.goToHome();
-            else
-              this.goToOnboarding();
-          });
-=======
           if(profileRecord.get("onboardingComplete")) {
             this.goToHome();
             this.ps.initPushNotification(this.ds);
           } else {
             this.goToOnboarding();
           }
->>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
         });
       });
     }

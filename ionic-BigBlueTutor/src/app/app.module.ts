@@ -7,12 +7,8 @@ import { AppPreferences } from '@ionic-native/app-preferences';
 import { Push } from '@ionic-native/push';
 
 import { DsService } from '../shared/ds.service';
-<<<<<<< HEAD
-// import { PushService } from '../shared/push.service';
-=======
 import { PushService } from '../shared/push.service';
 import { OAuthService } from '../shared/oauth.service';
->>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
 import { RecordListenService } from '../shared/recordlisten.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RequestPopover } from '../pages/request/request';
@@ -81,7 +77,7 @@ import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
     OAuthService,
     DsService,
     RecordListenService,
-    // PushService,
+    PushService,
     InAppBrowser,
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, ViewController } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class ProfilePage {
   statusColour;
   status: string;
 
-  constructor(public navCtrl: NavController, private ds: DsService) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, private ds: DsService) {
     this.username = this.ds.profileRecord.get("username");
     this.user = this.ds.getRecord("user/"+this.username);
     this.user.whenReady(record => {
