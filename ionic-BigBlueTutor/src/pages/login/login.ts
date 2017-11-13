@@ -5,7 +5,12 @@ import { NavController, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { CreateUsernamePage } from '../createusername/createusername'
 import { RoleChoice } from '../onboarding/roleChoice/roleChoice';
+<<<<<<< HEAD
 // import { PushService } from '../../shared/push.service';
+=======
+import { PushService } from '../../shared/push.service';
+import { OAuthService } from '../../shared/oauth.service';
+>>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
 import { DsService } from '../../shared/ds.service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Platform } from 'ionic-angular';
@@ -23,9 +28,14 @@ export class LoginPage {
   browser: any;
   auth2: any;
 
+<<<<<<< HEAD
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private ds: DsService, /*private ps: PushService,*/ private googlePlus: GooglePlus,  private storage: Storage, private appPreferences: AppPreferences) {
+=======
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private os: OAuthService, private ds: DsService, private ps: PushService, private googlePlus: GooglePlus,  private storage: Storage, private appPreferences: AppPreferences) {
+>>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
     this.username = this.password = this.idToken = "";
     //browser
+    /*
     console.log("Native:", this.hasGooglePlusNative());
     if(!this.hasGooglePlusNative()) {
       gapi.load("auth2", () => {
@@ -46,80 +56,27 @@ export class LoginPage {
         }, (error) => {console.log(error)});
       });
     }
+    */
   }
-/*
-  login() {
-    this.ds.login({ username: this.username, password: this.password }, this.handleLogin.bind(this));
-  }
-
-  handleLogin(success, data) {
-    if(success) {
-      this.ds.dsInstance.record.has("profile/"+this.username, this.linkProfile.bind(this));
-    } else {
-      console.log(success);
-    }
-  }
-*/
-/*
-  linkProfile(error, hasRecord) {
-    var record = this.ds.getRecord("profile/"+this.username);
-    if(!hasRecord) {
-      record.set({
-        username: this.username,
-        password: '',
-        stars: [],
-        pendingMeetings: [],
-        requestMeetings: [],
-        messages: {},
-        meeting: ""
-      });
-      this.ds.profileRecord = record;
-      this.ds.dataRecord = this.ds.getRecord("data")
-      this.ds.dataRecord.whenReady(() => {
-        this.goToOnboarding();
-      })
-    } else {
-      this.ds.profileRecord = record;
-      this.ds.dataRecord = this.ds.getRecord("data")
-      this.ds.dataRecord.whenReady(() => {
-        this.goToHome();
-      });
-    }
-  }
-  */
 
   googleLogin() {
-    this.googlePlus.disconnect().then(() =>
-    {
-      console.log("Logged out of Google Account");
-      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res => {
-        if(res) {
-          this.idToken = res.idToken;
-          this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
-        }
-      }).catch(error => {
-        console.log("Login error:", error);
-      });
-    }).catch(error => {
-      console.log("Logout error:", error);
-      this.googlePlus.login({webClientId: ENV.googleOAuthKey, offline: true}).then(res => {
-        if(res) {
-          this.idToken = res.idToken;
-          this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
-        }
-      }).catch(error => {
-        console.log("Login error:", error);
-      });
-    });
+    this.os.googleLogin((id) => {
+      this.idToken = id;
+    this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
+    })
   }
+
+  hasGooglePlusNative() {
+    return (this.platform.is("ios") || this.platform.is("android")) && this.platform.is("cordova");
+  }
+
 
   handleGoogleLogin(success, data) {
     console.log("Google login success:", success);
     if(success && data && data.username) {
       this.username = data.username;
       this.ds.dsInstance.record.has("profile/"+this.username, this.linkGoogleProfile.bind(this));
-    }
-    else if(data && data.needsUsername) {
+    } else if(data && data.needsUsername) {
       this.goToCreateUsername();
     }
   }
@@ -132,6 +89,7 @@ export class LoginPage {
         this.ds.profileRecord = profileRecord;
         this.ds.getRecord("data").whenReady(dataRecord => {
           this.ds.dataRecord = dataRecord;
+<<<<<<< HEAD
           this.appPreferences.fetch('username').then((res) => {
             if (this.ds.profileRecord.get('username') != res) {
               this.appPreferences.store('username', this.ds.profileRecord.get('username'));
@@ -142,21 +100,17 @@ export class LoginPage {
             else
               this.goToOnboarding();
           });
+=======
+          if(profileRecord.get("onboardingComplete")) {
+            this.goToHome();
+            this.ps.initPushNotification(this.ds);
+          } else {
+            this.goToOnboarding();
+          }
+>>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
         });
       });
     }
-  }
-
-  googleLogout() {
-    this.googlePlus.disconnect().then(() => {
-      console.log("Logged out of Google Account");
-    }).catch(error => {
-      console.log("Logout error:", error);
-    });
-  }
-
-  hasGooglePlusNative() {
-    return (this.platform.is("ios") || this.platform.is("android")) && this.platform.is("cordova");
   }
 
   goToCreateUsername() {
@@ -169,9 +123,5 @@ export class LoginPage {
 
   goToHome() {
     this.navCtrl.setRoot(HomePage);
-  }
-
-  ionViewWillEnter() {
-    this.menuCtrl.swipeEnable( false )
   }
 }

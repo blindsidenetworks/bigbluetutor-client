@@ -19,6 +19,7 @@ export class OnboardingPage {
   }
 
   register() {
+<<<<<<< HEAD
     if(this.navParams.get("categories"))
     {
       this.ds.dsInstance.rpc.make('registerTutor', {username: this.ds.profileRecord.get("username"), categories: this.navParams.get("categories")}, ()=> {
@@ -27,10 +28,20 @@ export class OnboardingPage {
     }
     else
     {
+=======
+    if(this.navParams.get("categories")) {
+      this.ds.dsInstance.rpc.make('registerTutor', {username: this.ds.profileRecord.get("username"), categories: this.navParams.get("categories")}, ()=> {
+        this.navCtrl.setRoot(HomePage);
+        this.finishOnboarding();
+      });
+    } else {
+      this.navCtrl.setRoot(HomePage);
+>>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
       this.finishOnboarding();
     }
   }
 
+<<<<<<< HEAD
   finishOnboarding()
   {
       this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {
@@ -44,6 +55,14 @@ export class OnboardingPage {
           this.navCtrl.setRoot(HomePage);
         });
       });
+=======
+  finishOnboarding() {
+    this.ds.dsInstance.rpc.make('changeDescription', {username: this.ds.profileRecord.get("username"), description: this.bio}, () => {
+      //do additional calls first
+      this.ds.profileRecord.set("onboardingComplete", true);
+      this.ps.initPushNotification(this.ds);
+    });
+>>>>>>> 973d1e325bac513e84e4cc298b68b9901fbca9b8
   }
 
   bioInput() {

@@ -1,22 +1,31 @@
 /*
 import { Injectable } from '@angular/core';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
+import { Inbox } from '../pages/inbox/inbox';
 import { Platform } from 'ionic-angular';
+import { OAuthService } from './oauth.service';
+import { DsService } from './ds.service';
 import { ENV } from '../config/env';
 
 @Injectable()
 export class PushService {
+  nav;
+  idToken;
+  username;
 
-  constructor(public push:Push, public platform: Platform) {
+  constructor(public push:Push, public platform: Platform, private os:OAuthService, private ds: DsService) {
   }
 
   initPushNotification(ds) {
+    console.log(ds);
     if (!this.platform.is('cordova')) {
       console.warn('Push notifications not initialized. Cordova is not available - Run in physical device');
       return;
     }
     const options: PushOptions = {
-      android: {},
+      android: {
+        senderID:ENV.senderId
+      },
       ios: {
         alert: 'true',
         badge: false,
@@ -29,7 +38,8 @@ export class PushService {
     pushObject.on('registration').subscribe((data: any) => {
       console.log('device token -> ' + data.registrationId);
       //TODO - send device token to server
-      ds.profileRecord.set('deviceToken', data.registrationId);
+      ds.dsInstance.rpc.make('addDeviceToken', {username: this.ds.profileRecord.get('username'), deviceToken: data.registrationId}, () => {});
+      //ds.profileRecord.set('deviceToken', data.registrationId);
     });
 
     pushObject.on('notification').subscribe((data: any) => {
@@ -41,6 +51,33 @@ export class PushService {
         //if user NOT using app and push notification comes
         //TODO: Your logic on click of push notification directly
         //this.nav.push(DetailsPage, { message: data.message });
+
+        this.nav.setRoot(Inbox);
+        /*
+        this.os.googleLogin((id) => {
+          this.idToken = id;
+          this.ds.login({idToken: this.idToken}, (success, data) => {
+            if(success && data && data.username) {
+              this.username = data.username;
+              this.ds.dsInstance.record.has("profile/"+this.username, (error, hasRecord) => {
+                if (hasRecord) {
+                  this.ds.getRecord("profile/"+this.username).whenReady(profileRecord => {
+                    this.ds.profileRecord = profileRecord;
+                    this.ds.getRecord("data").whenReady(dataRecord => {
+                      this.ds.dataRecord = dataRecord;
+                      if(profileRecord.get("onboardingComplete"))
+                        this.nav.setRoot(Inbox);
+                    });
+                  });
+                } else {
+
+                }
+              });
+            }
+          });
+        });
+
+      */
         console.log('Push notification clicked');
       }
     });

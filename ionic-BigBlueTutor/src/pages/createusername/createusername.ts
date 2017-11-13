@@ -3,7 +3,6 @@ import {NavController, NavParams, Platform} from 'ionic-angular';
 import { Events } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
 import { RoleChoice } from '../onboarding/roleChoice/roleChoice'
-import { HomePage } from '../home/home'
 import { LoginPage } from '../login/login'
 
 @Component({
@@ -70,11 +69,6 @@ export class CreateUsernamePage {
   goToOnboarding()
   {
     this.navCtrl.setRoot(RoleChoice);
-  }
-
-  goToHome()
-  {
-    this.navCtrl.setRoot(HomePage);
   }
 
   goToLogin()
