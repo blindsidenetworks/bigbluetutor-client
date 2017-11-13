@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, ViewController } from 'ionic-angular';
+import { NavController, ViewController, Events } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
+import { RecordListenService } from '../../shared/recordlisten.service';
 
 @Component({
   selector: 'page-profile',
@@ -14,8 +15,9 @@ export class ProfilePage {
   online: boolean;
   statusColour;
   status: string;
+  hasNewMessage;
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, private ds: DsService) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, private ds: DsService, public events:Events, private rls:RecordListenService) {
     this.username = this.ds.profileRecord.get("username");
     this.user = this.ds.getRecord("user/"+this.username);
     this.user.whenReady(record => {
@@ -25,15 +27,25 @@ export class ProfilePage {
 
     this.online = false;
     this.status = "Offline";
-    this.ds.dsInstance.presence.getAll([this.username], (result) =>
-    {
-      if (result)
-      {
+    this.ds.dsInstance.presence.getAll([this.username], (result) => {
+      if (result) {
         this.online = result[this.username]
         this.status =  this.online ? "Online" : "Offline";
         this.statusColour = this.online ? '#00aa00' : '#444';
         document.getElementById("onlineDot").style.backgroundColor = this.statusColour;
       }
     });
+
+    events.subscribe('user:newMessage', () => {
+      this.hasNewMessage = true;
+    });
+
+    var newMessages = this.ds.profileRecord.get('newMessagesCount');
+    for (var message in newMessages) {
+      if(newMessages[message]) {
+        this.hasNewMessage = true;
+        break;
+      }
+    }
   }
 }
