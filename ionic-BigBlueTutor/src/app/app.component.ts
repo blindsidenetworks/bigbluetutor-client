@@ -55,6 +55,7 @@ export class MyApp {
       }
     }
     this.pages[2].highlight = count;
+    console.log(count);
   }
 
   openPage(page)
