@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
-import {NavController, NavParams, Platform} from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 import { Events } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
-import { RoleChoice } from '../onboarding/roleChoice/roleChoice'
-import { LoginPage } from '../login/login'
+import { RoleChoice } from '../onboarding/roleChoice/roleChoice';
+import { LoginPage } from '../login/login';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-createusername',
@@ -54,13 +55,21 @@ export class CreateUsernamePage {
               this.ds.getRecord("data").whenReady(dataRecord =>
               {
                 this.ds.dataRecord = dataRecord;
-                this.goToOnboarding();
+                if(profileRecord.get("onboardingComplete"))
+                  this.goToHome();
+                else
+                  this.goToOnboarding();
               });
             });
           }
         });
       } //In all other cases, do nothing
     });
+  }
+
+  goToHome()
+  {
+    this.navCtrl.setRoot(HomePage);
   }
 
   goToOnboarding()

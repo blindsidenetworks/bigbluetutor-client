@@ -52,7 +52,6 @@ export class PushService {
         //this.nav.push(DetailsPage, { message: data.message });
 
         this.nav.setRoot(Inbox);
-        /*
         this.os.googleLogin((id) => {
           this.idToken = id;
           this.ds.login({idToken: this.idToken}, (success, data) => {
@@ -75,8 +74,6 @@ export class PushService {
             }
           });
         });
-
-      */
         console.log('Push notification clicked');
       }
     });

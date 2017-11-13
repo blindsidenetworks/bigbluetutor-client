@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NavController, Events} from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, Events, ViewController } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
-import {Message} from '../message/message';
-import {RecordListenService} from '../../shared/recordlisten.service';
+import { Message } from '../message/message';
+import { RecordListenService } from '../../shared/recordlisten.service';
 
 @Component({
   selector: 'page-inbox',
@@ -14,7 +14,7 @@ export class Inbox {
   newMessagesCount;
   tutors;
 
-  constructor(public navCtrl: NavController, private ds: DsService, public events:Events, private rls:RecordListenService) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, private ds: DsService, public events:Events, private rls:RecordListenService) {
     this.messagesRecord = this.ds.profileRecord.get("messages");
     this.newMessagesCount = this.ds.profileRecord.get('newMessagesCount');
     this.messages = Object.keys(this.messagesRecord);

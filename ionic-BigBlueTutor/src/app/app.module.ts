@@ -81,7 +81,7 @@ import { OnboardingPage } from '../pages/onboarding/onboarding/onboarding';
     InAppBrowser,
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GooglePlus
+    GooglePlus,
   ]
 })
 export class AppModule {}

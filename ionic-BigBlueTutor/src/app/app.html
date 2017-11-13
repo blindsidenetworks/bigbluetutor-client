@@ -8,7 +8,7 @@
   <div id="menuline"></div>
   <div class="space"></div>
   <h1>{{username}}</h1>
-  <button ion-item *ngFor="let page of pages" class="menuOption" (click)="openPage(page)">
+  <button ion-item *ngFor="let page of pages" class="menuOption" (tap)="openPage(page)">
       <h1 class="menuText">{{page.title}}</h1>
   </button>
   </ion-content>

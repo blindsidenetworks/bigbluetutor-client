@@ -11,8 +11,12 @@
 
 <ion-content>
   <div class="header">
-    <button class="hamburger" ion-button menuToggle>
+    <button *ngIf="navCtrl.indexOf(viewCtrl) === 0" class="hamburger" ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <button *ngIf="navCtrl.indexOf(viewCtrl) !== 0" class="hamburger" (tap)="navCtrl.pop()" ion-button>
+      <ion-icon name="arrow-back"></ion-icon>
     </button>
     <h1 class="title">Inbox</h1>
   </div>
