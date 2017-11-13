@@ -22,13 +22,13 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage:any = LoginPage;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, highlight:any}>;
 
    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController, private ps:PushService, private os:OAuthService, private ds:DsService) {
     this.pages = [
-      {title: "Home", component: HomePage},
-      {title: "Profile", component: ProfilePage},
-      {title: "Inbox", component: Inbox}
+      {title: "Home", component: HomePage, highlight: false},
+      {title: "Profile", component: ProfilePage, highlight: false},
+      {title: "Inbox", component: Inbox, highlight: false}
     ];
     platform.ready().then(() => {
 
@@ -44,6 +44,17 @@ export class MyApp {
       splashScreen.hide();
       ps.nav = this.nav;
     });
+  }
+
+  menuOpened() {
+    var count = 0;
+    var newMessages = this.ds.profileRecord.get('newMessagesCount');
+    for (var message in newMessages) {
+      if(newMessages[message]) {
+        count++;
+      }
+    }
+    this.pages[2].highlight = count;
   }
 
   openPage(page)

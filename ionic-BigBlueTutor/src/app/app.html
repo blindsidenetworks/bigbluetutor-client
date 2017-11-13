@@ -1,6 +1,6 @@
 <ion-nav [root]="rootPage" #content></ion-nav>
 
-<ion-menu [content]="content">
+<ion-menu [content]="content" (ionOpen)="menuOpened()">
   <ion-content class="menu">
   <div class="menulogo">
     <img class="menulogoimg" src="./assets/icon/logo.png"/>
@@ -10,6 +10,9 @@
   <h1>{{username}}</h1>
   <button ion-item *ngFor="let page of pages" class="menuOption" (tap)="openPage(page)">
       <h1 class="menuText">{{page.title}}</h1>
+      <div *ngIf="page.highlight">
+        {{page.highlight}}
+      </div>
   </button>
   </ion-content>
 </ion-menu>

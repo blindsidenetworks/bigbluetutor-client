@@ -14,6 +14,7 @@
 
   <button *ngIf="navCtrl.indexOf(this.viewCtrl) === 0" class="hamburger" ion-button menuToggle>
     <ion-icon name="menu"></ion-icon>
+    <p *ngIf="hasNewMessage"> RED DOT HERE</p>
   </button>
 
   <button *ngIf="navCtrl.indexOf(this.viewCtrl) !== 0" class="hamburger" (tap)="navCtrl.pop()" ion-button>

@@ -19,6 +19,7 @@ export class HomePage {
   searchCategories;
   searchTutors;
   imageLocations;
+  hasNewMessage;
 
   constructor(public navCtrl: NavController, public menuCtrl:MenuController, public viewCtrl: ViewController, public events: Events, private ds: DsService, private rls: RecordListenService) {
     this.imageLocations = {
@@ -35,10 +36,21 @@ export class HomePage {
       this.categories.push({category: category, img: this.imageLocations[category]});
     }
     this.search = "";
+
+    events.subscribe('user:newMessage', () => {
+      this.hasNewMessage = true;
+    });
   }
 
   ionViewWillEnter() {
     this.menuCtrl.swipeEnable(true);
+    var newMessages = this.ds.profileRecord.get('newMessagesCount');
+    for (var message in newMessages) {
+      if(newMessages[message]) {
+        this.hasNewMessage = true;
+        break;
+      }
+    }
   }
 
   onInput(event) {
