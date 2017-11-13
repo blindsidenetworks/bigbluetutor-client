@@ -41,6 +41,8 @@ page-message {
     border-top: 1px solid $lightbkggrey;
     display: flex;
     justify-content: flex-start;
+    bottom: 0px;
+    width: 100vw;
     position: fixed;
     background-color: white;
     bottom: 0;
@@ -98,17 +100,6 @@ page-message {
     margin-bottom: 10px;
     border-radius: 4px;
     background-color: white;
-    border: 2px solid $lightgrey;
-    height: 95px;
-    width: 112px;
-  }
-  .gradeimg{
-    height: 50%;
-    width: auto;
-  }
-  .gradetext{
-    margin-top: 8px;
-    margin-bottom: 0px;
   }
 
     @media screen and (min-width: 768px) {
@@ -121,6 +112,7 @@ page-message {
   .msgsend{
       font-size: 14px;
       width: 80px;
+      padding: 0px;
   }
   .sentmsgfield{
     background-color: $lightbkggrey;

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController, ViewController, PopoverController } from 'ionic-angular';
 import { DsService } from '../../shared/ds.service';
-import { PopoverController } from 'ionic-angular';
-import { ModalController, ViewController } from 'ionic-angular';
 
 import { Inbox } from '../inbox/inbox';
 import { Message } from '../message/message';
@@ -22,7 +20,7 @@ export class UserPage {
   profilePicture;
   statusColour;
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams:NavParams, private ds:DsService, private pc:PopoverController) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public viewCtrl: ViewController, public navParams:NavParams, private ds:DsService, private pc:PopoverController) {
     this.user = navParams.get('user');
     this.username = this.user.username;
     this.categories = this.user.categories;
