@@ -20,6 +20,10 @@
       <ion-icon name="arrow-back"></ion-icon>
     </button>
 
+    <button *ngIf="navCtrl.indexOf(viewCtrl) !== 0" class="hamburger" (tap)="navCtrl.pop()" ion-button>
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
     <div class="profilecontent">
       <h1 class="profiletitle">Overview</h1>
       <div class="biobox">
