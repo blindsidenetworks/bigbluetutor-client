@@ -21,11 +21,9 @@ export class OnboardingPage {
   register() {
     if(this.navParams.get("categories")) {
       this.ds.dsInstance.rpc.make('registerTutor', {username: this.ds.profileRecord.get("username"), categories: this.navParams.get("categories")}, ()=> {
-        this.navCtrl.setRoot(HomePage);
         this.finishOnboarding();
       });
     } else {
-      this.navCtrl.setRoot(HomePage);
       this.finishOnboarding();
     }
   }
@@ -35,6 +33,7 @@ export class OnboardingPage {
       //do additional calls first
       this.ds.profileRecord.set("onboardingComplete", true);
       this.ps.initPushNotification(this.ds);
+      this.navCtrl.setRoot(HomePage);
     });
   }
 

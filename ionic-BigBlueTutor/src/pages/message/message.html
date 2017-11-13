@@ -13,7 +13,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content content>
+<ion-content content #content>
   <div class="sentmsgfield">
     <div *ngFor="let msg of messages" [ngSwitch]="msg.special">
       <div class="sessionreq" *ngSwitchCase="'IncomingRequest'" >

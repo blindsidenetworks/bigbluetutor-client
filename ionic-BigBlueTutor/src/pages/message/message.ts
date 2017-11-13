@@ -29,33 +29,49 @@ export class Message {
         this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
       })
     }
+
+    var newMessagesCount = this.ds.profileRecord.get('newMessagesCount');
+    if (!newMessagesCount) {
+      newMessagesCount = {};
+    }
+    newMessagesCount[this.username] = 0;
+    this.ds.profileRecord.set('newMessagesCount', newMessagesCount);
     events.subscribe('user:message', () => {
       this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
     });
     events.subscribe('user:meeting', () => {
       this.joinMeeting();
     })
+    events.subscribe('user:newMessage', () => {
+      var newMessages = this.ds.profileRecord.get('newMessagesCount');
+      newMessages[this.username] = 0;
+      this.ds.profileRecord.set('newMessagesCount', newMessages);
+    });
   }
 
   seeUsername(){
-
+    //var messages = this.ds.profileRecord.get('messages')[this.username];
   }
 
   ionViewDidEnter() {
-    //this.content.scrollToBottom(0);
+    var newMessages = this.ds.profileRecord.get('newMessagesCount');
+    newMessages[this.username] = 0;
+    this.ds.profileRecord.set('newMessagesCount', newMessages);
+    this.content.scrollToBottom(0);
+
   }
 
   sendMessage() {
     if(this.input != "") {
       this.ds.dsInstance.rpc.make('sendMessage', {client:this.ds.profileRecord.get('username'), contact:this.username, message:this.input}, ( error, result ) => {});
       var tempMessages = this.ds.profileRecord.get('messages');
-      tempMessages[this.username].messages.push({user:this.ds.profileRecord.get('username'), message:this.input})
+      tempMessages[this.username].messages.push({user:this.ds.profileRecord.get('username'), message:this.input});
       this.ds.profileRecord.set('messages', tempMessages);
       this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
       this.input = ""
     }
-      this.textInput.setFocus();
-    //this.content.scrollToBottom(100);
+    this.content.scrollToBottom(0);
+    this.textInput.setFocus();
   }
 
   joinMeeting() {

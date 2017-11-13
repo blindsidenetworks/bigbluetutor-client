@@ -19,7 +19,10 @@
   <ion-list>
     <div *ngFor="let msg of messages" class="inbox_msg" (click)="viewMessage(msg)">
       <img src="{{messagesRecord[msg].pic}}" class="inbox_profilepic"/>
-      <button class="inbox_name" ion-item>{{msg}}</button>
+      <button class="inbox_name" ion-item>{{msg + newMessagesCount[msg]}}</button>
+      <div *ngIf="newMessagesCount[msg]">
+        <p>{{newMessagesCount[msg]}}</p>
+      </div>
     </div>
   </ion-list>
 </ion-content>
