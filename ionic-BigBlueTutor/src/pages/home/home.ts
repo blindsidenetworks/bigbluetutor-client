@@ -37,9 +37,6 @@ export class HomePage {
     }
     this.search = "";
 
-    events.subscribe('user:newMessage', () => {
-      this.hasNewMessage = true;
-    });
   }
 
   ionViewWillEnter() {
@@ -51,6 +48,13 @@ export class HomePage {
         break;
       }
     }
+    this.events.subscribe('user:newMessage', () => {
+      this.hasNewMessage = true;
+    });
+  }
+
+  ionViewDidLeave() {
+    this.events.unsubscribe('user:newMessage')
   }
 
   onInput(event) {
