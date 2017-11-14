@@ -13,22 +13,20 @@ import { RecordListenService } from '../../shared/recordlisten.service'
 export class Category {
   category: any;
   tutors;
+  type;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform:Platform, public events: Events, private ds: DsService) {
     this.category = navParams.get('category');
-    var type = "category";
+    this.type = "category";
     if (Object.keys(this.ds.dataRecord.get('categories')).indexOf(this.category) != -1) {
-      type = "subject";
+      this.type = "subject";
     }
 
-    ds.dsInstance.rpc.make(type+'/tutor', {subject: this.category}, function(error, data) {
+    ds.dsInstance.rpc.make(this.type+'/tutor', {subject: this.category}, function(error, data) {
       if (error) throw error
       this.tutors = data.data;
     }.bind(this));
 
-    ds.dsInstance.event.subscribe(type+'/tutor/'+this.category, function(data) {
-      this.tutors = data.data;
-    }.bind(this));
   }
 
   userSelected(tutor) {
@@ -38,6 +36,16 @@ export class Category {
     }else {
       this.navCtrl.push(UserPage, {user:tutor});
     }
+  }
+
+  ionViewWillEnter() {
+    this.ds.dsInstance.event.subscribe(this.type+'/tutor/'+this.category, function(data) {
+      this.tutors = data.data;
+    }.bind(this));
+  }
+
+  ionViewDidLeave() {
+      this.ds.dsInstance.event.unsubscribe(this.type+'/tutor/'+this.category);
   }
 
 }

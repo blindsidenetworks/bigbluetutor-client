@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Platform, MenuController, Nav} from 'ionic-angular';
+import {Platform, MenuController, Nav, Events} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
@@ -24,7 +24,7 @@ export class MyApp {
   rootPage:any = LoginPage;
   pages: Array<{title: string, component: any, highlight:any}>;
 
-   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController, private ps:PushService, private os:OAuthService, private ds:DsService) {
+   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController, private ps:PushService, private os:OAuthService, private ds:DsService, public events: Events) {
     this.pages = [
       {title: "Home", component: HomePage, highlight: false},
       {title: "Profile", component: ProfilePage, highlight: false},
@@ -55,7 +55,20 @@ export class MyApp {
       }
     }
     this.pages[2].highlight = count;
-    console.log(count);
+    this.events.subscribe('user:newMessage', () => {
+      count = 0;
+      newMessages = this.ds.profileRecord.get('newMessagesCount');
+      for (var message in newMessages) {
+        if(newMessages[message]) {
+          count++;
+        }
+      }
+      this.pages[2].highlight = count;
+    });
+  }
+
+  menuClosed() {
+    this.events.unsubscribe('user:newMessage', () => {});
   }
 
   openPage(page)

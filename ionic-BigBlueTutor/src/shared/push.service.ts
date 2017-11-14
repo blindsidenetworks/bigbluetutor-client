@@ -52,29 +52,6 @@ export class PushService {
         //this.nav.push(DetailsPage, { message: data.message });
 
         this.nav.setRoot(Inbox);
-        this.os.googleLogin((id) => {
-          this.idToken = id;
-          this.ds.login({idToken: this.idToken}, (success, data) => {
-            if(success && data && data.username) {
-              this.username = data.username;
-              this.ds.dsInstance.record.has("profile/"+this.username, (error, hasRecord) => {
-                if (hasRecord) {
-                  this.ds.getRecord("profile/"+this.username).whenReady(profileRecord => {
-                    this.ds.profileRecord = profileRecord;
-                    this.ds.getRecord("data").whenReady(dataRecord => {
-                      this.ds.dataRecord = dataRecord;
-                      if(profileRecord.get("onboardingComplete"))
-                        this.nav.setRoot(Inbox);
-                    });
-                  });
-                } else {
-
-                }
-              });
-            }
-          });
-        });
-        console.log('Push notification clicked');
       }
     });
     pushObject.on('error').subscribe(error => console.error('Error with Push plugin' + error));

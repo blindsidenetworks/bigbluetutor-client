@@ -36,10 +36,6 @@ export class ProfilePage {
       }
     });
 
-    events.subscribe('user:newMessage', () => {
-      this.hasNewMessage = true;
-    });
-
     var newMessages = this.ds.profileRecord.get('newMessagesCount');
     for (var message in newMessages) {
       if(newMessages[message]) {
@@ -47,5 +43,15 @@ export class ProfilePage {
         break;
       }
     }
+  }
+
+  ionViewDidEnter() {
+    this.events.subscribe('user:newMessage', () => {
+      this.hasNewMessage = true;
+    });
+  }
+
+  ionViewDidLeave() {
+    this.events.unsubscribe('user:newMessage');
   }
 }

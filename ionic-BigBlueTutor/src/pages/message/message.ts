@@ -36,17 +36,6 @@ export class Message {
     }
     newMessagesCount[this.username] = 0;
     this.ds.profileRecord.set('newMessagesCount', newMessagesCount);
-    events.subscribe('user:message', () => {
-      this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
-    });
-    events.subscribe('user:meeting', () => {
-      this.joinMeeting();
-    })
-    events.subscribe('user:newMessage', () => {
-      var newMessages = this.ds.profileRecord.get('newMessagesCount');
-      newMessages[this.username] = 0;
-      this.ds.profileRecord.set('newMessagesCount', newMessages);
-    });
   }
 
   seeUsername(){
@@ -57,18 +46,36 @@ export class Message {
     var newMessages = this.ds.profileRecord.get('newMessagesCount');
     newMessages[this.username] = 0;
     this.ds.profileRecord.set('newMessagesCount', newMessages);
-    this.content.scrollToBottom(0);
+    this.content.scrollToBottom(100);
+    this.events.subscribe('user:newMessage', () => {
+      console.log('cleared new messages');
+      var newMessages = this.ds.profileRecord.get('newMessagesCount');
+      newMessages[this.username] = 0;
+      this.ds.profileRecord.set('newMessagesCount', newMessages);
+    });
+    this.events.subscribe('user:message', () => {
+      this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
+    });
+    this.events.subscribe('user:meeting', () => {
+      this.joinMeeting();
+    })
+  }
 
+  ionViewDidLeave() {
+    this.events.unsubscribe('user:newMessage');
+    this.events.unsubscribe('user:meeting');
+    this.events.unsubscribe('user:message');
   }
 
   sendMessage() {
     if(this.input != "") {
-      this.ds.dsInstance.rpc.make('sendMessage', {client:this.ds.profileRecord.get('username'), contact:this.username, message:this.input}, ( error, result ) => {});
+      var msg = this.input
+      this.input = ""
+      this.ds.dsInstance.rpc.make('sendMessage', {client:this.ds.profileRecord.get('username'), contact:this.username, message:msg}, ( error, result ) => {});
       var tempMessages = this.ds.profileRecord.get('messages');
-      tempMessages[this.username].messages.push({user:this.ds.profileRecord.get('username'), message:this.input});
+      tempMessages[this.username].messages.push({user:this.ds.profileRecord.get('username'), message:msg});
       this.ds.profileRecord.set('messages', tempMessages);
       this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
-      this.input = ""
     }
     this.content.scrollToBottom(0);
     this.textInput.setFocus();
