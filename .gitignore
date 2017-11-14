@@ -13,3 +13,4 @@ ionic-BigBlueTutor/plugins
 env.ts
 debug-signing.properties
 .sourcemaps
+.env
