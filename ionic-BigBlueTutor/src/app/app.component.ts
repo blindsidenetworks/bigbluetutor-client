@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Platform, MenuController, Nav, Events} from 'ionic-angular';
+import {Platform, MenuController, Nav, Events, AlertController} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
@@ -24,11 +24,12 @@ export class MyApp {
   rootPage:any = LoginPage;
   pages: Array<{title: string, component: any, highlight:any}>;
 
-   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController, private ps:PushService, private os:OAuthService, private ds:DsService, public events: Events) {
+   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage, public menu: MenuController, private ps:PushService, private os:OAuthService, private ds:DsService, public events: Events, private alertCtrl: AlertController) {
     this.pages = [
       {title: "Home", component: HomePage, highlight: false},
       {title: "Profile", component: ProfilePage, highlight: false},
-      {title: "Inbox", component: Inbox, highlight: false}
+      {title: "Inbox", component: Inbox, highlight: false},
+      {title: "Logout", component: undefined, highlight: false}
     ];
     platform.ready().then(() => {
       this.storage.get('bbt').then((val) => {
@@ -73,6 +74,32 @@ export class MyApp {
   openPage(page)
   {
     this.menu.close();
-    this.nav.setRoot(page.component);
+    if(page.component) {
+      this.nav.setRoot(page.component);
+    } else {
+      let alert = this.alertCtrl.create({
+        title: 'Confirm Logout',
+        message: 'Are you sure you want to logout? You will no longer receive notications!',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          },
+          {
+            text: 'Confirm',
+            handler: () => {
+              this.ds.dsInstance.rpc.make('removeDeviceToken', {username: this.ds.profileRecord.get('username'), deviceToken:this.ps.idToken}, () => {
+                this.os.googleLogout();
+                this.nav.setRoot(LoginPage);
+              })
+            }
+          }
+        ]
+      });
+      alert.present();
+    }
   }
 }

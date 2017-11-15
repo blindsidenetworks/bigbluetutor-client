@@ -37,8 +37,8 @@ export class PushService {
     pushObject.on('registration').subscribe((data: any) => {
       console.log('device token -> ' + data.registrationId);
       //TODO - send device token to server
+      this.idToken = data.registrationId;
       ds.dsInstance.rpc.make('addDeviceToken', {username: this.ds.profileRecord.get('username'), deviceToken: data.registrationId}, () => {});
-      //ds.profileRecord.set('deviceToken', data.registrationId);
     });
 
     pushObject.on('notification').subscribe((data: any) => {
