@@ -31,7 +31,6 @@ export class MyApp {
       {title: "Inbox", component: Inbox, highlight: false}
     ];
     platform.ready().then(() => {
-
       this.storage.get('bbt').then((val) => {
         if (!val) {
           storage.set('bbt', true);
