@@ -72,7 +72,7 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-android-permissions": {},
       "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.591220975174-osk9erq27jsbdcbpiukggnihurgsfk0a"
+        "REVERSED_CLIENT_ID": "CLIENT_ID"
       },
       "cordova-sqlite-storage": {},
       "cordova-plugin-app-preferences": {},
