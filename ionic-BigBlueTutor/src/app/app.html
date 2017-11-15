@@ -1,6 +1,6 @@
 <ion-nav [root]="rootPage" #content></ion-nav>
 
-<ion-menu [content]="content" (ionOpen)="menuOpened()">
+<ion-menu [content]="content" (ionOpen)="menuOpened()" (ionclose)="menuClosed()">
   <ion-content class="menu">
   <div class="menulogo">
     <img class="menulogoimg" src="./assets/icon/logo.png"/>

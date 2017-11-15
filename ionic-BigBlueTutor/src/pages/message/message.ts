@@ -12,6 +12,7 @@ export class Message {
   messages: any;
   username: any;
   input: any;
+  enabled;
   @ViewChild('content') content: Content;
   @ViewChild('textInput') textInput;
 
@@ -66,8 +67,18 @@ export class Message {
     this.events.unsubscribe('user:meeting');
     this.events.unsubscribe('user:message');
   }
-
+  onInput(event) {
+    if(this.input == "") {
+      this.enabled = false;
+    } else {
+      this.enabled = true;
+    }
+  }
+  inputFocus() {
+    this.content.scrollToBottom(100);
+  }
   sendMessage() {
+    this.enabled = false;
     if(this.input != "") {
       var msg = this.input
       this.input = ""
@@ -77,7 +88,7 @@ export class Message {
       this.ds.profileRecord.set('messages', tempMessages);
       this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
     }
-    this.content.scrollToBottom(0);
+    this.content.scrollToBottom(100);
     this.textInput.setFocus();
   }
 

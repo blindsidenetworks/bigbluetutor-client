@@ -85,7 +85,7 @@
       </div>
   </div>
   <div class="messagefield">
-    <ion-input #textInput [(ngModel)]="input" placeholder="Type a message..." class="inputmessage"></ion-input>
-    <button (click)="sendMessage()" class="msgsend bluebutton" ion-button round>Send</button>
+    <ion-input #textInput [(ngModel)]="input" placeholder="Type a message..." (input)="onInput($event)" (ionFocus)='inputFocus()' class="inputmessage"></ion-input>
+    <button (click)="sendMessage()" class="msgsend bluebutton" [disabled]='!enabled' ion-button round>Send</button>
   </div>
 </ion-content>
