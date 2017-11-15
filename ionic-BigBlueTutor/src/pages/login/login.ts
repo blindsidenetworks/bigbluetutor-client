@@ -27,7 +27,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private os: OAuthService, private ds: DsService, private ps: PushService, private googlePlus: GooglePlus,  private storage: Storage, private appPreferences: AppPreferences) {
     this.username = this.password = this.idToken = "";
     //browser
-    /*
+    
     console.log("Native:", this.hasGooglePlusNative());
     if(!this.hasGooglePlusNative()) {
       gapi.load("auth2", () => {
@@ -48,7 +48,7 @@ export class LoginPage {
         }, (error) => {console.log(error)});
       });
     }
-    */
+
   }
 
   googleLogin() {

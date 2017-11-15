@@ -6,6 +6,23 @@ page-inbox {
     display: inline-flex;
   }
 
+  .inbox-notif{
+    width: 20px;
+    height: 20px;
+    background-color: $blue;
+    color: white;
+    border-radius: 50%;
+    display: block;
+    margin-top: 22px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .notiftext{
+    margin: 0px;
+  }
+
   .title{
     font-size: 28px;
     text-align: center;

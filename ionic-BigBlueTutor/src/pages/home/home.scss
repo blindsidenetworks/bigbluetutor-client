@@ -9,6 +9,16 @@ page-home {
     font-size: 30px;
   }
 
+  .reddot{
+    height: 8px;
+    width: 8px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
   .logo{
     display: block;
     background-color: transparent;
