@@ -25,7 +25,7 @@
       <img src="{{messagesRecord[msg].pic}}" class="inbox_profilepic"/>
       <button class="inbox_name" ion-item>{{msg}}</button>
       <div *ngIf="newMessagesCount[msg]">
-        <p>{{newMessagesCount[msg]}}</p>
+        <div class="inbox-notif"><p class="notiftext">{{newMessagesCount[msg]}}</p></div>
       </div>
     </div>
   </ion-list>

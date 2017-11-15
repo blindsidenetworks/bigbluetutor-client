@@ -21,4 +21,13 @@ page-profile
     height: 100px;
     border-radius: 50%;
   }
+  .reddot{
+    height: 8px;
+    width: 8px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
 }
