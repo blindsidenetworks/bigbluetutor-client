@@ -49,13 +49,11 @@ export class Message {
     this.ds.profileRecord.set('newMessagesCount', newMessages);
     this.content.scrollToBottom(100);
     this.events.subscribe('user:newMessage', () => {
-      console.log('cleared new messages');
+      this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
       var newMessages = this.ds.profileRecord.get('newMessagesCount');
       newMessages[this.username] = 0;
       this.ds.profileRecord.set('newMessagesCount', newMessages);
-    });
-    this.events.subscribe('user:message', () => {
-      this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
+      this.content.scrollToBottom(100);
     });
     this.events.subscribe('user:meeting', () => {
       this.joinMeeting();
