@@ -39,15 +39,12 @@ export class Message {
     this.ds.profileRecord.set('newMessagesCount', newMessagesCount);
   }
 
-  seeUsername(){
-    //var messages = this.ds.profileRecord.get('messages')[this.username];
-  }
-
   ionViewDidEnter() {
     var newMessages = this.ds.profileRecord.get('newMessagesCount');
     newMessages[this.username] = 0;
     this.ds.profileRecord.set('newMessagesCount', newMessages);
     this.content.scrollToBottom(100);
+
     this.events.subscribe('user:newMessage', () => {
       this.messages = this.ds.profileRecord.get('messages')[this.username].messages;
       var newMessages = this.ds.profileRecord.get('newMessagesCount');
@@ -55,6 +52,7 @@ export class Message {
       this.ds.profileRecord.set('newMessagesCount', newMessages);
       this.content.scrollToBottom(100);
     });
+
     this.events.subscribe('user:meeting', () => {
       this.joinMeeting();
     })
@@ -63,7 +61,6 @@ export class Message {
   ionViewDidLeave() {
     this.events.unsubscribe('user:newMessage');
     this.events.unsubscribe('user:meeting');
-    this.events.unsubscribe('user:message');
   }
   onInput(event) {
     if(this.input == "") {
