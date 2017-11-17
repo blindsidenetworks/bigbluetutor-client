@@ -4,10 +4,10 @@ node_modules/
 Pods/
 package-lock.json
 .directory
-ionic-BigBlueTutor/www/
-ionic-BigBlueTutor/platforms/
-ionic-BigblueTutor/.sourcemaps/
-ionic-BigBlueTutor/plugins
+www/
+platforms/
+.sourcemaps/
+plugins/
 *.apk
 *.keystore
 env.ts
