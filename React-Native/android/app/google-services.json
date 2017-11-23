@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "684916754135",
+    "project_id": "bigbluetutor-rn"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684916754135:android:2aff42af6089d9fd",
+        "android_client_info": {
+          "package_name": "com.bigbluetutor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684916754135-1kvdjf0j0kbljful47tf6eg6q89qj5kl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bigbluetutor",
+            "certificate_hash": "102f0039dae0b9e9baf03bf898100246b1913e5b"
+          }
+        },
+        {
+          "client_id": "684916754135-632344o72q3v2v96ks4v42q4a2iqc3f6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBsYTmtT0T6gvwg0Fk3vKvL4R03PZo1AA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
