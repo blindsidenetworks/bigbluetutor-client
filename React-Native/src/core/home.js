@@ -8,13 +8,14 @@ import {
   View
 } from 'react-native';
 
+import { Actions } from 'react-native-router-flux';
 
-export default class Home extends Component<{}> {
+export default class HomePage extends Component<{}> {
   render() {
     return (
       <View>
         <Button
-          onPress={() => this.props.navigation.navigate('DrawerOpen')}
+          onPress={() => Actions.drawerOpen()}
           title="toggle"
         />
         <Text>

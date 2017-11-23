@@ -7,12 +7,14 @@ import {
   View
 } from 'react-native';
 
-export default class Inbox extends Component<{}> {
+import { Actions } from 'react-native-router-flux';
+
+export default class InboxPage extends Component<{}> {
   render() {
     return (
       <View>
         <Button
-          onPress={() => this.props.navigation.navigate('DrawerOpen')}
+          onPress={() => Actions.drawerOpen()}
           title="toggle"
         />
         <Text>
