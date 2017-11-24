@@ -14,9 +14,6 @@ export default class Menu extends Component<{}> {
   render() {
     return (
       <View>
-        <Text>
-        HI
-        </Text>
         <Button
           onPress={() => Actions.home()}
           title="Home"
