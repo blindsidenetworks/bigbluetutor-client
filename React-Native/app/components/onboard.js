@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
+import Swiper from 'react-native-swiper';
+import { RadioButtons } from 'react-native-radio-buttons';
 
 export default class Onboard extends Component<{}> {
 
@@ -25,6 +27,10 @@ export default class Onboard extends Component<{}> {
     this.state.modalVisible = visible;
   }
 
+  renderRole() {
+
+  }
+
   render() {
     return (
         <Modal
@@ -32,27 +38,18 @@ export default class Onboard extends Component<{}> {
           transparent={false}
           visible={this.state.modalVisible}
           onRequestClose={() => {Actions.pop()}}
-          >
-         <View style={{marginTop: 22}}>
-          <View>
-            <Text>Please Enter a username</Text>
-            <TextInput
-              onChangeText={(text) => this.state.username=text}
-              value={this.state.username}
-            />
-            <Button
-              onPress={() => {
-                this.props.ds.login({idToken: this.props.idToken, username: this.state.username}, (success,data) => {
-                  if(success) {
-                    Actions.home({ds: this.props.ds});
-                  }
-                })
-              }}
-              title="Register"
-            />
-
-          </View>
-         </View>
+        >
+          <Swiper>
+            <View>
+              <RadioButtons
+                options = { ['Student', 'Tutor' ] }
+              />
+            </View>
+            <View>
+            </View>
+            <View>
+            </View>
+          </Swiper>
         </Modal>
     );
   }

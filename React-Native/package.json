@@ -12,8 +12,9 @@
 		"react-native": "0.50.3",
 		"react-native-config": "^0.10.0",
 		"react-native-google-signin": "^0.12.0",
+		"react-native-radio-buttons": "^1.0.0",
 		"react-native-router-flux": "^4.0.0-beta.24",
-		"react-navigation": "^1.0.0-beta.19",
+		"react-native-swiper": "^1.5.13",
 		"url": "^0.11.0"
 	},
 	"devDependencies": {

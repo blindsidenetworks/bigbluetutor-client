@@ -26,6 +26,7 @@ import InboxPage from './components/inbox';
 import Menu from './components/menu';
 import Register from './components/register';
 import SignIn from './components/signin'
+import Onboard from './components/onboard';
 
 import createDeepstream from 'deepstream.io-client-js';
 import Config from 'react-native-config';
@@ -55,7 +56,15 @@ export default class BigBlueTutor extends Component<{}> {
         .then((user) => {
           this.state.ds.login({idToken: user.idToken}, (success, data) => {
             if(success) {
-              Actions.home({ds: this.state.ds});
+              this.state.username = data.username;
+              this.state.profileRecord = this.state.ds.record.getRecord('profile/'+ this.state.username);
+              this.state.profileRecord.whenReady(() => {
+                if (!this.state.profileRecord.get("onboardingComplete")) {
+                  Actions.onboard({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord});
+                } else {
+                  Actions.home({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord});
+                }
+              })
             } else {
               if(data.needsUsername) {
                 Actions.register({ds: this.state.ds, idToken: user.idToken});
@@ -80,6 +89,7 @@ export default class BigBlueTutor extends Component<{}> {
           <Drawer key="drawer" contentComponent={Menu} hideNavBar>
             <Scene key="signin" component={SignIn} ds={this.state.ds} hideNavBar/>
             <Modal key="register" component={Register} hideNavBar/>
+            <Modal key="onboard" component={Onboard} hideNavBar/>
             <Scene key="home" component={HomePage} hideNavBar/>
             <Scene key="inbox" component={InboxPage} hideNavBar/>
           </Drawer>
