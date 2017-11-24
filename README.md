@@ -1,15 +1,15 @@
-#BigBlueTutor ionic client
+# BigBlueTutor ionic client
 
 A BigBlueButton social platform app for tutors and students.
 
-##Current Platforms:
+## Current Platforms:
 Android
 Browser
 
-##Future Platforms:
+## Future Platforms:
 iOS
 
-##How it works:
+## How it works:
 Tutors:
 1. Sign up
 2. Choose categories
@@ -20,7 +20,7 @@ Students:
 3. Find tutors for categories
 4. Connect with Tutors!
 
-#Setup:
+# Setup:
 
 you will need to install npm and ionic
 
@@ -29,7 +29,7 @@ you will need to install npm and ionic
 
 clone this repo into your local machine
 
-##updating and first install:
+## updating and first install:
 if this is a fresh clone or you have updated this repository you will need to update the plugins and node modules to ensure you are up to date
 
 1. npm update
@@ -39,12 +39,12 @@ You will need to add a config file with your google oauth information and server
 The template file is in **src/config/TEMPLATEenv.ts**. Please create a new file called **env.ts** with the placeholder values filled out
 
 
-##adding different platforms
+## adding different platforms
 Ionic support all 3 platforms (iOS, Android, Browser)
 To add a platform simply run **ionic cordova platform add <platform>**
 To remove a platform is equally easy **ionic cordova platform remove <platform>**
 
-##running
+## running
 
 browser:
 ionic serve
