@@ -13,15 +13,13 @@ import {Actions} from 'react-native-router-flux';
 
 export default class SignIn extends Component<{}> {
 
-  _signIn() {
+  signIn() {
     GoogleSignin.configure({
       webClientId: Config.WEB_CLIENT_ID
     })
     GoogleSignin.signIn()
     .then((user) => {
       this.props.ds.login({idToken: user.idToken}, (success, data) => {
-        console.log(success);
-        console.log(data);
         if(success) {
           Actions.home({ds: this.props.ds});
         } else {
@@ -44,7 +42,7 @@ export default class SignIn extends Component<{}> {
           style={{width: 120, height: 44}}
           color={GoogleSigninButton.Color.Light}
           size={GoogleSigninButton.Size.Icon}
-          onPress={() => { this._signIn(); }}
+          onPress={() => {this.signIn();}}
         />
       </View>
     );

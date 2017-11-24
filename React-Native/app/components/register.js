@@ -43,8 +43,9 @@ export default class Register extends Component<{}> {
             <Button
               onPress={() => {
                 this.props.ds.login({idToken: this.props.idToken, username: this.state.username}, (success,data) => {
-                  console.log(success);
-                  console.log(data);
+                  if(success) {
+                    Actions.home({ds: this.props.ds});
+                  }
                 })
               }}
               title="Register"

@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import BigBlueTutor from './BigBlueTutor';
+import BigBlueTutor from './app/BigBlueTutor';
 
 AppRegistry.registerComponent('BigBlueTutor', () => BigBlueTutor);
