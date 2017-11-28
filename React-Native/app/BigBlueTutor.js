@@ -22,6 +22,7 @@ import {
 } from 'react-native-router-flux';
 
 import HomePage from './components/home';
+import SearchPage from './components/search';
 import InboxPage from './components/inbox';
 import Menu from './components/menu';
 import Register from './components/register';
@@ -58,12 +59,15 @@ export default class BigBlueTutor extends Component<{}> {
             if(success) {
               this.state.username = data.username;
               this.state.profileRecord = this.state.ds.record.getRecord('profile/'+ this.state.username);
+              this.state.dataRecord = this.state.ds.record.getRecord('data');
               this.state.profileRecord.whenReady(() => {
-                if (!this.state.profileRecord.get("onboardingComplete")) {
-                  Actions.onboard({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord});
-                } else {
-                  Actions.home({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord});
-                }
+                this.state.dataRecord.whenReady(() => {
+                  if (!this.state.profileRecord.get("onboardingComplete")) {
+                    Actions.onboard({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
+                  } else {
+                    Actions.home({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
+                  }
+                })
               })
             } else {
               if(data.needsUsername) {
@@ -91,6 +95,7 @@ export default class BigBlueTutor extends Component<{}> {
             <Modal key="register" component={Register} hideNavBar/>
             <Modal key="onboard" component={Onboard} hideNavBar/>
             <Scene key="home" component={HomePage} hideNavBar/>
+            <Scene key="search" component={SearchPage} hideNavBar/>
             <Scene key="inbox" component={InboxPage} hideNavBar/>
           </Drawer>
         </Scene>

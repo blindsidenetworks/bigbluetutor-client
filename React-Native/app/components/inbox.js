@@ -4,6 +4,7 @@ import {
   Platform,
   StyleSheet,
   Text,
+  SectionList,
   View
 } from 'react-native';
 
@@ -17,9 +18,8 @@ export default class InboxPage extends Component<{}> {
           onPress={() => Actions.drawerOpen()}
           title="toggle"
         />
-        <Text>
-          Inbox
-        </Text>
+        <SectionList
+        />
       </View>
     );
   }
