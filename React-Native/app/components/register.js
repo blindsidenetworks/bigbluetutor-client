@@ -44,7 +44,18 @@ export default class Register extends Component<{}> {
               onPress={() => {
                 this.props.ds.login({idToken: this.props.idToken, username: this.state.username}, (success,data) => {
                   if(success) {
-                    Actions.home({ds: this.props.ds});
+                    this.state.username = data.username;
+                    this.state.profileRecord = this.props.ds.record.getRecord('profile/'+ this.state.username);
+                    this.state.dataRecord = this.props.ds.record.getRecord('data');
+                    this.state.profileRecord.whenReady(() => {
+                      this.state.dataRecord.whenReady(() => {
+                        if (!this.state.profileRecord.get("onboardingComplete")) {
+                          Actions.onboard({ds: this.props.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
+                        } else {
+                          Actions.home({ds: this.props.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
+                        }
+                      })
+                    })
                   }
                 })
               }}

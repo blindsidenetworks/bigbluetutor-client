@@ -2,21 +2,31 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   Platform,
-  Button,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
+import {Button, Icon} from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
 
 export default class HomePage extends Component<{}> {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <View>
-        <Button
-          onPress={() => Actions.drawerOpen()}
-          title="toggle"
+        <Icon
+          name='menu'
+        />
+        <Icon
+          name='search'
+          onPress={() => {
+            Actions.search(this.props);
+          }}
         />
         <Text>
           HOME
