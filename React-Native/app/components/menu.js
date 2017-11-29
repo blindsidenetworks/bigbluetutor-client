@@ -15,11 +15,11 @@ export default class Menu extends Component<{}> {
     return (
       <View>
         <Button
-          onPress={() => Actions.home()}
+          onPress={() => Actions.home(this.props)}
           title="Home"
         />
         <Button
-          onPress={() => Actions.inbox()}
+          onPress={() => Actions.inbox(this.props)}
           title="Inbox"
         />
         <Button

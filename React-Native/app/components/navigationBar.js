@@ -7,6 +7,7 @@ import {
   View
 } from 'react-native';
 
+import { Icon } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
 
 const styles = StyleSheet.create({
@@ -45,7 +46,7 @@ export default class NavigationBar extends Component<{}> {
           <View style={{width: null, height: null}} >
             <Icon
               name='menu'
-              onPress={() => Actions.drawerOpen()}
+              onPress={() => Actions.drawerOpen(this.props)}
             />
           </View>
         </View>
