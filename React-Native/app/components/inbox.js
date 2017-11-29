@@ -16,7 +16,6 @@ export default class InboxPage extends Component<{}> {
 
   constructor(props) {
     super(props);
-    console.log(Object.keys(this.props))
     this.state = {
       messages: []
     }
@@ -24,7 +23,7 @@ export default class InboxPage extends Component<{}> {
 
   componentDidMount() {
     this.setState({
-      //messages: this.props.profileRecord.get('messages')
+      messages: this.props.profileRecord.get('messages')
     })
   }
 
@@ -33,9 +32,16 @@ export default class InboxPage extends Component<{}> {
       <View>
         <NavigationBar/>
         <FlatList
-          data={[]}
-          renderItem={({item}) => <ListItem title={item} />}
-          renderSectionHeader={({section}) => <Header title={section.title} />}
+          data={ this.state.messages }
+          extraData={ this.state.messages }
+          renderItem={({item}) =>
+            <Card
+              title={ item }
+              image={{ uri: item.pic }}
+            >
+            </Card>
+          }
+          keyExtractor = {(item, index) => item.pic}
         />
       </View>
     );

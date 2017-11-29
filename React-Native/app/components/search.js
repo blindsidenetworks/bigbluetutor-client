@@ -19,7 +19,7 @@ export default class SearchPage extends Component<{}> {
     super(props);
     this.state = {
       text: "",
-      results: [{username: 'bob'}]
+      results: []
     }
   }
 
@@ -39,7 +39,7 @@ export default class SearchPage extends Component<{}> {
   }
 
   selectUser() {
-
+    
   }
 
   render() {
