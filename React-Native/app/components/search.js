@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   FlatList,
+  ListItem,
   View
 } from 'react-native';
 
@@ -25,8 +26,11 @@ export default class SearchPage extends Component<{}> {
   onChangeText(text) {
     this.state.text = text;
     this.props.ds.rpc.make('search', {param: this.state.text}, (error,data) => {
-      console.log(data)
-      this.state.results = data.data;
+      console.log(data.data)
+      this.setState({
+        results: data.data,
+        text: text
+      })
     })
   }
 
@@ -34,8 +38,8 @@ export default class SearchPage extends Component<{}> {
     this.state.text = "";
   }
 
-  selectCategory() {
-
+  selectUser() {
+    
   }
 
   render() {
@@ -46,8 +50,20 @@ export default class SearchPage extends Component<{}> {
           onClearText={this.onClearText.bind(this)}
         />
         <FlatList
-          data={this.state.results}
-          renderItem={({item}) => <Text>{item.username}</Text>}
+          data={ this.state.results }
+          renderItem={({item}) =>
+            <Card
+              title={ item.username }
+              image={{ uri: item.profilePic }}
+              >
+              <Button
+                onPress={this.selectUser.bind(this)}
+                title="Talk"
+              />
+            </Card>
+          }
+          extraData={ this.state.results }
+          keyExtractor = {(item, index) => item.username}
         />
       </View>
     );

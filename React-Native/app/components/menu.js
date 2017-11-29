@@ -11,15 +11,20 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 export default class Menu extends Component<{}> {
+
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <View>
         <Button
-          onPress={() => Actions.home()}
+          onPress={() => Actions.home(this.props)}
           title="Home"
         />
         <Button
-          onPress={() => Actions.inbox()}
+          onPress={() => Actions.inbox(this.props)}
           title="Inbox"
         />
         <Button

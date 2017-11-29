@@ -22,12 +22,13 @@ import {
 } from 'react-native-router-flux';
 
 import HomePage from './components/home';
-import SearchPage from './components/search';
 import InboxPage from './components/inbox';
 import Menu from './components/menu';
-import Register from './components/register';
-import SignIn from './components/signin'
 import Onboard from './components/onboard';
+import ProfilePage from './components/profile'
+import Register from './components/register';
+import SearchPage from './components/search';
+import SignIn from './components/signin'
 
 import createDeepstream from 'deepstream.io-client-js';
 import Config from 'react-native-config';
@@ -65,6 +66,7 @@ export default class BigBlueTutor extends Component<{}> {
                   if (!this.state.profileRecord.get("onboardingComplete")) {
                     Actions.onboard({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
                   } else {
+                    Actions.reset('drawer', {ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
                     Actions.home({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
                   }
                 })
@@ -90,13 +92,14 @@ export default class BigBlueTutor extends Component<{}> {
     return (
       <Router hideNavBar>
         <Scene key="root" hideNavBar>
-          <Drawer key="drawer" contentComponent={Menu} hideNavBar>
-            <Scene key="signin" component={SignIn} ds={this.state.ds} hideNavBar/>
-            <Modal key="register" component={Register} hideNavBar/>
-            <Modal key="onboard" component={Onboard} hideNavBar/>
-            <Scene key="home" component={HomePage} hideNavBar/>
-            <Scene key="search" component={SearchPage} hideNavBar/>
-            <Scene key="inbox" component={InboxPage} hideNavBar/>
+          <Scene key="signin" component={ SignIn } ds={ this.state.ds } hideNavBar/>
+          <Modal key="onboard" component={ Onboard } hideNavBar/>
+          <Modal key="register" component={ Register } hideNavBar/>
+          <Drawer key="drawer" contentComponent={ Menu } ds={ this.state.ds } hideNavBar>
+            <Scene key="home" component={ HomePage } hideNavBar/>
+            <Scene key="inbox" component={ InboxPage } hideNavBar/>
+            <Scene key="profile" component={ ProfilePage } hideNavBar/>
+            <Scene key="search" component={ SearchPage } hideNavBar/>
           </Drawer>
         </Scene>
       </Router>

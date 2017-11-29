@@ -4,21 +4,44 @@ import {
   Platform,
   StyleSheet,
   Text,
-  SectionList,
+  FlatList,
   View
 } from 'react-native';
 
+import NavigationBar from './navigationBar';
+import { Card } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
 
 export default class InboxPage extends Component<{}> {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      messages: []
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      messages: this.props.profileRecord.get('messages')
+    })
+  }
+
   render() {
     return (
       <View>
-        <Button
-          onPress={() => Actions.drawerOpen()}
-          title="toggle"
-        />
-        <SectionList
+        <NavigationBar/>
+        <FlatList
+          data={ this.state.messages }
+          extraData={ this.state.messages }
+          renderItem={({item}) =>
+            <Card
+              title={ item }
+              image={{ uri: item.pic }}
+            >
+            </Card>
+          }
+          keyExtractor = {(item, index) => item.pic}
         />
       </View>
     );

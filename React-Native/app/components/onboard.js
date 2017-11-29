@@ -93,6 +93,7 @@ export default class Onboard extends Component<{}> {
     }
     this.props.ds.rpc.make('changeDescription', { username: this.props.username, description: this.state.description }, () => {});
     this.props.profileRecord.set("onboardingComplete", true);
+    Actions.reset('drawer');
     Actions.home(this.props);
   }
 
