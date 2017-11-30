@@ -24,6 +24,7 @@ import {
 import HomePage from './components/home';
 import InboxPage from './components/inbox';
 import Menu from './components/menu';
+import MessagesPage from './components/messages';
 import Onboard from './components/onboard';
 import ProfilePage from './components/profile'
 import Register from './components/register';
@@ -98,6 +99,7 @@ export default class BigBlueTutor extends Component<{}> {
           <Drawer key="drawer" contentComponent={ Menu } ds={ this.state.ds } hideNavBar>
             <Scene key="home" component={ HomePage } hideNavBar/>
             <Scene key="inbox" component={ InboxPage } hideNavBar/>
+            <Scene key="messages" component={ MessagesPage } hideNavBar/>
             <Scene key="profile" component={ ProfilePage } hideNavBar/>
             <Scene key="search" component={ SearchPage } hideNavBar/>
           </Drawer>
