@@ -46,6 +46,7 @@ export default class NavigationBar extends Component<{}> {
           <View style={{width: null, height: null}} >
             <Icon
               name='menu'
+              size={ 50 }
               onPress={() => Actions.drawerOpen(this.props)}
             />
           </View>
@@ -56,6 +57,7 @@ export default class NavigationBar extends Component<{}> {
           <View style={{width: null, height: null}}>
             <Icon
               name='search'
+              size={ 50 }
               onPress={() => {Actions.search(this.props);}}
             />
           </View>

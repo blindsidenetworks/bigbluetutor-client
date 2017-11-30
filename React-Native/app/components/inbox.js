@@ -23,7 +23,8 @@ export default class InboxPage extends Component<{}> {
 
   componentDidMount() {
     this.setState({
-      messages: this.props.profileRecord.get('messages')
+      messages: this.props.profileRecord.get('messages'),
+      messagesKeys: Object.keys(this.props.profileRecord.get('messages'))
     })
   }
 
@@ -32,16 +33,20 @@ export default class InboxPage extends Component<{}> {
       <View>
         <NavigationBar/>
         <FlatList
-          data={ this.state.messages }
-          extraData={ this.state.messages }
+          data={ this.state.messagesKeys }
+          extraData={ this.state.messagesKeys }
           renderItem={({item}) =>
             <Card
               title={ item }
-              image={{ uri: item.pic }}
+              image={{ uri: this.state.messages[item].pic }}
             >
+            <Button
+              title="click"
+              onPress={() => { Actions.messages({props: this.props, username: item})}}
+            />
             </Card>
           }
-          keyExtractor = {(item, index) => item.pic}
+          keyExtractor = {(item, index) => item}
         />
       </View>
     );

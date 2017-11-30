@@ -38,8 +38,10 @@ export default class SearchPage extends Component<{}> {
     this.state.text = "";
   }
 
-  selectUser() {
-    
+  selectUser(user) {
+    this.props.ds.rpc.make('requestMeeting', { client: this.props.profileRecord.get('username'), contact:user.username }, () => {});
+    Actions.inbox(this.props);
+    //Actions.messages({props: this.props, username: user});
   }
 
   render() {
@@ -57,7 +59,8 @@ export default class SearchPage extends Component<{}> {
               image={{ uri: item.profilePic }}
               >
               <Button
-                onPress={this.selectUser.bind(this)}
+                raised
+                onPress={() => this.selectUser.bind(this)(item)}
                 title="Talk"
               />
             </Card>

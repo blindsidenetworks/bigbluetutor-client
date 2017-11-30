@@ -47,7 +47,7 @@ export default class HomePage extends Component<{}> {
         >
           <Card
             title={ this.props.username }
-            >
+          >
           </Card>
         </View>
       </View>
