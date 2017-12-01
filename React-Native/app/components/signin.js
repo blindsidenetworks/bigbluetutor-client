@@ -29,7 +29,7 @@ export default class SignIn extends Component<{}> {
               if (!this.state.profileRecord.get("onboardingComplete")) {
                 Actions.onboard({ds: this.props.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
               } else {
-                Actions.reset('drawer');
+                Actions.reset('drawer', {ds: this.props.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
                 Actions.home({ds: this.props.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
               }
             })
