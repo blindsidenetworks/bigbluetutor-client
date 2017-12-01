@@ -24,7 +24,14 @@ const styles = StyleSheet.create({
   },
   roleContainer: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    justifyContent: 'center'
+  },
+  container: {
+    flex: 0.5
+  },
+  imageContainer: {
+    flex: 1
   },
   image: {
     resizeMode: 'contain'
@@ -73,14 +80,17 @@ export default class Onboard extends Component<{}> {
       <TouchableOpacity
         onPress={ onSelect }
         key={index}
+        style= { styles.container }
       >
-        <Image
-          style={ styles.image }
-          source={ role === "Tutor"? require('../assets/tutor.png') : require('../assets/student.png') }
-        />
-          <Text
-            style={ style }
-          >
+        <View
+          style={ styles.imageContainer }
+        >
+          <Image
+            style={ styles.image }
+            source={ role === "Tutor"? require('../assets/tutor.png') : require('../assets/student.png') }
+          />
+        </View>
+          <Text>
             { role }
           </Text>
       </TouchableOpacity>
@@ -93,7 +103,7 @@ export default class Onboard extends Component<{}> {
     }
     this.props.ds.rpc.make('changeDescription', { username: this.props.username, description: this.state.description }, () => {});
     this.props.profileRecord.set("onboardingComplete", true);
-    Actions.reset('drawer');
+    Actions.reset('drawer', this.props);
     Actions.home(this.props);
   }
 
@@ -115,6 +125,7 @@ export default class Onboard extends Component<{}> {
                   options = { ['Student', 'Tutor' ] }
                   onSelection={ this.selectRole.bind(this) }
                   renderOption={ this.renderRole }
+                  renderContainer={RadioButtons.renderHorizontalContainer}
                   optionContainerStyle= { styles.radio }
                 />
                 <FlatList

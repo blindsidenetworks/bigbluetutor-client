@@ -35,6 +35,8 @@ import createDeepstream from 'deepstream.io-client-js';
 import Config from 'react-native-config';
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
+//import { PushNotification } from 'react-native-push-notification';
+
 export default class BigBlueTutor extends Component<{}> {
 
   constructor(props) {
@@ -67,6 +69,7 @@ export default class BigBlueTutor extends Component<{}> {
                   if (!this.state.profileRecord.get("onboardingComplete")) {
                     Actions.onboard({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
                   } else {
+                    //this.configurePush();
                     Actions.reset('drawer', {ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
                     Actions.home({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
                   }
@@ -88,6 +91,42 @@ export default class BigBlueTutor extends Component<{}> {
       })
     }
   }
+
+  /*configurePush() {
+    PushNotification.configure({
+      // (optional) Called when Token is generated (iOS and Android)
+      onRegister: function(token) {
+        console.log( 'TOKEN:', token );
+        this.state.ds.rpc.make('addDeviceToken', { username: this.state.profileRecord.get('username'), deviceToken: token }, () => {});
+      },
+
+      // (required) Called when a remote or local notification is opened or received
+      onNotification: function(notification) {
+        console.log( 'NOTIFICATION:', notification );
+      },
+
+      // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)
+      senderID: Config.SENDER_ID,
+
+      // IOS ONLY (optional): default: all - Permissions to register.
+      permissions: {
+          alert: true,
+          badge: true,
+          sound: true
+      },
+
+      // Should the initial notification be popped automatically
+      // default: true
+      popInitialNotification: true,
+
+
+        * (optional) default: true
+        * - Specified if permissions (ios) and token (android and ios) will requested or not,
+        * - if not, you must call PushNotificationsHandler.requestPermissions() later
+
+      requestPermissions: true,
+    });
+  }*/
 
   render() {
     return (

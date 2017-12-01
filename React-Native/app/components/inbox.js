@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Linking,
   Button,
   Platform,
   StyleSheet,
@@ -26,6 +27,23 @@ export default class InboxPage extends Component<{}> {
       messages: this.props.profileRecord.get('messages'),
       messagesKeys: Object.keys(this.props.profileRecord.get('messages'))
     })
+    this.props.profileRecord.subscribe('messages',() => {
+      this.setState({
+        messages: this.props.profileRecord.get('messages'),
+        messagesKeys: Object.keys(this.props.profileRecord.get('messages'))
+      })
+    })
+    this.props.profileRecord.subscribe('meeting', () => {
+      var url = this.props.profileRecord.get('meeting');
+      if (url) {
+        Linking.openURL(url)
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    this.props.profileRecord.unsubscribe('messages')
+    this.props.profileRecord.unsubscribe('meeting')
   }
 
   render() {

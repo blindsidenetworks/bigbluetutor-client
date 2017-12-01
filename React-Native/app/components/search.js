@@ -23,6 +23,16 @@ export default class SearchPage extends Component<{}> {
     }
   }
 
+  componentWillMount() {
+    this.props.ds.rpc.make('search', {param: this.state.text}, (error,data) => {
+      console.log(data.data)
+      this.setState({
+        results: data.data,
+        text: this.state.text
+      })
+    })
+  }
+
   onChangeText(text) {
     this.state.text = text;
     this.props.ds.rpc.make('search', {param: this.state.text}, (error,data) => {
@@ -39,9 +49,19 @@ export default class SearchPage extends Component<{}> {
   }
 
   selectUser(user) {
-    this.props.ds.rpc.make('requestMeeting', { client: this.props.profileRecord.get('username'), contact:user.username }, () => {});
-    Actions.inbox(this.props);
-    //Actions.messages({props: this.props, username: user});
+    if(this.props.profileRecord.get('messages') && this.props.profileRecord.get('messages')[user.username]) {
+      Actions.inbox(this.props);
+      Actions.messages({props: this.props, username: user.username});
+    } else {
+      var userRecord = this.props.ds.record.getRecord('user/'+user.username);
+      userRecord.whenReady(() => {
+        var tempMessages = this.props.profileRecord.get('messages');
+        tempMessages[user.username] = {pic: userRecord.get('profilePic'),messages:[]};
+        this.props.profileRecord.set('messages', tempMessages);
+        Actions.inbox(this.props);
+        Actions.messages({props: this.props, username: user.username});
+      })
+    }
   }
 
   render() {
