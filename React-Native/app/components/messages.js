@@ -7,6 +7,7 @@ import {
   Text,
   TextInput,
   FlatList,
+  Image,
   View
 } from 'react-native';
 
@@ -17,7 +18,8 @@ import { Actions } from 'react-native-router-flux';
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundColor: '#87CEFA'
   },
   messages: {
     flex:0.7
@@ -166,11 +168,37 @@ export default class MessagesPage extends Component<{}> {
                       </Card>
                     )
                 }
+              } else if (item.user == this.props.username) {
+                return(
+                  <View
+                    style={{flex:1, flexDirection:'row', margin:15, minHeight:30 }}
+                  >
+                    <View
+                      style={{ flex:1, flexDirection: 'column', justifyContent:'flex-start' }}
+                    >
+                      <Image
+                        style={{flex:1, marginRight:10, resizeMode: 'contain'}}
+                        source={{ uri: this.props.props.profileRecord.get('messages')[item.user].pic }}
+                      />
+                    </View>
+                    <Text
+                      style={{ flex:8, marginRight:60, backgroundColor: '#ffe' }}
+                    >
+                      { item.message }
+                    </Text>
+                  </View>
+                )
               } else {
                 return(
-                  <Card
-                    title={ item.message }
-                  />
+                  <View
+                    style={{ flexDirection:'row', justifyContent:'flex-end', margin:15 }}
+                  >
+                    <Text
+                      style={{ flex:1, marginLeft:60, backgroundColor: '#8e6' }}
+                    >
+                      { item.message }
+                    </Text>
+                  </View>
                 )
               }
             }
