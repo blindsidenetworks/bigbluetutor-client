@@ -11,6 +11,21 @@ import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 import Config from 'react-native-config';
 import {Actions} from 'react-native-router-flux';
 
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#3F89E2'
+  },
+  buttonContainer: {
+    flex:1,
+    flexDirection:'row',
+    justifyContent: 'center'
+  },
+})
+
 export default class SignIn extends Component<{}> {
 
   constructor(props) {
@@ -55,13 +70,15 @@ export default class SignIn extends Component<{}> {
 
   render() {
     return (
-      <View>
-        <GoogleSigninButton
-          style={{width: 120, height: 44}}
-          color={GoogleSigninButton.Color.Light}
-          size={GoogleSigninButton.Size.Icon}
-          onPress={() => {this.signIn();}}
-        />
+      <View
+        style={styles.container}
+      >
+          <GoogleSigninButton
+            style={{width: 120, height: 44}}
+            color={GoogleSigninButton.Color.Light}
+            size={GoogleSigninButton.Size.Icon}
+            onPress={() => {this.signIn();}}
+          />
       </View>
     );
   }

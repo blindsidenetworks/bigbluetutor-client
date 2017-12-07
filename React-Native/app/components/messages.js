@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#87CEFA'
   },
   messages: {
-    flex:0.7
+    flex:0.7,
+    padding: 10
   },
   messageBar: {
     flex:0,
@@ -109,7 +110,12 @@ export default class MessagesPage extends Component<{}> {
       <View
         style={ styles.page }
       >
-        <NavigationBar/>
+        <NavigationBar
+          back={true}
+          backKey={"inbox"}
+          noSearch={true}
+          title={this.props.username}
+        />
         <FlatList
           style={ styles.messages }
           data={ this.state.messages }
@@ -174,7 +180,7 @@ export default class MessagesPage extends Component<{}> {
                     style={{flex:1, flexDirection:'row', margin:15, minHeight:30 }}
                   >
                     <View
-                      style={{ flex:1, flexDirection: 'column', justifyContent:'flex-start' }}
+                      style={{ flex:0.1, flexDirection: 'column', justifyContent:'flex-start' }}
                     >
                       <Image
                         style={{flex:1, marginRight:10, resizeMode: 'contain'}}
@@ -182,7 +188,7 @@ export default class MessagesPage extends Component<{}> {
                       />
                     </View>
                     <Text
-                      style={{ flex:8, marginRight:60, backgroundColor: '#ffe' }}
+                      style={{ flex:0.6, backgroundColor: '#ffe' }}
                     >
                       { item.message }
                     </Text>
@@ -194,7 +200,7 @@ export default class MessagesPage extends Component<{}> {
                     style={{ flexDirection:'row', justifyContent:'flex-end', margin:15 }}
                   >
                     <Text
-                      style={{ flex:1, marginLeft:60, backgroundColor: '#8e6' }}
+                      style={{ flex:0.6, backgroundColor: '#8e6', textAlign:'right' }}
                     >
                       { item.message }
                     </Text>

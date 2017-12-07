@@ -136,7 +136,7 @@ export default class BigBlueTutor extends Component<{}> {
           <Scene key="signin" component={ SignIn } ds={ this.state.ds } hideNavBar/>
           <Modal key="onboard" component={ Onboard } hideNavBar/>
           <Modal key="register" component={ Register } hideNavBar/>
-          <Drawer key="drawer" contentComponent={ Menu } ds={ this.state.ds } hideNavBar>
+          <Drawer key="drawer" contentComponent={ Menu } ds={ this.state.ds } drawerWidth={200} hideNavBar>
             <Scene key="home" component={ HomePage } hideNavBar/>
             <Scene key="inbox" component={ InboxPage } hideNavBar/>
             <Scene key="messages" component={ MessagesPage } hideNavBar/>

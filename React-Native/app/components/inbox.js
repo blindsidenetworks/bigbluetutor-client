@@ -49,7 +49,9 @@ export default class InboxPage extends Component<{}> {
   render() {
     return (
       <View>
-        <NavigationBar/>
+        <NavigationBar
+          noSearch={true}
+        />
         <FlatList
           data={ this.state.messagesKeys }
           extraData={ this.state.messagesKeys }

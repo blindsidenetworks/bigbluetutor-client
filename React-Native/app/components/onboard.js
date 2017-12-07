@@ -87,7 +87,7 @@ export default class Onboard extends Component<{}> {
       modalVisible: true,
       tutor: false,
       subjects:[],
-      showAccept: false
+      showAccept: true
     }
   }
 
