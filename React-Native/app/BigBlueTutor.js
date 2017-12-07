@@ -54,6 +54,7 @@ export default class BigBlueTutor extends Component<{}> {
   componentDidMount() {
     if(this.state.ds.getConnectionState() != "OPEN") {
       GoogleSignin.configure({
+        iosClientId: Config.IOS_CLIENT_ID,
         webClientId: Config.WEB_CLIENT_ID
       })
       .then(() => {

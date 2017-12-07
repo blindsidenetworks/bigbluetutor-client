@@ -50,7 +50,7 @@ export default class Register extends Component<{}> {
                     this.state.profileRecord.whenReady(() => {
                       this.state.dataRecord.whenReady(() => {
                         if (!this.state.profileRecord.get("onboardingComplete")) {
-                          Actions.onboard({ds: this.props.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
+                          Actions.reset('onboard', {ds: this.props.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
                         } else {
                           Actions.reset('drawer', {ds: this.props.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
                           Actions.home({ds: this.props.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});

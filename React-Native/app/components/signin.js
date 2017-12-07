@@ -13,8 +13,14 @@ import {Actions} from 'react-native-router-flux';
 
 export default class SignIn extends Component<{}> {
 
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
   signIn() {
     GoogleSignin.configure({
+      iosClientId: Config.IOS_CLIENT_ID,
       webClientId: Config.WEB_CLIENT_ID
     })
     GoogleSignin.signIn()
