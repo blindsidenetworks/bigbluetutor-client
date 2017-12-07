@@ -6,11 +6,11 @@ import {
   StyleSheet,
   Text,
   FlatList,
-  ListItem,
+  Image,
   View
 } from 'react-native';
 
-import { SearchBar, Card } from 'react-native-elements';
+import { SearchBar, Card, Icon, ListItem } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
 
 export default class SearchPage extends Component<{}> {
@@ -67,27 +67,46 @@ export default class SearchPage extends Component<{}> {
   render() {
     return (
       <View>
-        <SearchBar
-          onChangeText={this.onChangeText.bind(this)}
-          onClearText={this.onClearText.bind(this)}
-        />
-        <FlatList
-          data={ this.state.results }
-          renderItem={({item}) =>
-            <Card
-              title={ item.username }
-              image={{ uri: item.profilePic }}
-              >
-              <Button
-                raised
-                onPress={() => this.selectUser.bind(this)(item)}
-                title="Talk"
+        <View
+          style={{ flexDirection:'row'}}
+        >
+          <View
+            style={{ flex: 1, flexDirection:'column', justifyContent:'center', backgroundColor: '#25262A' }}
+          >
+            <Icon
+              style={{ }}
+              type="ionicon"
+              name="md-arrow-back"
+              color='#fff'
+              onPress={ () => { Actions.pop() }}
+            />
+          </View>
+          <View
+            style={{ flex:8 }}
+          >
+            <SearchBar
+              style={{ }}
+              onChangeText={this.onChangeText.bind(this)}
+              onClearText={this.onClearText.bind(this)}
+            />
+          </View>
+        </View>
+        <View>
+          <FlatList
+            data={ this.state.results }
+            renderItem={({item}) =>
+              <ListItem
+                roundAvatar
+                avatar={{ uri: item.profilePic }}
+                key={ item.username }
+                title={ item.username }
+                onPress={ () => this.selectUser.bind(this)(item) }
               />
-            </Card>
-          }
-          extraData={ this.state.results }
-          keyExtractor = {(item, index) => item.username}
-        />
+            }
+            extraData={ this.state.results }
+            keyExtractor = {(item, index) => item.username}
+          />
+        </View>
       </View>
     );
   }

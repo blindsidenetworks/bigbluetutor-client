@@ -44,23 +44,41 @@ export default class NavigationBar extends Component<{}> {
           style={ styles.menu }
         >
           <View style={{width: null, height: null}} >
-            <Icon
-              name='menu'
-              size={ 50 }
-              onPress={() => Actions.drawerOpen(this.props)}
-            />
+
+            { this.props.back?
+              <Icon
+                type="ionicon"
+                name="md-arrow-back"
+                size={ 50 }
+                onPress={() => Actions[this.props.backKey].call()}
+              />:
+              <Icon
+                name='menu'
+                size={ 50 }
+                onPress={() => Actions.drawerOpen(this.props)}
+              />
+            }
           </View>
         </View>
+        { this.props.title?
+          <View>
+            <Text>
+              {this.props.title}
+            </Text>
+          </View> : null
+        }
         <View
           style={ styles.search }
         >
-          <View style={{width: null, height: null}}>
-            <Icon
-              name='search'
-              size={ 50 }
-              onPress={() => {Actions.search(this.props);}}
-            />
-          </View>
+          { this.props.noSearch? null :
+              <View style={{width: null, height: null}}>
+                <Icon
+                  name='search'
+                  size={ 50 }
+                  onPress={() => {Actions.search(this.props);}}
+                />
+              </View>
+          }
         </View>
       </View>
     );
