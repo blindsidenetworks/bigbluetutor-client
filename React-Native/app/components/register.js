@@ -36,7 +36,7 @@ export default class Register extends Component<{}> {
   }
 
   register() {
-    this.props.ds.login({idToken: this.props.idToken, username: this.state.username}, (success,data) => {
+    this.props.ds.login({idToken: this.props.idToken, username: this.state.username, platform: Platform.OS}, (success,data) => {
       if(success) {
         this.state.username = data.username;
         this.state.profileRecord = this.props.ds.record.getRecord('profile/'+ this.state.username);
