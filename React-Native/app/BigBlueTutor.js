@@ -60,7 +60,7 @@ export default class BigBlueTutor extends Component<{}> {
       .then(() => {
         GoogleSignin.signIn()
         .then((user) => {
-          this.state.ds.login({idToken: user.idToken}, (success, data) => {
+          this.state.ds.login({idToken: user.idToken, platform: Platform.OS}, (success, data) => {
             if(success) {
               this.state.username = data.username;
               this.state.profileRecord = this.state.ds.record.getRecord('profile/'+ this.state.username);

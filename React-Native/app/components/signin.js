@@ -40,7 +40,7 @@ export default class SignIn extends Component<{}> {
     })
     GoogleSignin.signIn()
     .then((user) => {
-      this.props.ds.login({idToken: user.idToken}, (success, data) => {
+      this.props.ds.login({idToken: user.idToken, platform: Platform.OS}, (success, data) => {
         if(success) {
           this.state.username = data.username;
           this.state.profileRecord = this.props.ds.record.getRecord('profile/'+ this.state.username);
