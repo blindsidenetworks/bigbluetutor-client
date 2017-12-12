@@ -149,6 +149,9 @@ android {
 
 dependencies {
     compile project(':react-native-push-notification')
+    compile ('com.google.android.gms:play-services-gcm:9.2.1') {
+        force = true;
+    }
     compile project(':react-native-vector-icons')
     compile project(':react-native-config')
     compile fileTree(include: ['*.jar'], dir: 'libs')
