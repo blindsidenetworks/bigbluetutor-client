@@ -27,7 +27,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private os: OAuthService, private ds: DsService, private ps: PushService, private googlePlus: GooglePlus,  private storage: Storage, private appPreferences: AppPreferences) {
     this.username = this.password = this.idToken = "";
     //browser
-    
+
     console.log("Native:", this.hasGooglePlusNative());
     if(!this.hasGooglePlusNative()) {
       gapi.load("auth2", () => {
@@ -40,7 +40,7 @@ export class LoginPage {
           this.auth2.attachClickHandler(document.getElementById('googleBrowser'),{}, profile => {
             if(profile) {
               this.idToken = profile.getAuthResponse().id_token;
-              this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
+              this.ds.login({idToken: this.idToken, platform: 'android'}, this.handleGoogleLogin.bind(this));
             }
           }, error => {
             console.log("Login error:", error);
@@ -54,7 +54,7 @@ export class LoginPage {
   googleLogin() {
     this.os.googleLogin((id) => {
       this.idToken = id;
-    this.ds.login({idToken: this.idToken}, this.handleGoogleLogin.bind(this));
+    this.ds.login({idToken: this.idToken, platform: 'android'}, this.handleGoogleLogin.bind(this));
     })
   }
 

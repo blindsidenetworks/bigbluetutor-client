@@ -95,7 +95,7 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.2" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <plugin name="cordova-plugin-googleplus" spec="^5.1.1">
-        <variable name="REVERSED_CLIENT_ID" value="CLIENT_ID" />
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.684916754135-632344o72q3v2v96ks4v42q4a2iqc3f6" />
     </plugin>
     <plugin name="cordova-sqlite-storage" spec="^2.1.2" />
     <plugin name="cordova-plugin-app-preferences" spec="^0.99.3" />
