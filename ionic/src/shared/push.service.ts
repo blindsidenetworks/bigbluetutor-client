@@ -38,7 +38,7 @@ export class PushService {
       console.log('device token -> ' + data.registrationId);
       //TODO - send device token to server
       this.idToken = data.registrationId;
-      ds.dsInstance.rpc.make('addDeviceToken', {username: this.ds.profileRecord.get('username'), deviceToken: data.registrationId}, () => {});
+      ds.dsInstance.rpc.make('addDeviceToken', { username: this.ds.profileRecord.get('username'), deviceToken: data.registrationId, platform: 'android', version: 'ionic' }, () => {});
     });
 
     pushObject.on('notification').subscribe((data: any) => {
