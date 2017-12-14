@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{ category }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="tutorresults">
+    <h1 class="resulttext categorytutors"> TUTORS</h1>
+    <div  *ngFor="let tutor of tutors" class="profileitem" (click)="userSelected(tutor)">
+      <div class="profilecard">
+        <img src="{{ tutor.profilePic }}" class="home_profilepic"/>
+        <h1 class="card_name">{{ tutor.username }}</h1>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>

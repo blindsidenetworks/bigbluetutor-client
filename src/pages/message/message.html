@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar class="messageheader">
+    <ion-title>
+      <div id="header">
+        <button ion-button menuToggle>
+          <ion-icon name='menu'></ion-icon>
+        </button>
+        <div class="username" (click)="seeUsername()" ><p>{{username}}</p></div>
+        <div class="whitefade"></div>
+        <button id="requestButton" (click)="requestMeeting()" class="bluebutton" ion-button item-right>Request<br/> Meeting</button>
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content content #content>
+  <div class="sentmsgfield">
+    <div *ngFor="let msg of messages" [ngSwitch]="msg.special">
+      <div class="sessionreq" *ngSwitchCase="'IncomingRequest'" >
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">SESSION REQUEST</h1></div>
+        <div class="msg_bbbsession_body msg_bbbsession_buttons">
+          <div class="msg_bbbsession_buttons">
+            <button ion-button round class="bluebutton" (click)="requestMeeting()">JOIN</button>
+            <button ion-button round class="whitebutton" (click)="declineMeeting()">DECLINE</button>
+          </div>
+        </div>
+      </div>
+      <div class="sessionreq" *ngSwitchCase="'OutgoingRequest'" >
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext"> MEETING REQUEST</h1></div>
+        <div class="msg_bbbsession_body">
+            <p class="sessionmsg">Waiting for {{username}}...</p>
+        </div>
+      </div>
+      <div class="sessionreq" *ngSwitchCase="'ActiveSession'" >
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">ACTIVE SESSION</h1></div>
+        <div class="msg_bbbsession_body">
+            <div>
+              <p class="sessionmsg">Tutoring Session currently in progress</p>
+              <div class="flex">
+                <div class="msg_bbbsession_buttons">
+                  <button ion-button round class="bluebutton" (click)="joinMeeting()">JOIN</button>
+                  <button ion-button round class="whitebutton" (click)="endMeeting()">END</button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="sessionreq" *ngSwitchCase="'DeclinedRequest'" >
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">SESSION DECLINED</h1></div>
+        <div class="msg_bbbsession_body">
+            <p class="sessionmsg">{{msg.user}} has declined.</p>
+        </div>
+      </div>
+      <div class="sessionreq" *ngSwitchCase="'EndedSession'" >
+        <div class="msg_bbbsession_title requestheader"><h1 class="reqtext">SESSION ENDED</h1></div>
+        <div class="msg_bbbsession_body">
+            <p class="sessionmsg">Tutoring Session Ended</p>
+        </div>
+      </div>
+        <div class="message" *ngSwitchDefault ion-item>
+
+          <div class="" [ngSwitch]="msg.user">
+
+            <div *ngSwitchDefault class="mymessages">
+              <div class="textusername myusername">
+                <b>{{msg.user}}</b>
+              </div>
+              <div class="textmessagebox mytextmsgbox">
+                <p class="textmessage mytextmsg">{{msg.message}}</p>
+              </div>
+            </div>
+
+            <div *ngSwitchCase="this.username">
+              <div class="textusername otherusername" >
+                <b>{{msg.user}}</b>
+              </div>
+              <div class="textmessagebox othertextmsgbox">
+                <p class="textmessage othertextmsg">{{msg.message}}</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+  </div>
+  <div class="messagefield">
+    <ion-input #textInput [(ngModel)]="input" placeholder="Type a message..." (input)="onInput($event)" (ionFocus)='inputFocus()' class="inputmessage"></ion-input>
+    <button (click)="sendMessage()" class="msgsend bluebutton" [disabled]='!enabled' ion-button round>Send</button>
+  </div>
+</ion-content>

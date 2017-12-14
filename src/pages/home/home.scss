@@ -1,0 +1,230 @@
+page-home {
+  .menubtn{
+    position: absolute;
+    background-color: transparent;
+    top: 5vh;
+    left: 5vh;
+  }
+  .menuicon{
+    font-size: 30px;
+  }
+
+  .reddot{
+    height: 8px;
+    width: 8px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .logo{
+    display: block;
+    background-color: transparent;
+    margin-top: 6vh;
+    margin-bottom: 4vh;
+    text-align: center;
+  }
+  .logoimg{
+    background: none;
+    width: 40%;
+    height: auto;
+    max-width: 200px;
+    contain: none;
+  }
+  .circles{
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    top:0;
+  }
+
+  .home-bkg{
+    position: fixed;
+    width: 100vw;
+    height: 80vh;
+    background: linear-gradient(to top, #FFFFFF, #264CEC);
+    background: webkit-gradient(linear, bottom, top, from(#264CEC), to(#FFFFFF));
+    //background: #0F65D1;
+    z-index: -1;
+  }
+  .searchbar{
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+
+  .search{
+    top: 36vh;
+    width: 100vw;
+    margin: auto;
+    display: block;
+    position: fixed;
+  }
+  #backgroundcontent{
+    display: block;
+  }
+
+  .categorycontainer{
+    border-radius: 0px !important;
+    border: none;
+    overflow: hidden;
+    max-width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+  }
+  .maincategories{
+    width: calc(84vw + 6%);
+  }
+
+  .categorycard{
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0px 2px 8px grey;
+    height: 28vw;
+    width: 28vw;
+    margin: 1%;
+    float: left;
+    display: inline;
+    position: relative;
+  }
+
+  .categorycard:hover{
+    cursor: pointer;
+  }
+  .categoryname{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+
+  }
+  .categoryimg{
+    max-height:65%;
+    max-width: 65%;
+    vertical-align: middle;
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .categoryimgcontainer{
+    height:80%;
+    margin: auto;
+    display: flex;
+  }
+  .searchcancel{
+    color: black;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    margin-right: 9%;
+    font-size: 16px;
+    display: none;
+    font-weight: bold;
+    opacity: 0;
+  }
+    @media screen and (min-width: 768px) {
+      .searchbar{
+        width: 500px;
+        margin-left: calc((100% - 500px)/2);
+        margin-right: calc((100% - 500px)/2);
+      }
+      .searchcancel{
+        margin-top: 22px;
+        margin-right: calc((105% - 500px)/2);
+      }
+      .categorycard{
+        height: 216px !important;
+        width: 216px !important;
+      }
+      .maincategories{
+        width: calc(648px + 6%) !important;
+      }
+    }
+    @media screen and (max-width: 668px) {
+      .categoryname{
+        margin: 5px !important;
+        font-size: 14px !important;
+        height: 20px;
+        line-height: 14px;
+        display: inline-table;
+      }
+      .categorycard{
+        height: 30vw;
+        width: 30vw;
+      }
+      .maincategories{
+        width: calc(90vw + 6%);
+      }
+    }
+
+    .searchresults{
+      display: none;
+    }
+
+    .resultscont{
+      transform: translateY(130px);
+      height: calc(100vh - 130px);
+      display: none;
+      overflow: scroll;
+      -webkit-transform: translateY(130px);
+    }
+
+    .categoryresults{
+      font-size: 24px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color:#2564B2;
+    }
+
+    @media screen and (min-width: 1024px){
+      .logo{
+        margin-top: 5%;
+      }
+      .logoimg{
+        width: 35%;
+      }
+      .categorycard{
+        height: 160px !important;
+        width: 160px !important;
+        margin: 5px;
+      }
+      .maincategories{
+        width: 510px !important;
+      }
+    }
+    .searchbar-clear-icon{
+      display: none !important;
+    }
+
+}
+
+ion-searchbar{
+  margin-left: auto;
+  margin-right: auto;
+}
+.searchbar-ios{
+  border-radius: 8px !important;
+  background: transparent !important;
+}
+.searchbar-input{
+  height: 50px !important;
+  z-index: -1;
+}
+.searchbar-search-icon {
+  left: 12px !important;
+  top: 18px !important;
+}

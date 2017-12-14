@@ -1,0 +1,57 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div id="userInfo">
+    <div id="imageContainer">
+      <img class="profilepic" src="{{profilePicture}}"/>
+    </div>
+
+    <div id="name" class="profilename">{{username}}</div>
+
+    <div id="on-off-status">
+      <div class="online-dot" id="onlineDot"></div>
+      <p class="online">{{status}}</p>
+    </div>
+
+    <button (click)="request($event)" class="bluebutton" ion-button round>Request Session</button>
+    <button (click)="message()" ion-button round class="bluebutton"><img class="buttonicon" src="./assets/icon/messageicon.png"/></button>
+  </div>
+  <div class="userpage">
+    <button *ngIf="navCtrl.indexOf(viewCtrl) === 0" class="hamburger" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <button *ngIf="navCtrl.indexOf(viewCtrl) !== 0" class="hamburger" (tap)="navCtrl.pop()" ion-button>
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
+    <div class="profilecontent">
+      <h1 class="profiletitle">Overview</h1>
+      <div class="biobox">
+        <p class="biotext">{{bio}}</p>
+      </div>
+      <h1 class="profiletitle">Subjects</h1>
+      <ion-list>
+        <ion-item *ngFor="let category of categories">
+          {{ category }}
+        </ion-item>
+      </ion-list>
+<!--
+      <h1 class="profiletitle">Grade Level</h1>
+      <button class="gradebutton">
+        <img class="gradeimg" src="./assets/OBimgs/K-8.png"/>
+        <p class="gradetext">K-8</p>
+      </button>
+      <button class="gradebutton">
+        <img class="gradeimg" src="./assets/OBimgs/Highschool.png"/>
+        <p class="gradetext">Highschool</p>
+      </button>
+      <button class="gradebutton">
+        <img class="gradeimg" src="./assets/OBimgs/Uni.png"/>
+        <p class="gradetext">University</p>
+      </button>
+    -->
+    </div>
+  </div>
+</ion-content>

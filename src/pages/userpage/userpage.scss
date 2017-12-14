@@ -1,0 +1,81 @@
+page-user
+{
+  #userInfo
+  {
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid $lightgrey;
+    background: linear-gradient(to top, #DCE3EC, #FFFFFF);
+    background: -webkit-gradient(linear, top, bottom, from(#DCE3EC), to(#FFFFFF));
+  }
+
+  #name
+  {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  #imageContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .profilepic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .favourite{
+    color: $yellow;
+    font-size: 25px;
+  }
+  .profilename{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: $darkgrey;
+    font-weight: 400;
+  }
+  .gradebutton{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: white;
+    border: 2px solid $lightgrey;
+    height: 95px;
+    width: 112px;
+  }
+  .gradeimg{
+    height: 50%;
+    width: auto;
+  }
+  .gradetext{
+    margin-top: 8px;
+    margin-bottom: 0px;
+  }
+}
+
+#on-off-status{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.online-dot{
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+
+.online{
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  line-height: 8px;
+  font-style: italic;
+}

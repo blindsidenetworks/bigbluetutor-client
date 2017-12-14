@@ -1,0 +1,83 @@
+page-login
+{
+  .login{
+    display: block;
+  }
+  .google{
+    height: 80%;
+    margin-right: 20px;
+  }
+  .loginenter{
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    min-width: 330px;
+    width: 20%;
+    margin: auto;
+  }
+  ion-list{
+    width: 100%;
+    min-width: 310px;
+    margin: auto;
+  }
+  .loginlist{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+  }
+  .loginbtn{
+    max-width: 10%;
+    min-width: 320px;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .loginlogo{
+    display: block;
+    background-color: transparent;
+    margin-top: 15vh;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .logoimg{
+    background: none;
+    width: 40%;
+    height: auto;
+    max-width: 200px;
+    contain: none;
+  }
+  .content-ios, .content-md, .content-wp{
+    background-color: transparent;
+  }
+  .background{
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right, #7791FB, #264CEC);
+    background: -webkit-gradient(linear, left top, right top, from(#7791FB), to(#264CEC));
+    z-index: -1;
+  }
+  .welcome{
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+  }
+
+  @media screen and (max-height : 660px){
+    .logo{
+      margin-top: 6% !important;
+
+    }
+  }
+  .circles{
+    width: 100vw;
+    height: auto;
+  }
+
+}
