@@ -52,6 +52,10 @@ export default class BigBlueTutor extends Component<{}> {
   }
 
   componentDidMount() {
+    this.state.ds.on('error', (error, event, topic ) => {
+      console.log(error, event, topic);
+      Actions.reset('signin', {ds: this.state.ds})
+    })
 
     if(this.state.ds.getConnectionState() != "OPEN") {
       GoogleSignin.configure({
@@ -99,16 +103,16 @@ export default class BigBlueTutor extends Component<{}> {
       // (optional) Called when Token is generated (iOS and Android)
       onRegister: function(token) {
         console.log( 'TOKEN:', token );
-        this.state.ds.rpc.make('addDeviceToken', { username: this.state.profileRecord.get('username'), deviceToken: token.token }, () => {});
+        this.state.ds.rpc.make('addDeviceToken', { username: this.state.profileRecord.get('username'), deviceToken: token.token, version: 'react-native', platform: 'android' }, () => {});
       }.bind(this),
 
       // (required) Called when a remote or local notification is opened or received
       onNotification: function(notification) {
         console.log( 'NOTIFICATION:', notification );
         PushNotification.localNotification({
-          largeIcon: notification.icon, // (optional) default: "ic_launcher"
-          smallIcon: notification.icon, // (optional) default: "ic_notification" with fallback for "ic_launcher"
-          bigText: notification.message, // (optional) default: "message" prop
+          largeIcon: notification.notification.icon, // (optional) default: "ic_launcher"
+          smallIcon: notification.notification.icon, // (optional) default: "ic_notification" with fallback for "ic_launcher"
+          bigText: notification.notification.body, // (optional) default: "message" prop
           color: "blue", // (optional) default: system default
           vibrate: true, // (optional) default: true
           vibration: 300, // vibration length in milliseconds, ignored if vibrate=false, default: 1000
@@ -123,8 +127,8 @@ export default class BigBlueTutor extends Component<{}> {
           */
 
           /* iOS and Android properties */
-          title: notification.title, // (optional, for iOS this is only used in apple watch, the title will be the app name on other iOS devices)
-          message: notification.message, // (required)
+          title: notification.notification.title, // (optional, for iOS this is only used in apple watch, the title will be the app name on other iOS devices)
+          message: notification.notification.body, // (required)
           playSound: false, // (optional) default: true
           soundName: 'default', // (optional) Sound to play when the notification is shown. Value of 'default' plays the default sound. It can be set to a custom sound such as 'android.resource://com.xyz/raw/my_sound'. It will look for the 'my_sound' audio file in 'res/raw' directory and play it. default: 'default' (default sound is played)
         })
@@ -140,15 +144,7 @@ export default class BigBlueTutor extends Component<{}> {
           sound: true
       },
 
-      // Should the initial notification be popped automatically
-      // default: true
       popInitialNotification: true,
-
-        /*
-        * (optional) default: true
-        * - Specified if permissions (ios) and token (android and ios) will requested or not,
-        * - if not, you must call PushNotificationsHandler.requestPermissions() later
-        */
 
       requestPermissions: true,
     });

@@ -1,0 +1,13 @@
+<ion-content>
+  <div class=background>
+      <img class="circles" src="./assets/icon/circles.png"/>
+  </div>
+  <div class="enterUsernamePage">
+    <div class="username">
+      <h1 class="createTitle">Create Your Username</h1>
+      <ion-input placeholder="Enter your username here" [(ngModel)]="username" (input)="hideError()" class="enterUsername"></ion-input>
+      <button ion-button (tap)="createUsername()" class="nextbtn whitebutton create" round>CREATE</button>
+      <p id="error" style="color:red;visibility:hidden">{{error}}</p>
+    </div>
+  </div>
+</ion-content>

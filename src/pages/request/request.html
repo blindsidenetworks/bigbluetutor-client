@@ -1,0 +1,31 @@
+<ion-header>
+</ion-header>
+
+
+  <ion-content>
+    <div class="requestmodal">
+      <ion-list-header class="requestheader">
+        <p class="headertext">Request Session with:</p>
+        <h1 class="requesttitle"> {{username}} </h1>
+        <ion-icon name="ios-close-circle-outline" class="closebtn" (click)=closeModal()></ion-icon>
+      </ion-list-header>
+      <ion-list>
+        <ion-list-header><h1 class="requesttitle" item-left>I need help in: </h1></ion-list-header>
+        <ion-item *ngFor="let category of categories">
+          <ion-label>{{ category }}</ion-label>
+          <ion-checkbox [(ngModel)]="categoriesSelected[category]"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <ion-list radio-group [(ngModel)]="time">
+        <ion-list-header><h1 class="requesttitle" item-left> Duration: </h1></ion-list-header>
+        <ion-item *ngFor="let time of times">
+          <ion-label>{{ time }}</ion-label>
+          <ion-radio [value]="time">
+          </ion-radio>
+        </ion-item>
+      </ion-list>
+      <button (click)="request()"round ion-button class="requestbtn bluebutton">
+        Request Meeting
+      </button>
+    </div>
+  </ion-content>
