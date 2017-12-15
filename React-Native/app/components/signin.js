@@ -75,7 +75,7 @@ export default class SignIn extends Component<{}> {
       // (optional) Called when Token is generated (iOS and Android)
       onRegister: function(token) {
         console.log( 'TOKEN:', token );
-        this.props.ds.rpc.make('addDeviceToken', { username: this.props.profileRecord.get('username'), deviceToken: token.token, version: 'react-native', platform: 'android' }, () => {});
+        this.props.ds.rpc.make('addDeviceToken', { username: this.state.profileRecord.get('username'), deviceToken: token.token, version: 'react-native', platform: Platform.OS }, () => {});
       }.bind(this),
 
       // (required) Called when a remote or local notification is opened or received

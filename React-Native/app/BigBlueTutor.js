@@ -103,7 +103,7 @@ export default class BigBlueTutor extends Component<{}> {
       // (optional) Called when Token is generated (iOS and Android)
       onRegister: function(token) {
         console.log( 'TOKEN:', token );
-        this.state.ds.rpc.make('addDeviceToken', { username: this.state.profileRecord.get('username'), deviceToken: token.token, version: 'react-native', platform: 'android' }, () => {});
+        this.state.ds.rpc.make('addDeviceToken', { username: this.state.profileRecord.get('username'), deviceToken: token.token, version: 'react-native', platform: Platform.OS }, () => {});
       }.bind(this),
 
       // (required) Called when a remote or local notification is opened or received
