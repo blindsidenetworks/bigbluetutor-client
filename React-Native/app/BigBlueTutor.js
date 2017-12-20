@@ -54,7 +54,7 @@ export default class BigBlueTutor extends Component<{}> {
   componentDidMount() {
     this.state.ds.on('error', (error, event, topic ) => {
       console.log(error, event, topic);
-      Actions.reset('signin', {ds: this.state.ds})
+      Actions.reset('signin', {ds: this.state.ds, configurePush: this.configurePush})
     })
 
     if(this.state.ds.getConnectionState() != "OPEN") {
@@ -73,19 +73,19 @@ export default class BigBlueTutor extends Component<{}> {
               this.state.profileRecord.whenReady(() => {
                 this.state.dataRecord.whenReady(() => {
                   if (!this.state.profileRecord.get("onboardingComplete")) {
-                    Actions.onboard({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
+                    Actions.onboard({ ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord, configurePush: this.configurePush});
                   } else {
                     this.configurePush();
-                    Actions.reset('drawer', {ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
-                    Actions.home({ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord});
+                    Actions.reset('drawer', { ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord, configurePush: this.configurePush });
+                    Actions.home({ ds: this.state.ds, username: this.state.username, profileRecord: this.state.profileRecord, dataRecord: this.state.dataRecord, configurePush: this.configurePush });
                   }
                 })
               })
             } else {
               if(data.needsUsername) {
-                Actions.register({ds: this.state.ds, idToken: user.idToken});
+                Actions.register({ds: this.state.ds, idToken: user.idToken, configurePush: this.configurePush});
               } else {
-                Actions.signin({ds: this.state.ds})
+                Actions.signin({ds: this.state.ds, configurePush: this.configurePush})
               }
             }
           });
@@ -102,13 +102,30 @@ export default class BigBlueTutor extends Component<{}> {
     PushNotification.configure({
       // (optional) Called when Token is generated (iOS and Android)
       onRegister: function(token) {
-        console.log( 'TOKEN:', token );
-        this.state.ds.rpc.make('addDeviceToken', { username: this.state.profileRecord.get('username'), deviceToken: token.token, version: 'react-native', platform: 'android' }, () => {});
+        var ds
+        var profileRecord
+        if (this.props) {
+          if(this.props.ds) {
+            ds = this.props.ds
+          }
+          if(this.props.profileRecord) {
+            profileRecord = this.props.profileRecord
+          }
+        }
+        if (this.state) {
+          if (this.state.ds) {
+            ds = this.state.ds
+          }
+          if (this.state.profileRecord) {
+            profileRecord = this.state.profileRecord
+          }
+        }
+        ds.rpc.make('addDeviceToken', { username: profileRecord.get('username'), deviceToken: token.token, version: 'react-native', platform: 'android' }, () => {});
       }.bind(this),
 
       // (required) Called when a remote or local notification is opened or received
       onNotification: function(notification) {
-        console.log( 'NOTIFICATION:', notification );
+        console.log(notification.notification.icon)
         PushNotification.localNotification({
           largeIcon: notification.notification.icon, // (optional) default: "ic_launcher"
           smallIcon: notification.notification.icon, // (optional) default: "ic_notification" with fallback for "ic_launcher"
@@ -154,7 +171,7 @@ export default class BigBlueTutor extends Component<{}> {
     return (
       <Router hideNavBar>
         <Scene key="root" hideNavBar>
-          <Scene key="signin" component={ SignIn } ds={ this.state.ds } hideNavBar/>
+        <Scene key="signin" component={ SignIn } ds={ this.state.ds } configurePush= { this.configurePush } hideNavBar/>
           <Modal key="onboard" component={ Onboard } hideNavBar/>
           <Modal key="register" component={ Register } hideNavBar/>
           <Drawer key="drawer" contentComponent={ Menu } ds={ this.state.ds } drawerWidth={200} hideNavBar>
