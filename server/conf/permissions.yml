@@ -1,0 +1,48 @@
+# BigBlueButton open source conferencing system - http://www.bigbluebutton.org/
+#
+# Copyright (c) 2017 BigBlueButton Inc. and by respective authors (see below).
+#
+# This file is part of BigBlueTutor.
+#
+# BigBlueTutor is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# BigBlueTutor is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with BigBlueTutor.  If not, see <http://www.gnu.org/licenses/>.
+presence:
+  "*":
+    allow: true
+record:
+  "*":
+    create: true
+    write: "user.data.role === 'server'"
+    read: true
+    delete: "user.data.role === 'server'"
+    listen: true
+  "profile/$userid":
+    create: "user.id === $userid || user.data.role === 'server'"
+    write: "user.id === $userid || user.data.role === 'server'"
+    read: "user.id === $userid || user.data.role === 'server'"
+    listen: "user.id === $userid"
+event:
+  "*":
+    publish: true
+    subscribe: true
+    listen: true
+rpc:
+  "*":
+    provide: true
+    request: true
+  "createUser":
+    provide: "user.data.role === 'server'"
+    request: "user.data.role === 'server'"
+  "registerTutor":
+    provide: "user.data.role === 'server'"
+    request: "user.id === data.username || user.data.role === 'server'"

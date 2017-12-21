@@ -1,0 +1,15 @@
+build_failure_conditions:
+    # No critical issue is present
+    - 'issues.severity(= CRITICAL).exists'
+
+    # No new critical issue is introduced (existing ones are tolerated)
+    - 'issues.severity(= CRITICAL).new.exists'
+
+    # Class has no tests
+    #- 'classes.metric("php_code_coverage.coverage", = 0).exists'
+
+    # Rating is D or worse
+    #- 'elements.rating(<= D).exists'
+
+    # Code Coverage decreased from previous inspection by more than 10%
+    #- 'project.metric_change("scrutinizer.test_coverage", < -0.10)'

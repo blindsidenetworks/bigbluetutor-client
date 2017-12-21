@@ -82,7 +82,7 @@ export default class Menu extends Component<{}> {
           style={ styles.imageOuterContainer }
         >
             <Image
-            style={ styles.image }
+              style={ styles.image }
               source={ require('../assets/logo.png') }
             />
         </View>
