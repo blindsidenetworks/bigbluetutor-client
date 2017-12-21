@@ -1,0 +1,26 @@
+# RethinkDB settings
+DB_HOST=localhost
+DB_PORT=28015
+DB_NAME=deepstream
+DB_DEFAULT_TABLE=deepstream_records
+
+# Google OAuth Provider settings
+# These are taken from the Google console
+GOOGLE_CLIENT_ID= WEB CLIENT ID
+IOS_GOOGLE_CLIENT_ID= IOS CLIENT ID
+
+# BigBlueButton settings
+# The URL has to be in the form https://test-install.blindsidenetworks.com/
+# Note that the scheme is included and also the last /
+# No need to add bigbluebutton/api
+BIGBLUEBUTTON_URL= BBB URL
+BIGBLUEBUTTON_SECRET= BBB SHARED SECRET
+
+LOG_LEVEL=info
+
+#These are taken from setting up Google Sign in get a configuration file. The iOS Ids are taken from the Apple Developer Account
+PUSH_SERVER_KEY= PUSH NOTIFICATION KEY FOR IONIC
+PUSH_AUTH_KEY= GOOGLE PUSH AUTHORIZATION KEY FOR REACT NATIVE ANDROID
+APN_KEY_ID= APPLE KEY
+IOS_TEAM_ID=APPLE DEVELOPER TEAM ID
+LOG_LEVEL= set to debug for debug messages

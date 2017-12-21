@@ -1,0 +1,47 @@
+{
+  "name": "bigbluetutor",
+  "version": "1.0.0",
+  "description": "Backend for BigBlueTutor",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "node server.js",
+    "start:client": "node client.js",
+    "start:provider-search": "node providerSearch.js",
+    "start:all": "SLEEPTIME=3 && (sleep $SLEEPTIME && npm run start:client &) && (sleep $SLEEPTIME && npm run start:provider-search &) && npm run start:server",
+    "start": "npm run start:all",
+    "db:cleartables": "python3 ./scripts/cleartables.py",
+    "db:createtables": "node ./scripts/createtables.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blindsidenetworks/bigbluetutor-server"
+  },
+  "author": "Blindside Networks",
+  "contributors": [
+    "Robin Luo <robin.luo@blindsidenetworks.com> (https://github.com/RPHLuo)",
+    "Cody Browne <cody.browne@blindsidenetworks.com> (https://github.com/browniecab)"
+  ],
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/blindsidenetworks/bigbluetutor-server/issues"
+  },
+  "homepage": "https://github.com/blindsidenetworks/bigbluetutor-server#readme",
+  "dependencies": {
+    "apn": "^2.1.5",
+    "body-parser": "^1.18.2",
+    "deepstream.io": "^3.1.1",
+    "deepstream.io-client-js": "^2.3.0",
+    "deepstream.io-logger-winston": "^1.1.0",
+    "deepstream.io-provider-search-rethinkdb": "^2.0.0",
+    "deepstream.io-storage-rethinkdb": "^1.0.2",
+    "dotenv": "^4.0.0",
+    "google-auth-library": "^0.11.0",
+    "needle": "^2.0.1",
+    "node-gcm": "^0.14.9",
+    "node-pushnotifications": "^1.0.18",
+    "parallelshell": "^3.0.2",
+    "rethinkdb": "^2.3.3",
+    "winston": "^2.4.0",
+    "ws": "^3.2.0"
+  }
+}
