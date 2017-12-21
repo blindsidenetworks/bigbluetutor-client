@@ -1,40 +1,23 @@
-<!--ion-header>
-  <ion-navbar class="onboardingnav">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  </ion-navbar>
-</ion-header>
+<!--
+BigBlueButton open source conferencing system - http://www.bigbluebutton.org/
 
-<ion-content padding>
-  <h2 class="OBTitle">What courses do you tutor?</h2>
-    <div class="categoryCONT">
-      <div class="allcategories">
-        <ion-list>
-          <div *ngFor="let category of categories">
-            <div class="categorycontainer">
-              <ion-item class="categoryitem"
-                (click)="toggleCategories(category)">
-                {{ category }}
-                <ion-icon ios="ios-add" class="moreoptions" md="md-add"></ion-icon>
-              </ion-item>
+Copyright (c) 2017 BigBlueButton Inc. and by respective authors (see below).
 
-              <div *ngIf="isOpen(category)">
-                <ion-item class="subcategoryitem"
-                  *ngFor="let subcategory of categoriesData[category]">
-                  <ion-label>
-                    {{ subcategory }}
-                  </ion-label>
-                  <ion-checkbox [(ngModel)]="categoriesSelected[subcategory]">
-                  </ion-checkbox>
-                </ion-item>
-              </div>
-            </div>
-          </div>
-          </div>
-        </ion-list>
-      </div>
-    </ion-slide>
+This file is part of BigBlueTutor.
+
+BigBlueTutor is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+BigBlueTutor is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with BigBlueTutor.  If not, see <http://www.gnu.org/licenses/>.
+-->
 </ion-content-->
 
 <ion-header>
