@@ -1,3 +1,23 @@
+<!--
+BigBlueButton open source conferencing system - http://www.bigbluebutton.org/
+
+Copyright (c) 2017 BigBlueButton Inc. and by respective authors (see below).
+
+This file is part of BigBlueTutor.
+
+BigBlueTutor is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+BigBlueTutor is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with BigBlueTutor.  If not, see <http://www.gnu.org/licenses/>.
+-->
 <ion-content padding class="onboarding">
   <ion-slides>
     <ion-slide>
@@ -19,18 +39,6 @@ BigBlueTutor allows you to quickly connect with online tutors from various subje
         <button [navPush]="TutorRegister" ion-button round class="nextbtn bluebutton" (click)="onboard(true)">NEXT</button>
       </div>
     </ion-slide>
-
-<!--
-    <ion-slide>
-      <ion-img class="onboardingimg" src="./assets/OBimgs/OB3.png"></ion-img>
-      <h1 class="onboardingtitle">DOWNLOAD BIGBLUEBUTTON</h1>
-      <p class="onboardingtext">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lobortis sapien, vel semper risus.</p>
-
-      <div class="btndiv" ng-controller="slideCtrl">
-        <button [navPush]="TutorRegister" ion-button round class="nextbtn" (click)="onboard(4)">NEXT</button>
-      </div>
-    </ion-slide> -->
   </ion-slides>
 
 </ion-content>
